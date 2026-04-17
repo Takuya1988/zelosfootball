@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>選手・スタッフ一覧｜Savannakhet Zelos FC Official Site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f6fa;
+    --ink: #0b0b0c;
+    --sub: #5a5a5a;
+    --brand: #044d83;
+    --brand-dark: #022641;
+    --brand-light: #1a6fa8;
+    --gold: #c9a84c;
+    --gold-deep: #a8892f;
+    --line: #d8dde5;
+    --card: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "Noto Sans JP", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .topbar {
+    background: var(--brand-dark);
+    color: #fff;
+    font-size: 11px;
+    padding: 8px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 0.08em;
+  }
+  .topbar .social { display: flex; gap: 14px; }
+  .topbar .social a { opacity: 0.75; transition: opacity 0.2s; }
+  .topbar .social a:hover { opacity: 1; color: var(--gold); }
+
+  header.main {
+    background: #fff;
+    border-bottom: 3px solid var(--brand);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(4, 77, 131, 0.08);
+  }
+  .header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .logo img {
+    width: 52px;
+    height: auto;
+    display: block;
+  }
+  .logo-text {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.12em;
+    color: var(--brand);
+    line-height: 1;
+  }
+  .logo-text span {
+    display: block;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--sub);
+    margin-top: 4px;
+  }
+  nav.main-nav ul {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  nav.main-nav a {
+    padding: 8px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  nav.main-nav a:hover { color: var(--brand); border-bottom-color: var(--gold); }
+  nav.main-nav a.active { color: var(--brand); border-bottom-color: var(--brand); }
+
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 60%, var(--brand-light) 100%);
+    color: #fff;
+    padding: 80px 24px 100px;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 85% 50%, rgba(255,255,255,0.08), transparent 50%),
+      radial-gradient(circle at 15% 80%, rgba(201, 168, 76, 0.12), transparent 50%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  .hero-kicker {
+    font-family: "Bebas Neue", sans-serif;
+    color: var(--gold);
+    letter-spacing: 0.3em;
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  .hero h1 {
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+  .hero h1 .jp {
+    display: block;
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: clamp(16px, 1.5vw, 20px);
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-top: 16px;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 40px;
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    max-width: 600px;
+  }
+  .hero-meta div {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+  .hero-meta strong {
+    display: block;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 28px;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .breadcrumb {
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    padding: 14px 24px;
+    font-size: 12px;
+    color: var(--sub);
+  }
+  .breadcrumb-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .breadcrumb a { color: var(--sub); }
+  .breadcrumb a:hover { color: var(--brand); }
+  .breadcrumb span { color: var(--ink); font-weight: 500; }
+
+  .position-tabs {
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    padding: 0 24px;
+    position: sticky;
+    top: 81px;
+    z-index: 50;
+  }
+  .position-tabs-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+  }
+  .position-tabs a {
+    padding: 18px 28px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.15em;
+    color: var(--sub);
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .position-tabs a:hover {
+    color: var(--brand);
+    background: #fafbfd;
+  }
+  .position-tabs a.active {
+    color: var(--brand);
+    border-bottom-color: var(--gold);
+  }
+
+  main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--brand);
+    position: relative;
+  }
+  .section-heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 80px;
+    height: 2px;
+    background: var(--gold);
+  }
+  .section-heading .pos-code {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 48px;
+    color: var(--brand);
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+  .section-heading .pos-name-en {
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: var(--brand-dark);
+    text-transform: uppercase;
+  }
+  .section-heading .pos-name-jp {
+    font-size: 13px;
+    color: var(--sub);
+    margin-left: auto;
+    letter-spacing: 0.1em;
+  }
+
+  .player-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 18px;
+    margin-bottom: 64px;
+  }
+
+  .player-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(.2,.8,.2,1);
+    cursor: pointer;
+    position: relative;
+  }
+  .player-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold);
+    box-shadow: 0 12px 24px rgba(4, 77, 131, 0.18);
+  }
+  .player-card:hover .player-img,
+  .player-card:hover .player-photo {
+    transform: scale(1.05);
+  }
+  .player-card:hover .player-number {
+    color: var(--gold);
+  }
+
+  .player-img-wrap {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--brand-light) 0%, var(--brand) 60%, var(--brand-dark) 100%);
+  }
+  .player-img {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: end center;
+    padding-bottom: 10px;
+    transition: transform 0.5s;
+    z-index: 1;
+  }
+  .player-img svg {
+    width: 75%;
+    height: 85%;
+    opacity: 0.45;
+  }
+  .player-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    transition: transform 0.5s;
+    z-index: 1;
+  }
+  .player-number {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 42px;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    z-index: 2;
+  }
+  .player-pos-tag {
+    position: absolute;
+    top: 16px;
+    right: 14px;
+    background: var(--gold);
+    color: var(--brand-dark);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 12px;
+    padding: 3px 8px;
+    letter-spacing: 0.1em;
+    z-index: 2;
+  }
+  .player-info {
+    padding: 14px 14px 16px;
+    background: #fff;
+    border-top: 3px solid var(--brand);
+    position: relative;
+  }
+  .player-info::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 30%;
+    height: 3px;
+    background: var(--gold);
+  }
+  .player-name-jp {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 2px;
+    letter-spacing: 0.02em;
+  }
+  .player-name-en {
+    font-family: "Oswald", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--sub);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .staff-section {
+    margin-top: 80px;
+    padding-top: 80px;
+    border-top: 1px solid var(--line);
+  }
+  .staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  .staff-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 24px 20px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .staff-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--brand);
+    transition: background 0.2s;
+  }
+  .staff-card:hover {
+    border-color: var(--gold);
+    transform: translateX(4px);
+    box-shadow: 0 6px 14px rgba(4, 77, 131, 0.1);
+  }
+  .staff-card:hover::before {
+    background: var(--gold);
+  }
+  .staff-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--brand-dark), var(--brand));
+    display: grid;
+    place-items: center;
+    color: var(--gold);
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 22px;
+    flex-shrink: 0;
+    border: 2px solid var(--gold);
+  }
+  .staff-role {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 11px;
+    color: var(--gold-deep);
+    letter-spacing: 0.2em;
+    margin-bottom: 4px;
+  }
+  .staff-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .staff-name-en {
+    font-family: "Oswald", sans-serif;
+    font-size: 10px;
+    color: var(--sub);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  footer {
+    background: var(--brand-dark);
+    color: #fff;
+    padding: 56px 24px 28px;
+    border-top: 4px solid var(--gold);
+  }
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .footer-brand img {
+    width: 56px;
+    height: auto;
+  }
+  .footer-logo {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    line-height: 1.1;
+  }
+  .footer-logo span {
+    display: block;
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.25em;
+    margin-top: 4px;
+  }
+  .footer-copy {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.6);
+  }
+
+  @media (max-width: 768px) {
+    nav.main-nav { display: none; }
+    .hero { padding: 56px 24px 72px; }
+    .hero-meta { flex-wrap: wrap; gap: 20px; }
+    .position-tabs { top: 77px; }
+    .position-tabs a { padding: 14px 16px; font-size: 13px; }
+    .player-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .section-heading .pos-code { font-size: 36px; }
+    .section-heading .pos-name-en { font-size: 16px; }
+    .section-heading .pos-name-jp { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div>SAVANNAKHET ZELOS FC &nbsp;|&nbsp; LAO PREMIER LEAGUE</div>
+  <div class="social">
+    <a href="#">X</a>
+    <a href="#">FB</a>
+    <a href="#">IG</a>
+    <a href="#">YT</a>
+  </div>
+</div>
+
+<header class="main">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <img src="emblem.png" alt="Savannakhet Zelos FC">
+      <div class="logo-text">
+        ZELOS FC
+        <span>SAVANNAKHET</span>
+      </div>
+    </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#">NEWS</a></li>
+        <li><a href="#">GAME</a></li>
+        <li><a href="#">TICKET</a></li>
+        <li><a href="#" class="active">TEAM</a></li>
+        <li><a href="#">CLUB</a></li>
+        <li><a href="#">FAN</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-kicker">2026-27 SEASON ROSTER</div>
+      <h1>
+        PLAYERS &amp; STAFF
+        <span class="jp">選手・スタッフ一覧</span>
+      </h1>
+      <div class="hero-meta">
+        <div>
+          <strong>06</strong>
+          SQUAD MEMBERS
+        </div>
+        <div>
+          <strong>04</strong>
+          STAFF
+        </div>
+        <div>
+          <strong>03</strong>
+          NATIONS
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="#">TOP</a> &nbsp;/&nbsp; <a href="#">TEAM</a> &nbsp;/&nbsp; <span>選手・スタッフ一覧</span>
+  </div>
+</div>
+
+<div class="position-tabs">
+  <div class="position-tabs-inner">
+    <a href="#gk" class="active">GK / ゴールキーパー</a>
+    <a href="#df">DF / ディフェンダー</a>
+    <a href="#mf">MF / ミッドフィルダー</a>
+    <a href="#fw">FW / フォワード</a>
+    <a href="#staff">STAFF / スタッフ</a>
+  </div>
+</div>
+
+<main>
+
+  <section id="gk">
+    <div class="section-heading">
+      <div class="pos-code">GK</div>
+      <div class="pos-name-en">Goalkeeper</div>
+      <div class="pos-name-jp">ゴールキーパー</div>
+    </div>
+    <div class="player-grid">
+      <a href="#" class="player-card">
+        <div class="player-img-wrap">
+          <div class="player-number">1</div>
+          <div class="player-pos-tag">GK</div>
+          <div class="player-img">
+            <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg>
+          </div>
+        </div>
+        <div class="player-info">
+          <div class="player-name-jp">三澤 拓歩</div>
+          <div class="player-name-en">Takuho MISAWA</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="df">
+    <div class="section-heading">
+      <div class="pos-code">DF</div>
+      <div class="pos-name-en">Defender</div>
+      <div class="pos-name-jp">ディフェンダー</div>
+    </div>
+    <div class="player-grid">
+      <a href="#" class="player-card">
+        <div class="player-img-wrap">
+          <div class="player-number">4</div>
+          <div class="player-pos-tag">DF</div>
+          <div class="player-img">
+            <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg>
+          </div>
+        </div>
+        <div class="player-info">
+          <div class="player-name-jp">片野 理道</div>
+          <div class="player-name-en">Hiromichi KATANO</div>
+        </div>
+      </a>
+      <a href="#" class="player-card">
+        <div class="player-img-wrap">
+          <div class="player-number">19</div>
+          <div class="player-pos-tag">DF</div>
+          <div class="player-img">
+            <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg>
+          </div>
+        </div>
+        <div class="player-info">
+          <div class="player-name-jp">ナロンシット</div>
+          <div class="player-name-en">NALONGSIT</div>
+        </div>
+      </a>
+      <a href="#" class="player-card">
+        <div class="player-img-wrap">
+          <div class="player-number">42</div>
+          <div class="player-pos-tag">DF</div>
+          <img src="player-42.jpg" alt="渡邉 卓矢" class="player-photo">
+        </div>
+        <div class="player-info">
+          <div class="player-name-jp">渡邉 卓矢</div>
+          <div class="player-name-en">Takuya WATANABE</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="mf">
+    <div class="section-heading">
+      <div class="pos-code">MF</div>
+      <div class="pos-name-en">Midfielder</div>
+      <div class="pos-name-jp">ミッドフィルダー</div>
+    </div>
+    <div class="player-grid">
+      <a href="#" class="player-card">
+        <div class="player-img-wrap">
+          <div class="player-number">6</div>
+          <div class="player-pos-tag">MF</div>
+          <div class="player-img">
+            <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg>
+          </div>
+        </div>
+        <div class="player-info">
+          <div class="player-name-jp">チャック</div>
+          <div class="player-name-en">Chakkavanh MANIVONG</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="fw">
+    <div class="section-heading">
+      <div class="pos-code">FW</div>
+      <div class="pos-name-en">Forward</div>
+      <div class="pos-name-jp">フォワード</div>
+    </div>
+    <div class="player-grid">
+      <a href="#" class="player-card">
+        <div class="player-img-wrap">
+          <div class="player-number">9</div>
+          <div class="player-pos-tag">FW</div>
+          <div class="player-img">
+            <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg>
+          </div>
+        </div>
+        <div class="player-info">
+          <div class="player-name-jp">菅澤 孝也</div>
+          <div class="player-name-en">Takaya SUGASAWA</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="staff" class="staff-section">
+    <div class="section-heading">
+      <div class="pos-code">ST</div>
+      <div class="pos-name-en">Club Staff</div>
+      <div class="pos-name-jp">スタッフ</div>
+    </div>
+
+    <div class="staff-grid">
+      <div class="staff-card">
+        <div class="staff-avatar">OW</div>
+        <div>
+          <div class="staff-role">OWNER / PLAYER</div>
+          <div class="staff-name">渡邉 卓矢</div>
+          <div class="staff-name-en">Takuya WATANABE</div>
+        </div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar">MG</div>
+        <div>
+          <div class="staff-role">MANAGER</div>
+          <div class="staff-name">ブントン</div>
+          <div class="staff-name-en">BOUNTHONG</div>
+        </div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar">SM</div>
+        <div>
+          <div class="staff-role">SALES MANAGER</div>
+          <div class="staff-name">阿部 賢</div>
+          <div class="staff-name-en">Satoshi ABE</div>
+        </div>
+      </div>
+      <div class="staff-card">
+        <div class="staff-avatar">CC</div>
+        <div>
+          <div class="staff-role">CLUB COMMUNICATOR</div>
+          <div class="staff-name">カンダ</div>
+          <div class="staff-name-en">CANDA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="emblem.png" alt="">
+      <div class="footer-logo">
+        SAVANNAKHET ZELOS FC
+        <span>LAO PREMIER LEAGUE</span>
+      </div>
+    </div>
+    <div class="footer-copy">© 2026 ZELOS Inc. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.position-tabs a');
+  const sections = document.querySelectorAll('main section');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tabs.forEach(t => t.classList.remove('active'));
+        const activeTab = document.querySelector(`.position-tabs a[href="#${id}"]`);
+        if (activeTab) activeTab.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(tab.getAttribute('href'));
+      if (target) {
+        const y = target.getBoundingClientRect().top + window.pageYOffset - 130;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
