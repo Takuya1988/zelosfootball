@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" id="htmlRoot">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Savannakhet Zelos FC | サバナケット・ゼロスFC 公式サイト</title>
+<title data-ja="Savannakhet Zelos FC | サバナケット・ゼロスFC 公式サイト" data-en="Savannakhet Zelos FC | Official Website">Savannakhet Zelos FC | サバナケット・ゼロスFC 公式サイト</title>
 <meta name="description" content="ラオス・プレミアリーグに所属するサバナケット・ゼロスFC公式サイト。日本とラオスを繋ぐ、新しいサッカークラブ。">
 <meta property="og:title" content="Savannakhet Zelos FC | 公式サイト">
 <meta property="og:description" content="ラオス・プレミアリーグ サバナケット・ゼロスFC公式サイト">
@@ -867,7 +867,7 @@ footer {
  
 <!-- ==================== TOPBAR ==================== -->
 <div class="topbar">
-  <span class="left">SAVANNAKHET ZELOS FC / LAO PREMIER LEAGUE 2026-27</span>
+  <span class="left" data-ja="SAVANNAKHET ZELOS FC / LAO PREMIER LEAGUE 2026-27" data-en="SAVANNAKHET ZELOS FC / LAO PREMIER LEAGUE 2026-27">SAVANNAKHET ZELOS FC / LAO PREMIER LEAGUE 2026-27</span>
   <div class="social">
     <a href="#" target="_blank" rel="noopener">Facebook</a>
     <a href="#" target="_blank" rel="noopener">X</a>
@@ -887,9 +887,9 @@ footer {
       </div>
     </a>
     <div class="header-cta">
-      <a class="cta-btn">TICKET</a>
-      <a class="cta-btn">SHOP</a>
-      <a class="cta-btn gold">FAN CLUB</a>
+      <a class="cta-btn" data-ja="TICKET" data-en="TICKET">TICKET</a>
+      <a class="cta-btn" data-ja="SHOP" data-en="SHOP">SHOP</a>
+      <a class="cta-btn gold" data-ja="FAN CLUB" data-en="FAN CLUB">FAN CLUB</a>
     </div>
   </div>
 </header>
@@ -897,14 +897,14 @@ footer {
 <!-- ==================== MAIN NAV ==================== -->
 <nav class="main-nav">
   <ul>
-    <li><a class="active" onclick="showPage('home')">NEWS</a></li>
-    <li><a onclick="showPage('schedule')">GAME</a></li>
-    <li><a onclick="showPage('players')">TEAM</a></li>
-    <li><a onclick="showPage('about')">CLUB</a></li>
-    <li><a onclick="showPage('goods')">SHOP</a></li>
-    <li><a onclick="showPage('sponsor')">SPONSOR</a></li>
-    <li><a onclick="showPage('contact')">CONTACT</a></li>
-    <li class="lang"><a>ENGLISH</a></li>
+    <li><a class="active" onclick="showPage('home')" data-ja="NEWS" data-en="NEWS">NEWS</a></li>
+    <li><a onclick="showPage('schedule')" data-ja="GAME" data-en="GAME">GAME</a></li>
+    <li><a onclick="showPage('players')" data-ja="TEAM" data-en="TEAM">TEAM</a></li>
+    <li><a onclick="showPage('about')" data-ja="CLUB" data-en="CLUB">CLUB</a></li>
+    <li><a onclick="showPage('goods')" data-ja="SHOP" data-en="SHOP">SHOP</a></li>
+    <li><a onclick="showPage('sponsor')" data-ja="SPONSOR" data-en="SPONSOR">SPONSOR</a></li>
+    <li><a onclick="showPage('contact')" data-ja="CONTACT" data-en="CONTACT">CONTACT</a></li>
+    <li class="lang"><a id="langToggle" onclick="toggleLang()" data-ja="ENGLISH" data-en="日本語">ENGLISH</a></li>
   </ul>
 </nav>
  
@@ -915,17 +915,17 @@ footer {
 <section class="hero-slider">
   <div class="hero-slide">
     <div class="hero-content">
-      <div class="hero-kicker">2026-27 SEASON</div>
-      <h1>WRITE A NEW<br><em>HISTORY</em><br>IN LAOS.</h1>
-      <div class="hero-subtitle">ラオス・サバナケットから、アジアへ。</div>
-      <p class="hero-description">
+      <div class="hero-kicker" data-ja="2026-27 SEASON" data-en="2026-27 SEASON">2026-27 SEASON</div>
+      <h1 data-ja="WRITE A NEW<br><em>HISTORY</em><br>IN LAOS." data-en="WRITE A NEW<br><em>HISTORY</em><br>IN LAOS.">WRITE A NEW<br><em>HISTORY</em><br>IN LAOS.</h1>
+      <div class="hero-subtitle" data-ja="ラオス・サバナケットから、アジアへ。" data-en="From Savannakhet, Laos to Asia.">ラオス・サバナケットから、アジアへ。</div>
+      <p class="hero-description" data-ja="日本とラオスを繋ぐ、新しいサッカーの物語が始まる。サバナケット・ゼロスFCは、2026-27シーズン、25,000席のスタジアム満員を目指して戦います。" data-en="A new football story connecting Japan and Laos begins. Savannakhet Zelos FC aims to fill the 25,000-seat stadium in the 2026-27 season.">
         日本とラオスを繋ぐ、新しいサッカーの物語が始まる。
         サバナケット・ゼロスFCは、2026-27シーズン、
         25,000席のスタジアム満員を目指して戦います。
       </p>
       <div class="hero-buttons">
-        <a class="btn-primary">チケット購入</a>
-        <a class="btn-outline" onclick="showPage('about')">クラブを知る</a>
+        <a class="btn-primary" data-ja="チケット購入" data-en="BUY TICKETS">チケット購入</a>
+        <a class="btn-outline" onclick="showPage('about')" data-ja="クラブを知る" data-en="ABOUT THE CLUB">クラブを知る</a>
       </div>
     </div>
   </div>
@@ -935,13 +935,13 @@ footer {
 <section class="stats-bar">
   <div class="stat-item">
     <div class="stat-num">25,000</div>
-    <div class="stat-label">STADIUM CAPACITY</div>
-    <div class="stat-ja">スタジアム収容可能人数</div>
+    <div class="stat-label" data-ja="STADIUM CAPACITY" data-en="STADIUM CAPACITY">STADIUM CAPACITY</div>
+    <div class="stat-ja" data-ja="スタジアム収容可能人数" data-en="Seats at Savannakhet Stadium">スタジアム収容可能人数</div>
   </div>
   <div class="stat-item">
     <div class="stat-num">2026</div>
-    <div class="stat-label">ZELOS PARTNERSHIP</div>
-    <div class="stat-ja">ZELOS運営参画</div>
+    <div class="stat-label" data-ja="ZELOS PARTNERSHIP" data-en="ZELOS PARTNERSHIP">ZELOS PARTNERSHIP</div>
+    <div class="stat-ja" data-ja="ZELOS運営参画" data-en="Year ZELOS took management">ZELOS運営参画</div>
   </div>
 </section>
  
@@ -949,42 +949,42 @@ footer {
 <div class="section-title">
   <div>
     <h2>GAME SCHEDULE</h2>
-    <span class="ja">試合日程</span>
+    <span class="ja" data-ja="試合日程" data-en="Upcoming Matches">試合日程</span>
   </div>
-  <a class="more" onclick="showPage('schedule')">ALL SCHEDULE →</a>
+  <a class="more" onclick="showPage('schedule')" data-ja="ALL SCHEDULE →" data-en="ALL SCHEDULE →">ALL SCHEDULE →</a>
 </div>
 <div class="game-schedule">
   <div class="game-card fade-in">
     <span class="game-badge home">HOME</span>
-    <div class="game-venue">サバナケット・スタジアム</div>
-    <div class="game-date">8/9 <span style="font-size:14px;font-weight:400">(日)</span></div>
-    <div class="game-time">18:00 KICK OFF</div>
-    <div class="game-league">LAO PREMIER LEAGUE 第1節</div>
-    <div class="game-opponent">vs. ビエンチャンFC</div>
+    <div class="game-venue" data-ja="サバナケット・スタジアム" data-en="Savannakhet Stadium">サバナケット・スタジアム</div>
+    <div class="game-date" data-ja="8/9 <span style=&quot;font-size:14px;font-weight:400&quot;>(日)</span>" data-en="AUG 9 <span style=&quot;font-size:14px;font-weight:400&quot;>(SUN)</span>">8/9 <span style="font-size:14px;font-weight:400">(日)</span></div>
+    <div class="game-time" data-ja="18:00 KICK OFF" data-en="18:00 KICK OFF">18:00 KICK OFF</div>
+    <div class="game-league" data-ja="LAO PREMIER LEAGUE 第1節" data-en="LAO PREMIER LEAGUE MATCHDAY 1">LAO PREMIER LEAGUE 第1節</div>
+    <div class="game-opponent" data-ja="vs. ビエンチャンFC" data-en="vs. Vientiane FC">vs. ビエンチャンFC</div>
   </div>
   <div class="game-card fade-in">
     <span class="game-badge away">AWAY</span>
-    <div class="game-venue">@ルアンパバーン・スタジアム</div>
-    <div class="game-date">8/23 <span style="font-size:14px;font-weight:400">(日)</span></div>
-    <div class="game-time">19:00 KICK OFF</div>
-    <div class="game-league">LAO PREMIER LEAGUE 第2節</div>
-    <div class="game-opponent">vs. ルアンパバーンFC</div>
+    <div class="game-venue" data-ja="@ルアンパバーン・スタジアム" data-en="@ Luang Prabang Stadium">@ルアンパバーン・スタジアム</div>
+    <div class="game-date" data-ja="8/23 <span style=&quot;font-size:14px;font-weight:400&quot;>(日)</span>" data-en="AUG 23 <span style=&quot;font-size:14px;font-weight:400&quot;>(SUN)</span>">8/23 <span style="font-size:14px;font-weight:400">(日)</span></div>
+    <div class="game-time" data-ja="19:00 KICK OFF" data-en="19:00 KICK OFF">19:00 KICK OFF</div>
+    <div class="game-league" data-ja="LAO PREMIER LEAGUE 第2節" data-en="LAO PREMIER LEAGUE MATCHDAY 2">LAO PREMIER LEAGUE 第2節</div>
+    <div class="game-opponent" data-ja="vs. ルアンパバーンFC" data-en="vs. Luang Prabang FC">vs. ルアンパバーンFC</div>
   </div>
   <div class="game-card fade-in">
     <span class="game-badge home">HOME</span>
-    <div class="game-venue">サバナケット・スタジアム</div>
-    <div class="game-date">9/6 <span style="font-size:14px;font-weight:400">(日)</span></div>
-    <div class="game-time">18:00 KICK OFF</div>
-    <div class="game-league">LAO PREMIER LEAGUE 第3節</div>
-    <div class="game-opponent">vs. チャンパーサックFC</div>
+    <div class="game-venue" data-ja="サバナケット・スタジアム" data-en="Savannakhet Stadium">サバナケット・スタジアム</div>
+    <div class="game-date" data-ja="9/6 <span style=&quot;font-size:14px;font-weight:400&quot;>(日)</span>" data-en="SEP 6 <span style=&quot;font-size:14px;font-weight:400&quot;>(SUN)</span>">9/6 <span style="font-size:14px;font-weight:400">(日)</span></div>
+    <div class="game-time" data-ja="18:00 KICK OFF" data-en="18:00 KICK OFF">18:00 KICK OFF</div>
+    <div class="game-league" data-ja="LAO PREMIER LEAGUE 第3節" data-en="LAO PREMIER LEAGUE MATCHDAY 3">LAO PREMIER LEAGUE 第3節</div>
+    <div class="game-opponent" data-ja="vs. チャンパーサックFC" data-en="vs. Champasak FC">vs. チャンパーサックFC</div>
   </div>
   <div class="game-card fade-in">
     <span class="game-badge away">AWAY</span>
-    <div class="game-venue">@ラオトヨタ・スタジアム</div>
-    <div class="game-date">9/20 <span style="font-size:14px;font-weight:400">(日)</span></div>
-    <div class="game-time">17:00 KICK OFF</div>
-    <div class="game-league">LAO PREMIER LEAGUE 第4節</div>
-    <div class="game-opponent">vs. ラオトヨタFC</div>
+    <div class="game-venue" data-ja="@ラオトヨタ・スタジアム" data-en="@ Lao Toyota Stadium">@ラオトヨタ・スタジアム</div>
+    <div class="game-date" data-ja="9/20 <span style=&quot;font-size:14px;font-weight:400&quot;>(日)</span>" data-en="SEP 20 <span style=&quot;font-size:14px;font-weight:400&quot;>(SUN)</span>">9/20 <span style="font-size:14px;font-weight:400">(日)</span></div>
+    <div class="game-time" data-ja="17:00 KICK OFF" data-en="17:00 KICK OFF">17:00 KICK OFF</div>
+    <div class="game-league" data-ja="LAO PREMIER LEAGUE 第4節" data-en="LAO PREMIER LEAGUE MATCHDAY 4">LAO PREMIER LEAGUE 第4節</div>
+    <div class="game-opponent" data-ja="vs. ラオトヨタFC" data-en="vs. Lao Toyota FC">vs. ラオトヨタFC</div>
   </div>
 </div>
  
@@ -993,49 +993,44 @@ footer {
   <div class="section-title">
     <div>
       <h2>NEWS</h2>
-      <span class="ja">ニュース</span>
+      <span class="ja" data-ja="ニュース" data-en="Latest Updates">ニュース</span>
     </div>
-    <a class="more">ALL NEWS →</a>
+    <a class="more" data-ja="ALL NEWS →" data-en="ALL NEWS →">ALL NEWS →</a>
   </div>
   <div class="news-inner">
     <div class="news-tabs">
-      <button class="news-tab active" data-cat="all">ALL</button>
-      <button class="news-tab" data-cat="team">トップチーム</button>
-      <button class="news-tab" data-cat="event">試合・イベント</button>
-      <button class="news-tab" data-cat="ticket">チケット</button>
-      <button class="news-tab" data-cat="goods">グッズ</button>
-      <button class="news-tab" data-cat="sponsor">スポンサー</button>
+      <button class="news-tab active" data-cat="all" data-ja="ALL" data-en="ALL">ALL</button>
+      <button class="news-tab" data-cat="team" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</button>
+      <button class="news-tab" data-cat="event" data-ja="試合・イベント" data-en="MATCH & EVENT">試合・イベント</button>
+      <button class="news-tab" data-cat="ticket" data-ja="チケット" data-en="TICKET">チケット</button>
+      <button class="news-tab" data-cat="goods" data-ja="グッズ" data-en="GOODS">グッズ</button>
+      <button class="news-tab" data-cat="sponsor" data-ja="スポンサー" data-en="SPONSOR">スポンサー</button>
     </div>
     <div class="news-list">
       <a class="news-item fade-in">
         <div class="news-date">2026.04.18</div>
-        <div class="news-category">トップチーム</div>
-        <div class="news-title">【新体制発表】2026-27シーズン 渡邉卓矢オーナー兼選手が語る、新たな挑戦</div>
+        <div class="news-category" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</div>
+        <div class="news-title" data-ja="【新体制発表】2026-27シーズン 渡邉卓矢オーナー兼選手が語る、新たな挑戦" data-en="[New Era] Owner-Player Takuya Watanabe on the 2026-27 Season Challenge">【新体制発表】2026-27シーズン 渡邉卓矢オーナー兼選手が語る、新たな挑戦</div>
       </a>
       <a class="news-item fade-in">
         <div class="news-date">2026.04.15</div>
         <div class="news-category event">EVENT</div>
-        <div class="news-title">【5/3 東京】ZELOS Sports Management Tokyo Tryout VOL.4 開催決定</div>
-      </a>
-      <a class="news-item fade-in">
-        <div class="news-date">2026.04.10</div>
-        <div class="news-category ticket">チケット</div>
-        <div class="news-title">2026-27シーズン シーズンチケット先行販売のご案内</div>
+        <div class="news-title" data-ja="【4/24 東京】ZELOS Sports Management Tokyo Tryout VOL.2 開催決定" data-en="[Apr 24 Tokyo] ZELOS Sports Management Tokyo Tryout VOL.2 Announced">【4/24 東京】ZELOS Sports Management Tokyo Tryout VOL.2 開催決定</div>
       </a>
       <a class="news-item fade-in">
         <div class="news-date">2026.04.08</div>
-        <div class="news-category goods">グッズ</div>
-        <div class="news-title">2026-27 新ユニフォーム予約開始のお知らせ</div>
+        <div class="news-category goods" data-ja="グッズ" data-en="GOODS">グッズ</div>
+        <div class="news-title" data-ja="2026-27 新ユニフォームの日本国内からの購入方法について" data-en="How to Purchase 2026-27 New Uniforms from Within Japan">2026-27 新ユニフォームの日本国内からの購入方法について</div>
       </a>
       <a class="news-item fade-in">
         <div class="news-date">2026.04.05</div>
-        <div class="news-category">スポンサー</div>
-        <div class="news-title">胸スポンサー決定のお知らせ</div>
+        <div class="news-category" data-ja="スポンサー" data-en="SPONSOR">スポンサー</div>
+        <div class="news-title" data-ja="背中スポンサー決定のお知らせ" data-en="Back Sponsor Announcement">背中スポンサー決定のお知らせ</div>
       </a>
       <a class="news-item fade-in">
         <div class="news-date">2026.04.03</div>
         <div class="news-category event">EVENT</div>
-        <div class="news-title">東京トライアウト VOL.3 開催報告</div>
+        <div class="news-title" data-ja="東京トライアウト VOL.1 開催報告" data-en="Tokyo Tryout VOL.1 Event Report">東京トライアウト VOL.1 開催報告</div>
       </a>
     </div>
   </div>
@@ -1045,17 +1040,17 @@ footer {
 <div class="section-title">
   <div>
     <h2>PICK UP</h2>
-    <span class="ja">注目コンテンツ</span>
+    <span class="ja" data-ja="注目コンテンツ" data-en="Featured Content">注目コンテンツ</span>
   </div>
 </div>
 <div class="pickup-section">
   <div class="pickup-grid">
-    <a class="pickup-card fade-in"><div class="label">BEGINNER</div><div class="title">初観戦ガイド</div></a>
-    <a class="pickup-card fade-in"><div class="label">FAN CLUB</div><div class="title">ファンクラブ入会</div></a>
-    <a class="pickup-card fade-in"><div class="label">TRYOUT</div><div class="title">選手トライアウト</div></a>
-    <a class="pickup-card fade-in"><div class="label">VISIT</div><div class="title">サバナケット観戦ツアー</div></a>
-    <a class="pickup-card fade-in"><div class="label">ACADEMY</div><div class="title">アカデミー</div></a>
-    <a class="pickup-card fade-in"><div class="label">SHOP</div><div class="title">グッズストア</div></a>
+    <a class="pickup-card fade-in"><div class="label">BEGINNER</div><div class="title" data-ja="初観戦ガイド" data-en="First Match Guide">初観戦ガイド</div></a>
+    <a class="pickup-card fade-in"><div class="label">FAN CLUB</div><div class="title" data-ja="ファンクラブ入会" data-en="Join the Fan Club">ファンクラブ入会</div></a>
+    <a class="pickup-card fade-in"><div class="label">TRYOUT</div><div class="title" data-ja="選手トライアウト" data-en="Player Tryout">選手トライアウト</div></a>
+    <a class="pickup-card fade-in"><div class="label">VISIT</div><div class="title" data-ja="サバナケット観戦ツアー" data-en="Savannakhet Match Tour">サバナケット観戦ツアー</div></a>
+    <a class="pickup-card fade-in"><div class="label">ACADEMY</div><div class="title" data-ja="アカデミー" data-en="Academy">アカデミー</div></a>
+    <a class="pickup-card fade-in"><div class="label">SHOP</div><div class="title" data-ja="グッズストア" data-en="Official Shop">グッズストア</div></a>
   </div>
 </div>
  
@@ -1063,17 +1058,17 @@ footer {
 <section class="story">
   <div class="story-inner fade-in">
     <div class="story-kicker">OUR STORY</div>
-    <h2>ラオスに、<br>真のプロクラブをつくる。</h2>
-    <p>
+    <h2 data-ja="ラオスに、<br>真のプロクラブをつくる。" data-en="Building a true<br>professional club<br>in Laos.">ラオスに、<br>真のプロクラブをつくる。</h2>
+    <p data-ja="サバナケット・ゼロスFCは、日本とラオスを繋ぐ架け橋として、2026年に誕生した新しいクラブです。" data-en="Savannakhet Zelos FC is a new club born in 2026 as a bridge connecting Japan and Laos.">
       サバナケット・ゼロスFCは、日本とラオスを繋ぐ架け橋として、
       2026年に誕生した新しいクラブです。
     </p>
-    <p>
+    <p data-ja="私たちのビジョンは明確です。ラオス初のJリーガーを輩出し、25,000席のサバナケット・スタジアムを満員にすること。そして、サッカーを通じて両国の未来を切り拓くこと。" data-en="Our vision is clear: to produce the first J-League player from Laos, to fill the 25,000-seat Savannakhet Stadium, and to open a new future for both nations through football.">
       私たちのビジョンは明確です。ラオス初のJリーガーを輩出し、
       25,000席のサバナケット・スタジアムを満員にすること。
       そして、サッカーを通じて両国の未来を切り拓くこと。
     </p>
-    <a class="story-link" onclick="showPage('about')">MORE ABOUT US →</a>
+    <a class="story-link" onclick="showPage('about')" data-ja="MORE ABOUT US →" data-en="MORE ABOUT US →">MORE ABOUT US →</a>
   </div>
 </section>
  
@@ -1100,44 +1095,44 @@ footer {
   <div class="players-heading fade-in">
     <div class="kicker">SQUAD 2026-27</div>
     <h2>PLAYERS &amp; STAFF</h2>
-    <div class="note">選手・スタッフ一覧（随時更新）</div>
+    <div class="note" data-ja="選手・スタッフ一覧（随時更新）" data-en="Players & Staff List (Updated Regularly)">選手・スタッフ一覧（随時更新）</div>
   </div>
  
-  <h3 class="position-heading">GK <span>GOALKEEPER</span></h3>
+  <h3 class="position-heading">GK <span data-ja="GOALKEEPER" data-en="GOALKEEPER">GOALKEEPER</span></h3>
   <div class="players-grid">
     <div class="player-card fade-in">
       <div class="player-num">1</div>
       <div>
-        <div class="player-name">三澤 拓歩</div>
-        <div class="player-name-en">Takuho Misawa</div>
+        <div class="player-name" data-ja="三澤 拓歩" data-en="Takuho Misawa">三澤 拓歩</div>
+        <div class="player-name-en" data-ja="Takuho Misawa" data-en="JAPAN">Takuho Misawa</div>
         <div class="player-tags"><span class="tag-pos">GK</span></div>
       </div>
     </div>
   </div>
  
-  <h3 class="position-heading">DF <span>DEFENDER</span></h3>
+  <h3 class="position-heading">DF <span data-ja="DEFENDER" data-en="DEFENDER">DEFENDER</span></h3>
   <div class="players-grid">
     <div class="player-card fade-in">
       <div class="player-num">4</div>
       <div>
-        <div class="player-name">片野 理道</div>
-        <div class="player-name-en">Hiromichi Katano</div>
+        <div class="player-name" data-ja="片野 理道" data-en="Hiromichi Katano">片野 理道</div>
+        <div class="player-name-en" data-ja="Hiromichi Katano" data-en="JAPAN">Hiromichi Katano</div>
         <div class="player-tags"><span class="tag-pos">DF</span></div>
       </div>
     </div>
     <div class="player-card fade-in">
       <div class="player-num">19</div>
       <div>
-        <div class="player-name">ナロンシット</div>
-        <div class="player-name-en">Nalongsit</div>
+        <div class="player-name" data-ja="ナロンシット" data-en="Nalongsit">ナロンシット</div>
+        <div class="player-name-en" data-ja="Nalongsit" data-en="LAOS">Nalongsit</div>
         <div class="player-tags"><span class="tag-pos">DF</span></div>
       </div>
     </div>
     <div class="player-card fade-in">
       <div class="player-num">42</div>
       <div>
-        <div class="player-name">渡邉 卓矢</div>
-        <div class="player-name-en">Takuya Watanabe</div>
+        <div class="player-name" data-ja="渡邉 卓矢" data-en="Takuya Watanabe">渡邉 卓矢</div>
+        <div class="player-name-en" data-ja="Takuya Watanabe" data-en="JAPAN">Takuya Watanabe</div>
         <div class="player-tags">
           <span class="tag-pos">DF</span>
           <span class="tag-role">OWNER / PLAYER</span>
@@ -1146,53 +1141,53 @@ footer {
     </div>
   </div>
  
-  <h3 class="position-heading">MF <span>MIDFIELDER</span></h3>
+  <h3 class="position-heading">MF <span data-ja="MIDFIELDER" data-en="MIDFIELDER">MIDFIELDER</span></h3>
   <div class="players-grid">
     <div class="player-card fade-in">
       <div class="player-num">6</div>
       <div>
-        <div class="player-name">チャック</div>
-        <div class="player-name-en">Chakkavanh Manivong</div>
+        <div class="player-name" data-ja="チャック" data-en="Chakkavanh Manivong">チャック</div>
+        <div class="player-name-en" data-ja="Chakkavanh Manivong" data-en="LAOS">Chakkavanh Manivong</div>
         <div class="player-tags"><span class="tag-pos">MF</span></div>
       </div>
     </div>
   </div>
  
-  <h3 class="position-heading">FW <span>FORWARD</span></h3>
+  <h3 class="position-heading">FW <span data-ja="FORWARD" data-en="FORWARD">FORWARD</span></h3>
   <div class="players-grid">
     <div class="player-card fade-in">
       <div class="player-num">9</div>
       <div>
-        <div class="player-name">菅澤 孝也</div>
-        <div class="player-name-en">Takaya Sugasawa</div>
+        <div class="player-name" data-ja="菅澤 孝也" data-en="Takaya Sugasawa">菅澤 孝也</div>
+        <div class="player-name-en" data-ja="Takaya Sugasawa" data-en="JAPAN">Takaya Sugasawa</div>
         <div class="player-tags"><span class="tag-pos">FW</span></div>
       </div>
     </div>
   </div>
  
-  <h3 class="position-heading">STAFF <span>CLUB STAFF</span></h3>
+  <h3 class="position-heading">STAFF <span data-ja="CLUB STAFF" data-en="CLUB STAFF">CLUB STAFF</span></h3>
   <div class="players-grid">
     <div class="player-card fade-in">
       <div class="player-num" style="font-size:18px">MG</div>
       <div>
-        <div class="player-name">ブントン</div>
-        <div class="player-name-en">Bounthong</div>
+        <div class="player-name" data-ja="ブントン" data-en="Bounthong">ブントン</div>
+        <div class="player-name-en" data-ja="Bounthong" data-en="LAOS">Bounthong</div>
         <div class="player-tags"><span class="tag-role">MANAGER</span></div>
       </div>
     </div>
     <div class="player-card fade-in">
       <div class="player-num" style="font-size:18px">SM</div>
       <div>
-        <div class="player-name">阿部 賢</div>
-        <div class="player-name-en">Satoshi Abe</div>
+        <div class="player-name" data-ja="阿部 賢" data-en="Satoshi Abe">阿部 賢</div>
+        <div class="player-name-en" data-ja="Satoshi Abe" data-en="JAPAN">Satoshi Abe</div>
         <div class="player-tags"><span class="tag-role">SALES MANAGER</span></div>
       </div>
     </div>
     <div class="player-card fade-in">
       <div class="player-num" style="font-size:18px">CC</div>
       <div>
-        <div class="player-name">カンダ</div>
-        <div class="player-name-en">Canda</div>
+        <div class="player-name" data-ja="カンダ" data-en="Canda">カンダ</div>
+        <div class="player-name-en" data-ja="Canda" data-en="LAOS">Canda</div>
         <div class="player-tags"><span class="tag-role">CLUB COMMUNICATOR</span></div>
       </div>
     </div>
@@ -1204,60 +1199,60 @@ footer {
 <div class="page" id="page-schedule">
 <div class="generic-inner">
   <h2>GAME SCHEDULE</h2>
-  <p style="color:var(--sub);margin-bottom:32px">2026-27シーズン 試合日程一覧</p>
+  <p style="color:var(--sub);margin-bottom:32px" data-ja="2026-27シーズン 試合日程一覧" data-en="2026-27 Season Full Match Schedule">2026-27シーズン 試合日程一覧</p>
  
   <div class="game-schedule" style="padding:0">
     <div class="game-card">
       <span class="game-badge home">HOME</span>
-      <div class="game-venue">サバナケット・スタジアム</div>
-      <div class="game-date">8/9 <span style="font-size:14px;font-weight:400">(日)</span></div>
+      <div class="game-venue" data-ja="サバナケット・スタジアム" data-en="Savannakhet Stadium">サバナケット・スタジアム</div>
+      <div class="game-date" data-ja="8/9 <span style=&quot;font-size:14px;font-weight:400&quot;>(日)</span>" data-en="AUG 9 <span style=&quot;font-size:14px;font-weight:400&quot;>(SUN)</span>">8/9 <span style="font-size:14px;font-weight:400">(日)</span></div>
       <div class="game-time">18:00 KICK OFF</div>
-      <div class="game-league">LAO PREMIER LEAGUE 第1節</div>
-      <div class="game-opponent">vs. ビエンチャンFC</div>
+      <div class="game-league" data-ja="LAO PREMIER LEAGUE 第1節" data-en="LAO PREMIER LEAGUE MATCHDAY 1">LAO PREMIER LEAGUE 第1節</div>
+      <div class="game-opponent" data-ja="vs. ビエンチャンFC" data-en="vs. Vientiane FC">vs. ビエンチャンFC</div>
     </div>
     <div class="game-card">
       <span class="game-badge away">AWAY</span>
-      <div class="game-venue">@ルアンパバーン</div>
-      <div class="game-date">8/23 <span style="font-size:14px;font-weight:400">(日)</span></div>
+      <div class="game-venue" data-ja="@ルアンパバーン" data-en="@ Luang Prabang">@ルアンパバーン</div>
+      <div class="game-date" data-ja="8/23 <span style=&quot;font-size:14px;font-weight:400&quot;>(日)</span>" data-en="AUG 23 <span style=&quot;font-size:14px;font-weight:400&quot;>(SUN)</span>">8/23 <span style="font-size:14px;font-weight:400">(日)</span></div>
       <div class="game-time">19:00 KICK OFF</div>
-      <div class="game-league">LAO PREMIER LEAGUE 第2節</div>
-      <div class="game-opponent">vs. ルアンパバーンFC</div>
+      <div class="game-league" data-ja="LAO PREMIER LEAGUE 第2節" data-en="LAO PREMIER LEAGUE MATCHDAY 2">LAO PREMIER LEAGUE 第2節</div>
+      <div class="game-opponent" data-ja="vs. ルアンパバーンFC" data-en="vs. Luang Prabang FC">vs. ルアンパバーンFC</div>
     </div>
     <div class="game-card">
       <span class="game-badge home">HOME</span>
-      <div class="game-venue">サバナケット・スタジアム</div>
-      <div class="game-date">9/6 <span style="font-size:14px;font-weight:400">(日)</span></div>
+      <div class="game-venue" data-ja="サバナケット・スタジアム" data-en="Savannakhet Stadium">サバナケット・スタジアム</div>
+      <div class="game-date" data-ja="9/6 <span style=&quot;font-size:14px;font-weight:400&quot;>(日)</span>" data-en="SEP 6 <span style=&quot;font-size:14px;font-weight:400&quot;>(SUN)</span>">9/6 <span style="font-size:14px;font-weight:400">(日)</span></div>
       <div class="game-time">18:00 KICK OFF</div>
-      <div class="game-league">LAO PREMIER LEAGUE 第3節</div>
-      <div class="game-opponent">vs. チャンパーサックFC</div>
+      <div class="game-league" data-ja="LAO PREMIER LEAGUE 第3節" data-en="LAO PREMIER LEAGUE MATCHDAY 3">LAO PREMIER LEAGUE 第3節</div>
+      <div class="game-opponent" data-ja="vs. チャンパーサックFC" data-en="vs. Champasak FC">vs. チャンパーサックFC</div>
     </div>
     <div class="game-card">
       <span class="game-badge away">AWAY</span>
-      <div class="game-venue">@ラオトヨタ</div>
-      <div class="game-date">9/20 <span style="font-size:14px;font-weight:400">(日)</span></div>
+      <div class="game-venue" data-ja="@ラオトヨタ" data-en="@ Lao Toyota">@ラオトヨタ</div>
+      <div class="game-date" data-ja="9/20 <span style=&quot;font-size:14px;font-weight:400&quot;>(日)</span>" data-en="SEP 20 <span style=&quot;font-size:14px;font-weight:400&quot;>(SUN)</span>">9/20 <span style="font-size:14px;font-weight:400">(日)</span></div>
       <div class="game-time">17:00 KICK OFF</div>
-      <div class="game-league">LAO PREMIER LEAGUE 第4節</div>
-      <div class="game-opponent">vs. ラオトヨタFC</div>
+      <div class="game-league" data-ja="LAO PREMIER LEAGUE 第4節" data-en="LAO PREMIER LEAGUE MATCHDAY 4">LAO PREMIER LEAGUE 第4節</div>
+      <div class="game-opponent" data-ja="vs. ラオトヨタFC" data-en="vs. Lao Toyota FC">vs. ラオトヨタFC</div>
     </div>
     <div class="game-card">
       <span class="game-badge home">HOME</span>
-      <div class="game-venue">サバナケット・スタジアム</div>
-      <div class="game-date">10/4 <span style="font-size:14px;font-weight:400">(日)</span></div>
+      <div class="game-venue" data-ja="サバナケット・スタジアム" data-en="Savannakhet Stadium">サバナケット・スタジアム</div>
+      <div class="game-date" data-ja="10/4 <span style=&quot;font-size:14px;font-weight:400&quot;>(日)</span>" data-en="OCT 4 <span style=&quot;font-size:14px;font-weight:400&quot;>(SUN)</span>">10/4 <span style="font-size:14px;font-weight:400">(日)</span></div>
       <div class="game-time">18:00 KICK OFF</div>
-      <div class="game-league">LAO PREMIER LEAGUE 第5節</div>
-      <div class="game-opponent">vs. ヤングエレファンツFC</div>
+      <div class="game-league" data-ja="LAO PREMIER LEAGUE 第5節" data-en="LAO PREMIER LEAGUE MATCHDAY 5">LAO PREMIER LEAGUE 第5節</div>
+      <div class="game-opponent" data-ja="vs. ヤングエレファンツFC" data-en="vs. Young Elephants FC">vs. ヤングエレファンツFC</div>
     </div>
     <div class="game-card">
       <span class="game-badge away">AWAY</span>
-      <div class="game-venue">@ビエンチャン</div>
-      <div class="game-date">10/18 <span style="font-size:14px;font-weight:400">(日)</span></div>
+      <div class="game-venue" data-ja="@ビエンチャン" data-en="@ Vientiane">@ビエンチャン</div>
+      <div class="game-date" data-ja="10/18 <span style=&quot;font-size:14px;font-weight:400&quot;>(日)</span>" data-en="OCT 18 <span style=&quot;font-size:14px;font-weight:400&quot;>(SUN)</span>">10/18 <span style="font-size:14px;font-weight:400">(日)</span></div>
       <div class="game-time">19:00 KICK OFF</div>
-      <div class="game-league">LAO PREMIER LEAGUE 第6節</div>
-      <div class="game-opponent">vs. マスター7FC</div>
+      <div class="game-league" data-ja="LAO PREMIER LEAGUE 第6節" data-en="LAO PREMIER LEAGUE MATCHDAY 6">LAO PREMIER LEAGUE 第6節</div>
+      <div class="game-opponent" data-ja="vs. マスター7FC" data-en="vs. Master 7 FC">vs. マスター7FC</div>
     </div>
   </div>
  
-  <p style="margin-top:32px;color:var(--sub);font-size:13px">※ 日程は変更される可能性があります。最新情報は公式SNSでご確認ください。</p>
+  <p style="margin-top:32px;color:var(--sub);font-size:13px" data-ja="※ 日程は変更される可能性があります。最新情報は公式SNSでご確認ください。" data-en="* Schedule is subject to change. Please check our official SNS for the latest updates.">※ 日程は変更される可能性があります。最新情報は公式SNSでご確認ください。</p>
 </div>
 </div><!-- end page-schedule -->
  
@@ -1267,32 +1262,56 @@ footer {
   <div class="players-heading fade-in">
     <div class="kicker">ABOUT US</div>
     <h2>CLUB</h2>
-    <div class="note">クラブ紹介</div>
+    <div class="note" data-ja="クラブ紹介" data-en="Club Introduction">クラブ紹介</div>
   </div>
  
   <div class="about-section">
     <h3>VISION</h3>
-    <p>サバナケット・ゼロスFCは、日本とラオスを繋ぐ架け橋として、2026年に誕生した新しいクラブです。</p>
-    <p>私たちのビジョンは明確です。ラオス初のJリーガーを輩出し、25,000席のサバナケット・スタジアムを満員にすること。そして、サッカーを通じて両国の未来を切り拓くこと。</p>
+    <p data-ja="サバナケット・ゼロスFCは、日本とラオスを繋ぐ架け橋として、2026年に誕生した新しいクラブです。" data-en="Savannakhet Zelos FC is a new club born in 2026 as a bridge connecting Japan and Laos.">サバナケット・ゼロスFCは、日本とラオスを繋ぐ架け橋として、2026年に誕生した新しいクラブです。</p>
+    <p data-ja="私たちのビジョンは明確です。ラオス初のJリーガーを輩出し、25,000席のサバナケット・スタジアムを満員にすること。そして、サッカーを通じて両国の未来を切り拓くこと。" data-en="Our vision is clear: to produce the first J-League player from Laos, to fill the 25,000-seat Savannakhet Stadium, and to open a new future for both nations through football.">私たちのビジョンは明確です。ラオス初のJリーガーを輩出し、25,000席のサバナケット・スタジアムを満員にすること。そして、サッカーを通じて両国の未来を切り拓くこと。</p>
   </div>
  
   <div class="about-section">
     <h3>MISSION</h3>
-    <p>ラオスのサッカーを世界水準に。日本人選手とラオス人選手が共に切磋琢磨する環境を作り、次世代のアジアのサッカーを育てます。</p>
-    <p>また、選手に正当な対価を支払い、ラオスの子どもたちに夢を与えるクラブであり続けることを約束します。</p>
+    <p data-ja="ラオスのサッカーを世界水準に。日本人選手とラオス人選手が共に切磋琢磨する環境を作り、次世代のアジアのサッカーを育てます。" data-en="Bringing Lao football to world-class standards. We are creating an environment where Japanese and Laotian players grow together, shaping the next generation of Asian football.">ラオスのサッカーを世界水準に。日本人選手とラオス人選手が共に切磋琢磨する環境を作り、次世代のアジアのサッカーを育てます。</p>
+    <p data-ja="また、選手に正当な対価を支払い、ラオスの子どもたちに夢を与えるクラブであり続けることを約束します。" data-en="We also commit to paying players fairly and remaining a club that inspires dreams in the children of Laos.">また、選手に正当な対価を支払い、ラオスの子どもたちに夢を与えるクラブであり続けることを約束します。</p>
   </div>
  
   <div class="about-section">
     <h3>CLUB INFO</h3>
     <table class="about-table">
-      <tr><th>クラブ名</th><td>Savannakhet Zelos FC<br>サバナケット・ゼロスFC</td></tr>
-      <tr><th>所属リーグ</th><td>ラオス・プレミアリーグ (Lao Premier League)</td></tr>
-      <tr><th>ホームタウン</th><td>ラオス サバナケット州</td></tr>
-      <tr><th>ホームスタジアム</th><td>サバナケット・スタジアム（収容25,000人）</td></tr>
-      <tr><th>チームカラー</th><td>ネイビー × ゴールド</td></tr>
-      <tr><th>運営会社</th><td>株式会社ZELOS（東京都千代田区）</td></tr>
-      <tr><th>代表</th><td>渡邉 卓矢（Takuya Watanabe）</td></tr>
-      <tr><th>設立</th><td>2026年</td></tr>
+      <tr>
+        <th data-ja="クラブ名" data-en="Club Name">クラブ名</th>
+        <td data-ja="Savannakhet Zelos FC<br>サバナケット・ゼロスFC" data-en="Savannakhet Zelos FC">Savannakhet Zelos FC<br>サバナケット・ゼロスFC</td>
+      </tr>
+      <tr>
+        <th data-ja="所属リーグ" data-en="League">所属リーグ</th>
+        <td data-ja="ラオス・プレミアリーグ (Lao Premier League)" data-en="Lao Premier League">ラオス・プレミアリーグ (Lao Premier League)</td>
+      </tr>
+      <tr>
+        <th data-ja="ホームタウン" data-en="Hometown">ホームタウン</th>
+        <td data-ja="ラオス サバナケット州" data-en="Savannakhet Province, Laos">ラオス サバナケット州</td>
+      </tr>
+      <tr>
+        <th data-ja="ホームスタジアム" data-en="Home Stadium">ホームスタジアム</th>
+        <td data-ja="サバナケット・スタジアム（収容25,000人）" data-en="Savannakhet Stadium (Capacity: 25,000)">サバナケット・スタジアム（収容25,000人）</td>
+      </tr>
+      <tr>
+        <th data-ja="チームカラー" data-en="Team Colors">チームカラー</th>
+        <td data-ja="ネイビー × ゴールド" data-en="Navy × Gold">ネイビー × ゴールド</td>
+      </tr>
+      <tr>
+        <th data-ja="運営会社" data-en="Operating Company">運営会社</th>
+        <td data-ja="株式会社ZELOS（東京都千代田区）" data-en="ZELOS Inc. (Chiyoda-ku, Tokyo)">株式会社ZELOS（東京都千代田区）</td>
+      </tr>
+      <tr>
+        <th data-ja="代表" data-en="Representative">代表</th>
+        <td data-ja="渡邉 卓矢（Takuya Watanabe）" data-en="Takuya Watanabe">渡邉 卓矢（Takuya Watanabe）</td>
+      </tr>
+      <tr>
+        <th data-ja="設立" data-en="Founded">設立</th>
+        <td data-ja="2026年" data-en="2026">2026年</td>
+      </tr>
     </table>
   </div>
 </div>
@@ -1302,10 +1321,10 @@ footer {
 <div class="page" id="page-goods">
 <div class="generic-inner">
   <h2>OFFICIAL GOODS</h2>
-  <p>オフィシャルグッズの販売は2026年夏より開始予定です。</p>
+  <p data-ja="オフィシャルグッズの販売は2026年夏より開始予定です。" data-en="Official merchandise sales will begin in summer 2026.">オフィシャルグッズの販売は2026年夏より開始予定です。</p>
   <div class="coming-soon" style="margin-top:32px">
     <div class="big">COMING SOON</div>
-    <div>準備中</div>
+    <div data-ja="準備中" data-en="Coming Soon">準備中</div>
   </div>
 </div>
 </div><!-- end page-goods -->
@@ -1314,41 +1333,53 @@ footer {
 <div class="page" id="page-sponsor">
 <div class="generic-inner">
   <h2>SPONSOR</h2>
-  <p>サバナケット・ゼロスFCは、クラブの成長と共に歩んでいただけるスポンサー企業様を募集しています。</p>
-  <p>日本とラオスを繋ぐクラブとして、両国のビジネス展開にも貢献いたします。</p>
+  <p data-ja="サバナケット・ゼロスFCは、クラブの成長と共に歩んでいただけるスポンサー企業様を募集しています。" data-en="Savannakhet Zelos FC is looking for sponsor companies to grow together with our club.">サバナケット・ゼロスFCは、クラブの成長と共に歩んでいただけるスポンサー企業様を募集しています。</p>
+  <p data-ja="日本とラオスを繋ぐクラブとして、両国のビジネス展開にも貢献いたします。" data-en="As a club bridging Japan and Laos, we also support your business expansion in both countries.">日本とラオスを繋ぐクラブとして、両国のビジネス展開にも貢献いたします。</p>
  
   <h3 style="font-family:'Oswald',sans-serif;font-size:22px;color:var(--navy);margin-top:40px;margin-bottom:16px;padding-left:14px;border-left:4px solid var(--gold)">SPONSORSHIP PLAN</h3>
   <table class="about-table">
-    <tr><th>胸スポンサー</th><td>¥10,000,000 / シーズン</td></tr>
-    <tr><th>背中スポンサー</th><td>¥5,000,000 / シーズン</td></tr>
-    <tr><th>袖スポンサー</th><td>¥3,000,000 / シーズン</td></tr>
-    <tr><th>パンツスポンサー</th><td>¥3,000,000 / シーズン</td></tr>
+    <tr>
+      <th data-ja="胸スポンサー" data-en="Chest Sponsor">胸スポンサー</th>
+      <td data-ja="¥10,000,000 / シーズン" data-en="¥10,000,000 / Season">¥10,000,000 / シーズン</td>
+    </tr>
+    <tr>
+      <th data-ja="背中スポンサー" data-en="Back Sponsor">背中スポンサー</th>
+      <td data-ja="¥5,000,000 / シーズン" data-en="¥5,000,000 / Season">¥5,000,000 / シーズン</td>
+    </tr>
+    <tr>
+      <th data-ja="袖スポンサー" data-en="Sleeve Sponsor">袖スポンサー</th>
+      <td data-ja="¥3,000,000 / シーズン" data-en="¥3,000,000 / Season">¥3,000,000 / シーズン</td>
+    </tr>
+    <tr>
+      <th data-ja="パンツスポンサー" data-en="Shorts Sponsor">パンツスポンサー</th>
+      <td data-ja="¥3,000,000 / シーズン" data-en="¥3,000,000 / Season">¥3,000,000 / シーズン</td>
+    </tr>
   </table>
-  <p style="margin-top:16px;font-size:13px;color:var(--sub)">※ 上記プラン以外にも、マッチデースポンサー、イベントスポンサーなど各種プランをご用意しております。詳細はお問い合わせください。</p>
+  <p style="margin-top:16px;font-size:13px;color:var(--sub)" data-ja="※ 上記プラン以外にも、マッチデースポンサー、イベントスポンサーなど各種プランをご用意しております。詳細はお問い合わせください。" data-en="* Besides the plans above, we also offer Matchday Sponsor, Event Sponsor and other options. Please contact us for details.">※ 上記プラン以外にも、マッチデースポンサー、イベントスポンサーなど各種プランをご用意しております。詳細はお問い合わせください。</p>
  
   <h3 style="font-family:'Oswald',sans-serif;font-size:22px;color:var(--navy);margin-top:48px;margin-bottom:16px;padding-left:14px;border-left:4px solid var(--gold)">SPONSORSHIP INQUIRY</h3>
-  <p style="margin-bottom:16px">スポンサーシップに関するお問い合わせは、以下のフォームよりお願いいたします。担当者より詳細資料をお送りいたします。</p>
+  <p style="margin-bottom:16px" data-ja="スポンサーシップに関するお問い合わせは、以下のフォームよりお願いいたします。担当者より詳細資料をお送りいたします。" data-en="Please use the form below for any sponsorship inquiries. Our team will send you detailed materials.">スポンサーシップに関するお問い合わせは、以下のフォームよりお願いいたします。担当者より詳細資料をお送りいたします。</p>
  
   <form class="contact-form" action="https://formspree.io/f/xkokrplj" method="POST">
     <input type="hidden" name="_subject" value="【svzfc.com】スポンサーお問い合わせ">
     <input type="hidden" name="_language" value="ja">
     <input type="hidden" name="問い合わせ種別" value="スポンサーについて">
-    <input type="text" name="お名前" placeholder="ご担当者名 *" required>
-    <input type="text" name="会社名" placeholder="会社名・団体名 *" required>
-    <input type="text" name="役職" placeholder="役職(任意)">
-    <input type="email" name="メールアドレス" placeholder="メールアドレス *" required>
-    <input type="tel" name="電話番号" placeholder="電話番号(任意)">
+    <input type="text" name="お名前" data-ja-placeholder="ご担当者名 *" data-en-placeholder="Your Name *" placeholder="ご担当者名 *" required>
+    <input type="text" name="会社名" data-ja-placeholder="会社名・団体名 *" data-en-placeholder="Company / Organization Name *" placeholder="会社名・団体名 *" required>
+    <input type="text" name="役職" data-ja-placeholder="役職(任意)" data-en-placeholder="Position (Optional)" placeholder="役職(任意)">
+    <input type="email" name="メールアドレス" data-ja-placeholder="メールアドレス *" data-en-placeholder="Email Address *" placeholder="メールアドレス *" required>
+    <input type="tel" name="電話番号" data-ja-placeholder="電話番号(任意)" data-en-placeholder="Phone Number (Optional)" placeholder="電話番号(任意)">
     <select name="ご興味のあるプラン" required>
-      <option value="">ご興味のあるプランを選択 *</option>
-      <option value="胸スポンサー(¥10,000,000)">胸スポンサー(¥10,000,000)</option>
-      <option value="背中スポンサー(¥5,000,000)">背中スポンサー(¥5,000,000)</option>
-      <option value="袖スポンサー(¥3,000,000)">袖スポンサー(¥3,000,000)</option>
-      <option value="パンツスポンサー(¥3,000,000)">パンツスポンサー(¥3,000,000)</option>
-      <option value="その他のプラン">その他のプラン</option>
-      <option value="まずは資料請求">まずは資料請求</option>
+      <option value="" data-ja="ご興味のあるプランを選択 *" data-en="Select Your Interested Plan *">ご興味のあるプランを選択 *</option>
+      <option value="胸スポンサー(¥10,000,000)" data-ja="胸スポンサー(¥10,000,000)" data-en="Chest Sponsor (¥10,000,000)">胸スポンサー(¥10,000,000)</option>
+      <option value="背中スポンサー(¥5,000,000)" data-ja="背中スポンサー(¥5,000,000)" data-en="Back Sponsor (¥5,000,000)">背中スポンサー(¥5,000,000)</option>
+      <option value="袖スポンサー(¥3,000,000)" data-ja="袖スポンサー(¥3,000,000)" data-en="Sleeve Sponsor (¥3,000,000)">袖スポンサー(¥3,000,000)</option>
+      <option value="パンツスポンサー(¥3,000,000)" data-ja="パンツスポンサー(¥3,000,000)" data-en="Shorts Sponsor (¥3,000,000)">パンツスポンサー(¥3,000,000)</option>
+      <option value="その他のプラン" data-ja="その他のプラン" data-en="Other Plans">その他のプラン</option>
+      <option value="まずは資料請求" data-ja="まずは資料請求" data-en="Request Materials First">まずは資料請求</option>
     </select>
-    <textarea name="お問い合わせ内容" placeholder="お問い合わせ内容・ご質問 *" required></textarea>
-    <button type="submit">送信する</button>
+    <textarea name="お問い合わせ内容" data-ja-placeholder="お問い合わせ内容・ご質問 *" data-en-placeholder="Your Message / Questions *" placeholder="お問い合わせ内容・ご質問 *" required></textarea>
+    <button type="submit" data-ja="送信する" data-en="SEND">送信する</button>
   </form>
 </div>
 </div><!-- end page-sponsor -->
@@ -1357,26 +1388,26 @@ footer {
 <div class="page" id="page-contact">
 <div class="generic-inner">
   <h2>CONTACT</h2>
-  <p>サバナケット・ゼロスFCへのお問い合わせは、以下のフォームよりお願いいたします。</p>
-  <p style="font-size:13px;color:var(--sub);margin-top:8px">通常2〜3営業日以内にご返信いたします。</p>
+  <p data-ja="サバナケット・ゼロスFCへのお問い合わせは、以下のフォームよりお願いいたします。" data-en="Please use the form below for any inquiries to Savannakhet Zelos FC.">サバナケット・ゼロスFCへのお問い合わせは、以下のフォームよりお願いいたします。</p>
+  <p style="font-size:13px;color:var(--sub);margin-top:8px" data-ja="通常2〜3営業日以内にご返信いたします。" data-en="We usually reply within 2-3 business days.">通常2〜3営業日以内にご返信いたします。</p>
  
   <form class="contact-form" action="https://formspree.io/f/xkokrplj" method="POST">
     <input type="hidden" name="_subject" value="【svzfc.com】お問い合わせ">
     <input type="hidden" name="_language" value="ja">
-    <input type="text" name="お名前" placeholder="お名前 *" required>
-    <input type="email" name="メールアドレス" placeholder="メールアドレス *" required>
-    <input type="text" name="会社名・団体名" placeholder="会社名・団体名(任意)">
-    <input type="tel" name="電話番号" placeholder="電話番号(任意)">
+    <input type="text" name="お名前" data-ja-placeholder="お名前 *" data-en-placeholder="Your Name *" placeholder="お名前 *" required>
+    <input type="email" name="メールアドレス" data-ja-placeholder="メールアドレス *" data-en-placeholder="Email Address *" placeholder="メールアドレス *" required>
+    <input type="text" name="会社名・団体名" data-ja-placeholder="会社名・団体名(任意)" data-en-placeholder="Company / Organization (Optional)" placeholder="会社名・団体名(任意)">
+    <input type="tel" name="電話番号" data-ja-placeholder="電話番号(任意)" data-en-placeholder="Phone Number (Optional)" placeholder="電話番号(任意)">
     <select name="お問い合わせ種別" required>
-      <option value="">お問い合わせ種別を選択 *</option>
-      <option value="選手・トライアウトについて">選手・トライアウトについて</option>
-      <option value="グッズについて">グッズについて</option>
-      <option value="取材・メディアについて">取材・メディアについて</option>
-      <option value="ファンクラブについて">ファンクラブについて</option>
-      <option value="その他">その他</option>
+      <option value="" data-ja="お問い合わせ種別を選択 *" data-en="Select Inquiry Type *">お問い合わせ種別を選択 *</option>
+      <option value="選手・トライアウトについて" data-ja="選手・トライアウトについて" data-en="About Players / Tryouts">選手・トライアウトについて</option>
+      <option value="グッズについて" data-ja="グッズについて" data-en="About Goods">グッズについて</option>
+      <option value="取材・メディアについて" data-ja="取材・メディアについて" data-en="Media / Press Inquiry">取材・メディアについて</option>
+      <option value="ファンクラブについて" data-ja="ファンクラブについて" data-en="About Fan Club">ファンクラブについて</option>
+      <option value="その他" data-ja="その他" data-en="Other">その他</option>
     </select>
-    <textarea name="お問い合わせ内容" placeholder="お問い合わせ内容 *" required></textarea>
-    <button type="submit">送信する</button>
+    <textarea name="お問い合わせ内容" data-ja-placeholder="お問い合わせ内容 *" data-en-placeholder="Your Message *" placeholder="お問い合わせ内容 *" required></textarea>
+    <button type="submit" data-ja="送信する" data-en="SEND">送信する</button>
   </form>
 </div>
 </div><!-- end page-contact -->
@@ -1393,25 +1424,25 @@ footer {
         <div>
           <h4>TEAM</h4>
           <ul>
-            <li onclick="showPage('players')">選手一覧</li>
-            <li onclick="showPage('players')">スタッフ</li>
-            <li onclick="showPage('schedule')">試合日程</li>
+            <li onclick="showPage('players')" data-ja="選手一覧" data-en="Players">選手一覧</li>
+            <li onclick="showPage('players')" data-ja="スタッフ" data-en="Staff">スタッフ</li>
+            <li onclick="showPage('schedule')" data-ja="試合日程" data-en="Schedule">試合日程</li>
           </ul>
         </div>
         <div>
           <h4>CLUB</h4>
           <ul>
-            <li onclick="showPage('about')">クラブ紹介</li>
-            <li onclick="showPage('sponsor')">スポンサー</li>
-            <li onclick="showPage('contact')">お問い合わせ</li>
+            <li onclick="showPage('about')" data-ja="クラブ紹介" data-en="About">クラブ紹介</li>
+            <li onclick="showPage('sponsor')" data-ja="スポンサー" data-en="Sponsor">スポンサー</li>
+            <li onclick="showPage('contact')" data-ja="お問い合わせ" data-en="Contact">お問い合わせ</li>
           </ul>
         </div>
         <div>
           <h4>FAN</h4>
           <ul>
-            <li onclick="showPage('goods')">グッズ</li>
-            <li>ファンクラブ</li>
-            <li>ブログ</li>
+            <li onclick="showPage('goods')" data-ja="グッズ" data-en="Goods">グッズ</li>
+            <li data-ja="ファンクラブ" data-en="Fan Club">ファンクラブ</li>
+            <li data-ja="ブログ" data-en="Blog">ブログ</li>
           </ul>
         </div>
       </div>
@@ -1436,10 +1467,10 @@ function showPage(pageId) {
   const target = document.getElementById('page-' + pageId);
   if (target) target.classList.add('active');
  
-  // Update nav active state
-  document.querySelectorAll('nav.main-nav a').forEach(a => a.classList.remove('active'));
+  // Update nav active state (exclude language toggle)
+  document.querySelectorAll('nav.main-nav li:not(.lang) a').forEach(a => a.classList.remove('active'));
   const navMap = {home:0, schedule:1, players:2, about:3, goods:4, sponsor:5, contact:6};
-  const navItems = document.querySelectorAll('nav.main-nav li a');
+  const navItems = document.querySelectorAll('nav.main-nav li:not(.lang) a');
   if (navMap[pageId] !== undefined && navItems[navMap[pageId]]) {
     navItems[navMap[pageId]].classList.add('active');
   }
@@ -1466,7 +1497,52 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
  
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+ 
+// ============ LANGUAGE TOGGLE ============
+let currentLang = 'ja';
+ 
+function toggleLang() {
+  currentLang = (currentLang === 'ja') ? 'en' : 'ja';
+  applyLang(currentLang);
+}
+ 
+function applyLang(lang) {
+  // Update html lang attribute
+  document.getElementById('htmlRoot').setAttribute('lang', lang);
+ 
+  // Update all elements with data-ja / data-en (innerHTML)
+  document.querySelectorAll('[data-ja][data-en]').forEach(el => {
+    const text = el.getAttribute('data-' + lang);
+    if (text !== null) {
+      // For elements that should use textContent (options, buttons)
+      if (el.tagName === 'OPTION' || el.tagName === 'BUTTON' || el.tagName === 'TITLE') {
+        el.textContent = text;
+      } else {
+        el.innerHTML = text;
+      }
+    }
+  });
+ 
+  // Update placeholders
+  document.querySelectorAll('[data-ja-placeholder][data-en-placeholder]').forEach(el => {
+    const placeholder = el.getAttribute('data-' + lang + '-placeholder');
+    if (placeholder !== null) {
+      el.setAttribute('placeholder', placeholder);
+    }
+  });
+ 
+  // Update Formspree _language field to reflect current UI language
+  document.querySelectorAll('input[name="_language"]').forEach(el => {
+    el.value = lang;
+  });
+}
+ 
+// Initialize language on load (default: Japanese)
+document.addEventListener('DOMContentLoaded', () => {
+  applyLang('ja');
+});
 </script>
  
 </body>
 </html>
+ 
