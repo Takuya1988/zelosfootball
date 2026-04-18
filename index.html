@@ -765,6 +765,158 @@ nav.main-nav li.lang a {
 }
 .contact-form button:hover { background: var(--gold); color: var(--navy-dark); }
  
+/* ========================= SHOP / PRODUCT ========================= */
+.product-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 32px;
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 24px;
+}
+.product-img-wrap {
+  background: var(--bg);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.product-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product-img-placeholder {
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.2em;
+  color: var(--sub);
+  padding: 20px;
+  line-height: 1.6;
+}
+.product-img-placeholder span {
+  font-size: 14px;
+  color: var(--gold-deep);
+  display: block;
+  margin-top: 10px;
+}
+.product-info { padding: 8px 0; }
+.product-kicker {
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--gold-deep);
+  letter-spacing: 0.25em;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.product-title {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 22px;
+  color: var(--navy);
+  margin-bottom: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.product-price {
+  font-family: "Oswald", sans-serif;
+  font-size: 32px;
+  color: var(--navy);
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--gold);
+}
+.product-price span {
+  font-size: 13px;
+  color: var(--sub);
+  font-weight: 400;
+  margin-left: 6px;
+  font-family: "Noto Sans JP", sans-serif;
+}
+.product-spec {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.product-spec th, .product-spec td {
+  padding: 10px 0;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.product-spec th {
+  width: 32%;
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+.product-spec td {
+  color: var(--ink);
+  line-height: 1.7;
+}
+ 
+/* Order Flow */
+.order-flow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg);
+  padding: 20px;
+  margin: 24px 0;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.flow-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+.flow-num {
+  width: 32px;
+  height: 32px;
+  background: var(--navy);
+  color: var(--gold);
+  display: grid;
+  place-items: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.flow-text {
+  font-size: 13px;
+  color: var(--navy);
+  font-weight: 500;
+}
+.flow-arrow {
+  color: var(--gold);
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+ 
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-top: 16px;
+  margin-bottom: 4px;
+  letter-spacing: 0.05em;
+}
+.form-label:first-child { margin-top: 0; }
+ 
+@media (max-width: 700px) {
+  .product-card { grid-template-columns: 1fr; }
+  .order-flow { flex-direction: column; align-items: stretch; }
+  .flow-arrow { text-align: center; transform: rotate(90deg); }
+  .flow-step { justify-content: flex-start; }
+}
+ 
 /* ========================= FOOTER ========================= */
 footer {
   background: var(--navy-dark);
@@ -1320,12 +1472,116 @@ footer {
 <!-- ==================== GOODS PAGE ==================== -->
 <div class="page" id="page-goods">
 <div class="generic-inner">
-  <h2>OFFICIAL GOODS</h2>
-  <p data-ja="オフィシャルグッズの販売は2026年夏より開始予定です。" data-en="Official merchandise sales will begin in summer 2026.">オフィシャルグッズの販売は2026年夏より開始予定です。</p>
-  <div class="coming-soon" style="margin-top:32px">
-    <div class="big">COMING SOON</div>
-    <div data-ja="準備中" data-en="Coming Soon">準備中</div>
+  <h2>OFFICIAL SHOP</h2>
+  <p data-ja="2026-27シーズン公式ユニフォームの販売を開始しました。" data-en="Our 2026-27 official uniforms are now on sale.">2026-27シーズン公式ユニフォームの販売を開始しました。</p>
+ 
+  <!-- Product Card -->
+  <div class="product-card">
+    <div class="product-img-wrap">
+      <img src="uniform-2026.jpg" alt="2026-27 HOME Uniform" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'product-img-placeholder\'>UNIFORM IMAGE<br><span>2026-27 HOME</span></div>';">
+    </div>
+    <div class="product-info">
+      <div class="product-kicker" data-ja="2026-27 OFFICIAL" data-en="2026-27 OFFICIAL">2026-27 OFFICIAL</div>
+      <h3 class="product-title" data-ja="HOME ユニフォーム（シャツ）" data-en="HOME Uniform (Shirt)">HOME ユニフォーム（シャツ）</h3>
+      <div class="product-price">¥9,500 <span data-ja="(税込)" data-en="(tax incl.)">(税込)</span></div>
+ 
+      <table class="product-spec">
+        <tr>
+          <th data-ja="サイズ" data-en="Size">サイズ</th>
+          <td>S / M / L / XL / 2XL</td>
+        </tr>
+        <tr>
+          <th data-ja="素材" data-en="Material">素材</th>
+          <td data-ja="ポリエステル、ドライメッシュ" data-en="Polyester, Dry Mesh">ポリエステル、ドライメッシュ</td>
+        </tr>
+        <tr>
+          <th data-ja="名入れ" data-en="Name & Number">名入れ</th>
+          <td data-ja="お好きな名前・背番号を指定可能（+¥1,500）/ 名入れなしも選択可" data-en="Custom name & number available (+¥1,500) / or no customization">お好きな名前・背番号を指定可能（+¥1,500）/ 名入れなしも選択可</td>
+        </tr>
+        <tr>
+          <th data-ja="発送時期" data-en="Shipping">発送時期</th>
+          <td data-ja="2026年7月25日以降、ご注文から約4週間" data-en="From July 25, 2026, approx. 4 weeks after order">2026年7月25日以降、ご注文から約4週間</td>
+        </tr>
+        <tr>
+          <th data-ja="送料" data-en="Shipping Fee">送料</th>
+          <td data-ja="日本国内 ¥800 / ラオス国内 無料 / 海外 応相談" data-en="Japan ¥800 / Laos Free / International: Contact us">日本国内 ¥800 / ラオス国内 無料 / 海外 応相談</td>
+        </tr>
+        <tr>
+          <th data-ja="販売開始" data-en="On Sale">販売開始</th>
+          <td data-ja="2026年7月25日〜" data-en="From July 25, 2026">2026年7月25日〜</td>
+        </tr>
+      </table>
+    </div>
   </div>
+ 
+  <!-- Order Form Header -->
+  <h3 style="font-family:'Oswald',sans-serif;font-size:22px;color:var(--navy);margin-top:56px;margin-bottom:16px;padding-left:14px;border-left:4px solid var(--gold)">ORDER FORM</h3>
+  <p style="margin-bottom:16px" data-ja="ご注文は以下のフォームからお願いいたします。お申し込み後、担当者より振込先・PayPay情報などを記載したメールをお送りいたします。" data-en="Please place your order using the form below. After submission, we will email you payment details (bank transfer or PayPay).">ご注文は以下のフォームからお願いいたします。お申し込み後、担当者より振込先・PayPay情報などを記載したメールをお送りいたします。</p>
+ 
+  <!-- Order Flow -->
+  <div class="order-flow">
+    <div class="flow-step">
+      <div class="flow-num">1</div>
+      <div class="flow-text" data-ja="フォームから注文" data-en="Submit Order Form">フォームから注文</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="flow-num">2</div>
+      <div class="flow-text" data-ja="振込・PayPay情報が届く" data-en="Receive Payment Info">振込・PayPay情報が届く</div>
+    </div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step">
+      <div class="flow-num">3</div>
+      <div class="flow-text" data-ja="入金確認後、発送" data-en="Shipping After Payment">入金確認後、発送</div>
+    </div>
+  </div>
+ 
+  <!-- Order Form -->
+  <form class="contact-form" action="https://formspree.io/f/xkokrplj" method="POST">
+    <input type="hidden" name="_subject" value="【svzfc.com】ユニフォーム注文">
+    <input type="hidden" name="_language" value="ja">
+    <input type="hidden" name="注文商品" value="2026-27 HOME ユニフォーム (シャツ) ¥9,500">
+ 
+    <label class="form-label" data-ja="【お客様情報】" data-en="【Customer Information】">【お客様情報】</label>
+    <input type="text" name="お名前" data-ja-placeholder="お名前 *" data-en-placeholder="Your Name *" placeholder="お名前 *" required>
+    <input type="email" name="メールアドレス" data-ja-placeholder="メールアドレス *" data-en-placeholder="Email Address *" placeholder="メールアドレス *" required>
+    <input type="tel" name="電話番号" data-ja-placeholder="電話番号 *" data-en-placeholder="Phone Number *" placeholder="電話番号 *" required>
+ 
+    <label class="form-label" data-ja="【配送先住所】" data-en="【Shipping Address】">【配送先住所】</label>
+    <input type="text" name="郵便番号" data-ja-placeholder="郵便番号 *" data-en-placeholder="Postal Code *" placeholder="郵便番号 *" required>
+    <input type="text" name="住所" data-ja-placeholder="住所 *(番地、建物名まで)" data-en-placeholder="Full Address *" placeholder="住所 *(番地、建物名まで)" required>
+ 
+    <label class="form-label" data-ja="【注文内容】" data-en="【Order Details】">【注文内容】</label>
+    <select name="サイズ" required>
+      <option value="" data-ja="サイズを選択 *" data-en="Select Size *">サイズを選択 *</option>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+      <option value="2XL">2XL</option>
+    </select>
+    <input type="number" name="数量" data-ja-placeholder="数量 *" data-en-placeholder="Quantity *" placeholder="数量 *" min="1" value="1" required>
+ 
+    <select name="名入れ" required>
+      <option value="" data-ja="名入れオプション *" data-en="Name & Number Option *">名入れオプション *</option>
+      <option value="名入れなし" data-ja="名入れなし" data-en="No Customization">名入れなし</option>
+      <option value="名入れあり（+¥1,500）" data-ja="名入れあり（+¥1,500）" data-en="With Custom Name & Number (+¥1,500)">名入れあり（+¥1,500）</option>
+    </select>
+    <input type="text" name="名前_背番号指定" data-ja-placeholder="名入れ希望の場合のみ記入（例：WATANABE 93）" data-en-placeholder="Only if customized (e.g. WATANABE 93)" placeholder="名入れ希望の場合のみ記入（例：WATANABE 93）">
+ 
+    <label class="form-label" data-ja="【お支払い方法】" data-en="【Payment Method】">【お支払い方法】</label>
+    <select name="支払い方法" required>
+      <option value="" data-ja="お支払い方法を選択 *" data-en="Select Payment Method *">お支払い方法を選択 *</option>
+      <option value="銀行振込" data-ja="銀行振込" data-en="Bank Transfer">銀行振込</option>
+      <option value="PayPay" data-ja="PayPay" data-en="PayPay">PayPay</option>
+    </select>
+ 
+    <textarea name="備考" data-ja-placeholder="備考（ご質問やご要望があればこちらに）" data-en-placeholder="Notes (any questions or requests)" placeholder="備考（ご質問やご要望があればこちらに）"></textarea>
+ 
+    <button type="submit" data-ja="注文を送信する" data-en="SUBMIT ORDER">注文を送信する</button>
+  </form>
+ 
+  <p style="margin-top:24px;font-size:12px;color:var(--sub);line-height:1.8" data-ja="※ ご注文確定後のサイズ・名入れ内容の変更はできません。よくご確認の上、ご注文ください。<br>※ ご入金確認後、発送の準備に入ります。入金期限は注文から7日以内とさせていただきます。<br>※ 海外からのご注文の場合、送料は別途ご相談となります。" data-en="* Size and customization cannot be changed after order confirmation. Please review carefully before ordering.<br>* Shipping preparation begins after payment confirmation. Payment must be completed within 7 days of order.<br>* For international orders, shipping fees will be discussed separately.">※ ご注文確定後のサイズ・名入れ内容の変更はできません。よくご確認の上、ご注文ください。<br>※ ご入金確認後、発送の準備に入ります。入金期限は注文から7日以内とさせていただきます。<br>※ 海外からのご注文の場合、送料は別途ご相談となります。</p>
 </div>
 </div><!-- end page-goods -->
  
@@ -1545,4 +1801,3 @@ document.addEventListener('DOMContentLoaded', () => {
  
 </body>
 </html>
- 
