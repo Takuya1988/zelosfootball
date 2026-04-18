@@ -1536,7 +1536,7 @@ footer {
         <div class="player-name-en" data-ja="Satoshi Abe" data-en="JAPAN">Satoshi Abe</div>
         <div class="player-tags"><span class="tag-role">SALES MANAGER</span></div>
       </div>
-      <div class="player-tooltip" data-ja="プロフィール情報は準備中です。<br>クリックで詳細表示。" data-en="Profile info coming soon.<br>Click for details.">プロフィール情報は準備中です。<br>クリックで詳細表示。</div>
+      <div class="player-tooltip" data-ja="プロ〜アマチュアまで様々なサッカークラブの運営経験を持つ。<br>スポンサー営業・マーケティング担当。" data-en="Extensive experience across pro and amateur football clubs.<br>In charge of sponsor sales and marketing.">プロ〜アマチュアまで様々なサッカークラブの運営経験を持つ。<br>スポンサー営業・マーケティング担当。</div>
     </div>
     <div class="player-card fade-in" onclick="openPlayerModal('canda')">
       <div class="player-num" style="font-size:18px">CC</div>
@@ -2157,13 +2157,15 @@ const playerProfiles = {
     profile: {
       ja: {
         '役職': 'セールスマネージャー',
-        '経歴': 'スポンサー営業、パートナーシップ構築を担当。日本とラオスのビジネスを繋ぐ架け橋として活動。',
-        'コメント': '「ラオスから、アジアへ。サバナケット・ゼロスFCで新しい歴史を作ります。」',
+        'プロフィール': 'サッカークラブのフロントスタッフとして、プロ〜アマチュアまで様々なカテゴリーのクラブ運営に従事。現在は主にスポンサーセールスやマーケティングの業務を担う。',
+        '保有資格': '・日本サッカー協会公認審判員4級\n・日本サッカー協会公認コーチD級\n・JFAスポーツマネジャー資格Grade2',
+        '経歴': '2022年〜2022年　東京都リーグ4部／フロントスタッフ\n2023年〜2024年　Fリーグ1部／スポンサー営業・ホームゲーム飲食ブース運営\n2023年〜2024年　埼玉県リーグ3部東部／運営統括責任者\n2025年〜2026年　埼玉県クラブユース連盟サッカー連盟／ダイレクター\n2025年〜　日本ビーチサッカーリーグ／パートナーセールス\n2025年〜　千葉県リーグ1部／パートナーセールス',
       },
       en: {
         'Position': 'Sales Manager',
-        'Career': 'In charge of sponsorship sales and partnership development. Serves as a bridge between Japanese and Lao businesses.',
-        'Comment': '"From Laos to Asia. We will write a new history with Savannakhet Zelos FC."',
+        'Profile': 'Experienced football club front-office staff, having worked across a wide range of categories from professional to amateur clubs. Currently focused on sponsor sales and marketing.',
+        'Certifications': '・JFA Certified Referee Grade 4\n・JFA Certified Coach Grade D\n・JFA Sports Manager Grade 2',
+        'Career': '2022　Tokyo League Div.4 — Front Office Staff\n2023-2024　F.League Div.1 — Sponsor Sales / Home Game F&B Operations\n2023-2024　Saitama Prefecture League Div.3 East — Operations Director\n2025-2026　Saitama Club Youth Football Federation — Director\n2025-present　Japan Beach Soccer League — Partnership Sales\n2025-present　Chiba Prefecture League Div.1 — Partnership Sales',
       }
     }
   },
@@ -2217,6 +2219,7 @@ function openPlayerModal(id) {
     const h4 = document.createElement('h4');
     h4.textContent = key;
     const p = document.createElement('p');
+    p.style.whiteSpace = 'pre-line';
     p.textContent = profileData[key];
     section.appendChild(h4);
     section.appendChild(p);
