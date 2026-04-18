@@ -1357,18 +1357,24 @@ footer {
       <a class="news-item fade-in">
         <div class="news-date">2026.04.18</div>
         <div class="news-category" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</div>
-        <div class="news-title" data-ja="【新加入選手】2026-27シーズン 御手洗紫苑選手が明海大学より加入" data-en="[New Era] Owner-Player Takuya Watanabe on the 2026-27 Season Challenge">【新体制発表】2026-27シーズン 渡邉卓矢オーナー兼選手が語る、新たな挑戦</div>
+        <div class="news-title" data-ja="【新加入選手】2026-27シーズン 本多涼祐選手（最終所属：明治学院大学体育会サッカー部）が加入" data-en="[New Signing] Ryosuke Honda Joins for 2026-27 Season (Previous: Meiji Gakuin University FC)">【新加入選手】2026-27シーズン 本多涼祐選手（最終所属：明治学院大学体育会サッカー部）が加入</div>
       </a>
       <a class="news-item fade-in">
         <div class="news-date">2026.04.18</div>
         <div class="news-category" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</div>
-        <div class="news-title" data-ja="【新加入選手】2026-27シーズン 菅澤孝也選手がサラワンユナイテッドより加入" data-en="[New Era] Owner-Player Takuya Watanabe on the 2026-27 Season Challenge">【新体制発表】2026-27シーズン 渡邉卓矢オーナー兼選手が語る、新たな挑戦</div>
-      </a>  
+        <div class="news-title" data-ja="【新加入選手】2026-27シーズン 御手洗紫苑選手が明海大学より加入" data-en="[New Signing] Shion Mitarai Joins from Meikai University for 2026-27 Season">【新加入選手】2026-27シーズン 御手洗紫苑選手が明海大学より加入</div>
+      </a>
       <a class="news-item fade-in">
         <div class="news-date">2026.04.18</div>
         <div class="news-category" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</div>
-        <div class="news-title" data-ja="【新加入選手】2026-27シーズン ナロンシット選手がサラワンユナイテッドより加入" data-en="[New Era] Owner-Player Takuya Watanabe on the 2026-27 Season Challenge">【新体制発表】2026-27シーズン 渡邉卓矢オーナー兼選手が語る、新たな挑戦</div>
-      </a>      <a class="news-item fade-in">
+        <div class="news-title" data-ja="【新加入選手】2026-27シーズン 菅澤孝也選手がサラワンユナイテッドより加入" data-en="[New Signing] Takaya Sugasawa Joins from Salavan United for 2026-27 Season">【新加入選手】2026-27シーズン 菅澤孝也選手がサラワンユナイテッドより加入</div>
+      </a>
+      <a class="news-item fade-in">
+        <div class="news-date">2026.04.18</div>
+        <div class="news-category" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</div>
+        <div class="news-title" data-ja="【新加入選手】2026-27シーズン ナロンシット選手がサラワンユナイテッドより加入" data-en="[New Signing] Nalongsit Joins from Salavan United for 2026-27 Season">【新加入選手】2026-27シーズン ナロンシット選手がサラワンユナイテッドより加入</div>
+      </a>
+      <a class="news-item fade-in">
         <div class="news-date">2026.04.15</div>
         <div class="news-category event">EVENT</div>
         <div class="news-title" data-ja="【4/24 東京】ZELOS Sports Management Tokyo Tryout VOL.2 開催決定" data-en="[Apr 24 Tokyo] ZELOS Sports Management Tokyo Tryout VOL.2 Announced">【4/24 東京】ZELOS Sports Management Tokyo Tryout VOL.2 開催決定</div>
@@ -1477,6 +1483,15 @@ footer {
         <div class="player-tags"><span class="tag-pos">DF</span></div>
       </div>
       <div class="player-tooltip" data-ja="タイ・リーグ1部から<br>交渉中の選手です。" data-en="In negotiation with a player<br>from Thai League 1.">タイ・リーグ1部から<br>交渉中の選手です。</div>
+    </div>
+    <div class="player-card fade-in" onclick="openPlayerModal('honda')">
+      <div class="player-num">11</div>
+      <div>
+        <div class="player-name" data-ja="本多 涼祐" data-en="Ryosuke Honda">本多 涼祐</div>
+        <div class="player-name-en" data-ja="Ryosuke Honda" data-en="JAPAN">Ryosuke Honda</div>
+        <div class="player-tags"><span class="tag-pos">DF</span></div>
+      </div>
+      <div class="player-tooltip" data-ja="松本山雅FC U-15/U-18 出身。<br>明治学院大学体育会サッカー部より加入。" data-en="Former Matsumoto Yamaga FC U-15/U-18 youth.<br>Joined from Meiji Gakuin University FC.">松本山雅FC U-15/U-18 出身。<br>明治学院大学体育会サッカー部より加入。</div>
     </div>
     <div class="player-card fade-in" onclick="openPlayerModal('nalongsit')">
       <div class="player-num">19</div>
@@ -2086,6 +2101,26 @@ const playerProfiles = {
         'Career': 'Former pro footballer with experience in 7 countries. Currently based in Laos.',
         'Position': 'Defender',
         'Comment': '"From Laos to Asia. We will write a new history with Savannakhet Zelos FC."',
+      }
+    }
+  },
+  honda: {
+    num: '11',
+    name: { ja: '本多 涼祐', en: 'Ryosuke Honda' },
+    nameEn: 'RYOSUKE HONDA',
+    tags: [{ type: 'pos', text: 'DF' }],
+    profile: {
+      ja: {
+        'ポジション': 'ディフェンダー',
+        '国籍': '日本',
+        '経歴': '岡谷東部FC\n松本山雅FC U-15\n松本山雅FC U-18\n明治学院大学体育会サッカー部',
+        '加入コメント': 'この度、サバナケット・ゼロスFCに加入させていただく事になりました、本多涼祐（Ryosuke Honda）です。\nサッカー選手という小さい頃からの夢を、このクラブでスタートできる事にとても感謝しています。\nサッカー選手としてはもちろん、1人の人間として多くの子供達に夢を与えられるように、どこまでもサッカーにまっすぐ精進していきます。',
+      },
+      en: {
+        'Position': 'Defender',
+        'Nationality': 'Japan',
+        'Career': 'Okaya Tobu FC\nMatsumoto Yamaga FC U-15\nMatsumoto Yamaga FC U-18\nMeiji Gakuin University Football Club',
+        'Signing Comment': 'I am Ryosuke Honda, and I am delighted to be joining Savannakhet Zelos FC.\nI am truly grateful that I can begin my journey as a professional footballer — a dream I have had since childhood — with this club.\nBeyond being a footballer, I will dedicate myself fully to football so that I can inspire many children as a person, and pursue this path with sincerity to the very end.',
       }
     }
   },
