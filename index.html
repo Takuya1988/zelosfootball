@@ -703,6 +703,23 @@ nav.main-nav li.lang a {
   font-weight: 700;
   width: 30%;
 }
+.sold-out-row {
+  opacity: 0.7;
+}
+.sold-out-row th {
+  text-decoration: line-through;
+  text-decoration-color: var(--sub);
+}
+.sold-out-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--navy);
+  color: var(--gold);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  font-weight: 400;
+}
  
 /* ========================= GENERIC PAGE INNER ========================= */
 .generic-inner {
@@ -1598,9 +1615,9 @@ footer {
       <th data-ja="胸スポンサー" data-en="Chest Sponsor">胸スポンサー</th>
       <td data-ja="¥10,000,000 / シーズン" data-en="¥10,000,000 / Season">¥10,000,000 / シーズン</td>
     </tr>
-    <tr>
+    <tr class="sold-out-row">
       <th data-ja="背中スポンサー" data-en="Back Sponsor">背中スポンサー</th>
-      <td data-ja="¥5,000,000 / シーズン" data-en="¥5,000,000 / Season">¥5,000,000 / シーズン</td>
+      <td><span class="sold-out-badge">SOLD OUT</span></td>
     </tr>
     <tr>
       <th data-ja="袖スポンサー" data-en="Sleeve Sponsor">袖スポンサー</th>
@@ -1628,7 +1645,6 @@ footer {
     <select name="ご興味のあるプラン" required>
       <option value="" data-ja="ご興味のあるプランを選択 *" data-en="Select Your Interested Plan *">ご興味のあるプランを選択 *</option>
       <option value="胸スポンサー(¥10,000,000)" data-ja="胸スポンサー(¥10,000,000)" data-en="Chest Sponsor (¥10,000,000)">胸スポンサー(¥10,000,000)</option>
-      <option value="背中スポンサー(¥5,000,000)" data-ja="背中スポンサー(¥5,000,000)" data-en="Back Sponsor (¥5,000,000)">背中スポンサー(¥5,000,000)</option>
       <option value="袖スポンサー(¥3,000,000)" data-ja="袖スポンサー(¥3,000,000)" data-en="Sleeve Sponsor (¥3,000,000)">袖スポンサー(¥3,000,000)</option>
       <option value="パンツスポンサー(¥3,000,000)" data-ja="パンツスポンサー(¥3,000,000)" data-en="Shorts Sponsor (¥3,000,000)">パンツスポンサー(¥3,000,000)</option>
       <option value="その他のプラン" data-ja="その他のプラン" data-en="Other Plans">その他のプラン</option>
