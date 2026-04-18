@@ -1447,14 +1447,14 @@ footer {
 
   <h3 class="position-heading">GK <span data-ja="GOALKEEPER" data-en="GOALKEEPER">GOALKEEPER</span></h3>
   <div class="players-grid">
-    <div class="player-card fade-in" onclick="openPlayerModal('misawa')">
+    <div class="player-card fade-in negotiating" onclick="openPlayerModal('gk1')">
       <div class="player-num">1</div>
       <div>
-        <div class="player-name" data-ja="三澤 拓歩" data-en="Takuho Misawa">三澤 拓歩</div>
-        <div class="player-name-en" data-ja="Takuho Misawa" data-en="JAPAN">Takuho Misawa</div>
+        <div class="player-name" data-ja="交渉中" data-en="In Negotiation">交渉中</div>
+        <div class="player-name-en" data-ja="From Japan (University Student)" data-en="From Japan (University Student)">From Japan (University Student)</div>
         <div class="player-tags"><span class="tag-pos">GK</span></div>
       </div>
-      <div class="player-tooltip" data-ja="プロフィール情報は準備中です。<br>クリックで詳細表示。" data-en="Profile info coming soon.<br>Click for details.">プロフィール情報は準備中です。<br>クリックで詳細表示。</div>
+      <div class="player-tooltip" data-ja="日本の大学生GKと<br>現在交渉中です。" data-en="Currently in negotiation<br>with a Japanese university GK.">日本の大学生GKと<br>現在交渉中です。</div>
     </div>
   </div>
 
@@ -1502,6 +1502,15 @@ footer {
         <div class="player-tags"><span class="tag-pos">MF</span></div>
       </div>
       <div class="player-tooltip" data-ja="プロフィール情報は準備中です。<br>クリックで詳細表示。" data-en="Profile info coming soon.<br>Click for details.">プロフィール情報は準備中です。<br>クリックで詳細表示。</div>
+    </div>
+    <div class="player-card fade-in" onclick="openPlayerModal('mitarai')">
+      <div class="player-num">15</div>
+      <div>
+        <div class="player-name" data-ja="御手洗 紫苑" data-en="Shion Mitarai">御手洗 紫苑</div>
+        <div class="player-name-en" data-ja="Shion Mitarai" data-en="JAPAN">Shion Mitarai</div>
+        <div class="player-tags"><span class="tag-pos">MF</span></div>
+      </div>
+      <div class="player-tooltip" data-ja="東京トライアウト第1号契約獲得選手。<br>運動量と推進力でピッチを走り回る。" data-en="First contract from Tokyo Tryout.<br>Known for stamina and forward drive.">東京トライアウト第1号契約獲得選手。<br>運動量と推進力でピッチを走り回る。</div>
     </div>
   </div>
 
@@ -2021,21 +2030,19 @@ document.addEventListener('DOMContentLoaded', () => {
 // Sample data: Takuya Watanabe's profile is used as template for all for now.
 // Update each player's data when actual profiles are ready.
 const playerProfiles = {
-  misawa: {
+  gk1: {
     num: '1',
-    name: { ja: '三澤 拓歩', en: 'Takuho Misawa' },
-    nameEn: 'TAKUHO MISAWA',
+    name: { ja: '交渉中', en: 'In Negotiation' },
+    nameEn: 'FROM JAPAN (UNIVERSITY STUDENT)',
     tags: [{ type: 'pos', text: 'GK' }],
     profile: {
       ja: {
-        '経歴': '元プロサッカー選手として7カ国でプレー経験を持つ。現在はラオスを拠点に活動。',
-        'ポジション': 'ゴールキーパー',
-        'コメント': '「ラオスから、アジアへ。サバナケット・ゼロスFCで新しい歴史を作ります。」',
+        '現状': '日本の大学に在籍するゴールキーパーと、現在交渉を進めております。',
+        '加入予定': '正式加入が決定次第、クラブ公式サイト・SNSにて発表いたします。',
       },
       en: {
-        'Career': 'Former pro footballer with experience in 7 countries. Currently based in Laos.',
-        'Position': 'Goalkeeper',
-        'Comment': '"From Laos to Asia. We will write a new history with Savannakhet Zelos FC."',
+        'Status': 'Currently in negotiation with a goalkeeper enrolled at a Japanese university.',
+        'Announcement': 'Official signing will be announced on our website and SNS upon confirmation.',
       }
     }
   },
@@ -2080,10 +2087,10 @@ const playerProfiles = {
     tags: [{ type: 'pos', text: 'DF' }, { type: 'role', text: 'OWNER / PLAYER' }],
     profile: {
       ja: {
-        '経歴': '千葉県柏市出身。柏レイソルに憧れサッカーを始める。18歳でアルゼンチンに渡り、エスタディアンテスデラプラタに所属。その後、プロサッカー選手として東南アジアを中心に7カ国でプレー。ラオス在住約6年、30名以上の日本人選手の東南アジア進出を支援。',
+        '経歴': '千葉県柏市出身。柏レイソルに憧れサッカーを始める。18歳でアルゼンチンに渡り、エスタディアンテスでトレーニング。その後、プロサッカー選手として7カ国でプレー。ラオス在住約6年、30名以上の日本人選手の東南アジア進出を支援。',
         '役職': '株式会社ZELOS 代表取締役 / サバナケット・ゼロスFC 60%オーナー',
-        '設立': '2022年　一般社団法人Zelos、2026年 株式会社ZELOSを創業。スポーツを通じて日本と東南アジアを繋ぐ事業を展開。',
-        '社会貢献': 'カンボジア・ラオス・モンゴル・ネパール・タイでの社会貢献活動。1,000足以上のサッカーシューズを寄付。',
+        '設立': '2026年 株式会社ZELOSを東京・千代田区にて創業。スポーツを通じて日本と東南アジアを繋ぐ事業を展開。',
+        '社会貢献': 'カンボジア・ラオス・モンゴル・ネパール・タイでの社会貢献活動。1,075足以上のサッカーシューズを寄付。',
         'ビジョン': 'ラオス初のJリーガーを輩出し、25,000席のサバナケット・スタジアムを満員にすること。',
       },
       en: {
@@ -2102,14 +2109,36 @@ const playerProfiles = {
     tags: [{ type: 'pos', text: 'MF' }],
     profile: {
       ja: {
-        '経歴': 'プロサッカー選手として7カ国でプレー経験を持つ。現在はラオスを拠点に活動。交通事故による大怪我からの復帰を目指す。',
-        'ポジション': 'ディフェンダー',
-        'コメント': '「ラオスから、世界へ。サバナケット・ゼロスFCで新しい歴史を作ります。」',
+        '経歴': '元プロサッカー選手として7カ国でプレー経験を持つ。現在はラオスを拠点に活動。',
+        'ポジション': 'ミッドフィルダー',
+        'コメント': '「ラオスから、アジアへ。サバナケット・ゼロスFCで新しい歴史を作ります。」',
       },
       en: {
         'Career': 'Former pro footballer with experience in 7 countries. Currently based in Laos.',
         'Position': 'Midfielder',
         'Comment': '"From Laos to Asia. We will write a new history with Savannakhet Zelos FC."',
+      }
+    }
+  },
+  mitarai: {
+    num: '15',
+    name: { ja: '御手洗 紫苑', en: 'Shion Mitarai' },
+    nameEn: 'SHION MITARAI',
+    tags: [{ type: 'pos', text: 'MF' }],
+    profile: {
+      ja: {
+        'ポジション': 'ミッドフィルダー',
+        '国籍': '日本',
+        '加入経緯': '東京開催の第1回トライアウトにて契約獲得した第１号。',
+        '経歴': '奈良クラブユース → 明海大学',
+        '特徴': '持ち前の運動量と推進力でピッチを縦横無尽に走って走って走りまくる！',
+      },
+      en: {
+        'Position': 'Midfielder',
+        'Nationality': 'Japan',
+        'Signing Story': 'The very first player signed through the Tokyo Tryout Series VOL.1.',
+        'Career': 'Nara Club Youth → Meikai University',
+        'Strengths': 'Relentless stamina and forward drive. Runs across the pitch tirelessly from end to end.',
       }
     }
   },
@@ -2120,9 +2149,9 @@ const playerProfiles = {
     tags: [{ type: 'pos', text: 'FW' }],
     profile: {
       ja: {
-        '経歴': 'シンガポール、タイ、モンゴル、ラオスにてプロサッカー選手として活躍。持ち前の身体の強さで相手守備陣を切り裂く。',
+        '経歴': '元プロサッカー選手として7カ国でプレー経験を持つ。現在はラオスを拠点に活動。',
         'ポジション': 'フォワード',
-        'コメント': '「得点王を目指して、すべてをチームに捧げます。」',
+        'コメント': '「ラオスから、アジアへ。サバナケット・ゼロスFCで新しい歴史を作ります。」',
       },
       en: {
         'Career': 'Former pro footballer with experience in 7 countries. Currently based in Laos.',
@@ -2139,8 +2168,8 @@ const playerProfiles = {
     profile: {
       ja: {
         '役職': 'チームマネージャー',
-        '経歴': 'サバナケットのサッカー界で長年活動。クラブ運営・選手マネジメントに精通。',
-        'コメント': '「昨年の悔しさを胸にサバナケット・ゼロスFCで新しい歴史を作ります。」',
+        '経歴': 'ラオス国内のサッカー界で長年活動。クラブ運営・選手マネジメントに精通。',
+        'コメント': '「ラオスから、アジアへ。サバナケット・ゼロスFCで新しい歴史を作ります。」',
       },
       en: {
         'Position': 'Team Manager',
