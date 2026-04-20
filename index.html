@@ -1208,6 +1208,461 @@ footer {
   .stat-item:last-child { border-bottom: none; }
   .stats-bar { grid-template-columns: 1fr 1fr; }
 }
+/* ========================= FAN CLUB PAGE ========================= */
+.fc-hero {
+  background: linear-gradient(135deg, var(--navy-dark), var(--navy) 60%, var(--navy-light));
+  color: #fff;
+  padding: 80px 24px 100px;
+  position: relative;
+  overflow: hidden;
+}
+.fc-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(201, 168, 76, 0.18), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.04), transparent 50%);
+  pointer-events: none;
+}
+.fc-hero-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.fc-hero-kicker {
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--gold);
+  letter-spacing: 0.35em;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+.fc-hero-kicker::before, .fc-hero-kicker::after {
+  content: "—";
+  margin: 0 14px;
+  opacity: 0.6;
+}
+.fc-hero h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+.fc-hero h1 em {
+  color: var(--gold);
+  font-style: normal;
+}
+.fc-hero-sub {
+  font-size: 15px;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.85);
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+.fc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  padding: 10px 22px;
+  border: 1px solid var(--gold);
+  background: rgba(201,168,76,0.08);
+}
+.fc-badge .pulse {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--gold);
+  animation: fcPulse 1.8s ease-in-out infinite;
+}
+@keyframes fcPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(201,168,76,0.5); }
+  50% { opacity: 0.6; box-shadow: 0 0 0 8px rgba(201,168,76,0); }
+}
+.fc-why {
+  background: var(--bg);
+  padding: 64px 24px 80px;
+}
+.fc-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.fc-section-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.fc-section-kicker {
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--gold-deep);
+  letter-spacing: 0.3em;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.fc-section-title {
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(28px, 4vw, 40px);
+  color: var(--navy);
+  margin-bottom: 10px;
+  letter-spacing: 0.01em;
+}
+.fc-section-sub {
+  font-size: 14px;
+  color: var(--sub);
+  line-height: 1.8;
+}
+.fc-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.fc-why-card {
+  background: #fff;
+  padding: 36px 28px;
+  border-top: 3px solid var(--gold);
+  position: relative;
+  box-shadow: 0 6px 20px rgba(11,22,40,0.06);
+}
+.fc-why-num {
+  position: absolute;
+  top: 18px; right: 22px;
+  font-family: "Oswald", sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: rgba(11,22,40,0.06);
+  line-height: 1;
+}
+.fc-why-card h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+.fc-why-card .jp {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 12px;
+  color: var(--gold-deep);
+  letter-spacing: 0.2em;
+  margin-bottom: 14px;
+}
+.fc-why-card p {
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: var(--ink);
+}
+.fc-plans {
+  padding: 64px 24px 80px;
+}
+.fc-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+.fc-plan {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 36px 28px 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.fc-plan:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(11,22,40,0.1);
+}
+.fc-plan.featured {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--gold);
+}
+.fc-plan-ribbon {
+  position: absolute;
+  top: 14px; right: -4px;
+  background: var(--gold);
+  color: var(--navy-dark);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  padding: 6px 14px;
+  font-weight: 400;
+}
+.fc-plan-name {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  color: var(--gold-deep);
+  margin-bottom: 6px;
+}
+.fc-plan.featured .fc-plan-name { color: var(--gold); }
+.fc-plan-label {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.fc-plan.featured .fc-plan-label { color: #fff; }
+.fc-plan-desc {
+  font-size: 12.5px;
+  color: var(--sub);
+  margin-bottom: 22px;
+  min-height: 38px;
+  line-height: 1.7;
+}
+.fc-plan.featured .fc-plan-desc { color: rgba(255,255,255,0.7); }
+.fc-plan-price {
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 24px;
+  padding-bottom: 22px;
+  border-bottom: 1px dashed var(--line);
+}
+.fc-plan.featured .fc-plan-price { border-bottom-color: rgba(255,255,255,0.15); }
+.fc-plan-price .yen {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-right: 2px;
+}
+.fc-plan.featured .fc-plan-price .yen { color: var(--gold); }
+.fc-plan-price .amount {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+}
+.fc-plan.featured .fc-plan-price .amount { color: var(--gold); }
+.fc-plan-price .unit {
+  font-size: 13px;
+  color: var(--sub);
+  margin-left: 6px;
+  font-family: "Noto Sans JP", sans-serif;
+}
+.fc-plan.featured .fc-plan-price .unit { color: rgba(255,255,255,0.6); }
+.fc-plan-features {
+  list-style: none;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+.fc-feat {
+  font-size: 13px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.6;
+}
+.fc-plan.featured .fc-feat { border-bottom-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.9); }
+.fc-feat:last-child { border-bottom: none; }
+.fc-feat .check {
+  color: var(--gold-deep);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.fc-plan.featured .fc-feat .check { color: var(--gold); }
+.fc-feat.muted { opacity: 0.35; }
+.fc-feat.muted .check { color: #bbb; }
+.fc-plan-cta {
+  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  padding: 13px;
+  border: 1px solid var(--gold);
+  color: var(--gold-deep);
+  background: transparent;
+}
+.fc-plan.featured .fc-plan-cta { color: var(--gold); }
+.fc-perks {
+  background: var(--bg);
+  padding: 64px 24px 80px;
+}
+.fc-perks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+.fc-perk {
+  background: #fff;
+  padding: 28px 24px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  border-left: 3px solid var(--gold);
+}
+.fc-perk-icon {
+  width: 48px; height: 48px;
+  background: var(--navy);
+  color: var(--gold);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+}
+.fc-perk-body h4 {
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 2px;
+  letter-spacing: 0.02em;
+}
+.fc-perk-body .jp {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 11px;
+  color: var(--gold-deep);
+  letter-spacing: 0.2em;
+  margin-bottom: 8px;
+}
+.fc-perk-body p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--ink);
+}
+.fc-cs {
+  background:
+    linear-gradient(135deg, rgba(2,38,65,0.95), rgba(11,22,40,0.9)),
+    radial-gradient(ellipse at 70% 30%, rgba(201,168,76,0.2), transparent 60%),
+    var(--navy);
+  color: #fff;
+  padding: 80px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.fc-cs::before {
+  content: "COMING SOON";
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(70px, 16vw, 200px);
+  font-weight: 400;
+  color: rgba(201,168,76,0.05);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.fc-cs-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.fc-cs-kicker {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.4em;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.fc-cs-title {
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(28px, 4.5vw, 44px);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 18px;
+}
+.fc-cs-sub {
+  font-size: 14.5px;
+  line-height: 1.9;
+  opacity: 0.85;
+  margin-bottom: 32px;
+}
+.fc-cs-btn {
+  display: inline-block;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  padding: 16px 40px;
+  background: var(--gold);
+  color: var(--navy-dark);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.fc-cs-btn:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(201,168,76,0.3);
+}
+.fc-cs-note {
+  font-size: 11.5px;
+  opacity: 0.6;
+  margin-top: 20px;
+  letter-spacing: 0.05em;
+}
+.fc-faq {
+  padding: 64px 24px 80px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+.fc-faq-list {
+  margin-top: 32px;
+}
+.fc-faq-item {
+  border-bottom: 1px solid var(--line);
+}
+.fc-faq-q {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 22px 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.fc-faq-q .q-mark {
+  font-family: "Oswald", sans-serif;
+  color: var(--gold-deep);
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+.fc-faq-q .q-text { flex-grow: 1; }
+.fc-faq-q .toggle {
+  font-size: 22px;
+  color: var(--gold-deep);
+  font-weight: 300;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.fc-faq-item.open .fc-faq-q .toggle { transform: rotate(45deg); }
+.fc-faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s;
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: var(--ink);
+  padding-left: 38px;
+}
+.fc-faq-item.open .fc-faq-a {
+  max-height: 400px;
+  padding-bottom: 20px;
+}
+@media (max-width: 900px) {
+  .fc-why-grid { grid-template-columns: 1fr; }
+  .fc-plans-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+  .fc-perks-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -1236,7 +1691,7 @@ footer {
     <div class="header-cta">
       <a class="cta-btn" data-ja="TICKET" data-en="TICKET">TICKET</a>
       <a class="cta-btn" data-ja="SHOP" data-en="SHOP">SHOP</a>
-      <a class="cta-btn gold" data-ja="FAN CLUB" data-en="FAN CLUB">FAN CLUB</a>
+     <a class="cta-btn gold" onclick="showPage('fanclub')" data-ja="FAN CLUB" data-en="FAN CLUB">FAN CLUB</a>
     </div>
   </div>
 </header>
@@ -1408,7 +1863,7 @@ footer {
 <div class="pickup-section">
   <div class="pickup-grid">
     <a class="pickup-card fade-in"><div class="label">BEGINNER</div><div class="title" data-ja="初観戦ガイド" data-en="First Match Guide">初観戦ガイド</div></a>
-    <a class="pickup-card fade-in"><div class="label">FAN CLUB</div><div class="title" data-ja="ファンクラブ入会" data-en="Join the Fan Club">ファンクラブ入会</div></a>
+   <a class="pickup-card fade-in" onclick="showPage('fanclub')"><div class="label">FAN CLUB</div><div class="title" data-ja="ファンクラブ入会" data-en="Join the Fan Club">ファンクラブ入会</div></a>
     <a class="pickup-card fade-in"><div class="label">TRYOUT</div><div class="title" data-ja="選手トライアウト" data-en="Player Tryout">選手トライアウト</div></a>
     <a class="pickup-card fade-in"><div class="label">VISIT</div><div class="title" data-ja="サバナケット観戦ツアー" data-en="Savannakhet Match Tour">サバナケット観戦ツアー</div></a>
     <a class="pickup-card fade-in"><div class="label">ACADEMY</div><div class="title" data-ja="アカデミー" data-en="Academy">アカデミー</div></a>
@@ -1891,7 +2346,264 @@ footer {
   </form>
 </div>
 </div><!-- end page-sponsor -->
-
+<!-- ==================== FAN CLUB PAGE ==================== -->
+<div class="page" id="page-fanclub">
+ 
+<!-- HERO -->
+<section class="fc-hero">
+  <div class="fc-hero-inner">
+    <div class="fc-hero-kicker" data-ja="OFFICIAL FAN CLUB" data-en="OFFICIAL FAN CLUB">OFFICIAL FAN CLUB</div>
+    <h1 data-ja="SUPPORT <em>BEYOND</em><br>BORDERS." data-en="SUPPORT <em>BEYOND</em><br>BORDERS.">SUPPORT <em>BEYOND</em><br>BORDERS.</h1>
+    <p class="fc-hero-sub" data-ja="日本にいながら、ラオスで戦うクラブを応援する。<br>SAVANNAKHET ZELOS FC オフィシャル・ファンクラブ、始動。" data-en="Cheer for a club fighting in Laos — from anywhere in Japan.<br>The official fan club of Savannakhet Zelos FC is launching soon.">
+      日本にいながら、ラオスで戦うクラブを応援する。<br>
+      SAVANNAKHET ZELOS FC オフィシャル・ファンクラブ、始動。
+    </p>
+    <div class="fc-badge">
+      <span class="pulse"></span>
+      <span data-ja="COMING SOON ・ 近日公開予定" data-en="COMING SOON">COMING SOON ・ 近日公開予定</span>
+    </div>
+  </div>
+</section>
+ 
+<!-- WHY -->
+<section class="fc-why">
+  <div class="fc-inner">
+    <div class="fc-section-head">
+      <div class="fc-section-kicker">WHY JOIN</div>
+      <h2 class="fc-section-title" data-ja="日本から、ラオスを熱くする。" data-en="Heat up Laos — from Japan.">日本から、ラオスを熱くする。</h2>
+      <p class="fc-section-sub" data-ja="サバナケット・ゼロスFCはラオス・プレミアリーグで戦うクラブ。<br>その応援を、日本からでも最高の形で楽しめるコミュニティをつくります。" data-en="Savannakhet Zelos FC competes in the Lao Premier League.<br>We are building a community to bring that thrill to Japan-based fans.">
+        サバナケット・ゼロスFCはラオス・プレミアリーグで戦うクラブ。<br>
+        その応援を、日本からでも最高の形で楽しめるコミュニティをつくります。
+      </p>
+    </div>
+    <div class="fc-why-grid">
+      <div class="fc-why-card fade-in">
+        <div class="fc-why-num">01</div>
+        <h3>WATCH TOGETHER</h3>
+        <div class="jp" data-ja="一緒に観る" data-en="WATCH AS ONE">一緒に観る</div>
+        <p data-ja="全試合YouTubeライブ配信を、ファンクラブ会員と一緒にオンラインで観戦。チャットで盛り上がり、遠く離れたラオスのピッチと繋がります。" data-en="Watch every match's YouTube livestream alongside fellow fan club members. Chat in real time and connect with the pitch in Laos.">全試合YouTubeライブ配信を、ファンクラブ会員と一緒にオンラインで観戦。チャットで盛り上がり、遠く離れたラオスのピッチと繋がります。</p>
+      </div>
+      <div class="fc-why-card fade-in">
+        <div class="fc-why-num">02</div>
+        <h3>GET CLOSER</h3>
+        <div class="jp" data-ja="近くで感じる" data-en="FEEL IT CLOSER">近くで感じる</div>
+        <p data-ja="選手とのオンライン交流会、会員限定ニュースレター、練習の裏側映像など。テレビでは見えないクラブの素顔にアクセスできます。" data-en="Online meet-ups with players, members-only newsletters, behind-the-scenes training footage. Access the club's true face — the part you can't see on TV.">選手とのオンライン交流会、会員限定ニュースレター、練習の裏側映像など。テレビでは見えないクラブの素顔にアクセスできます。</p>
+      </div>
+      <div class="fc-why-card fade-in">
+        <div class="fc-why-num">03</div>
+        <h3>BUILD WITH US</h3>
+        <div class="jp" data-ja="共に創る" data-en="BUILD IT WITH US">共に創る</div>
+        <p data-ja="グッズ10%OFF、観戦ツアー優先案内、オリジナルステッカー。会員の応援が、クラブの成長とラオス初のJリーガー輩出に直結します。" data-en="10% off merchandise, priority access to match tours, original stickers. Your support directly fuels the club's growth and the first J-League player from Laos.">グッズ10%OFF、観戦ツアー優先案内、オリジナルステッカー。会員の応援が、クラブの成長とラオス初のJリーガー輩出に直結します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- PLANS -->
+<section class="fc-plans">
+  <div class="fc-inner">
+    <div class="fc-section-head">
+      <div class="fc-section-kicker">MEMBERSHIP</div>
+      <h2 class="fc-section-title" data-ja="3つの会員プラン" data-en="Three Membership Plans">3つの会員プラン</h2>
+      <p class="fc-section-sub" data-ja="あなたの応援スタイルに合わせて選べる3プラン。<br>無料のFREEプランから、深く関わるPREMIUMまで。" data-en="Three plans to fit your supporting style.<br>From the free FREE plan to the deeply engaged PREMIUM.">
+        あなたの応援スタイルに合わせて選べる3プラン。<br>
+        無料のFREEプランから、深く関わるPREMIUMまで。
+      </p>
+    </div>
+ 
+    <div class="fc-plans-grid">
+      <!-- FREE -->
+      <div class="fc-plan fade-in">
+        <div class="fc-plan-name">FREE</div>
+        <div class="fc-plan-label" data-ja="フリー会員" data-en="Free Member">フリー会員</div>
+        <div class="fc-plan-desc" data-ja="まずはクラブの世界観に触れてみたい方へ。" data-en="For those who want to first experience the club's world.">まずはクラブの世界観に触れてみたい方へ。</div>
+        <div class="fc-plan-price">
+          <span class="yen">¥</span><span class="amount">0</span>
+          <span class="unit" data-ja="/ 永久無料" data-en="/ Free Forever">/ 永久無料</span>
+        </div>
+        <ul class="fc-plan-features">
+          <li class="fc-feat"><span class="check">✓</span><span data-ja="会員限定ニュースレター" data-en="Members-only newsletter">会員限定ニュースレター</span></li>
+          <li class="fc-feat"><span class="check">✓</span><span data-ja="YouTubeライブ観戦への参加" data-en="Access to YouTube live watch parties">YouTubeライブ観戦への参加</span></li>
+          <li class="fc-feat"><span class="check">✓</span><span data-ja="会員証デジタル発行" data-en="Digital membership card">会員証デジタル発行</span></li>
+          <li class="fc-feat muted"><span class="check">—</span><span data-ja="グッズ割引" data-en="Merchandise discount">グッズ割引</span></li>
+          <li class="fc-feat muted"><span class="check">—</span><span data-ja="選手とのオンライン交流会" data-en="Online meet-ups with players">選手とのオンライン交流会</span></li>
+          <li class="fc-feat muted"><span class="check">—</span><span data-ja="オリジナルグッズ" data-en="Original merchandise">オリジナルグッズ</span></li>
+        </ul>
+        <div class="fc-plan-cta">COMING SOON</div>
+      </div>
+ 
+      <!-- STANDARD (featured) -->
+      <div class="fc-plan featured fade-in">
+        <div class="fc-plan-ribbon">POPULAR</div>
+        <div class="fc-plan-name">STANDARD</div>
+        <div class="fc-plan-label" data-ja="スタンダード会員" data-en="Standard Member">スタンダード会員</div>
+        <div class="fc-plan-desc" data-ja="クラブと一緒に歩む、スタンダードな応援プラン。" data-en="The standard supporting plan — walk alongside the club.">クラブと一緒に歩む、スタンダードな応援プラン。</div>
+        <div class="fc-plan-price">
+          <span class="yen">¥</span><span class="amount">1,000</span>
+          <span class="unit" data-ja="/ 月" data-en="/ month">/ 月</span>
+        </div>
+        <ul class="fc-plan-features">
+          <li class="fc-feat"><span class="check">✓</span><span data-ja="FREE会員の特典すべて" data-en="All FREE member benefits">FREE会員の特典すべて</span></li>
+          <li class="fc-feat"><span class="check">✓</span><span data-ja="グッズストア10%OFF" data-en="10% off official shop">グッズストア10%OFF</span></li>
+          <li class="fc-feat"><span class="check">✓</span><span data-ja="会員限定バックステージ映像" data-en="Members-only backstage videos">会員限定バックステージ映像</span></li>
+          <li class="fc-feat"><span class="check">✓</span><span data-ja="サバナケット観戦ツアー優先案内" data-en="Priority Savannakhet match tour invites">サバナケット観戦ツアー優先案内</span></li>
+          <li class="fc-feat"><span class="check">✓</span><span data-ja="オリジナルステッカー（入会特典）" data-en="Original sticker (welcome gift)">オリジナルステッカー（入会特典）</span></li>
+          <li class="fc-feat muted"><span class="check">—</span><span data-ja="選手とのオンライン交流会" data-en="Online meet-ups with players">選手とのオンライン交流会</span></li>
+        </ul>
+        <div class="fc-plan-cta">COMING SOON</div>
+      </div>
+ 
+      <!-- PREMIUM -->
+      <div class="fc-plan fade-in">
+        <div class="fc-plan-name">PREMIUM</div>
+        <div class="fc-plan-label" data-ja="プレミアム会員" data-en="Premium Member">プレミアム会員</div>
+        <div class="fc-plan-desc" data-ja="クラブの最も近くで支える、ディープファンへ。" data-en="For the deep fans who support the club from closest.">クラブの最も近くで支える、ディープファンへ。</div>
+        <div class="fc-plan-price">
+          <span class="yen">¥</span><span class="amount">3,000</span>
+          <span class="unit" data-ja="/ 月" data-en="/ month">/ 月</span>
+        </div>
+        <ul class="fc-plan-features">
+          <li class="fc-feat"><span class="check">✓</span><span data-ja="STANDARD会員の特典すべて" data-en="All STANDARD member benefits">STANDARD会員の特典すべて</span></li>
+          <li class="fc-feat"><span class="check">✓</span><span data-ja="選手とのオンライン交流会（月1回）" data-en="Online meet-ups with players (monthly)">選手とのオンライン交流会（月1回）</span></li>
+          <li class="fc-feat"><span class="check">✓</span><span data-ja="限定オリジナルグッズ（年2回）" data-en="Exclusive original goods (twice a year)">限定オリジナルグッズ（年2回）</span></li>
+          <li class="fc-feat"><span class="check">✓</span><span data-ja="観戦ツアー参加費割引" data-en="Discount on match tour fees">観戦ツアー参加費割引</span></li>
+          <li class="fc-feat"><span class="check">✓</span><span data-ja="代表・渡邉卓矢からのメッセージ" data-en="Message from Representative Takuya Watanabe">代表・渡邉卓矢からのメッセージ</span></li>
+          <li class="fc-feat"><span class="check">✓</span><span data-ja="会員名クレジット掲載権" data-en="Member name credit on the site">会員名クレジット掲載権</span></li>
+        </ul>
+        <div class="fc-plan-cta">COMING SOON</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- PERKS -->
+<section class="fc-perks">
+  <div class="fc-inner">
+    <div class="fc-section-head">
+      <div class="fc-section-kicker">PERKS</div>
+      <h2 class="fc-section-title" data-ja="会員特典の詳細" data-en="Member Perks in Detail">会員特典の詳細</h2>
+      <p class="fc-section-sub" data-ja="日本とラオスを繋ぐ、ファンクラブだけの体験。" data-en="Fan-club-only experiences bridging Japan and Laos.">日本とラオスを繋ぐ、ファンクラブだけの体験。</p>
+    </div>
+    <div class="fc-perks-grid">
+      <div class="fc-perk fade-in">
+        <div class="fc-perk-icon">01</div>
+        <div class="fc-perk-body">
+          <h4>YOUTUBE LIVE WATCH PARTY</h4>
+          <div class="jp" data-ja="全試合YouTubeライブ一緒観戦" data-en="ALL MATCHES ・ LIVE WATCH">全試合YouTubeライブ一緒観戦</div>
+          <p data-ja="ラオス・プレミアリーグ全試合のYouTube配信を、会員専用チャットと共に観戦。ゴールの瞬間を、日本中の会員と共有できます。" data-en="Watch every Lao Premier League match on YouTube alongside a members-only chat. Share every goal with fans across Japan.">ラオス・プレミアリーグ全試合のYouTube配信を、会員専用チャットと共に観戦。ゴールの瞬間を、日本中の会員と共有できます。</p>
+        </div>
+      </div>
+      <div class="fc-perk fade-in">
+        <div class="fc-perk-icon">02</div>
+        <div class="fc-perk-body">
+          <h4>MERCH 10% OFF</h4>
+          <div class="jp" data-ja="公式グッズ10%OFF" data-en="10% OFF OFFICIAL SHOP">公式グッズ10%OFF</div>
+          <p data-ja="ユニフォーム、Tシャツ、オリジナルグッズなど、公式ストアの全商品が会員価格で購入可能。シーズンごとの新商品にも適用されます。" data-en="Uniforms, T-shirts, original goods — all items at the official store at members' price. Also applies to seasonal new arrivals.">ユニフォーム、Tシャツ、オリジナルグッズなど、公式ストアの全商品が会員価格で購入可能。シーズンごとの新商品にも適用されます。</p>
+        </div>
+      </div>
+      <div class="fc-perk fade-in">
+        <div class="fc-perk-icon">03</div>
+        <div class="fc-perk-body">
+          <h4>PLAYER MEETUP ONLINE</h4>
+          <div class="jp" data-ja="選手とのオンライン交流会" data-en="ONLINE PLAYER MEETUP">選手とのオンライン交流会</div>
+          <p data-ja="PREMIUM会員限定で、月1回のオンライン交流会を開催。所属選手と直接会話し、質問や激励を送れる、ファンクラブだけの時間。" data-en="PREMIUM-only monthly online meetup. Talk directly with players, ask questions, send your encouragement — a time only for fan club members.">PREMIUM会員限定で、月1回のオンライン交流会を開催。所属選手と直接会話し、質問や激励を送れる、ファンクラブだけの時間。</p>
+        </div>
+      </div>
+      <div class="fc-perk fade-in">
+        <div class="fc-perk-icon">04</div>
+        <div class="fc-perk-body">
+          <h4>SAVANNAKHET TOUR PRIORITY</h4>
+          <div class="jp" data-ja="サバナケット観戦ツアー優先案内" data-en="PRIORITY MATCH TOUR">サバナケット観戦ツアー優先案内</div>
+          <p data-ja="ラオス・サバナケットへの観戦ツアーを、会員に先行してご案内。現地でしか味わえない臨場感と、クラブスタッフとの交流が待っています。" data-en="Match tours to Savannakhet, Laos, announced first to members. Experience the atmosphere that only on-site can offer, and meet the club staff.">ラオス・サバナケットへの観戦ツアーを、会員に先行してご案内。現地でしか味わえない臨場感と、クラブスタッフとの交流が待っています。</p>
+        </div>
+      </div>
+      <div class="fc-perk fade-in">
+        <div class="fc-perk-icon">05</div>
+        <div class="fc-perk-body">
+          <h4>EXCLUSIVE MERCH</h4>
+          <div class="jp" data-ja="オリジナルグッズ" data-en="EXCLUSIVE GOODS">オリジナルグッズ</div>
+          <p data-ja="会員限定のオリジナルステッカー（全会員）、限定グッズ（PREMIUM会員）など、ここでしか手に入らないアイテムをお届け。" data-en="Exclusive stickers for all members, and limited goods for PREMIUM members — items available only here.">会員限定のオリジナルステッカー（全会員）、限定グッズ（PREMIUM会員）など、ここでしか手に入らないアイテムをお届け。</p>
+        </div>
+      </div>
+      <div class="fc-perk fade-in">
+        <div class="fc-perk-icon">06</div>
+        <div class="fc-perk-body">
+          <h4>INSIDE STORIES</h4>
+          <div class="jp" data-ja="バックステージ映像・ニュースレター" data-en="BACKSTAGE & NEWSLETTER">バックステージ映像・ニュースレター</div>
+          <p data-ja="試合の舞台裏、選手のオフショット、代表・渡邉卓矢からのメッセージなど、会員だけが読めるクラブの裏側コンテンツを定期配信。" data-en="Behind-the-scenes footage, player candid shots, messages from Representative Takuya Watanabe — members-only club content delivered regularly.">試合の舞台裏、選手のオフショット、代表・渡邉卓矢からのメッセージなど、会員だけが読めるクラブの裏側コンテンツを定期配信。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- COMING SOON CTA -->
+<section class="fc-cs">
+  <div class="fc-cs-inner">
+    <div class="fc-cs-kicker" data-ja="LAUNCH ・ 2026 SUMMER" data-en="LAUNCH ・ SUMMER 2026">LAUNCH ・ 2026 SUMMER</div>
+    <h2 class="fc-cs-title" data-ja="Be the first to join." data-en="Be the first to join.">Be the first to join.</h2>
+    <p class="fc-cs-sub" data-ja="ファンクラブは現在、開設に向けて準備中です。<br>正式オープン・先行案内をご希望の方は、お問い合わせフォームよりご連絡ください。<br>開設時、優先的にご案内いたします。" data-en="The fan club is currently in preparation.<br>To receive early access, please reach out via the contact form.<br>You will be guided first when we launch.">
+      ファンクラブは現在、開設に向けて準備中です。<br>
+      正式オープン・先行案内をご希望の方は、お問い合わせフォームよりご連絡ください。<br>
+      開設時、優先的にご案内いたします。
+    </p>
+    <a class="fc-cs-btn" onclick="showPage('contact'); setTimeout(function(){var s=document.querySelector('#page-contact select[name=&quot;お問い合わせ種別&quot;]');if(s){s.value='ファンクラブについて';}},100);" data-ja="事前登録はこちら →" data-en="Pre-register Here →">事前登録はこちら →</a>
+    <div class="fc-cs-note" data-ja="※ お問い合わせ種別で「ファンクラブについて」をご選択ください。" data-en="* Please select 'About Fan Club' as the inquiry type.">※ お問い合わせ種別で「ファンクラブについて」をご選択ください。</div>
+  </div>
+</section>
+ 
+<!-- FAQ -->
+<section class="fc-faq">
+  <div class="fc-section-head">
+    <div class="fc-section-kicker">FAQ</div>
+    <h2 class="fc-section-title" data-ja="よくあるご質問" data-en="Frequently Asked Questions">よくあるご質問</h2>
+    <p class="fc-section-sub" data-ja="ファンクラブに関してよくいただく質問をまとめました。" data-en="Answers to common questions about the fan club.">ファンクラブに関してよくいただく質問をまとめました。</p>
+  </div>
+  <div class="fc-faq-list">
+    <div class="fc-faq-item">
+      <button class="fc-faq-q" onclick="this.closest('.fc-faq-item').classList.toggle('open');">
+        <span class="q-mark">Q.</span>
+        <span class="q-text" data-ja="ファンクラブはいつから始まりますか？" data-en="When does the fan club launch?">ファンクラブはいつから始まりますか？</span>
+        <span class="toggle">+</span>
+      </button>
+      <div class="fc-faq-a" data-ja="現在、2026年夏頃のオープンを目標に準備を進めています。正式開始日が決まり次第、事前登録いただいた方から優先的にご案内いたします。" data-en="We are currently preparing for a Summer 2026 launch. Once the official launch date is confirmed, pre-registered users will be notified first.">現在、2026年夏頃のオープンを目標に準備を進めています。正式開始日が決まり次第、事前登録いただいた方から優先的にご案内いたします。</div>
+    </div>
+    <div class="fc-faq-item">
+      <button class="fc-faq-q" onclick="this.closest('.fc-faq-item').classList.toggle('open');">
+        <span class="q-mark">Q.</span>
+        <span class="q-text" data-ja="日本からでも入会できますか？" data-en="Can I join from Japan?">日本からでも入会できますか？</span>
+        <span class="toggle">+</span>
+      </button>
+      <div class="fc-faq-a" data-ja="はい、日本在住の方を主な対象としたファンクラブです。YouTubeライブ観戦、グッズ割引、オンライン交流会など、日本からでもサバナケット・ゼロスFCを全力で応援していただけます。" data-en="Yes — this fan club is primarily aimed at fans in Japan. Through YouTube live watching, merchandise discounts, and online meet-ups, you can fully support Savannakhet Zelos FC from Japan.">はい、日本在住の方を主な対象としたファンクラブです。YouTubeライブ観戦、グッズ割引、オンライン交流会など、日本からでもサバナケット・ゼロスFCを全力で応援していただけます。</div>
+    </div>
+    <div class="fc-faq-item">
+      <button class="fc-faq-q" onclick="this.closest('.fc-faq-item').classList.toggle('open');">
+        <span class="q-mark">Q.</span>
+        <span class="q-text" data-ja="プランは途中で変更できますか？" data-en="Can I change my plan midway?">プランは途中で変更できますか？</span>
+        <span class="toggle">+</span>
+      </button>
+      <div class="fc-faq-a" data-ja="はい、ご入会後も月単位でプランの変更・解約が可能となる予定です。詳細な規約は正式オープン時に公開いたします。" data-en="Yes — plan changes and cancellations will be available on a monthly basis after joining. Full terms will be published at launch.">はい、ご入会後も月単位でプランの変更・解約が可能となる予定です。詳細な規約は正式オープン時に公開いたします。</div>
+    </div>
+    <div class="fc-faq-item">
+      <button class="fc-faq-q" onclick="this.closest('.fc-faq-item').classList.toggle('open');">
+        <span class="q-mark">Q.</span>
+        <span class="q-text" data-ja="支払い方法は何がありますか？" data-en="What payment methods are available?">支払い方法は何がありますか？</span>
+        <span class="toggle">+</span>
+      </button>
+      <div class="fc-faq-a" data-ja="クレジットカード決済を中心に、複数の支払い方法に対応する予定です。詳細は正式オープン時にご案内いたします。" data-en="We plan to support multiple payment methods, primarily credit card. Full details will be announced at launch.">クレジットカード決済を中心に、複数の支払い方法に対応する予定です。詳細は正式オープン時にご案内いたします。</div>
+    </div>
+    <div class="fc-faq-item">
+      <button class="fc-faq-q" onclick="this.closest('.fc-faq-item').classList.toggle('open');">
+        <span class="q-mark">Q.</span>
+        <span class="q-text" data-ja="法人での入会・サポートは可能ですか？" data-en="Is corporate membership available?">法人での入会・サポートは可能ですか？</span>
+        <span class="toggle">+</span>
+      </button>
+      <div class="fc-faq-a" data-ja="法人でのサポートをご希望の方は、スポンサーシッププログラムをご用意しております。SPONSORページをご覧ください。" data-en="For corporate support, we offer a sponsorship program. Please see the SPONSOR page for details.">法人でのサポートをご希望の方は、スポンサーシッププログラムをご用意しております。SPONSORページをご覧ください。</div>
+    </div>
+  </div>
+</section>
+ 
+</div><!-- end page-fanclub -->
 <!-- ==================== CONTACT PAGE ==================== -->
 <div class="page" id="page-contact">
 <div class="generic-inner">
@@ -1949,7 +2661,7 @@ footer {
           <h4>FAN</h4>
           <ul>
             <li onclick="showPage('goods')" data-ja="グッズ" data-en="Goods">グッズ</li>
-            <li data-ja="ファンクラブ" data-en="Fan Club">ファンクラブ</li>
+            <li onclick="showPage('fanclub')" data-ja="ファンクラブ" data-en="Fan Club">ファンクラブ</li>
             <li data-ja="ブログ" data-en="Blog">ブログ</li>
           </ul>
         </div>
