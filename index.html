@@ -1889,6 +1889,7 @@ footer {
   .ac-route-visual {
     grid-template-columns: 1fr;
     gap: 16px;
+  
     text-align: center;
   }
   .ac-route-arrow {
@@ -1898,44 +1899,47 @@ footer {
 .ac-route-node { text-align: center; }
 .ac-route-node .icon {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 11px;
+  font-size: 14px;
   color: var(--gold);
   letter-spacing: 0.3em;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 .ac-route-node .name {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  line-height: 1.35;
 }
 .ac-route-node .name-en {
   font-family: "Oswald", sans-serif;
-  font-size: 12px;
+  font-size: 15px;
   color: var(--gold);
   letter-spacing: 0.08em;
 }
 .ac-route-arrow {
   font-family: "Bebas Neue", sans-serif;
-  font-size: 20px;
+  font-size: 28px;
   color: var(--gold);
   text-align: center;
   line-height: 1.2;
 }
 .ac-route-arrow .dist {
   display: block;
-  font-size: 10px;
+  font-size: 16px;
   letter-spacing: 0.2em;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
+  font-weight: 400;
 }
 .ac-route-arrow .time {
   display: block;
-  font-size: 9px;
-  color: rgba(255,255,255,0.6);
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
   letter-spacing: 0.15em;
-  margin-top: 4px;
-}
- 
+  margin-top: 8px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+} 
 /* Transport options */
 .ac-options {
   padding: 64px 24px 40px;
@@ -3231,13 +3235,11 @@ footer {
   </div>
  
   <div class="ac-opt-grid">
-    <!-- TAXI - RECOMMENDED -->
-    <div class="ac-opt featured">
-      <div class="ac-opt-rec" data-ja="RECOMMENDED" data-en="RECOMMENDED">RECOMMENDED</div>
+    <!-- TAXI -->
+    <div class="ac-opt">
       <div class="num">01</div>
       <h4>AIRPORT TAXI</h4>
-      <div class="jp" data-ja="空港タクシー" data-en="TAXI AT AIRPORT">空港タクシー</div>
-      <div class="ac-opt-meta">
+      <div class="jp" data-ja="空港タクシー" data-en="TAXI AT AIRPORT">空港タクシー</div>      <div class="ac-opt-meta">
         <div class="ac-meta-item">
           <div class="k" data-ja="FARE ・ 料金" data-en="FARE">FARE ・ 料金</div>
           <div class="v" data-ja="約 ¥500" data-en="~¥500">約 ¥500</div>
@@ -3247,13 +3249,14 @@ footer {
           <div class="v" data-ja="10〜15分" data-en="10-15 min">10〜15分</div>
         </div>
       </div>
-      <p data-ja="空港到着ロビーを出ると、タクシーが待機しています。これが最も確実で一般的な移動手段。料金は日本円で約500円と非常にリーズナブル。乗車前に運転手と行き先と料金を確認してから出発するのが安心です。" data-en="Taxis wait just outside the arrival lobby. This is the most reliable and common option. The fare is very reasonable — about ¥500 (around 80,000 LAK). Confirm the destination and fare with the driver before starting your trip.">
-        空港到着ロビーを出ると、タクシーが待機しています。これが最も確実で一般的な移動手段。料金は日本円で約500円と非常にリーズナブル。乗車前に運転手と行き先と料金を確認してから出発するのが安心です。
+    <p data-ja="空港到着ロビーを出ると、タクシーが待機していることがあります。ただし、サバナケット空港はフライト本数が少ないため、タクシーが待機していない時間帯もあります。確実に移動するためには、下記の配車アプリ(LOCA / KOKKOK)を日本出発前にスマホへインストールしておくのがおすすめです。乗車前に運転手と行き先と料金を確認してから出発するのが安心です。" data-en="Taxis may be waiting outside the arrival lobby — but Savannakhet Airport has limited flights, so there won't always be one available. We strongly recommend installing the ride-hailing apps below (LOCA / KOKKOK) on your phone before you leave Japan. Always confirm the destination and fare with the driver before starting your trip.">
+        空港到着ロビーを出ると、タクシーが待機していることがあります。ただし、サバナケット空港はフライト本数が少ないため、タクシーが待機していない時間帯もあります。確実に移動するためには、下記の配車アプリ(LOCA / KOKKOK)を日本出発前にスマホへインストールしておくのがおすすめです。乗車前に運転手と行き先と料金を確認してから出発するのが安心です。
       </p>
     </div>
  
-    <!-- LOCA APP -->
-    <div class="ac-opt">
+  <!-- LOCA APP - RECOMMENDED -->
+    <div class="ac-opt featured">
+      <div class="ac-opt-rec" data-ja="RECOMMENDED" data-en="RECOMMENDED">RECOMMENDED</div>
       <div class="num">02</div>
       <h4>LOCA APP</h4>
       <div class="jp" data-ja="配車アプリ" data-en="RIDE-HAILING APP">配車アプリ</div>
@@ -3267,10 +3270,9 @@ footer {
           <div class="v" data-ja="10〜15分" data-en="10-15 min">10〜15分</div>
         </div>
       </div>
-      <p data-ja="ラオス発の配車アプリ「LOCA」。アプリ上で目的地を指定すれば、運転手との言語のやりとりが不要で、料金も事前確定。クレジットカード決済も対応。事前にアプリをダウンロードしておくと便利です。" data-en="LOCA is Laos' home-grown ride-hailing app. Set your destination in-app and you won't need to negotiate verbally — the fare is fixed upfront. Credit card payment supported. Download the app before you arrive.">
-        ラオス発の配車アプリ「LOCA」。アプリ上で目的地を指定すれば、運転手との言語のやりとりが不要で、料金も事前確定。クレジットカード決済も対応。事前にアプリをダウンロードしておくと便利です。
-      </p>
-      <div class="app-badges">
+     <p data-ja="ラオス発の配車アプリ「LOCA」。アプリ上で目的地を指定すれば、運転手との言語のやりとりが不要で、料金も事前確定。クレジットカード決済も対応。確実な移動手段として、日本出発前に必ずダウンロードしておくことをおすすめします。" data-en="LOCA is Laos' home-grown ride-hailing app. Set your destination in-app and you won't need to negotiate verbally — the fare is fixed upfront. Credit card payment supported. As the most reliable option, we strongly recommend downloading it before leaving Japan.">
+        ラオス発の配車アプリ「LOCA」。アプリ上で目的地を指定すれば、運転手との言語のやりとりが不要で、料金も事前確定。クレジットカード決済も対応。確実な移動手段として、日本出発前に必ずダウンロードしておくことをおすすめします。
+      </p>      <div class="app-badges">
         <span class="ac-app-badge">LOCA</span>
         <span class="ac-app-badge" data-ja="アプリ必須" data-en="APP REQUIRED">アプリ必須</span>
       </div>
