@@ -2446,20 +2446,7 @@ footer {
     <h2>PLAYERS &amp; STAFF</h2>
     <div class="note" data-ja="選手・スタッフ一覧（随時更新）※ 各カードをクリックで詳細表示" data-en="Players & Staff List (Updated Regularly) * Click each card for details">選手・スタッフ一覧（随時更新）※ 各カードをクリックで詳細表示</div>
   </div>
-
-  <h3 class="position-heading">GK <span data-ja="GOALKEEPER" data-en="GOALKEEPER">GOALKEEPER</span></h3>
-  <div class="players-grid">
-    <div class="player-card fade-in negotiating" onclick="openPlayerModal('gk1')">
-      <div class="player-num">1</div>
-      <div>
-        <div class="player-name" data-ja="交渉中" data-en="In Negotiation">交渉中</div>
-        <div class="player-name-en" data-ja="From Japan (University Student)" data-en="From Japan (University Student)">From Japan (University Student)</div>
-        <div class="player-tags"><span class="tag-pos">GK</span></div>
-      </div>
-      <div class="player-tooltip" data-ja="日本の大学生GKと<br>現在交渉中です。" data-en="Currently in negotiation<br>with a Japanese university GK.">日本の大学生GKと<br>現在交渉中です。</div>
-    </div>
-  </div>
-
+  
   <h3 class="position-heading">GK <span data-ja="GOALKEEPER" data-en="GOALKEEPER">GOALKEEPER</span></h3>
   <div class="players-grid">
     <div class="player-card fade-in" onclick="openPlayerModal('okamoto')">
@@ -2493,15 +2480,7 @@ footer {
       </div>
       <div class="player-tooltip" data-ja="松本山雅FC U-15/U-18 出身。<br>明治学院大学体育会サッカー部より加入。" data-en="Former Matsumoto Yamaga FC U-15/U-18 youth.<br>Joined from Meiji Gakuin University FC.">松本山雅FC U-15/U-18 出身。<br>明治学院大学体育会サッカー部より加入。</div>
     </div>
-    <div class="player-card fade-in" onclick="openPlayerModal('nalongsit')">
-      <div class="player-num">19</div>
-      <div>
-        <div class="player-name" data-ja="ナロンシット" data-en="Nalongsit">ナロンシット</div>
-        <div class="player-name-en" data-ja="Nalongsit" data-en="LAOS">Nalongsit</div>
-        <div class="player-tags"><span class="tag-pos">DF</span></div>
-      </div>
-      <div class="player-tooltip" data-ja="プロフィール情報は準備中です。<br>クリックで詳細表示。" data-en="Profile info coming soon.<br>Click for details.">プロフィール情報は準備中です。<br>クリックで詳細表示。</div>
-    </div>
+    
 <div class="player-card fade-in" onclick="openPlayerModal('sato')">
       <div class="player-num">32</div>
       <div>
@@ -3618,24 +3597,6 @@ const playerProfiles = {
       en: {
         'Status': 'Currently in negotiation with a player from Thai League 1.',
         'Announcement': 'Official signing will be announced on our website and SNS upon confirmation.',
-      }
-    }
-  },
-  nalongsit: {
-    num: '19',
-    name: { ja: 'ナロンシット', en: 'Nalongsit' },
-    nameEn: 'NALONGSIT',
-    tags: [{ type: 'pos', text: 'DF' }],
-    profile: {
-      ja: {
-        '経歴': '元プロサッカー選手として7カ国でプレー経験を持つ。現在はラオスを拠点に活動。',
-        'ポジション': 'ディフェンダー',
-        'コメント': '「ラオスから、アジアへ。サバナケット・ゼロスFCで新しい歴史を作ります。」',
-      },
-      en: {
-        'Career': 'Former pro footballer with experience in 7 countries. Currently based in Laos.',
-        'Position': 'Defender',
-        'Comment': '"From Laos to Asia. We will write a new history with Savannakhet Zelos FC."',
       }
     }
   },
