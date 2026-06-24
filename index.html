@@ -2330,6 +2330,12 @@ footer {
       <button class="news-tab" data-cat="sponsor" data-ja="スポンサー" data-en="SPONSOR">スポンサー</button>
     </div>
     <div class="news-list">
+    <a class="news-item fade-in">
+        <div class="news-date">2026.06.22</div>
+        <div class="news-category" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</div>
+        <div class="news-title" data-ja="【退任】現地セールスマネージャーの砂原浩二が退任しました。" data-en="[New Staff] Koji Sunahara Appointed as Local Sales Manager">【新スタッフ】現地セールスマネージャーに砂原浩二が就任</div>
+      </a>
+      
       <a class="news-item fade-in">
         <div class="news-date">2026.04.27</div>
         <div class="news-category" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</div>
@@ -3600,7 +3606,25 @@ document.addEventListener('DOMContentLoaded', () => {
 // Sample data: Takuya Watanabe's profile is used as template for all for now.
 // Update each player's data when actual profiles are ready.
 const playerProfiles = {
-  got: {
+
+   natsu: {
+    num: '1',
+    name: { ja: '岡本 那津', en: 'Natsu Okamoto' },
+    nameEn: 'NATSU OKAMOTO',
+    tags: [{ type: 'pos', text: 'GK' }],
+    profile: {
+      ja: {
+        'ポジション': 'ゴールキーパー',
+        '国籍': '日本',
+        'プロフィール': 'プロフィール情報は準備中です。詳細が決まり次第、随時公開いたします。',
+      },
+      en: {
+        'Position': 'Goalkeeper',
+        'Nationality': 'Japan',
+        'Profile': 'Profile information is being prepared. Details will be published as they become available.',
+      }
+    }
+  },  got: {
     num: '25',
     name: { ja: 'Got', en: 'Got' },
     nameEn: 'GOT',
@@ -3656,7 +3680,7 @@ const playerProfiles = {
   },
   inoue: {
     num: '4',
-    name: { ja: 'Shota Inoue', en: 'Shota Inoue' },
+    name: { ja: '井上 翔太', en: 'Shota Inoue' },
     nameEn: 'SHOTA INOUE',
     tags: [{ type: 'pos', text: 'DF' }],
     profile: {
@@ -3692,7 +3716,7 @@ const playerProfiles = {
   },
   itofusa: {
     num: '14',
-    name: { ja: 'Shuki Itofusa', en: 'Shuki Itofusa' },
+    name: { ja: '糸房 珠希', en: 'Shuki Itofusa' },
     nameEn: 'SHUKI ITOFUSA',
     tags: [{ type: 'pos', text: 'MF' }],
     profile: {
@@ -3734,7 +3758,7 @@ const playerProfiles = {
     profile: {
       ja: {
         'ポジション': 'フォワード',
-        '国籍': 'タイ',
+        '国籍': 'ラオス',
         'プロフィール': 'プロフィール情報は準備中です。詳細が決まり次第、随時公開いたします。',
       },
       en: {
@@ -3762,28 +3786,7 @@ const playerProfiles = {
       }
     }
   },
-  watanabe: {
-    num: '42',
-    name: { ja: '渡邉 卓矢', en: 'Takuya Watanabe' },
-    nameEn: 'TAKUYA WATANABE',
-    tags: [{ type: 'pos', text: 'DF' }, { type: 'role', text: 'OWNER / PLAYER' }],
-    profile: {
-      ja: {
-        '経歴': '千葉県柏市出身。柏レイソルに憧れサッカーを始める。18歳でアルゼンチンに渡り、エスタディアンテスでトレーニング。その後、プロサッカー選手として7カ国でプレー。ラオス在住約6年、30名以上の日本人選手の東南アジア進出を支援。',
-        '役職': '株式会社ZELOS 代表取締役 / サバナケット・ゼロスFC 60%オーナー',
-        '設立': '2026年 株式会社ZELOSを東京・千代田区にて創業。スポーツを通じて日本と東南アジアを繋ぐ事業を展開。',
-        '社会貢献': 'カンボジア・ラオス・モンゴル・ネパール・タイでの社会貢献活動。1,075足以上のサッカーシューズを寄付。',
-        'ビジョン': 'ラオス初のJリーガーを輩出し、25,000席のサバナケット・スタジアムを満員にすること。',
-      },
-      en: {
-        'Career': 'Born in Kashiwa, Chiba. Inspired by Kashiwa Reysol, began playing football. Moved to Argentina at 18 to train with Estudiantes. Later, played professionally in 7 countries. Based in Laos for ~6 years, has supported over 30 Japanese players to pursue careers in Southeast Asia.',
-        'Position': 'Representative Director, ZELOS Inc. / 60% Owner of Savannakhet Zelos FC',
-        'Founded': 'Founded ZELOS Inc. in 2026 in Chiyoda, Tokyo. Building bridges between Japan and Southeast Asia through sports.',
-        'Social Impact': 'Active in Cambodia, Laos, Mongolia, Nepal, and Thailand. Donated over 1,075 pairs of football shoes.',
-        'Vision': 'To produce the first J-League player from Laos, and to fill the 25,000-seat Savannakhet Stadium.',
-      }
-    }
-  },
+ 
   mitarai: {
     num: '15',
     name: { ja: '御手洗 紫苑', en: 'Shion Mitarai' },
@@ -3892,22 +3895,7 @@ const playerProfiles = {
       }
     }
   },
-  sunahara: {
-    num: 'SM',
-    name: { ja: '砂原 浩二', en: 'Koji Sunahara' },
-    nameEn: 'KOJI SUNAHARA',
-    tags: [{ type: 'role', text: 'SALES MANAGER' }],
-    profile: {
-      ja: {
-        '役職': 'セールスマネージャー（ラオス駐在）',
-        'プロフィール': 'ラオス駐在スタッフ。現地セールスマネージャーとしてクラブの営業を担当する。',
-      },
-      en: {
-        'Position': 'Sales Manager (Based in Laos)',
-        'Profile': 'Based in Laos as a local staff member. Serves as Sales Manager, leading the club\'s on-the-ground sales operations.',
-      }
-    }
-  },
+
   canda: {
     num: 'CC',
     name: { ja: 'カンダ', en: 'Canda' },
