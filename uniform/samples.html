@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>デザインサンプル | ZELOS UNIFORM</title>
+<meta name="description" content="ZELOS UNIFORM のオリジナルユニフォーム デザインサンプル一覧。気に入ったデザインはそのままテンプレートとして製作いただけます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--grey:#6b6b6b;--grey-2:#9a9a9a;--line:#e8e8e6;--bg:#ffffff;--soft:#f5f5f3}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:var(--ink);background:var(--bg);line-height:1.85;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 28px}
+.outline{-webkit-text-stroke:2px var(--ink);color:transparent}
+
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{font-family:"Archivo",sans-serif;font-weight:900;letter-spacing:.04em;font-size:18px}
+.nav-links{display:flex;gap:30px;font-size:12px;font-weight:700;letter-spacing:.12em}
+.nav-links a{color:var(--grey);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer}
+
+.btn{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.1em;padding:16px 34px;border:1px solid var(--ink);transition:background .2s,color .2s}
+.btn-fill{background:var(--ink);color:#fff}
+.btn-fill:hover{background:#fff;color:var(--ink)}
+
+.page-hero{padding:108px 0 60px;border-bottom:1px solid var(--line)}
+.page-hero .lbl{font-size:11px;font-weight:700;letter-spacing:.3em;color:var(--grey-2)}
+.page-hero h1{font-family:"Archivo",sans-serif;font-size:clamp(40px,9vw,88px);font-weight:900;text-transform:uppercase;letter-spacing:-.01em;margin:18px 0 18px;line-height:.98}
+.page-hero p{color:var(--grey);max-width:42em;font-size:15px}
+
+/* ---------- Sample catalog ---------- */
+.gallery{padding:56px 0 36px}
+.count{display:flex;align-items:baseline;gap:12px;margin-bottom:26px;border-bottom:1px solid var(--ink);padding-bottom:16px}
+.count .n{font-family:"Archivo",sans-serif;font-size:20px;font-weight:800}
+.count .t{font-size:12px;letter-spacing:.16em;color:var(--grey-2);font-weight:700}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#fff;border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:0 12px 30px rgba(17,17,17,.08);transform:translateY(-3px)}
+
+/* 画像スペース（3:2）。img があれば写真、なければプレースホルダー枠 */
+.thumb{aspect-ratio:3/2;background:var(--soft);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.thumb.has-img{background:#fff;cursor:zoom-in}
+.thumb img{width:100%;height:100%;object-fit:contain;display:block}
+.ph{display:flex;flex-direction:column;align-items:center;gap:10px}
+.ph .pno{font-family:"Archivo",sans-serif;font-size:40px;font-weight:900;line-height:1;-webkit-text-stroke:1.6px var(--grey-2);color:transparent;letter-spacing:-.02em}
+.ph .pt{font-size:10px;font-weight:700;letter-spacing:.24em;color:var(--grey-2)}
+
+/* 拡大表示（ライトボックス） */
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:94vw;max-height:90vh;object-fit:contain}
+.lightbox .lb-close{position:absolute;top:18px;right:24px;color:#fff;font-size:30px;font-weight:300;line-height:1;background:none;border:none;cursor:pointer;font-family:"Archivo",sans-serif}
+.lightbox .lb-cap{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#cfcfcf;font-size:13px;letter-spacing:.06em}
+
+.info{padding:20px 22px 24px}
+.info .no{font-family:"Archivo",sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;color:var(--grey-2)}
+.info .name{font-family:"Archivo","Noto Sans JP",sans-serif;font-size:18px;font-weight:800;letter-spacing:.01em;margin-top:6px}
+.info .jpname{font-size:12px;color:var(--grey-2);font-weight:700;letter-spacing:.06em;margin-top:2px}
+.info .desc{font-size:13px;color:var(--grey);margin-top:12px;line-height:1.7}
+
+.howto{padding:84px 0;border-top:1px solid var(--line);background:var(--soft)}
+.howto-box{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start}
+.howto .lbl{font-size:11px;font-weight:700;letter-spacing:.26em;color:var(--grey-2)}
+.howto h2{font-family:"Archivo","Noto Sans JP",sans-serif;font-size:clamp(24px,3.6vw,34px);font-weight:800;letter-spacing:-.01em;margin-top:14px;line-height:1.3}
+.howto p{color:var(--grey);margin-top:16px;font-size:15px}
+.howto .panel{background:#fff;border:1px solid var(--ink);padding:32px 30px}
+.howto .panel h3{font-family:"Archivo",sans-serif;font-size:13px;font-weight:800;letter-spacing:.12em;margin-bottom:16px}
+.howto .panel li{list-style:none;font-size:14px;color:var(--grey);padding:9px 0 9px 24px;position:relative;border-bottom:1px solid var(--line)}
+.howto .panel li:last-child{border-bottom:none}
+.howto .panel li::before{content:"";position:absolute;left:0;top:15px;width:9px;height:1px;background:var(--ink)}
+
+.cta{padding:104px 0;text-align:center}
+.cta h2{font-family:"Archivo",sans-serif;font-size:clamp(28px,5.4vw,56px);font-weight:900;text-transform:uppercase;letter-spacing:-.01em}
+.cta p{color:var(--grey);margin:18px auto 34px;max-width:32em;font-size:15px}
+
+footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.12)}
+.foot-brand{font-family:"Archivo",sans-serif;font-weight:900;font-size:20px;color:#fff;letter-spacing:.04em}
+.foot-links{display:flex;gap:26px;font-weight:700;letter-spacing:.1em;font-size:12px}
+.foot-links a:hover{color:#fff}
+.copy{margin-top:24px;font-size:12px}
+
+@media(max-width:860px){
+  .grid{grid-template-columns:1fr 1fr;gap:18px}
+  .howto-box{grid-template-columns:1fr;gap:32px}
+  .nav-links{position:absolute;top:66px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:6px 28px 14px;border-bottom:1px solid var(--line);display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:13px 0;border-bottom:1px solid var(--line)}
+  .nav-toggle{display:block}
+}
+@media(max-width:520px){.grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand">ZELOS UNIFORM</a>
+    <button class="nav-toggle" aria-label="メニュー" onclick="document.getElementById('nav').classList.toggle('open')">≡</button>
+    <nav class="nav-links" id="nav">
+      <a href="index.html">HOME</a>
+      <a href="samples.html" class="active">DESIGN SAMPLES</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="lbl">DESIGN SAMPLES</span>
+    <h1>Design <span class="outline">index</span></h1>
+    <p>これまでに製作したデザインの一覧です。気になるデザインの「No.」を控えて、お問い合わせ時にお知らせください。そのままテンプレートとして、お好きなカラー・チーム名・ロゴで製作いたします。</p>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="wrap">
+    <div class="count">
+      <span class="n" id="count-n">00</span>
+      <span class="t">DESIGN SAMPLES</span>
+    </div>
+    <div class="grid" id="grid"><!-- sample cards injected below --></div>
+  </div>
+</section>
+
+<section class="howto">
+  <div class="wrap howto-box">
+    <div>
+      <span class="lbl">Use as template</span>
+      <h2>気に入ったデザインを、<br>テンプレートとして使えます</h2>
+      <p>一覧からベースにしたいデザインを選んでいただければ、そのレイアウトをもとに、あなたのチームカラー・チーム名・ロゴ・背番号に合わせて製作します。もちろん、まったく新しいデザインの新規作成も無料で承ります。</p>
+    </div>
+    <div class="panel">
+      <h3>HOW TO ORDER</h3>
+      <ul>
+        <li>気になるデザインの「No.」をお控えください</li>
+        <li>お問い合わせフォームから番号とご希望をお知らせください</li>
+        <li>カラー・名入れ・枚数（10枚〜）を相談のうえ確定</li>
+        <li>デザイン費は無料。約1ヶ月でお届けします</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Make it <span class="outline">yours</span>.</h2>
+    <p>デザイン番号とご希望を添えて、お気軽にお問い合わせください。</p>
+    <a href="contact.html" class="btn btn-fill">お問い合わせはこちら</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <a href="index.html" class="foot-brand">ZELOS UNIFORM</a>
+      <nav class="foot-links">
+        <a href="index.html">HOME</a>
+        <a href="samples.html">SAMPLES</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </div>
+    <p class="copy">© 2026 ZELOS Inc. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+/* ===========================================================
+   デザインサンプル一覧
+   -----------------------------------------------------------
+   ■ 画像の入れ方
+     各サンプルの "img" に画像ファイルのパスを入れると、その画像が
+     表示されます。空（""）のままだと「画像準備中」のプレースホルダー
+     枠（正方形スペース）が表示されます。
+     例）img フォルダを作って画像を置く場合：
+         img: "img/sample-01.jpg"
+   ■ サンプルの追加・削除
+     下の SAMPLES 配列を編集するだけです。No. は自動で振られます。
+   =========================================================== */
+const SAMPLES = [
+  {img:"img/sample-01.png", name:"SIMPLE LINE", jp:"シンプルライン｜秋田書店蹴球部", desc:"秋田書店蹴球部 様の制作例。中央に走るブルー×ブラックのラインが映える、シンプルで力強い一着。"},
+  {img:"img/sample-03.png", name:"SVZ FC", jp:"サバナケットゼロスFC｜オフィシャル", desc:"サバナケット・ゼロスFC オフィシャルモデル。襟付き×ペイントストライプの本格派。背名・背番号も自由に対応します。"},
+  {img:"img/sample-02.png", name:"LONDON CLASSIC", jp:"ロンドンクラシック｜GERME KASHIWA 4th", desc:"GERME KASHIWA 様 4周年記念モデル。襟付き×ボーダーで、ロンドンクラシックを思わせる上品で気品のある一着。"},
+  {img:"img/sample-04.png", name:"ZELOS FC", jp:"ゼロスFC｜稲妻グラフィック", desc:"稲妻のような激しさは、情熱の表れ。ブラック×イエローの大胆なグラフィックで魅せる、ZELOS FC のアグレッシブな一着。"},
+  {img:"", name:"CENTER STRIPE",jp:"センターストライプ",desc:"中央を縦に貫くストライプ。クラシックで力強い。"},
+  {img:"", name:"GRADATION",    jp:"グラデーション",    desc:"昇華プリントならではの滑らかな色の移り変わり。"},
+  {img:"", name:"PINSTRIPE",    jp:"ピンストライプ",    desc:"細い縦縞で上品に。落ち着いた印象に仕上がる。"},
+  {img:"", name:"COLOR BLOCK",  jp:"カラーブロック",    desc:"面で色を切り替える、モダンな配色デザイン。"},
+  {img:"", name:"CAMO",         jp:"カモ柄",            desc:"迷彩パターン。個性を出したいチームに。"},
+  {img:"", name:"GEOMETRIC",    jp:"幾何学パターン",    desc:"図形を散りばめた、デザイン性の高い一着。"},
+  {img:"", name:"HALF & HALF",  jp:"左右切り替え",      desc:"左右で色を分ける、インパクトのあるデザイン。"},
+  {img:"", name:"HOOPS",        jp:"ボーダー",          desc:"横縞の伝統的なデザイン。視認性が高い。"},
+  {img:"", name:"MINIMAL",      jp:"ミニマル",          desc:"装飾を削ぎ落とした、極限までシンプルな型。"},
+  {img:"", name:"EMBLEM",       jp:"エンブレム強調",    desc:"胸のエンブレム・ロゴを主役にしたレイアウト。"},
+  {img:"", name:"RETRO",        jp:"レトロ",            desc:"クラシックで懐かしい雰囲気のデザイン。"},
+  {img:"", name:"NUMBER FOCUS", jp:"ナンバー主役",      desc:"大きな背番号を主役にした大胆なデザイン。"},
+];
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');}
+
+const grid = document.getElementById('grid');
+grid.innerHTML = SAMPLES.map((s, i) => {
+  const no = String(i + 1).padStart(2, '0');
+  const cap = `No.${no} ${s.name}｜${s.jp}`;
+  const thumb = s.img
+    ? `<div class="thumb has-img" onclick="openLightbox('${esc(s.img)}','${esc(cap)}')"><img src="${esc(s.img)}" alt="${esc(s.name)} デザインサンプル"></div>`
+    : `<div class="thumb"><div class="ph"><div class="pno">${no}</div><div class="pt">IMAGE</div></div></div>`;
+  return `
+  <article class="card">
+    ${thumb}
+    <div class="info">
+      <div class="no">No.${no}</div>
+      <div class="name">${esc(s.name)}</div>
+      <div class="jpname">${esc(s.jp)}</div>
+      <div class="desc">${esc(s.desc)}</div>
+    </div>
+  </article>`;
+}).join('');
+document.getElementById('count-n').textContent = String(SAMPLES.length).padStart(2, '0');
+
+/* ライトボックス（画像クリックで拡大） */
+function openLightbox(src, cap){
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lb-cap').textContent = cap || '';
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.getElementById('lb-img').src = '';
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
+</script>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lb-close" aria-label="閉じる" onclick="closeLightbox()">×</button>
+  <img id="lb-img" src="" alt="デザインサンプル拡大表示">
+  <div class="lb-cap" id="lb-cap"></div>
+</div>
+
+</body>
+</html>
