@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="/uniform/">
 <title>デザインサンプル | ZELOS UNIFORM</title>
 <meta name="description" content="ZELOS UNIFORM のオリジナルユニフォーム デザインサンプル一覧。気に入ったデザインはそのままテンプレートとして製作いただけます。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,10 +20,13 @@ a{color:inherit;text-decoration:none}
 
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.nav-right{display:flex;align-items:center;gap:24px}
 .brand{font-family:"Archivo",sans-serif;font-weight:900;letter-spacing:.04em;font-size:18px}
-.nav-links{display:flex;gap:30px;font-size:12px;font-weight:700;letter-spacing:.12em}
+.nav-links{display:flex;align-items:center;gap:30px;font-size:12px;font-weight:700;letter-spacing:.12em}
 .nav-links a{color:var(--grey);transition:color .2s}
 .nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.lang-btn{font-family:inherit;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--ink);background:none;border:1px solid var(--ink);padding:6px 12px;cursor:pointer;transition:background .2s,color .2s;line-height:1}
+.lang-btn:hover{background:var(--ink);color:#fff}
 .nav-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer}
 
 .btn{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.1em;padding:16px 34px;border:1px solid var(--ink);transition:background .2s,color .2s}
@@ -90,9 +94,10 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
 @media(max-width:860px){
   .grid{grid-template-columns:1fr 1fr;gap:18px}
   .howto-box{grid-template-columns:1fr;gap:32px}
-  .nav-links{position:absolute;top:66px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:6px 28px 14px;border-bottom:1px solid var(--line);display:none}
+  .nav-links{position:absolute;top:66px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:6px 28px 14px;border-bottom:1px solid var(--line);display:none}
   .nav-links.open{display:flex}
-  .nav-links a{padding:13px 0;border-bottom:1px solid var(--line)}
+  .nav-links a{padding:13px 0;border-bottom:1px solid var(--line);width:100%}
+  .nav-links .lang-btn{margin-top:12px}
   .nav-toggle{display:block}
 }
 @media(max-width:520px){.grid{grid-template-columns:1fr}}
@@ -104,12 +109,15 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
 <header>
   <div class="wrap nav">
     <a href="index.html" class="brand">ZELOS UNIFORM</a>
-    <button class="nav-toggle" aria-label="メニュー" onclick="document.getElementById('nav').classList.toggle('open')">≡</button>
-    <nav class="nav-links" id="nav">
-      <a href="index.html">HOME</a>
-      <a href="samples.html" class="active">DESIGN SAMPLES</a>
-      <a href="contact.html">CONTACT</a>
-    </nav>
+    <div class="nav-right">
+      <nav class="nav-links" id="nav">
+        <a href="index.html">HOME</a>
+        <a href="samples.html" class="active">DESIGN SAMPLES</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+      <button id="langToggle" class="lang-btn" onclick="toggleLang()">ENGLISH</button>
+      <button class="nav-toggle" aria-label="メニュー" onclick="document.getElementById('nav').classList.toggle('open')">≡</button>
+    </div>
   </div>
 </header>
 
@@ -117,7 +125,7 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
   <div class="wrap">
     <span class="lbl">DESIGN SAMPLES</span>
     <h1>Design <span class="outline">index</span></h1>
-    <p>これまでに製作したデザインの一覧です。気になるデザインの「No.」を控えて、お問い合わせ時にお知らせください。そのままテンプレートとして、お好きなカラー・チーム名・ロゴで製作いたします。</p>
+    <p data-en="A catalog of designs we have produced. Note the No. of any design you like and mention it when you contact us — we will build it as a template in your colors, team name, and logo.">これまでに製作したデザインの一覧です。気になるデザインの「No.」を控えて、お問い合わせ時にお知らせください。そのままテンプレートとして、お好きなカラー・チーム名・ロゴで製作いたします。</p>
   </div>
 </section>
 
@@ -135,16 +143,16 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
   <div class="wrap howto-box">
     <div>
       <span class="lbl">Use as template</span>
-      <h2>気に入ったデザインを、<br>テンプレートとして使えます</h2>
-      <p>一覧からベースにしたいデザインを選んでいただければ、そのレイアウトをもとに、あなたのチームカラー・チーム名・ロゴ・背番号に合わせて製作します。もちろん、まったく新しいデザインの新規作成も無料で承ります。</p>
+      <h2 data-en="Use any design you like<br>as a template">気に入ったデザインを、<br>テンプレートとして使えます</h2>
+      <p data-en="Choose a design from the list as your base, and we will build it to match your team colors, name, logo, and numbers. Brand-new original designs are also created free of charge.">一覧からベースにしたいデザインを選んでいただければ、そのレイアウトをもとに、あなたのチームカラー・チーム名・ロゴ・背番号に合わせて製作します。もちろん、まったく新しいデザインの新規作成も無料で承ります。</p>
     </div>
     <div class="panel">
       <h3>HOW TO ORDER</h3>
       <ul>
-        <li>気になるデザインの「No.」をお控えください</li>
-        <li>お問い合わせフォームから番号とご希望をお知らせください</li>
-        <li>カラー・名入れ・枚数（10枚〜）を相談のうえ確定</li>
-        <li>デザイン費は無料。約1ヶ月でお届けします</li>
+        <li data-en="Note the No. of the design you like">気になるデザインの「No.」をお控えください</li>
+        <li data-en="Send the number and your request via the contact form">お問い合わせフォームから番号とご希望をお知らせください</li>
+        <li data-en="Confirm colors, names, and quantity (10+) together">カラー・名入れ・枚数（10枚〜）を相談のうえ確定</li>
+        <li data-en="Design is free. Delivered in about one month">デザイン費は無料。約1ヶ月でお届けします</li>
       </ul>
     </div>
   </div>
@@ -153,8 +161,8 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
 <section class="cta">
   <div class="wrap">
     <h2>Make it <span class="outline">yours</span>.</h2>
-    <p>デザイン番号とご希望を添えて、お気軽にお問い合わせください。</p>
-    <a href="contact.html" class="btn btn-fill">お問い合わせはこちら</a>
+    <p data-en="Send us the design number and your request — feel free to reach out anytime.">デザイン番号とご希望を添えて、お気軽にお問い合わせください。</p>
+    <a href="contact.html" class="btn btn-fill" data-en="Contact us">お問い合わせはこちら</a>
   </div>
 </section>
 
@@ -176,42 +184,38 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
 /* ===========================================================
    デザインサンプル一覧
    -----------------------------------------------------------
-   ■ 画像の入れ方
-     各サンプルの "img" に画像ファイルのパスを入れると、その画像が
-     表示されます。空（""）のままだと「画像準備中」のプレースホルダー
-     枠（正方形スペース）が表示されます。
-     例）img フォルダを作って画像を置く場合：
-         img: "img/sample-01.jpg"
-   ■ サンプルの追加・削除
-     下の SAMPLES 配列を編集するだけです。No. は自動で振られます。
+   ■ 画像の入れ方： 各サンプルの "img" に画像パスを入れると表示。
+     空（""）ならプレースホルダー枠。例：img:"img/sample-01.png"
+   ■ 日英： jp/desc が日本語、jpEn/descEn が英語。言語トグルで自動切替。
+   ■ 追加・削除： 下の SAMPLES 配列を編集するだけ。No. は自動採番。
    =========================================================== */
 const SAMPLES = [
-  {img:"img/sample-01.png", name:"SIMPLE LINE", jp:"シンプルライン｜秋田書店蹴球部", desc:"秋田書店蹴球部 様の制作例。中央に走るブルー×ブラックのラインが映える、シンプルで力強い一着。"},
-  {img:"img/sample-03.png", name:"SVZ FC", jp:"サバナケットゼロスFC｜オフィシャル", desc:"サバナケット・ゼロスFC オフィシャルモデル。襟付き×ペイントストライプの本格派。背名・背番号も自由に対応します。"},
-  {img:"img/sample-02.png", name:"LONDON CLASSIC", jp:"ロンドンクラシック｜GERME KASHIWA 4th", desc:"GERME KASHIWA 様 4周年記念モデル。襟付き×ボーダーで、ロンドンクラシックを思わせる上品で気品のある一着。"},
-  {img:"img/sample-04.png", name:"ZELOS FC", jp:"ゼロスFC｜稲妻グラフィック", desc:"稲妻のような激しさは、情熱の表れ。ブラック×イエローの大胆なグラフィックで魅せる、ZELOS FC のアグレッシブな一着。"},
-  {img:"", name:"CENTER STRIPE",jp:"センターストライプ",desc:"中央を縦に貫くストライプ。クラシックで力強い。"},
-  {img:"", name:"GRADATION",    jp:"グラデーション",    desc:"昇華プリントならではの滑らかな色の移り変わり。"},
-  {img:"", name:"PINSTRIPE",    jp:"ピンストライプ",    desc:"細い縦縞で上品に。落ち着いた印象に仕上がる。"},
-  {img:"", name:"COLOR BLOCK",  jp:"カラーブロック",    desc:"面で色を切り替える、モダンな配色デザイン。"},
-  {img:"", name:"CAMO",         jp:"カモ柄",            desc:"迷彩パターン。個性を出したいチームに。"},
-  {img:"", name:"GEOMETRIC",    jp:"幾何学パターン",    desc:"図形を散りばめた、デザイン性の高い一着。"},
-  {img:"", name:"HALF & HALF",  jp:"左右切り替え",      desc:"左右で色を分ける、インパクトのあるデザイン。"},
-  {img:"", name:"HOOPS",        jp:"ボーダー",          desc:"横縞の伝統的なデザイン。視認性が高い。"},
-  {img:"", name:"MINIMAL",      jp:"ミニマル",          desc:"装飾を削ぎ落とした、極限までシンプルな型。"},
-  {img:"", name:"EMBLEM",       jp:"エンブレム強調",    desc:"胸のエンブレム・ロゴを主役にしたレイアウト。"},
-  {img:"", name:"RETRO",        jp:"レトロ",            desc:"クラシックで懐かしい雰囲気のデザイン。"},
-  {img:"", name:"NUMBER FOCUS", jp:"ナンバー主役",      desc:"大きな背番号を主役にした大胆なデザイン。"},
+  {img:"img/sample-03.png", name:"SVZ FC", jp:"サバナケットゼロスFC｜オフィシャル", jpEn:"Savannakhet Zelos FC｜Official", desc:"サバナケット・ゼロスFC オフィシャルモデル。襟付き×ペイントストライプの本格派。背名・背番号も自由に対応します。", descEn:"The official Savannakhet Zelos FC model. A true club kit with a collar and paint-stripe graphics. Names and numbers fully customizable."},
+  {img:"img/sample-01.png", name:"SIMPLE LINE", jp:"シンプルライン｜秋田書店蹴球部", jpEn:"Simple Line｜Akita Shoten FC", desc:"秋田書店蹴球部 様の制作例。中央に走るブルー×ブラックのラインが映える、シンプルで力強い一着。", descEn:"Made for Akita Shoten FC. A simple, powerful kit defined by a blue-and-black line running down the center."},
+  {img:"img/sample-05.png", name:"FC HAMISENNA", jp:"FCハミセンナ｜チェッカーボード", jpEn:"FC Hamisenna｜Checkerboard", desc:"FCハミセンナ オフィシャルモデル。ネイビー×ゴールドのチェッカーボード柄に、エンブレムとスターをあしらった風格あるデザイン。", descEn:"The official FC Hamisenna model. A navy-and-gold checkerboard with an emblem and star — a kit full of prestige."},
+  {img:"img/sample-04.png", name:"ZELOS FC", jp:"ゼロスFC｜稲妻グラフィック", jpEn:"Zelos FC｜Lightning Graphic", desc:"稲妻のような激しさは、情熱の表れ。ブラック×イエローの大胆なグラフィックで魅せる、ZELOS FC のアグレッシブな一着。", descEn:"Intensity like a lightning bolt — the mark of passion. An aggressive Zelos FC kit with bold black-and-yellow graphics."},
+  {img:"", name:"CENTER STRIPE", jp:"センターストライプ", jpEn:"Center Stripe", desc:"中央を縦に貫くストライプ。クラシックで力強い。", descEn:"A stripe running vertically down the center. Classic and powerful."},
+  {img:"", name:"GRADATION", jp:"グラデーション", jpEn:"Gradation", desc:"昇華プリントならではの滑らかな色の移り変わり。", descEn:"Smooth color transitions only sublimation printing can deliver."},
+  {img:"", name:"PINSTRIPE", jp:"ピンストライプ", jpEn:"Pinstripe", desc:"細い縦縞で上品に。落ち着いた印象に仕上がる。", descEn:"Thin vertical stripes for an elegant, composed look."},
+  {img:"", name:"COLOR BLOCK", jp:"カラーブロック", jpEn:"Color Block", desc:"面で色を切り替える、モダンな配色デザイン。", descEn:"A modern design that switches color panel by panel."},
+  {img:"", name:"CAMO", jp:"カモ柄", jpEn:"Camo", desc:"迷彩パターン。個性を出したいチームに。", descEn:"A camouflage pattern for teams that want to stand out."},
+  {img:"", name:"GEOMETRIC", jp:"幾何学パターン", jpEn:"Geometric", desc:"図形を散りばめた、デザイン性の高い一着。", descEn:"A design-forward kit scattered with geometric shapes."},
+  {img:"", name:"HALF & HALF", jp:"左右切り替え", jpEn:"Half & Half", desc:"左右で色を分ける、インパクトのあるデザイン。", descEn:"Split colors left and right for high impact."},
+  {img:"", name:"HOOPS", jp:"ボーダー", jpEn:"Hoops", desc:"横縞の伝統的なデザイン。視認性が高い。", descEn:"A traditional horizontal-stripe design with great visibility."},
+  {img:"", name:"MINIMAL", jp:"ミニマル", jpEn:"Minimal", desc:"装飾を削ぎ落とした、極限までシンプルな型。", descEn:"Stripped of decoration — minimal to the extreme."},
+  {img:"", name:"EMBLEM", jp:"エンブレム強調", jpEn:"Emblem", desc:"胸のエンブレム・ロゴを主役にしたレイアウト。", descEn:"A layout that makes the chest emblem and logo the star."},
+  {img:"", name:"RETRO", jp:"レトロ", jpEn:"Retro", desc:"クラシックで懐かしい雰囲気のデザイン。", descEn:"A classic design with a nostalgic feel."},
+  {img:"", name:"NUMBER FOCUS", jp:"ナンバー主役", jpEn:"Number Focus", desc:"大きな背番号を主役にした大胆なデザイン。", descEn:"A bold design built around an oversized number."},
 ];
 
-function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');}
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');}
 
 const grid = document.getElementById('grid');
 grid.innerHTML = SAMPLES.map((s, i) => {
   const no = String(i + 1).padStart(2, '0');
-  const cap = `No.${no} ${s.name}｜${s.jp}`;
+  const cap = `No.${no} ${s.name}`;
   const thumb = s.img
-    ? `<div class="thumb has-img" onclick="openLightbox('${esc(s.img)}','${esc(cap)}')"><img src="${esc(s.img)}" alt="${esc(s.name)} デザインサンプル"></div>`
+    ? `<div class="thumb has-img" onclick="openLightbox('${esc(s.img)}','${esc(cap)}')"><img src="${esc(s.img)}" alt="${esc(s.name)}"></div>`
     : `<div class="thumb"><div class="ph"><div class="pno">${no}</div><div class="pt">IMAGE</div></div></div>`;
   return `
   <article class="card">
@@ -219,8 +223,8 @@ grid.innerHTML = SAMPLES.map((s, i) => {
     <div class="info">
       <div class="no">No.${no}</div>
       <div class="name">${esc(s.name)}</div>
-      <div class="jpname">${esc(s.jp)}</div>
-      <div class="desc">${esc(s.desc)}</div>
+      <div class="jpname" data-en="${esc(s.jpEn)}">${esc(s.jp)}</div>
+      <div class="desc" data-en="${esc(s.descEn)}">${esc(s.desc)}</div>
     </div>
   </article>`;
 }).join('');
@@ -244,6 +248,33 @@ document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox
   <img id="lb-img" src="" alt="デザインサンプル拡大表示">
   <div class="lb-cap" id="lb-cap"></div>
 </div>
+
+<script>
+/* 日英切り替え（選択は localStorage に保存し、3ページ共通で適用） */
+(function(){
+  var KEY='zlu_lang';
+  function apply(lang){
+    var en = (lang==='en');
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      if(el.getAttribute('data-ja')===null) el.setAttribute('data-ja', el.innerHTML);
+      el.innerHTML = en ? el.getAttribute('data-en') : el.getAttribute('data-ja');
+    });
+    document.documentElement.lang = en ? 'en' : 'ja';
+    var t=document.getElementById('langToggle');
+    if(t) t.textContent = en ? '日本語' : 'ENGLISH';
+    try{ localStorage.setItem(KEY, lang); }catch(e){}
+  }
+  window.toggleLang=function(){
+    var cur='ja'; try{ cur=localStorage.getItem(KEY)||'ja'; }catch(e){}
+    apply(cur==='en'?'ja':'en');
+  };
+  var init='ja';
+  try{ var s=localStorage.getItem(KEY); if(s) init=s; }catch(e){}
+  if(/[?&]lang=en/.test(location.search)) init='en';
+  if(/[?&]lang=ja/.test(location.search)) init='ja';
+  apply(init);
+})();
+</script>
 
 </body>
 </html>

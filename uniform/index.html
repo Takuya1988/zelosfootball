@@ -14,41 +14,32 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#111111;     /* 見出し（ほぼ黒） */
-  --text:#4a4a4a;    /* 本文グレー */
-  --muted:#8c8c8c;   /* キャプション */
-  --bg:#ffffff;      /* 背景：白 */
-  --soft:#f5f5f4;    /* 薄いグレー面 */
-  --line:#e6e6e3;    /* ヘアライン */
+  --ink:#111111;--text:#4a4a4a;--muted:#8c8c8c;--bg:#ffffff;--soft:#f5f5f4;--line:#e6e6e3;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
-  color:var(--text);background:var(--bg);line-height:1.85;
-  -webkit-font-smoothing:antialiased;
-}
+body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:var(--text);background:var(--bg);line-height:1.85;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1100px;margin:0 auto;padding:0 28px}
 
-/* Header */
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.nav-right{display:flex;align-items:center;gap:24px}
 .brand{font-weight:900;letter-spacing:.14em;font-size:17px;color:var(--ink)}
 .brand span{font-weight:400;color:var(--muted)}
-.nav-links{display:flex;gap:32px;font-size:12px;font-weight:700;letter-spacing:.14em}
+.nav-links{display:flex;align-items:center;gap:32px;font-size:12px;font-weight:700;letter-spacing:.14em}
 .nav-links a{color:var(--muted);transition:color .2s}
 .nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.lang-btn{font-family:inherit;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--ink);background:none;border:1px solid var(--ink);padding:6px 12px;cursor:pointer;transition:background .2s,color .2s;line-height:1}
+.lang-btn:hover{background:var(--ink);color:#fff}
 .nav-toggle{display:none;background:none;border:none;font-size:22px;color:var(--ink);cursor:pointer}
 
-/* Buttons */
 .btn{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.08em;padding:15px 30px;transition:background .2s,color .2s,border-color .2s,transform .15s}
 .btn-solid{background:var(--ink);color:#fff;border:1px solid var(--ink)}
 .btn-solid:hover{background:#333;border-color:#333;transform:translateY(-2px)}
 .btn-line{border:1px solid var(--ink);color:var(--ink)}
 .btn-line:hover{background:var(--ink);color:#fff}
 
-/* Hero */
 .hero{padding:96px 0 84px;border-bottom:1px solid var(--line)}
 .eyebrow{font-size:11px;font-weight:700;letter-spacing:.34em;color:var(--muted);margin-bottom:26px}
 .hero h1{font-weight:900;line-height:1.02;letter-spacing:.01em;font-size:clamp(44px,9vw,96px);color:var(--ink);text-transform:uppercase}
@@ -57,7 +48,6 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop
 .hero .msg{margin-top:18px;font-size:13px;color:var(--muted);letter-spacing:.02em}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
 
-/* Section heads */
 .sec{padding:84px 0}
 .sec-soft{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .section-head{margin-bottom:46px}
@@ -65,7 +55,6 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop
 .section-head h2{font-size:clamp(26px,4vw,38px);font-weight:900;color:var(--ink);margin-top:12px;letter-spacing:.02em}
 .section-head p{color:var(--text);margin-top:14px;font-size:15px;max-width:40em}
 
-/* Price */
 .price-card{border:1px solid var(--ink);display:grid;grid-template-columns:1fr 1.2fr}
 .price-figure{padding:48px 44px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--line)}
 .price-figure .tag{font-size:11px;letter-spacing:.22em;color:var(--muted);font-weight:700}
@@ -82,7 +71,6 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop
 .spec dd{font-size:14px;color:var(--text)}
 .spec dd b{color:var(--ink);font-weight:700}
 
-/* Shipping */
 .ship-card{border:1px solid var(--ink);display:grid;grid-template-columns:.9fr 1.1fr}
 .ship-figure{background:var(--soft);padding:44px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--line)}
 .ship-figure .case{font-size:11px;letter-spacing:.2em;color:var(--muted);font-weight:700}
@@ -100,7 +88,6 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop
 .ship-points li b{color:var(--ink);font-weight:700}
 .ship-cta{margin-top:24px}
 
-/* Material */
 .mat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);background:#fff}
 .mat-card{padding:34px 30px;border-right:1px solid var(--line)}
 .mat-card:last-child{border-right:none}
@@ -108,26 +95,22 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop
 .mat-card h3{font-size:17px;font-weight:900;color:var(--ink);margin:10px 0 10px;letter-spacing:.02em}
 .mat-card p{font-size:14px;color:var(--text)}
 
-/* Steps */
 .step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .step{padding-top:18px;border-top:2px solid var(--ink)}
 .step .n{font-size:14px;font-weight:700;letter-spacing:.1em;color:var(--muted)}
 .step h3{font-size:18px;font-weight:900;color:var(--ink);margin:10px 0 8px}
 .step p{font-size:14px;color:var(--text)}
 
-/* Notes */
 .notes ul{list-style:none;max-width:780px}
 .notes li{font-size:13.5px;color:var(--text);padding:9px 0 9px 22px;position:relative}
 .notes li::before{content:"";position:absolute;left:0;top:15px;width:6px;height:6px;background:var(--ink);border-radius:50%}
 
-/* CTA */
 .cta{padding:90px 0;text-align:center}
 .cta h2{font-size:clamp(26px,4.4vw,40px);font-weight:900;color:var(--ink);letter-spacing:.02em}
 .cta h2 em{font-style:italic}
 .cta p{color:var(--text);margin:16px auto 32px;max-width:34em;font-size:15px}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
-/* Footer */
 footer{background:var(--ink);color:#9a9a9a;padding:48px 0 32px;font-size:13px}
 .foot-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.12)}
 .foot-brand{font-weight:900;font-size:19px;color:#fff;letter-spacing:.12em}
@@ -147,9 +130,10 @@ footer{background:var(--ink);color:#9a9a9a;padding:48px 0 32px;font-size:13px}
   .mat-card:last-child{border-bottom:none}
   .step-grid{grid-template-columns:1fr;gap:0}
   .step{margin-bottom:28px}
-  .nav-links{position:absolute;top:66px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:8px 28px 16px;border-bottom:1px solid var(--line);display:none}
+  .nav-links{position:absolute;top:66px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:8px 28px 16px;border-bottom:1px solid var(--line);display:none}
   .nav-links.open{display:flex}
-  .nav-links a{padding:12px 0;border-bottom:1px solid var(--line)}
+  .nav-links a{padding:12px 0;border-bottom:1px solid var(--line);width:100%}
+  .nav-links .lang-btn{margin-top:14px}
   .nav-toggle{display:block}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
@@ -160,12 +144,15 @@ footer{background:var(--ink);color:#9a9a9a;padding:48px 0 32px;font-size:13px}
 <header>
   <div class="wrap nav">
     <a href="index.html" class="brand">ZELOS <span>UNIFORM</span></a>
-    <button class="nav-toggle" aria-label="メニュー" onclick="document.getElementById('nav').classList.toggle('open')">≡</button>
-    <nav class="nav-links" id="nav">
-      <a href="index.html" class="active">HOME</a>
-      <a href="samples.html">DESIGN SAMPLES</a>
-      <a href="contact.html">CONTACT</a>
-    </nav>
+    <div class="nav-right">
+      <nav class="nav-links" id="nav">
+        <a href="index.html" class="active">HOME</a>
+        <a href="samples.html">DESIGN SAMPLES</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+      <button id="langToggle" class="lang-btn" onclick="toggleLang()">ENGLISH</button>
+      <button class="nav-toggle" aria-label="menu" onclick="document.getElementById('nav').classList.toggle('open')">≡</button>
+    </div>
   </div>
 </header>
 
@@ -173,11 +160,11 @@ footer{background:var(--ink);color:#9a9a9a;padding:48px 0 32px;font-size:13px}
   <div class="wrap">
     <p class="eyebrow">ZELOS ORIGINAL FOOTBALL UNIFORM</p>
     <h1>Make your<br><em>original</em> kit.</h1>
-    <p class="jp">あなたのチーム、サークル、仲間のためのオリジナルサッカーユニフォーム。高品質な素材で、上下セット ¥6,000（デザイン費込み）。20着以上のご注文で送料無料です。</p>
-    <p class="msg">デザインはどこまでもシンプルに。色は、あなたのつくる一着から。</p>
+    <p class="jp" data-en="Original football kits for your team, club, or crew. Premium fabric, ¥6,000 per top-and-shorts set (design included). Free shipping on orders of 20+ sets.">あなたのチーム、サークル、仲間のためのオリジナルサッカーユニフォーム。高品質な素材で、上下セット ¥6,000（デザイン費込み）。20着以上のご注文で送料無料です。</p>
+    <p class="msg" data-en="Our design stays simple. The color comes from the kit you create.">デザインはどこまでもシンプルに。色は、あなたのつくる一着から。</p>
     <div class="hero-cta">
-      <a href="samples.html" class="btn btn-solid">デザインサンプルを見る</a>
-      <a href="contact.html" class="btn btn-line">お問い合わせ</a>
+      <a href="samples.html" class="btn btn-solid" data-en="View design samples">デザインサンプルを見る</a>
+      <a href="contact.html" class="btn btn-line" data-en="Contact">お問い合わせ</a>
     </div>
   </div>
 </section>
@@ -187,26 +174,26 @@ footer{background:var(--ink);color:#9a9a9a;padding:48px 0 32px;font-size:13px}
   <div class="wrap">
     <div class="section-head">
       <span class="lbl">Price &amp; Terms</span>
-      <h2>価格と製作条件</h2>
-      <p>シンプルな価格設定。名入れ・背番号は何枚入れても追加料金はかかりません。</p>
+      <h2 data-en="Pricing &amp; Terms">価格と製作条件</h2>
+      <p data-en="Simple pricing. Names and numbers are included at no extra cost, however many you add.">シンプルな価格設定。名入れ・背番号は何枚入れても追加料金はかかりません。</p>
     </div>
     <div class="price-card">
       <div class="price-figure">
-        <span class="tag">UNIFORM SET（上下・デザイン費込み）</span>
+        <span class="tag" data-en="UNIFORM SET (top &amp; shorts, design included)">UNIFORM SET（上下・デザイン費込み）</span>
         <div class="amount"><span class="yen">¥</span><span class="num">6,000</span></div>
-        <span class="set">シャツ＋パンツ 上下セット・1着あたり（デザイン費込み）</span>
-        <span class="ship">送料は別途計算（下記参照）</span>
-        <span class="freebadge">20着以上のご注文で送料無料</span>
+        <span class="set" data-en="Shirt + shorts set, per set (design included)">シャツ＋パンツ 上下セット・1着あたり（デザイン費込み）</span>
+        <span class="ship" data-en="Shipping calculated separately (see below)">送料は別途計算（下記参照）</span>
+        <span class="freebadge" data-en="Free shipping on orders of 20+">20着以上のご注文で送料無料</span>
       </div>
       <div class="spec">
         <dl>
-          <div class="row"><dt>デザイン費</dt><dd><b>基本料金に込み</b>　¥6,000にデザイン作成費が含まれます。追加費用はかかりません。</dd></div>
-          <div class="row"><dt>最低オーダー</dt><dd><b>10枚〜</b>　まずは10枚からご注文いただけます。</dd></div>
-          <div class="row"><dt>追加オーダー</dt><dd><b>5枚単位</b>　追加でのご注文は5枚単位で承ります。</dd></div>
-          <div class="row"><dt>新規デザイン</dt><dd>デザインを新しく作り替える場合も、<b>10枚〜</b>のご注文をお願いします。</dd></div>
-          <div class="row"><dt>名入れ・背番号</dt><dd><b>昇華プリント</b>で加工するため、何枚入れても料金は変わりません。</dd></div>
-          <div class="row"><dt>納期</dt><dd>ご注文確定から<b>約1ヶ月</b>でお手元にお届けします。</dd></div>
-          <div class="row"><dt>送料</dt><dd>地域・枚数により<b>別途計算</b>（10着で+¥8,000〜10,000が目安）。<b>20着以上のご注文で送料無料</b>です。</dd></div>
+          <div class="row"><dt data-en="Design fee">デザイン費</dt><dd data-en="<b>Included</b>  Design work is part of the ¥6,000 base price. No extra charge."><b>基本料金に込み</b>　¥6,000にデザイン作成費が含まれます。追加費用はかかりません。</dd></div>
+          <div class="row"><dt data-en="Minimum order">最低オーダー</dt><dd data-en="<b>From 10 sets</b>  Orders start at 10 sets."><b>10枚〜</b>　まずは10枚からご注文いただけます。</dd></div>
+          <div class="row"><dt data-en="Add-on order">追加オーダー</dt><dd data-en="<b>In units of 5</b>  Additional orders are taken in units of 5."><b>5枚単位</b>　追加でのご注文は5枚単位で承ります。</dd></div>
+          <div class="row"><dt data-en="New design">新規デザイン</dt><dd data-en="Switching to a brand-new design also requires <b>10 sets minimum</b>.">デザインを新しく作り替える場合も、<b>10枚〜</b>のご注文をお願いします。</dd></div>
+          <div class="row"><dt data-en="Names &amp; numbers">名入れ・背番号</dt><dd data-en="Done with <b>sublimation print</b>, so the price stays the same however many you add."><b>昇華プリント</b>で加工するため、何枚入れても料金は変わりません。</dd></div>
+          <div class="row"><dt data-en="Delivery">納期</dt><dd data-en="Delivered <b>about 1 month</b> after your order is confirmed.">ご注文確定から<b>約1ヶ月</b>でお手元にお届けします。</dd></div>
+          <div class="row"><dt data-en="Shipping">送料</dt><dd data-en="<b>Calculated separately</b> by region and quantity (around +¥8,000–10,000 for 10 sets). <b>Free on orders of 20+ sets</b>.">地域・枚数により<b>別途計算</b>（10着で+¥8,000〜10,000が目安）。<b>20着以上のご注文で送料無料</b>です。</dd></div>
         </dl>
       </div>
     </div>
@@ -218,27 +205,27 @@ footer{background:var(--ink);color:#9a9a9a;padding:48px 0 32px;font-size:13px}
   <div class="wrap">
     <div class="section-head">
       <span class="lbl">Shipping</span>
-      <h2>送料について</h2>
-      <p>送料は重さと配送先で決まります。隠れた費用はありません。下記はあくまで目安です。</p>
+      <h2 data-en="Shipping">送料について</h2>
+      <p data-en="Shipping depends on weight and destination. No hidden fees — the figures below are estimates.">送料は重さと配送先で決まります。隠れた費用はありません。下記はあくまで目安です。</p>
     </div>
     <div class="ship-card">
       <div class="ship-figure">
-        <span class="case">10着のご注文の場合（目安）</span>
-        <span class="weight">総重量 約5kg</span>
+        <span class="case" data-en="For an order of 10 sets (estimate)">10着のご注文の場合（目安）</span>
+        <span class="weight" data-en="Total weight approx. 5kg">総重量 約5kg</span>
         <div class="amount"><span class="plus">+</span><span class="yen">¥</span><span class="num">8,000–10,000</span></div>
-        <span class="guide">枚数・配送先により変動します</span>
-        <span class="ship-free">20着以上で送料無料</span>
+        <span class="guide" data-en="Varies by quantity and destination">枚数・配送先により変動します</span>
+        <span class="ship-free" data-en="Free over 20 sets">20着以上で送料無料</span>
       </div>
       <div class="ship-body">
-        <p class="lead">20着以上のご注文で、送料無料。</p>
+        <p class="lead" data-en="Free shipping on orders of 20+ sets.">20着以上のご注文で、送料無料。</p>
         <ul class="ship-points">
-          <li><b>20着以上なら送料は無料。</b>大人数のチームほど、まとめてお得にご注文いただけます。</li>
-          <li><b>業界最安値を目指しています。</b>送料を含めても、ご納得いただける価格を追求します。</li>
-          <li><b>20着未満でも、送料の割引をご相談可能。</b>枚数に応じて柔軟に対応します。</li>
-          <li>正確な送料は、デザイン・枚数・お届け先をもとにお見積り時にご案内します。</li>
+          <li data-en="<b>20+ sets ship free.</b> The bigger the team, the more you save by ordering together."><b>20着以上なら送料は無料。</b>大人数のチームほど、まとめてお得にご注文いただけます。</li>
+          <li data-en="<b>We aim for the industry's lowest prices.</b> Even including shipping, we pursue a price you'll be happy with."><b>業界最安値を目指しています。</b>送料を含めても、ご納得いただける価格を追求します。</li>
+          <li data-en="<b>Shipping discounts are possible under 20 sets too.</b> We stay flexible based on quantity."><b>20着未満でも、送料の割引をご相談可能。</b>枚数に応じて柔軟に対応します。</li>
+          <li data-en="Exact shipping is quoted based on design, quantity, and destination.">正確な送料は、デザイン・枚数・お届け先をもとにお見積り時にご案内します。</li>
         </ul>
         <div class="ship-cta">
-          <a href="contact.html" class="btn btn-solid">送料について相談する</a>
+          <a href="contact.html" class="btn btn-solid" data-en="Ask about shipping">送料について相談する</a>
         </div>
       </div>
     </div>
@@ -250,24 +237,24 @@ footer{background:var(--ink);color:#9a9a9a;padding:48px 0 32px;font-size:13px}
   <div class="wrap">
     <div class="section-head">
       <span class="lbl">Quality</span>
-      <h2>素材へのこだわり</h2>
-      <p>価格はおさえつつ、満足いただける品質を。スポーツに最適な生地を使用しています。</p>
+      <h2 data-en="Quality You Can Feel">素材へのこだわり</h2>
+      <p data-en="Affordable, but built to satisfy. We use fabric made for sport.">価格はおさえつつ、満足いただける品質を。スポーツに最適な生地を使用しています。</p>
     </div>
     <div class="mat-grid">
       <div class="mat-card">
         <div class="mk">01 — FABRIC</div>
-        <h3>高品質な生地</h3>
-        <p>しっかりとした質感ながら軽量。激しい動きにも耐える、スポーツ向けの高品質素材を採用しています。</p>
+        <h3 data-en="High-quality fabric">高品質な生地</h3>
+        <p data-en="Substantial yet lightweight. A quality sports fabric that holds up to intense movement.">しっかりとした質感ながら軽量。激しい動きにも耐える、スポーツ向けの高品質素材を採用しています。</p>
       </div>
       <div class="mat-card">
         <div class="mk">02 — BREATHABLE</div>
-        <h3>優れた通気性</h3>
-        <p>汗をすばやく逃がす通気性の高い生地。蒸れにくく、試合中も快適な着心地を保ちます。</p>
+        <h3 data-en="Great breathability">優れた通気性</h3>
+        <p data-en="Highly breathable fabric that wicks sweat fast, staying comfortable throughout the match.">汗をすばやく逃がす通気性の高い生地。蒸れにくく、試合中も快適な着心地を保ちます。</p>
       </div>
       <div class="mat-card">
         <div class="mk">03 — PRINT</div>
-        <h3>昇華プリント</h3>
-        <p>名前・背番号・ロゴを生地に染め込む昇華プリント。剥がれにくく、デザインの自由度も高い加工方法です。</p>
+        <h3 data-en="Sublimation print">昇華プリント</h3>
+        <p data-en="Names, numbers, and logos dyed into the fabric. Durable, with huge design freedom.">名前・背番号・ロゴを生地に染め込む昇華プリント。剥がれにくく、デザインの自由度も高い加工方法です。</p>
       </div>
     </div>
   </div>
@@ -278,23 +265,23 @@ footer{background:var(--ink);color:#9a9a9a;padding:48px 0 32px;font-size:13px}
   <div class="wrap">
     <div class="section-head">
       <span class="lbl">How it works</span>
-      <h2>ご注文の流れ</h2>
+      <h2 data-en="How It Works">ご注文の流れ</h2>
     </div>
     <div class="step-grid">
       <div class="step">
         <div class="n">STEP 01</div>
-        <h3>デザインを相談</h3>
-        <p>サンプルからお好きなデザインを選ぶか、ご希望のイメージをお知らせください。新規デザインも無料で作成します。</p>
+        <h3 data-en="Discuss the design">デザインを相談</h3>
+        <p data-en="Pick a design from our samples, or tell us your idea. New designs are created free of charge.">サンプルからお好きなデザインを選ぶか、ご希望のイメージをお知らせください。新規デザインも無料で作成します。</p>
       </div>
       <div class="step">
         <div class="n">STEP 02</div>
-        <h3>オーダー確定</h3>
-        <p>デザイン・サイズ・枚数（10枚〜）・名入れ内容を確定。お見積り（本体＋送料）をご案内します。</p>
+        <h3 data-en="Confirm the order">オーダー確定</h3>
+        <p data-en="Lock in the design, sizes, quantity (10+), and names. We send a quote (kit + shipping).">デザイン・サイズ・枚数（10枚〜）・名入れ内容を確定。お見積り（本体＋送料）をご案内します。</p>
       </div>
       <div class="step">
         <div class="n">STEP 03</div>
-        <h3>約1ヶ月でお届け</h3>
-        <p>ご注文確定後、約1ヶ月で製作。完成したユニフォームをお手元までお届けします。</p>
+        <h3 data-en="Delivered in ~1 month">約1ヶ月でお届け</h3>
+        <p data-en="About one month after confirmation, your finished kits are delivered to you.">ご注文確定後、約1ヶ月で製作。完成したユニフォームをお手元までお届けします。</p>
       </div>
     </div>
   </div>
@@ -307,11 +294,11 @@ footer{background:var(--ink);color:#9a9a9a;padding:48px 0 32px;font-size:13px}
       <span class="lbl">Notes</span>
     </div>
     <ul>
-      <li>表示価格は上下セット1着あたり・デザイン費込みの金額です。送料は別途計算となります。</li>
-      <li>最低オーダーは10枚から、追加は5枚単位で承ります。新規デザインへの作り替えも10枚からとなります。</li>
-      <li>名入れ・背番号は昇華プリントのため、何枚・何種類入れても追加料金はかかりません。</li>
-      <li>納期はご注文確定後から約1ヶ月が目安です。時期により前後する場合があります。</li>
-      <li>送料は10着で+¥8,000〜10,000が目安です。20着以上のご注文で送料無料。20着未満でも枚数に応じて割引をご相談いただけます。</li>
+      <li data-en="Listed price is per top-and-shorts set, design included. Shipping is calculated separately.">表示価格は上下セット1着あたり・デザイン費込みの金額です。送料は別途計算となります。</li>
+      <li data-en="Minimum order is 10 sets; add-ons in units of 5. Switching to a new design also starts at 10 sets.">最低オーダーは10枚から、追加は5枚単位で承ります。新規デザインへの作り替えも10枚からとなります。</li>
+      <li data-en="Names and numbers use sublimation print, so any number or variety adds no extra cost.">名入れ・背番号は昇華プリントのため、何枚・何種類入れても追加料金はかかりません。</li>
+      <li data-en="Delivery is about one month after confirmation, and may vary depending on the season.">納期はご注文確定後から約1ヶ月が目安です。時期により前後する場合があります。</li>
+      <li data-en="Shipping runs about +¥8,000–10,000 for 10 sets. Free on orders of 20+; discounts can be discussed under 20 too.">送料は10着で+¥8,000〜10,000が目安です。20着以上のご注文で送料無料。20着未満でも枚数に応じて割引をご相談いただけます。</li>
     </ul>
   </div>
 </section>
@@ -319,11 +306,11 @@ footer{background:var(--ink);color:#9a9a9a;padding:48px 0 32px;font-size:13px}
 <!-- CTA -->
 <section class="cta">
   <div class="wrap">
-    <h2>あなただけの<em>一着</em>を、つくろう。</h2>
-    <p>デザインサンプルからイメージを膨らませて。気になることがあれば、お気軽にお問い合わせください。</p>
+    <h2 data-en="Make it <em>yours</em>.">あなただけの<em>一着</em>を、つくろう。</h2>
+    <p data-en="Get inspired by our design samples. Any questions, just reach out.">デザインサンプルからイメージを膨らませて。気になることがあれば、お気軽にお問い合わせください。</p>
     <div class="cta-btns">
-      <a href="samples.html" class="btn btn-solid">デザインサンプルを見る</a>
-      <a href="contact.html" class="btn btn-line">お問い合わせ</a>
+      <a href="samples.html" class="btn btn-solid" data-en="View design samples">デザインサンプルを見る</a>
+      <a href="contact.html" class="btn btn-line" data-en="Contact">お問い合わせ</a>
     </div>
   </div>
 </section>
@@ -341,6 +328,37 @@ footer{background:var(--ink);color:#9a9a9a;padding:48px 0 32px;font-size:13px}
     <p class="copy">© 2026 ZELOS Inc. All Rights Reserved.</p>
   </div>
 </footer>
+
+<script>
+/* 日英切り替え（選択は localStorage に保存し、3ページ共通で適用） */
+(function(){
+  var KEY='zlu_lang';
+  function apply(lang){
+    var en = (lang==='en');
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      if(el.getAttribute('data-ja')===null) el.setAttribute('data-ja', el.innerHTML);
+      el.innerHTML = en ? el.getAttribute('data-en') : el.getAttribute('data-ja');
+    });
+    document.querySelectorAll('[data-en-ph]').forEach(function(el){
+      if(el.getAttribute('data-ja-ph')===null) el.setAttribute('data-ja-ph', el.getAttribute('placeholder')||'');
+      el.setAttribute('placeholder', en ? el.getAttribute('data-en-ph') : el.getAttribute('data-ja-ph'));
+    });
+    document.documentElement.lang = en ? 'en' : 'ja';
+    var t=document.getElementById('langToggle');
+    if(t) t.textContent = en ? '日本語' : 'ENGLISH';
+    try{ localStorage.setItem(KEY, lang); }catch(e){}
+  }
+  window.toggleLang=function(){
+    var cur='ja'; try{ cur=localStorage.getItem(KEY)||'ja'; }catch(e){}
+    apply(cur==='en'?'ja':'en');
+  };
+  var init='ja';
+  try{ var s=localStorage.getItem(KEY); if(s) init=s; }catch(e){}
+  if(/[?&]lang=en/.test(location.search)) init='en';
+  if(/[?&]lang=ja/.test(location.search)) init='ja';
+  apply(init);
+})();
+</script>
 
 </body>
 </html>
