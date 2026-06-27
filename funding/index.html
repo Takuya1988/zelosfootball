@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Savannakhet Zelos FC | Crowdfunding</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--red:#C41E3A;--red-lt:#C41E3A18;--dk:#111;--body:#444;--mid:#999;--bdr:#e8e8e8;--w:#fff;--mx:680px}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP','Helvetica Neue',Arial,sans-serif;color:var(--body);background:var(--w);line-height:1.95;font-weight:400;font-size:15px;-webkit-font-smoothing:antialiased}
+a{color:var(--red)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--w);border-bottom:1px solid var(--bdr);padding:12px 24px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{color:var(--dk);font-size:12px;font-weight:600;letter-spacing:.12em}
+.nav-cta{color:var(--red);font-size:12px;font-weight:700;letter-spacing:.08em;text-decoration:none;border:1px solid var(--red);padding:6px 18px;transition:all .2s}
+.nav-cta:hover{background:var(--red);color:var(--w)}
+.hero{margin-top:48px;padding:96px 24px 72px;text-align:center}
+.hero-ey{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:20px}
+.hero-title{font-size:clamp(28px,5.5vw,44px);font-weight:700;color:var(--dk);line-height:1.35;margin-bottom:20px}
+.hero-sub{font-size:15px;color:var(--body);max-width:500px;margin:0 auto;font-weight:300;line-height:1.9}
+.hero-line{width:32px;height:2px;background:var(--red);margin:32px auto 0}
+.content{max-width:var(--mx);margin:0 auto;padding:0 24px}
+.dv{border:none;border-top:1px solid var(--bdr);margin:0}
+.hook{padding:72px 24px;max-width:var(--mx);margin:0 auto}
+.hook-text{font-size:clamp(16px,2.8vw,20px);font-weight:300;line-height:2.2;color:var(--dk)}
+.hook-text strong{font-weight:700}
+.hook-em{color:var(--red);font-weight:600}
+.story{padding:64px 0}.story+.story{border-top:1px solid var(--bdr)}
+.story-label{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:16px}
+.story-title{font-size:clamp(19px,3vw,24px);font-weight:700;color:var(--dk);line-height:1.45;margin-bottom:20px}
+.story p{margin-bottom:18px}
+.photo-slot{border:1px dashed var(--bdr);padding:36px 24px;text-align:center;color:var(--mid);font-size:12px;margin:28px 0 0;letter-spacing:.03em}
+.video-wrap{padding:48px 24px;max-width:var(--mx);margin:0 auto}
+.video-box{aspect-ratio:16/9;background:#fafafa;border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;color:var(--mid);font-size:13px}
+.slogan{padding:56px 24px;text-align:center}
+.slogan-text{font-size:clamp(16px,2.5vw,20px);font-weight:700;color:var(--dk);letter-spacing:.06em}
+.slogan-line{width:28px;height:2px;background:var(--red);margin:14px auto 0}
+.section{padding:64px 0;border-top:1px solid var(--bdr)}
+.section-label{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:16px}
+.section-heading{font-size:clamp(19px,3vw,24px);font-weight:700;color:var(--dk);line-height:1.45;margin-bottom:20px}
+.section p{margin-bottom:18px}
+.fund-table{width:100%;border-collapse:collapse;margin:20px 0 12px;font-size:13px}
+.fund-table th{text-align:left;font-weight:600;font-size:11px;letter-spacing:.05em;color:var(--dk);padding:8px 0;border-bottom:2px solid var(--dk)}
+.fund-table th:nth-child(2){text-align:right}
+.fund-table td{padding:10px 0;border-bottom:1px solid var(--bdr);vertical-align:top}
+.fund-table td:nth-child(2){text-align:right;font-weight:600;white-space:nowrap;color:var(--dk)}
+.fund-table td:nth-child(3){color:var(--mid);font-size:12px;padding-left:12px}
+.fund-table tr:last-child td{font-weight:700;color:var(--red);border-bottom:2px solid var(--dk)}
+.note{font-size:12px;color:var(--mid);margin-top:8px}
+.return-grid{margin-top:28px}
+.return-card{padding:24px 0;border-bottom:1px solid var(--bdr);display:grid;grid-template-columns:1fr auto;gap:8px 24px;align-items:start}
+.return-card:first-child{border-top:1px solid var(--bdr)}
+.return-info{min-width:0}
+.return-name{font-size:15px;font-weight:700;color:var(--dk);margin-bottom:4px}
+.return-desc{font-size:13px;color:var(--body);line-height:1.7}
+.return-meta{text-align:right;flex-shrink:0}
+.return-price{font-size:18px;font-weight:700;color:var(--dk)}
+.return-limit{font-size:11px;color:var(--red);font-weight:600;margin-top:2px}
+.return-tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;margin-bottom:6px;border:1px solid var(--bdr);color:var(--mid)}
+.tag-red{border-color:var(--red);color:var(--red)}
+.schedule-list{list-style:none;margin-top:20px}
+.schedule-item{display:flex;gap:20px;padding:12px 0;border-bottom:1px solid var(--bdr);font-size:14px;align-items:baseline}
+.schedule-date{flex-shrink:0;width:80px;font-weight:600;color:var(--dk);font-size:13px}
+.schedule-item.now .schedule-date{color:var(--red)}
+.schedule-item.now .schedule-desc{font-weight:600;color:var(--dk)}
+.cta{padding:80px 24px;text-align:center;border-top:1px solid var(--bdr)}
+.cta-heading{font-size:clamp(20px,3.5vw,28px);font-weight:700;color:var(--dk);line-height:1.6;margin-bottom:20px}
+.cta-sub{font-size:14px;color:var(--body);font-weight:300;line-height:1.9;margin-bottom:32px;max-width:440px;margin-left:auto;margin-right:auto}
+.cta-btn{display:inline-block;background:var(--red);color:var(--w);padding:13px 44px;font-size:13px;font-weight:700;letter-spacing:.08em;text-decoration:none;transition:opacity .2s}
+.cta-btn:hover{opacity:.85}
+.footer{padding:28px 24px;text-align:center;font-size:11px;color:var(--mid);letter-spacing:.04em;border-top:1px solid var(--bdr)}
+@media(max-width:600px){.hero{padding:72px 20px 56px}.return-card{grid-template-columns:1fr}.return-meta{text-align:left;display:flex;gap:12px;align-items:baseline}.schedule-item{flex-direction:column;gap:2px}.schedule-date{width:auto}}
+.fi{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}.fi.v{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-logo">SVZFC</div><a href="#support" class="nav-cta">SUPPORT</a></nav>
+<header class="hero fi">
+<div class="hero-ey">Crowdfunding 2026</div>
+<h1 class="hero-title">ラオスから、世界へ。</h1>
+<p class="hero-sub">怪我から復帰するプロサッカー選手が、ラオスでクラブの運営権を取得。<br>日本とラオスの架け橋となるチームで、1年目優勝を目指す。</p>
+<div class="hero-line"></div>
+</header>
+<hr class="dv">
+<div class="hook fi">
+<p class="hook-text">子供の頃、毎朝6時にランニングに出かけるかっこいいお兄さんがいた。その人は<strong>柏レイソル</strong>のプロサッカー選手だった。満員のスタジアムでプレーする姿を見て、僕はサッカーを始めた。</p><br>
+<p class="hook-text">「サッカー選手になりたい」。そう思った瞬間、ボールを買ってもらえて、スパイクを買ってもらえて、クラブチームに入れてもらえた。夢を追いかける環境が、<strong>当たり前のようにすぐ揃った</strong>。</p><br>
+<p class="hook-text"><span class="hook-em">——でも、それは「当たり前」じゃなかった。</span></p>
+</div>
+<hr class="dv">
+<div class="video-wrap fi"><div class="video-box">▶ 動画を埋め込み（1〜2分）</div></div>
+<hr class="dv">
+<div class="content">
+<div class="story fi">
+<div class="story-label">About</div>
+<h2 class="story-title">渡邉卓矢</h2>
+<p>千葉県柏市出身。プロサッカー選手として、タイやカンボジア、ラオスを含む東南アジアを中心に6カ国でプレー。現在ラオス在住6年目。</p>
+<p>怪我からの復帰を目指しながら、ラオス・プレミアリーグの「Savannakhet Zelos FC」の運営権を取得。オーナー兼選手としてチームを率いています。</p>
+<div class="photo-slot">写真を挿入 — プレー中 / ラオスでの活動</div>
+</div>
+<div class="story fi">
+<div class="story-label">ラオスとの出会い</div>
+<h2 class="story-title">コロナで閉ざされた国境の中で<br>見つけたもの</h2>
+<p>ラオスのチームに移籍した矢先、コロナで国境が閉鎖されました。家からも出られない。そんな状況が約3ヶ月続きました。</p>
+<p>その後もラオスからは出国ができない状況でしたが、たくさんのラオスの人たちに助けられ、乗り切ることができました。そして、ラオスの若いサッカー選手たち、特に10代の選手たちの可能性を強く感じました。</p>
+<p>でも、彼らには環境がない。経済的な差がある。同じ志を持ち、同じ熱量で夢を追いかけているのに、その夢が叶う確率が大きく違う。その事実に、胸が痛くなりました。</p>
+<div class="photo-slot">写真を挿入 — ラオスの若い選手たち / サバナケット</div>
+</div>
+<div class="story fi">
+<div class="story-label">転機</div>
+<h2 class="story-title">「当たり前」が<br>当たり前じゃないと知った日</h2>
+<p>僕は日本に生まれて、経済的にも恵まれた環境で育ちました。ボールも、スパイクも、クラブチームへの入団も、すべて「当たり前」のように揃っていました。</p>
+<p>でもそれは、日本を飛び出して初めてわかったことでした。東南アジアの発展途上国で長く生活する中で、その「当たり前」が全く当たり前ではないという現実を知りました。それまでその恩恵を受けていたのに、気づきもしなかった自分が、正直恥ずかしかった。</p>
+<p>生まれる国も、性別も、環境も、自分では選べない。それなのに、スタートラインの時点で差がついてしまっている。これはやっぱりおかしいと、僕は思うんです。</p>
+<p>だから、与えてもらった側の人間として、自分も与えられる側になりたい。その想いが、ラオスでのサッカーを通じたこの挑戦につながっています。</p>
+</div>
+</div>
+<hr class="dv">
+<div class="slogan fi">
+<div class="slogan-text">スポーツを通じて、誰しもが挑戦できる社会へ</div>
+<div class="slogan-line"></div>
+</div>
+<hr class="dv">
+<div class="content">
+<div class="story fi">
+<div class="story-label">Vision</div>
+<h2 class="story-title">目指す世界</h2>
+<p>僕がこのチーム運営を通じてやりたいのは、ラオスの子供たちに夢を追いかける環境とチャンスを届けること。彼らの夢を守り、育て上げ、この少し閉鎖的な国から世界に飛び出していくサッカー選手を輩出すること。</p>
+<p>その選手たちの姿を見た子供たちが「僕も、私も、あんなふうになりたい」と思う。僕らの選手たちが、子供たちのロールモデルになる。勉強を頑張るきっかけになる。人生に希望や夢を持って前向きに生きていく力になる。</p>
+<p>「ラオス人でも、挑戦すれば、努力すれば、何にだってなれる」。そういうポジティブな影響を与えられるクラブにする。その景色を、僕は見たい。</p>
+<p>そして、日本の皆さんにも伝えたい。「当たり前」に思っていることが、実はものすごく恵まれているということ。それは悪いことじゃない、素晴らしいことなんです。だからこそ、そのありがたみに感謝してほしい。</p>
+<div class="photo-slot">写真を挿入 — 子供たち / アカデミー / チーム集合</div>
+</div>
+<div class="section fi" id="fund">
+<div class="section-label">資金の使いみち</div>
+<h2 class="section-heading">透明性のある運営を</h2>
+<p>皆さまからの支援金は、2026-27シーズンの運営費に充てさせていただきます。</p>
+<table class="fund-table">
+<tr><th>項目</th><th>金額</th><th></th></tr>
+<tr><td>人件費（選手・監督・コーチ・スタッフ）</td><td>¥15,000,000</td><td>約50%</td></tr>
+<tr><td>練習場使用料</td><td>¥2,750,000</td><td>25万/月×11ヶ月</td></tr>
+<tr><td>アウェイ遠征費</td><td>¥1,800,000</td><td>20万×9試合</td></tr>
+<tr><td>チーム備品・ユニフォーム</td><td>¥400,000</td><td></td></tr>
+<tr><td>年間運営費 合計</td><td>約 ¥30,000,000</td><td></td></tr>
+</table>
+<p class="note">※ 目標金額を超えた分は、選手の人件費・チーム強化費に充当します。</p>
+</div>
+<div class="section fi" id="support">
+<div class="section-label">Returns</div>
+<h2 class="section-heading">リターン一覧</h2>
+<div class="return-grid">
+<div class="return-card"><div class="return-info"><div class="return-name">お気持ち応援</div><div class="return-desc">お礼メッセージ＋活動報告（月次）</div></div><div class="return-meta"><div class="return-price">¥3,000</div><div class="return-limit">無制限</div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Social Impact</span><div class="return-name">アカデミースポンサー</div><div class="return-desc">子供1名のアカデミー参加費1ヶ月分を負担。ラオスの子供を無料招待。</div></div><div class="return-meta"><div class="return-price">¥7,000</div><div class="return-limit">限定 30口</div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag">Uniform</span><div class="return-name">通常ユニフォーム</div><div class="return-desc">リーグ戦モデル。希望の背番号・ネーム入り。</div></div><div class="return-meta"><div class="return-price">¥10,000</div><div class="return-limit">限定 150枚</div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag">Uniform</span><div class="return-name">サイン入りユニフォーム</div><div class="return-desc">選手サイン入り通常ユニフォーム。</div></div><div class="return-meta"><div class="return-price">¥15,000</div><div class="return-limit">限定 50枚</div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Limited</span><div class="return-name">クラファン限定ユニフォーム</div><div class="return-desc">支援者限定デザイン・特別カラー。ここでしか手に入りません。</div></div><div class="return-meta"><div class="return-price">¥20,000</div><div class="return-limit">限定 50枚</div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Social Impact</span><div class="return-name">アカデミースポンサー ×3</div><div class="return-desc">子供3名分のアカデミー参加費1ヶ月分＋活動報告書。</div></div><div class="return-meta"><div class="return-price">¥21,000</div><div class="return-limit">限定 20口</div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag">Uniform</span><div class="return-name">選手実着ユニフォーム</div><div class="return-desc">シーズン後に選手が実際に着用したユニフォーム。</div></div><div class="return-meta"><div class="return-price">¥30,000</div><div class="return-limit">限定 20枚</div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag">Sponsor</span><div class="return-name">スポンサー枠</div><div class="return-desc">個人名をクラブ公式SNS・サイトに掲載。</div></div><div class="return-meta"><div class="return-price">¥50,000</div><div class="return-limit">限定 20人</div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Premium</span><div class="return-name">プレミアム</div><div class="return-desc">現地観戦招待＋限定ユニフォーム＋スポンサー掲載。（現地までの交通費、現地での滞在費などは個人の負担となります。）</div></div><div class="return-meta"><div class="return-price">¥100,000</div><div class="return-limit">限定 5人</div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag">Team Order</span><div class="return-name">ユニフォームオーダー 20枚〜</div><div class="return-desc">チーム向け。上下¥6,000/着×20枚〜。デザイン費込。今後の注文が永久15%OFF。</div></div><div class="return-meta"><div class="return-price">¥120,000</div><div class="return-limit">限定 20口</div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag">Team Order</span><div class="return-name">ユニフォームオーダー 40枚〜</div><div class="return-desc">チーム向け。上下¥6,000/着×40枚〜。デザイン費込。今後の注文が永久20%OFF。</div></div><div class="return-meta"><div class="return-price">¥240,000</div><div class="return-limit">限定 20口</div></div></div>
+</div>
+</div>
+<div class="section fi">
+<div class="section-label">Schedule</div>
+<h2 class="section-heading">スケジュール</h2>
+<ul class="schedule-list">
+<li class="schedule-item"><span class="schedule-date">6月中旬</span><span class="schedule-desc">ページ作成・審査提出</span></li>
+<li class="schedule-item"><span class="schedule-date">6月下旬</span><span class="schedule-desc">SNS・Voicyで事前告知開始</span></li>
+<li class="schedule-item now"><span class="schedule-date">7月上旬</span><span class="schedule-desc">クラウドファンディング公開（約40日間）</span></li>
+<li class="schedule-item"><span class="schedule-date">8月上旬</span><span class="schedule-desc">2026-27シーズン開幕</span></li>
+<li class="schedule-item"><span class="schedule-date">8月中旬</span><span class="schedule-desc">クラウドファンディング終了</span></li>
+<li class="schedule-item"><span class="schedule-date">9月以降</span><span class="schedule-desc">リターン順次発送＋活動報告開始</span></li>
+</ul>
+</div>
+</div>
+<div class="cta fi">
+<div class="cta-heading">一緒に戦ってくれる仲間を、<br>探しています。</div>
+<p class="cta-sub">僕が子供の頃に柏レイソルの選手に憧れたように、ラオスの子供たちにもロールモデルを届けたい。まずはこの1年、優勝を目指します。</p>
+<a href="#" class="cta-btn">READYFORで支援する</a>
+</div>
+<footer class="footer">© 2026 株式会社Zelos / Savannakhet Zelos FC</footer>
+<script>
+const o=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('v')})},{threshold:.12});
+document.querySelectorAll('.fi').forEach(el=>o.observe(el));
+</script>
+</body>
+</html>
