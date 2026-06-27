@@ -11,26 +11,29 @@
 html{scroll-behavior:smooth}
 body{font-family:'Noto Sans JP','Helvetica Neue',Arial,sans-serif;color:var(--body);background:var(--w);line-height:1.95;font-weight:400;font-size:15px;-webkit-font-smoothing:antialiased}
 a{color:var(--red)}
+.en{display:none}body.is-en .ja{display:none}body.is-en .en{display:inline}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--w);border-bottom:1px solid var(--bdr);padding:12px 24px;display:flex;justify-content:space-between;align-items:center}
 .nav-logo{color:var(--dk);font-size:12px;font-weight:600;letter-spacing:.12em}
-.nav-cta{color:var(--red);font-size:12px;font-weight:700;letter-spacing:.08em;text-decoration:none;border:1px solid var(--red);padding:6px 18px;transition:all .2s}
+.nav-r{display:flex;gap:8px;align-items:center}
+.lang-btn{font-size:11px;font-weight:700;letter-spacing:.08em;padding:5px 12px;cursor:pointer;border:1px solid var(--bdr);background:var(--w);color:var(--mid);transition:all .2s}
+.lang-btn.on{border-color:var(--dk);color:var(--dk)}
+.nav-cta{color:var(--red);font-size:12px;font-weight:700;letter-spacing:.08em;text-decoration:none;border:1px solid var(--red);padding:6px 18px;transition:all .2s;margin-left:4px}
 .nav-cta:hover{background:var(--red);color:var(--w)}
 .hero{margin-top:48px;padding:96px 24px 72px;text-align:center}
 .hero-ey{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:20px}
 .hero-title{font-size:clamp(28px,5.5vw,44px);font-weight:700;color:var(--dk);line-height:1.35;margin-bottom:20px}
-.hero-sub{font-size:15px;color:var(--body);max-width:500px;margin:0 auto;font-weight:300;line-height:1.9}
+.hero-sub{font-size:15px;color:var(--body);max-width:520px;margin:0 auto;font-weight:300;line-height:1.9}
 .hero-line{width:32px;height:2px;background:var(--red);margin:32px auto 0}
 .content{max-width:var(--mx);margin:0 auto;padding:0 24px}
 .dv{border:none;border-top:1px solid var(--bdr);margin:0}
 .hook{padding:72px 24px;max-width:var(--mx);margin:0 auto}
 .hook-text{font-size:clamp(16px,2.8vw,20px);font-weight:300;line-height:2.2;color:var(--dk)}
-.hook-text strong{font-weight:700}
-.hook-em{color:var(--red);font-weight:600}
+.hook-text strong{font-weight:700}.hook-em{color:var(--red);font-weight:600}
 .story{padding:64px 0}.story+.story{border-top:1px solid var(--bdr)}
 .story-label{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--red);font-weight:600;margin-bottom:16px}
 .story-title{font-size:clamp(19px,3vw,24px);font-weight:700;color:var(--dk);line-height:1.45;margin-bottom:20px}
 .story p{margin-bottom:18px}
-.photo-slot{border:1px dashed var(--bdr);padding:36px 24px;text-align:center;color:var(--mid);font-size:12px;margin:28px 0 0;letter-spacing:.03em}
+.photo-slot{border:1px dashed var(--bdr);padding:36px 24px;text-align:center;color:var(--mid);font-size:12px;margin:28px 0 0}
 .video-wrap{padding:48px 24px;max-width:var(--mx);margin:0 auto}
 .video-box{aspect-ratio:16/9;background:#fafafa;border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;color:var(--mid);font-size:13px}
 .slogan{padding:56px 24px;text-align:center}
@@ -41,7 +44,7 @@ a{color:var(--red)}
 .section-heading{font-size:clamp(19px,3vw,24px);font-weight:700;color:var(--dk);line-height:1.45;margin-bottom:20px}
 .section p{margin-bottom:18px}
 .fund-table{width:100%;border-collapse:collapse;margin:20px 0 12px;font-size:13px}
-.fund-table th{text-align:left;font-weight:600;font-size:11px;letter-spacing:.05em;color:var(--dk);padding:8px 0;border-bottom:2px solid var(--dk)}
+.fund-table th{text-align:left;font-weight:600;font-size:11px;color:var(--dk);padding:8px 0;border-bottom:2px solid var(--dk)}
 .fund-table th:nth-child(2){text-align:right}
 .fund-table td{padding:10px 0;border-bottom:1px solid var(--bdr);vertical-align:top}
 .fund-table td:nth-child(2){text-align:right;font-weight:600;white-space:nowrap;color:var(--dk)}
@@ -51,10 +54,9 @@ a{color:var(--red)}
 .return-grid{margin-top:28px}
 .return-card{padding:24px 0;border-bottom:1px solid var(--bdr);display:grid;grid-template-columns:1fr auto;gap:8px 24px;align-items:start}
 .return-card:first-child{border-top:1px solid var(--bdr)}
-.return-info{min-width:0}
 .return-name{font-size:15px;font-weight:700;color:var(--dk);margin-bottom:4px}
 .return-desc{font-size:13px;color:var(--body);line-height:1.7}
-.return-meta{text-align:right;flex-shrink:0}
+.return-meta{text-align:right}
 .return-price{font-size:18px;font-weight:700;color:var(--dk)}
 .return-limit{font-size:11px;color:var(--red);font-weight:600;margin-top:2px}
 .return-tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 6px;margin-bottom:6px;border:1px solid var(--bdr);color:var(--mid)}
@@ -62,150 +64,139 @@ a{color:var(--red)}
 .schedule-list{list-style:none;margin-top:20px}
 .schedule-item{display:flex;gap:20px;padding:12px 0;border-bottom:1px solid var(--bdr);font-size:14px;align-items:baseline}
 .schedule-date{flex-shrink:0;width:80px;font-weight:600;color:var(--dk);font-size:13px}
-.schedule-item.now .schedule-date{color:var(--red)}
-.schedule-item.now .schedule-desc{font-weight:600;color:var(--dk)}
+.schedule-item.now .schedule-date{color:var(--red)}.schedule-item.now .schedule-desc{font-weight:600;color:var(--dk)}
 .cta{padding:80px 24px;text-align:center;border-top:1px solid var(--bdr)}
 .cta-heading{font-size:clamp(20px,3.5vw,28px);font-weight:700;color:var(--dk);line-height:1.6;margin-bottom:20px}
 .cta-sub{font-size:14px;color:var(--body);font-weight:300;line-height:1.9;margin-bottom:32px;max-width:440px;margin-left:auto;margin-right:auto}
 .cta-btn{display:inline-block;background:var(--red);color:var(--w);padding:13px 44px;font-size:13px;font-weight:700;letter-spacing:.08em;text-decoration:none;transition:opacity .2s}
 .cta-btn:hover{opacity:.85}
-.footer{padding:28px 24px;text-align:center;font-size:11px;color:var(--mid);letter-spacing:.04em;border-top:1px solid var(--bdr)}
+.footer{padding:28px 24px;text-align:center;font-size:11px;color:var(--mid);border-top:1px solid var(--bdr)}
 @media(max-width:600px){.hero{padding:72px 20px 56px}.return-card{grid-template-columns:1fr}.return-meta{text-align:left;display:flex;gap:12px;align-items:baseline}.schedule-item{flex-direction:column;gap:2px}.schedule-date{width:auto}}
 .fi{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}.fi.v{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
-<nav class="nav"><div class="nav-logo">SVZFC</div><a href="#support" class="nav-cta">SUPPORT</a></nav>
+<nav class="nav"><div class="nav-logo">SVZFC</div><div class="nav-r"><button class="lang-btn on" onclick="setLang('ja')">JP</button><button class="lang-btn" onclick="setLang('en')">EN</button><a href="#support" class="nav-cta">SUPPORT</a></div></nav>
+
 <header class="hero fi">
 <div class="hero-ey">Crowdfunding 2026</div>
-<h1 class="hero-title">ラオスから、世界へ。</h1>
-<p class="hero-sub">ラオスに真のプロサッカークラブを作り、子供たちに夢と希望を届けたい。<br>子供たちの憧れとなるロールモデルが誕生する未来を作る。</p>
+<h1 class="hero-title"><span class="ja">ラオスから、世界へ。</span><span class="en">From Laos, to the World.</span></h1>
+<p class="hero-sub"><span class="ja">ラオスに真のプロサッカークラブを作り、子供たちに夢と希望を届けたい。<br>子供たちの憧れとなるロールモデルが誕生する未来を作る。</span><span class="en">Building a true professional football club in Laos to deliver dreams and hope to children.<br>Creating a future where role models are born.</span></p>
 <div class="hero-line"></div>
 </header>
 <hr class="dv">
+
 <div class="hook fi">
-<p class="hook-text">子供の頃、毎朝6時にランニングに出かけるかっこいいお兄さんがいた。その人は<strong>柏レイソル</strong>のプロサッカー選手だった。黄色く染まるスタジアムでプレーする姿を見て、僕はサッカーを始めた。</p><br>
-<p class="hook-text">「サッカー選手になりたい」。そう思った瞬間、ボールを買ってもらえて、スパイクを買ってもらえて、クラブチームに入れてもらえた。夢を追いかける環境が、<strong>当たり前のようにすぐ揃った</strong>。</p><br>
-<p class="hook-text"><span class="hook-em">——でも、それは「当たり前」じゃなかった。</span></p>
+<p class="hook-text"><span class="ja">子供の頃、毎朝6時にランニングに出かけるかっこいいお兄さんがいた。その人は<strong>柏レイソル</strong>のプロサッカー選手だった。満員のスタジアムでプレーする姿を見て、僕はサッカーを始めた。</span><span class="en">When I was a child, there was a cool guy who went running every morning at 6am. He was a professional footballer for <strong>Kashiwa Reysol</strong>. Watching him play in a packed stadium, I started playing football.</span></p><br>
+<p class="hook-text"><span class="ja">「サッカー選手になりたい」。そう思った瞬間、ボールを買ってもらえて、スパイクを買ってもらえて、クラブチームに入れてもらえた。夢を追いかける環境が、<strong>当たり前のようにすぐ揃った</strong>。</span><span class="en">"I want to be a footballer." The moment I thought that, I got a ball, cleats, and joined a club team. <strong>Everything I needed to chase my dream was instantly available</strong>.</span></p><br>
+<p class="hook-text"><span class="ja hook-em">——でも、それは「当たり前」じゃなかった。</span><span class="en hook-em">— But that was never "normal" at all.</span></p>
 </div>
 <hr class="dv">
-<div class="video-wrap fi"><div class="video-box">▶ 動画を埋め込み（1〜2分）</div></div>
+<div class="video-wrap fi"><div class="video-box">▶ <span class="ja">動画を埋め込み</span><span class="en">Embed video here</span></div></div>
 <hr class="dv">
+
 <div class="content">
-<div class="story fi">
-<div class="story-label">About</div>
-<h2 class="story-title">渡邉卓矢</h2>
-<p>千葉県柏市出身。プロサッカー選手として、タイやカンボジア、ラオスを含む東南アジアを中心に6カ国でプレー。現在ラオス在住6年目。</p>
-<p>怪我からの復帰を目指しながら、ラオス・プレミアリーグの「Savannakhet Zelos FC」の運営権を取得。オーナー兼選手としてチームを率いています。</p>
-<div class="photo-slot">写真を挿入 — プレー中 / ラオスでの活動</div>
-</div>
-<div class="story fi">
-<div class="story-label">ラオスとの出会い</div>
-<h2 class="story-title">コロナで閉ざされた国境の中で<br>見つけたもの</h2>
-<p>ラオスのチームに移籍した矢先、コロナで国境が閉鎖されました。家からも出られない。そんな状況が約3ヶ月続きました。</p>
-<p>その後もラオスからは出国ができない状況でしたが、たくさんのラオスの人たちに助けられ、乗り切ることができました。そして、ラオスの若いサッカー選手たち、特に10代の選手たちの可能性を強く感じました。</p>
-<p>でも、彼らには環境がない。経済的な差がある。同じ志を持ち、同じ熱量で夢を追いかけているのに、その夢が叶う確率が大きく違う。その事実に、胸が痛くなりました。</p>
-<div class="photo-slot">写真を挿入 — ラオスの若い選手たち / サバナケット</div>
-</div>
-<div class="story fi">
-<div class="story-label">転機</div>
-<h2 class="story-title">「当たり前」が<br>当たり前じゃないと知った日</h2>
-<p>僕は日本に生まれて、経済的にも恵まれた環境で育ちました。ボールも、スパイクも、クラブチームへの入団も、すべて「当たり前」のように揃っていました。</p>
-<p>でもそれは、日本を飛び出して初めてわかったことでした。東南アジアの発展途上国で長く生活する中で、その「当たり前」が全く当たり前ではないという現実を知りました。それまでその恩恵を受けていたのに、気づきもしなかった自分が、正直恥ずかしかった。</p>
-<p>生まれる国も、性別も、環境も、自分では選べない。それなのに、スタートラインの時点で差がついてしまっている。これはやっぱりおかしいと、僕は思うんです。</p>
-<p>だから、与えてもらった側の人間として、自分も与えられる側になりたい。その想いが、ラオスでのサッカーを通じたこの挑戦につながっています。</p>
-</div>
-</div>
-<hr class="dv">
-<div class="slogan fi">
-<div class="slogan-text">スポーツを通じて、誰しもが挑戦できる社会へ</div>
-<div class="slogan-line"></div>
-</div>
-<hr class="dv">
-<div class="content">
-<div class="story fi">
-<div class="story-label">Vision</div>
-<h2 class="story-title">目指す世界</h2>
-<p>僕がこのチーム運営を通じてやりたいのは、ラオスの子供たちに夢を追いかける環境とチャンスを届けること。彼らの夢を守り、育て上げ、この少し閉鎖的な国から世界に飛び出していくサッカー選手を輩出すること。</p>
-<p>その選手たちの姿を見た子供たちが「僕も、私も、あんなふうになりたい」と思う。僕らの選手たちが、子供たちのロールモデルになる。勉強を頑張るきっかけになる。人生に希望や夢を持って前向きに生きていく力になる。</p>
-<p>「ラオス人でも、挑戦すれば、努力すれば、何にだってなれる」。そういうポジティブな影響を与えられるクラブにする。その景色を、僕は見たい。</p>
-<p>そして、日本の皆さんにも伝えたい。「当たり前」に思っていることが、実はものすごく恵まれているということ。それは悪いことじゃない、素晴らしいことなんです。だからこそ、そのありがたみに感謝してほしい。</p>
-<div class="photo-slot">写真を挿入 — 子供たち / アカデミー / チーム集合</div>
+<div class="story fi"><div class="story-label">About</div>
+<h2 class="story-title"><span class="ja">渡邉卓矢</span><span class="en">Takuya Watanabe</span></h2>
+<p><span class="ja">千葉県柏市出身。プロサッカー選手として、タイやカンボジア、ラオスを含む東南アジアを中心に6カ国でプレー。現在ラオス在住6年目。</span><span class="en">Born in Kashiwa, Chiba. Professional footballer across 6 countries in Southeast Asia including Thailand, Cambodia, and Laos. In his 6th year living in Laos.</span></p>
+<p><span class="ja">怪我からの復帰を目指しながら、ラオス・プレミアリーグの「Savannakhet Zelos FC」の運営権を取得。オーナー兼選手としてチームを率いています。</span><span class="en">While recovering from injury, he acquired management rights of "Savannakhet Zelos FC" in the Lao Premier League, leading the team as owner and player.</span></p>
+<div class="photo-slot"><span class="ja">写真を挿入</span><span class="en">Insert photo</span></div></div>
+
+<div class="story fi"><div class="story-label"><span class="ja">ラオスとの出会い</span><span class="en">Encountering Laos</span></div>
+<h2 class="story-title"><span class="ja">コロナで閉ざされた国境の中で<br>見つけたもの</span><span class="en">What I Found Behind<br>COVID's Closed Borders</span></h2>
+<p><span class="ja">ラオスのチームに移籍した矢先、コロナで国境が閉鎖されました。家からも出られない。そんな状況が約3ヶ月続きました。</span><span class="en">Right after transferring to a Lao team, COVID shut down the borders. I couldn't even leave my house for about 3 months.</span></p>
+<p><span class="ja">その後もラオスからは出国ができない状況でしたが、たくさんのラオスの人たちに助けられ、乗り切ることができました。そして、ラオスの若いサッカー選手たち、特に10代の選手たちの可能性を強く感じました。</span><span class="en">Even after, I couldn't leave the country, but the Lao people helped me through it. I saw immense potential in young Lao footballers, especially teenagers.</span></p>
+<p><span class="ja">でも、彼らには環境がない。経済的な差がある。同じ志を持ち、同じ熱量で夢を追いかけているのに、その夢が叶う確率が大きく違う。その事実に、胸が痛くなりました。</span><span class="en">But they lack the environment. There's an economic gap. They share the same passion, yet the odds of achieving their dreams are vastly different. That reality broke my heart.</span></p>
+<div class="photo-slot"><span class="ja">写真を挿入</span><span class="en">Insert photo</span></div></div>
+
+<div class="story fi"><div class="story-label"><span class="ja">転機</span><span class="en">Turning Point</span></div>
+<h2 class="story-title"><span class="ja">「当たり前」が<br>当たり前じゃないと知った日</span><span class="en">The Day I Learned<br>"Normal" Isn't Normal</span></h2>
+<p><span class="ja">僕は日本に生まれて、経済的にも恵まれた環境で育ちました。ボールも、スパイクも、クラブチームへの入団も、すべて「当たり前」のように揃っていました。</span><span class="en">I was born in Japan and grew up economically privileged. A ball, cleats, joining a club — everything was available as if it were "normal."</span></p>
+<p><span class="ja">でもそれは、日本を飛び出して初めてわかったことでした。東南アジアの発展途上国で長く生活する中で、その「当たり前」が全く当たり前ではないという現実を知りました。それまでその恩恵を受けていたのに、気づきもしなかった自分が、正直恥ずかしかった。</span><span class="en">I only understood this after leaving Japan. Living in developing countries, I realized this "normal" was not normal at all. I was ashamed I'd benefited without even noticing.</span></p>
+<p><span class="ja">生まれる国も、性別も、環境も、自分では選べない。それなのに、スタートラインの時点で差がついてしまっている。これはやっぱりおかしいと、僕は思うんです。</span><span class="en">You can't choose where you're born, your gender, or your environment. Yet the gap exists from the very starting line. I believe that's simply not right.</span></p>
+<p><span class="ja">だから、与えてもらった側の人間として、自分も与えられる側になりたい。その想いが、ラオスでのサッカーを通じたこの挑戦につながっています。</span><span class="en">As someone who was given so much, I want to become someone who gives. That desire drives this challenge through football in Laos.</span></p></div>
 </div>
 
-<div class="story fi">
-<div class="story-label">Sustainability</div>
-<h2 class="story-title">いただいたお金を<br>「使って終わり」にしない</h2>
-<p>僕たちは、スポンサーやクラウドファンディングによる資金提供に頼り続ける未来は望ましいと思っていません。このクラウドファンディングは、クラブが自走するための「初期始動」です。</p>
-<p>いただいた資金は、ただ運営費として使って終わりにはしません。資金の一部は、クラブとして現地での事業を展開し、サッカー周辺のビジネスを立ち上げるために活用させていただきます。日本とのつながりを生かしたビジネスも含め、クラブが自ら収益を生み出せる体制をつくります。</p>
-<p>将来的には、クラブが健全に自走できる状態を目指します。選手、スタッフ、オーナーが一丸となって、自分たちでお金を稼ぎに行く。自分たちの夢を、自分たちの力で守り、そしてこの夢を次世代につないでいく。それが、僕たちの目指すクラブの姿です。</p>
-</div>
+<hr class="dv">
+<div class="slogan fi"><div class="slogan-text"><span class="ja">スポーツを通じて、誰しもが挑戦できる社会へ</span><span class="en">Through Sport, a Society Where Anyone Can Challenge Themselves</span></div><div class="slogan-line"></div></div>
+<hr class="dv">
 
-<div class="story fi">
-<div class="story-label">Beyond Winning</div>
-<h2 class="story-title">優勝が最終ゴールではない</h2>
-<p>もちろんリーグに参加する以上、優勝を目指します。でも、優勝することが最終ゴールではありません。</p>
-<p>優勝を目指す過程の中で、努力すること、学ぶこと、気づくこと。その一つ一つに何より価値があると思っています。その姿を見た子供たちが、僕たちのクラブや選手に憧れを抱き、同じように夢を持つ。</p>
-<p>その夢を叶えるために、毎日の生活を改めたり、目標を持って生きていく楽しさ。そしてそのことによる将来の豊かさ。そういうものを、僕たちはこの挑戦を通じて表現していきたいと思っています。</p>
-<p><strong>ラオスの子供たちにとって、僕たちが憧れの存在になる。将来の夢の対象となる。そんな未来を目指して、頑張りたいと思います。</strong></p>
-</div>
-<div class="section fi" id="fund">
-<div class="section-label">資金の使いみち</div>
-<h2 class="section-heading">透明性のある運営を</h2>
-<p>皆さまからの支援金は、2026-27シーズンの運営費に充てさせていただきます。</p>
+<div class="content">
+<div class="story fi"><div class="story-label">Vision</div>
+<h2 class="story-title"><span class="ja">目指す世界</span><span class="en">The World We Aim For</span></h2>
+<p><span class="ja">僕がこのチーム運営を通じてやりたいのは、ラオスの子供たちに夢を追いかける環境とチャンスを届けること。彼らの夢を守り、育て上げ、この少し閉鎖的な国から世界に飛び出していくサッカー選手を輩出すること。</span><span class="en">Through this club, I want to deliver environments and opportunities for Lao children to chase dreams — nurturing them, and producing footballers who break out onto the world stage.</span></p>
+<p><span class="ja">その選手たちの姿を見た子供たちが「僕も、私も、あんなふうになりたい」と思う。僕らの選手たちが、子供たちのロールモデルになる。</span><span class="en">Children who see those players will think "I want to be like them." Our players become role models for the next generation.</span></p>
+<p><span class="ja">「ラオス人でも、挑戦すれば、努力すれば、何にだってなれる」。そういうポジティブな影響を与えられるクラブにする。その景色を、僕は見たい。</span><span class="en">"Even from Laos, if you challenge yourself, you can become anything." We will build a club that delivers that message. I want to see that future.</span></p>
+<p><span class="ja">そして、日本の皆さんにも伝えたい。「当たり前」に思っていることが、実はものすごく恵まれているということ。それは悪いことじゃない、素晴らしいことなんです。だからこそ、そのありがたみに感謝してほしい。</span><span class="en">And to everyone in Japan: what you take for granted is an incredible privilege. That's not a bad thing — it's wonderful. Please be grateful for it.</span></p>
+<div class="photo-slot"><span class="ja">写真を挿入</span><span class="en">Insert photo</span></div></div>
+
+<div class="story fi"><div class="story-label">Sustainability</div>
+<h2 class="story-title"><span class="ja">いただいたお金を<br>「使って終わり」にしない</span><span class="en">Your Support Won't Be<br>"Spent and Gone"</span></h2>
+<p><span class="ja">僕たちは、スポンサーやクラウドファンディングによる資金提供に頼り続ける未来は望ましいと思っていません。このクラウドファンディングは、クラブが自走するための「初期始動」です。</span><span class="en">We don't believe depending on sponsors and crowdfunding forever is sustainable. This campaign is the "initial ignition" for the club to become self-sufficient.</span></p>
+<p><span class="ja">いただいた資金は、ただ運営費として使って終わりにはしません。資金の一部は、クラブとして現地での事業を展開し、サッカー周辺のビジネスを立ち上げるために活用させていただきます。日本とのつながりを生かしたビジネスも含め、クラブが自ら収益を生み出せる体制をつくります。</span><span class="en">Funds won't simply be spent on operations. A portion will develop local businesses around football, leveraging Japan-Laos connections to build self-sustaining revenue streams.</span></p>
+<p><span class="ja">将来的には、クラブが健全に自走できる状態を目指します。選手、スタッフ、オーナーが一丸となって、自分たちでお金を稼ぎに行く。自分たちの夢を、自分たちの力で守り、そしてこの夢を次世代につないでいく。それが、僕たちの目指すクラブの姿です。</span><span class="en">Our goal is a self-sustaining club — players, staff, and owner united, earning our own way, protecting our dreams with our own strength, passing them to the next generation.</span></p></div>
+
+<div class="story fi"><div class="story-label">Beyond Winning</div>
+<h2 class="story-title"><span class="ja">優勝が最終ゴールではない</span><span class="en">Winning Isn't the Ultimate Goal</span></h2>
+<p><span class="ja">もちろんリーグに参加する以上、優勝を目指します。でも、優勝することが最終ゴールではありません。</span><span class="en">Of course, we aim to win the league. But winning isn't the ultimate goal.</span></p>
+<p><span class="ja">優勝を目指す過程の中で、努力すること、学ぶこと、気づくこと。その一つ一つに何より価値があると思っています。その姿を見た子供たちが、僕たちのクラブや選手に憧れを抱き、同じように夢を持つ。</span><span class="en">The effort, learning, and discoveries in the process of pursuing victory — each holds the greatest value. Children who witness this will be inspired to hold dreams of their own.</span></p>
+<p><span class="ja">その夢を叶えるために、毎日の生活を改めたり、目標を持って生きていく楽しさ。そしてそのことによる将来の豊かさ。そういうものを、僕たちはこの挑戦を通じて表現していきたいと思っています。</span><span class="en">The joy of changing daily habits and living with purpose. The future richness that comes from it. That is what we express through this challenge.</span></p>
+<p><span class="ja"><strong>ラオスの子供たちにとって、僕たちが憧れの存在になる。将来の夢の対象となる。そんな未来を目指して、頑張りたいと思います。</strong></span><span class="en"><strong>We want to become the aspiration for Lao children — the subject of their future dreams. We will work hard toward that future.</strong></span></p></div>
+
+<div class="section fi" id="fund"><div class="section-label"><span class="ja">資金の使いみち</span><span class="en">Use of Funds</span></div>
+<h2 class="section-heading"><span class="ja">透明性のある運営を</span><span class="en">Transparent Operations</span></h2>
+<p><span class="ja">皆さまからの支援金は、2026-27シーズンの運営費に充てさせていただきます。</span><span class="en">Your support will fund the 2026-27 season operations.</span></p>
 <table class="fund-table">
-<tr><th>項目</th><th>金額</th><th></th></tr>
-<tr><td>人件費（選手・監督・コーチ・スタッフ）</td><td>¥15,000,000</td><td>約50%</td></tr>
-<tr><td>練習場使用料</td><td>¥2,750,000</td><td>25万/月×11ヶ月</td></tr>
-<tr><td>アウェイ遠征費</td><td>¥1,800,000</td><td>20万×9試合</td></tr>
-<tr><td>チーム備品・ユニフォーム</td><td>¥400,000</td><td></td></tr>
-<tr><td>年間運営費 合計</td><td>約 ¥30,000,000</td><td></td></tr>
+<tr><th><span class="ja">項目</span><span class="en">Item</span></th><th><span class="ja">金額</span><span class="en">Amount</span></th><th></th></tr>
+<tr><td><span class="ja">人件費（選手・監督・コーチ・スタッフ）</span><span class="en">Personnel</span></td><td>¥15,000,000</td><td>~50%</td></tr>
+<tr><td><span class="ja">練習場使用料</span><span class="en">Training ground</span></td><td>¥2,750,000</td><td>¥250K/mo ×11</td></tr>
+<tr><td><span class="ja">アウェイ遠征費</span><span class="en">Away travel</span></td><td>¥1,800,000</td><td>¥200K ×9</td></tr>
+<tr><td><span class="ja">チーム備品</span><span class="en">Equipment</span></td><td>¥400,000</td><td></td></tr>
+<tr><td><span class="ja">年間合計</span><span class="en">Annual total</span></td><td>~¥30,000,000</td><td></td></tr>
 </table>
-<p class="note">※ 目標金額を超えた分は、選手の人件費・チーム強化費に充当します。</p>
-</div>
-<div class="section fi" id="support">
-<div class="section-label">Returns</div>
-<h2 class="section-heading">リターン一覧</h2>
+<p class="note"><span class="ja">※ 目標金額を超えた分は、選手の人件費・チーム強化費に充当します。</span><span class="en">※ Excess funds go toward player salaries and team development.</span></p></div>
+
+<div class="section fi" id="support"><div class="section-label">Returns</div>
+<h2 class="section-heading"><span class="ja">リターン一覧</span><span class="en">Return Plans</span></h2>
 <div class="return-grid">
-<div class="return-card"><div class="return-info"><div class="return-name">お気持ち応援</div><div class="return-desc">お礼メッセージ＋活動報告（月次）</div></div><div class="return-meta"><div class="return-price">¥3,000</div><div class="return-limit">無制限</div></div></div>
-<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Social Impact</span><div class="return-name">アカデミースポンサー</div><div class="return-desc">子供1名のアカデミー参加費1ヶ月分を負担。ラオスの子供を無料招待。</div></div><div class="return-meta"><div class="return-price">¥7,000</div><div class="return-limit">限定 30口</div></div></div>
-<div class="return-card"><div class="return-info"><span class="return-tag">Uniform</span><div class="return-name">通常ユニフォーム</div><div class="return-desc">リーグ戦モデル。希望の背番号・ネーム入り。</div></div><div class="return-meta"><div class="return-price">¥10,000</div><div class="return-limit">限定 150枚</div></div></div>
-<div class="return-card"><div class="return-info"><span class="return-tag">Uniform</span><div class="return-name">サイン入りユニフォーム</div><div class="return-desc">選手サイン入り通常ユニフォーム。</div></div><div class="return-meta"><div class="return-price">¥15,000</div><div class="return-limit">限定 50枚</div></div></div>
-<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Limited</span><div class="return-name">クラファン限定ユニフォーム</div><div class="return-desc">支援者限定デザイン・特別カラー。ここでしか手に入りません。</div></div><div class="return-meta"><div class="return-price">¥20,000</div><div class="return-limit">限定 50枚</div></div></div>
-<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Social Impact</span><div class="return-name">アカデミースポンサー ×3</div><div class="return-desc">子供3名分のアカデミー参加費1ヶ月分＋活動報告書。</div></div><div class="return-meta"><div class="return-price">¥21,000</div><div class="return-limit">限定 20口</div></div></div>
-<div class="return-card"><div class="return-info"><span class="return-tag">Uniform</span><div class="return-name">選手実着ユニフォーム</div><div class="return-desc">シーズン後に選手が実際に着用したユニフォーム。</div></div><div class="return-meta"><div class="return-price">¥30,000</div><div class="return-limit">限定 20枚</div></div></div>
-<div class="return-card"><div class="return-info"><span class="return-tag">Sponsor</span><div class="return-name">スポンサー枠</div><div class="return-desc">個人名をクラブ公式SNS・サイトに掲載。</div></div><div class="return-meta"><div class="return-price">¥300,000</div><div class="return-limit">限定 20人</div></div></div>
-<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Premium</span><div class="return-name">プレミアム</div><div class="return-desc">現地観戦招待＋限定ユニフォーム＋スポンサー掲載。（現地までの交通費、現地での滞在費などは個人の負担となります。）</div></div><div class="return-meta"><div class="return-price">¥100,000</div><div class="return-limit">限定 5人</div></div></div>
-<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Ticket</span><div class="return-name">チケット購入プラン 500人</div><div class="return-desc">子供500人分の観戦チケットを購入。子供たちを試合に無料招待します。</div></div><div class="return-meta"><div class="return-price">¥100,000</div><div class="return-limit">限定</div></div></div>
-<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Ticket</span><div class="return-name">チケット購入プラン 1,000人</div><div class="return-desc">子供1,000人分の観戦チケットを購入。子供たちを試合に無料招待します。</div></div><div class="return-meta"><div class="return-price">¥200,000</div><div class="return-limit">限定</div></div></div>
-<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Ticket</span><div class="return-name">チケット購入プラン 2,500人</div><div class="return-desc">子供2,500人分の観戦チケットを購入。子供たちを試合に無料招待します。</div></div><div class="return-meta"><div class="return-price">¥500,000</div><div class="return-limit">限定</div></div></div>
-<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Ticket</span><div class="return-name">チケット購入プラン 5,000人</div><div class="return-desc">子供5,000人分の観戦チケットを購入。子供たちを試合に無料招待します。</div></div><div class="return-meta"><div class="return-price">¥1,000,000</div><div class="return-limit">限定</div></div></div>
-<div class="return-card"><div class="return-info"><span class="return-tag">Team Order</span><div class="return-name">ユニフォームオーダー 20枚〜</div><div class="return-desc">チーム向け。上下¥6,000/着×20枚〜。デザイン費込。今後の注文が永久15%OFF。</div></div><div class="return-meta"><div class="return-price">¥120,000</div><div class="return-limit">限定 20口</div></div></div>
-<div class="return-card"><div class="return-info"><span class="return-tag">Team Order</span><div class="return-name">ユニフォームオーダー 40枚〜</div><div class="return-desc">チーム向け。上下¥6,000/着×40枚〜。デザイン費込。今後の注文が永久20%OFF。</div></div><div class="return-meta"><div class="return-price">¥240,000</div><div class="return-limit">限定 20口</div></div></div>
-</div>
-</div>
-<div class="section fi">
-<div class="section-label">Schedule</div>
-<h2 class="section-heading">スケジュール</h2>
+<div class="return-card"><div class="return-info"><div class="return-name"><span class="ja">お気持ち応援</span><span class="en">General Support</span></div><div class="return-desc"><span class="ja">お礼メッセージ＋活動報告（月次）</span><span class="en">Thank-you message + monthly report</span></div></div><div class="return-meta"><div class="return-price">¥3,000</div><div class="return-limit"><span class="ja">無制限</span><span class="en">Unlimited</span></div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Social Impact</span><div class="return-name"><span class="ja">アカデミースポンサー</span><span class="en">Academy Sponsor</span></div><div class="return-desc"><span class="ja">子供1名のアカデミー参加費1ヶ月分を負担。ラオスの子供を無料招待。</span><span class="en">Sponsor 1 child's academy fee for 1 month.</span></div></div><div class="return-meta"><div class="return-price">¥7,000</div><div class="return-limit"><span class="ja">限定 30口</span><span class="en">Limited: 30</span></div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag">Uniform</span><div class="return-name"><span class="ja">通常ユニフォーム</span><span class="en">Official Uniform</span></div><div class="return-desc"><span class="ja">リーグ戦モデル。希望の背番号・ネーム入り。</span><span class="en">League model. Custom number &amp; name.</span></div></div><div class="return-meta"><div class="return-price">¥10,000</div><div class="return-limit"><span class="ja">限定 150枚</span><span class="en">Limited: 150</span></div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag">Uniform</span><div class="return-name"><span class="ja">サイン入りユニフォーム</span><span class="en">Signed Uniform</span></div><div class="return-desc"><span class="ja">選手サイン入り通常ユニフォーム。</span><span class="en">Official uniform with player signatures.</span></div></div><div class="return-meta"><div class="return-price">¥15,000</div><div class="return-limit"><span class="ja">限定 50枚</span><span class="en">Limited: 50</span></div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Limited</span><div class="return-name"><span class="ja">クラファン限定ユニフォーム</span><span class="en">Exclusive Uniform</span></div><div class="return-desc"><span class="ja">支援者限定デザイン・特別カラー。</span><span class="en">Exclusive design &amp; color. Only here.</span></div></div><div class="return-meta"><div class="return-price">¥20,000</div><div class="return-limit"><span class="ja">限定 50枚</span><span class="en">Limited: 50</span></div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Social Impact</span><div class="return-name"><span class="ja">アカデミースポンサー ×3</span><span class="en">Academy Sponsor ×3</span></div><div class="return-desc"><span class="ja">子供3名分のアカデミー参加費1ヶ月分＋活動報告書。</span><span class="en">Sponsor 3 children + activity report.</span></div></div><div class="return-meta"><div class="return-price">¥21,000</div><div class="return-limit"><span class="ja">限定 20口</span><span class="en">Limited: 20</span></div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag">Uniform</span><div class="return-name"><span class="ja">選手実着ユニフォーム</span><span class="en">Match-Worn Uniform</span></div><div class="return-desc"><span class="ja">シーズン後に選手が実際に着用したユニフォーム。</span><span class="en">Actual uniform worn by a player.</span></div></div><div class="return-meta"><div class="return-price">¥30,000</div><div class="return-limit"><span class="ja">限定 20枚</span><span class="en">Limited: 20</span></div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Ticket</span><div class="return-name"><span class="ja">チケット購入プラン 500人</span><span class="en">Ticket Plan: 500 Children</span></div><div class="return-desc"><span class="ja">子供500人分の観戦チケットを購入。子供たちを試合に無料招待。</span><span class="en">Purchase tickets for 500 children to attend matches free.</span></div></div><div class="return-meta"><div class="return-price">¥100,000</div><div class="return-limit"><span class="ja">限定</span><span class="en">Limited</span></div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Premium</span><div class="return-name"><span class="ja">プレミアム</span><span class="en">Premium</span></div><div class="return-desc"><span class="ja">現地観戦招待＋限定ユニフォーム＋スポンサー掲載。（交通費・滞在費は個人負担）</span><span class="en">VIP match invite + exclusive uniform + sponsor listing. (Travel at own expense)</span></div></div><div class="return-meta"><div class="return-price">¥100,000</div><div class="return-limit"><span class="ja">限定 5人</span><span class="en">Limited: 5</span></div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag">Team Order</span><div class="return-name"><span class="ja">ユニフォームオーダー 20枚〜</span><span class="en">Uniform Order 20+</span></div><div class="return-desc"><span class="ja">上下¥6,000/着×20枚〜。デザイン費込。今後永久15%OFF。</span><span class="en">¥6,000/set ×20+. Design included. 15% off future orders.</span></div></div><div class="return-meta"><div class="return-price">¥120,000</div><div class="return-limit"><span class="ja">限定 20口</span><span class="en">Limited: 20</span></div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Ticket</span><div class="return-name"><span class="ja">チケット購入プラン 1,000人</span><span class="en">Ticket Plan: 1,000 Children</span></div><div class="return-desc"><span class="ja">子供1,000人分の観戦チケットを購入。子供たちを試合に無料招待。</span><span class="en">Purchase tickets for 1,000 children to attend matches free.</span></div></div><div class="return-meta"><div class="return-price">¥200,000</div><div class="return-limit"><span class="ja">限定</span><span class="en">Limited</span></div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag">Team Order</span><div class="return-name"><span class="ja">ユニフォームオーダー 40枚〜</span><span class="en">Uniform Order 40+</span></div><div class="return-desc"><span class="ja">上下¥6,000/着×40枚〜。デザイン費込。今後永久20%OFF。</span><span class="en">¥6,000/set ×40+. Design included. 20% off future orders.</span></div></div><div class="return-meta"><div class="return-price">¥240,000</div><div class="return-limit"><span class="ja">限定 20口</span><span class="en">Limited: 20</span></div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag">Sponsor</span><div class="return-name"><span class="ja">スポンサー枠</span><span class="en">Sponsor Tier</span></div><div class="return-desc"><span class="ja">個人名をクラブ公式SNS・サイトに掲載。</span><span class="en">Your name on club's official SNS &amp; website.</span></div></div><div class="return-meta"><div class="return-price">¥300,000</div><div class="return-limit"><span class="ja">限定 20人</span><span class="en">Limited: 20</span></div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Ticket</span><div class="return-name"><span class="ja">チケット購入プラン 2,500人</span><span class="en">Ticket Plan: 2,500 Children</span></div><div class="return-desc"><span class="ja">子供2,500人分の観戦チケットを購入。子供たちを試合に無料招待。</span><span class="en">Purchase tickets for 2,500 children to attend matches free.</span></div></div><div class="return-meta"><div class="return-price">¥500,000</div><div class="return-limit"><span class="ja">限定</span><span class="en">Limited</span></div></div></div>
+<div class="return-card"><div class="return-info"><span class="return-tag tag-red">Ticket</span><div class="return-name"><span class="ja">チケット購入プラン 5,000人</span><span class="en">Ticket Plan: 5,000 Children</span></div><div class="return-desc"><span class="ja">子供5,000人分の観戦チケットを購入。子供たちを試合に無料招待。</span><span class="en">Purchase tickets for 5,000 children to attend matches free.</span></div></div><div class="return-meta"><div class="return-price">¥1,000,000</div><div class="return-limit"><span class="ja">限定</span><span class="en">Limited</span></div></div></div>
+</div></div>
+
+<div class="section fi"><div class="section-label">Schedule</div>
+<h2 class="section-heading"><span class="ja">スケジュール</span><span class="en">Schedule</span></h2>
 <ul class="schedule-list">
-<li class="schedule-item"><span class="schedule-date">6月中旬</span><span class="schedule-desc">ページ作成・審査提出</span></li>
-<li class="schedule-item"><span class="schedule-date">6月下旬</span><span class="schedule-desc">SNS・Voicyで事前告知開始</span></li>
-<li class="schedule-item now"><span class="schedule-date">7月上旬</span><span class="schedule-desc">クラウドファンディング公開（約40日間）</span></li>
-<li class="schedule-item"><span class="schedule-date">8月上旬</span><span class="schedule-desc">2026-27シーズン開幕</span></li>
-<li class="schedule-item"><span class="schedule-date">8月中旬</span><span class="schedule-desc">クラウドファンディング終了</span></li>
-<li class="schedule-item"><span class="schedule-date">9月以降</span><span class="schedule-desc">リターン順次発送＋活動報告開始</span></li>
-</ul>
+<li class="schedule-item"><span class="schedule-date"><span class="ja">6月中旬</span><span class="en">Mid Jun</span></span><span class="schedule-desc"><span class="ja">ページ作成・審査提出</span><span class="en">Page creation &amp; review</span></span></li>
+<li class="schedule-item"><span class="schedule-date"><span class="ja">6月下旬</span><span class="en">Late Jun</span></span><span class="schedule-desc"><span class="ja">SNS・Voicyで事前告知</span><span class="en">Pre-launch on SNS &amp; Voicy</span></span></li>
+<li class="schedule-item now"><span class="schedule-date"><span class="ja">7月上旬</span><span class="en">Early Jul</span></span><span class="schedule-desc"><span class="ja">クラウドファンディング公開（約40日間）</span><span class="en">Crowdfunding launch (~40 days)</span></span></li>
+<li class="schedule-item"><span class="schedule-date"><span class="ja">8月上旬</span><span class="en">Early Aug</span></span><span class="schedule-desc"><span class="ja">2026-27シーズン開幕</span><span class="en">2026-27 season kickoff</span></span></li>
+<li class="schedule-item"><span class="schedule-date"><span class="ja">8月中旬</span><span class="en">Mid Aug</span></span><span class="schedule-desc"><span class="ja">クラウドファンディング終了</span><span class="en">Crowdfunding ends</span></span></li>
+<li class="schedule-item"><span class="schedule-date"><span class="ja">9月以降</span><span class="en">Sep+</span></span><span class="schedule-desc"><span class="ja">リターン順次発送＋活動報告</span><span class="en">Returns shipped + reports begin</span></span></li>
+</ul></div>
 </div>
-</div>
+
 <div class="cta fi">
-<div class="cta-heading">一緒に戦ってくれる仲間を、<br>探しています。</div>
-<p class="cta-sub">僕が子供の頃に柏レイソルの選手に憧れたように、ラオスの子供たちにもロールモデルを届けたい。まずはこの1年、優勝を目指します。</p>
-<a href="#" class="cta-btn">READYFORで支援する</a>
+<div class="cta-heading"><span class="ja">一緒に戦ってくれる仲間を、<br>探しています。</span><span class="en">We're looking for teammates<br>to fight alongside us.</span></div>
+<p class="cta-sub"><span class="ja">僕が子供の頃に柏レイソルの選手に憧れたように、ラオスの子供たちにもロールモデルを届けたい。まずはこの1年、優勝を目指します。</span><span class="en">Just as I was inspired by a Kashiwa Reysol player as a child, I want to deliver role models to the children of Laos. This year, we aim to win.</span></p>
+<a href="#" class="cta-btn"><span class="ja">READYFORで支援する</span><span class="en">Support on READYFOR</span></a>
 </div>
-<footer class="footer">© 2026 株式会社Zelos / Savannakhet Zelos FC</footer>
+<footer class="footer">© 2026 Zelos Inc. / Savannakhet Zelos FC</footer>
 <script>
-const o=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('v')})},{threshold:.12});
-document.querySelectorAll('.fi').forEach(el=>o.observe(el));
+function setLang(l){document.body.classList.toggle('is-en',l==='en');document.documentElement.lang=l;document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('on',b.textContent.trim()===(l==='en'?'EN':'JP')))}
+const o=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('v')})},{threshold:.12});document.querySelectorAll('.fi').forEach(el=>o.observe(el));
 </script>
 </body>
 </html>
