@@ -11,139 +11,178 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#111111;--text:#4a4a4a;--muted:#8c8c8c;--bg:#ffffff;--soft:#f5f5f4;--line:#e6e6e3;
+  --ink:#0d0d0d;
+  --text:#454545;
+  --mute:#8f8f8c;
+  --line:#e7e7e4;
+  --paper:#ffffff;
+  --soft:#f6f6f4;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:var(--text);background:var(--bg);line-height:1.85;-webkit-font-smoothing:antialiased}
+body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:var(--ink);background:var(--paper);line-height:1.9;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1100px;margin:0 auto;padding:0 28px}
+button{font-family:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
 
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
-.nav-right{display:flex;align-items:center;gap:24px}
-.brand{font-weight:900;letter-spacing:.14em;font-size:17px;color:var(--ink)}
-.brand span{font-weight:400;color:var(--muted)}
-.nav-links{display:flex;align-items:center;gap:32px;font-size:12px;font-weight:700;letter-spacing:.14em}
-.nav-links a{color:var(--muted);transition:color .2s}
+/* type roles */
+.disp{font-family:"Archivo","Noto Sans JP",sans-serif;font-weight:900;font-stretch:115%;text-transform:uppercase;letter-spacing:-.015em}
+.mono{font-family:"IBM Plex Mono",monospace;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+.outline{-webkit-text-stroke:2.5px var(--ink);color:transparent}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:115%;letter-spacing:.02em;font-size:17px;text-transform:uppercase}
+.nav-right{display:flex;align-items:center;gap:26px}
+.nav-links{display:flex;align-items:center;gap:30px;font-size:11.5px;font-weight:700;letter-spacing:.14em}
+.nav-links a{color:var(--mute);transition:color .18s;padding:4px 0}
 .nav-links a:hover,.nav-links a.active{color:var(--ink)}
-.lang-btn{font-family:inherit;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--ink);background:none;border:1px solid var(--ink);padding:6px 12px;cursor:pointer;transition:background .2s,color .2s;line-height:1}
+.nav-links a.active{box-shadow:0 2px 0 var(--ink)}
+.lang-btn{font-size:10.5px;font-weight:600;font-family:"IBM Plex Mono",monospace;letter-spacing:.14em;color:var(--ink);background:none;border:1px solid var(--ink);padding:7px 13px;cursor:pointer;transition:background .18s,color .18s;line-height:1}
 .lang-btn:hover{background:var(--ink);color:#fff}
-.nav-toggle{display:none;background:none;border:none;font-size:22px;color:var(--ink);cursor:pointer}
+.nav-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--ink)}
 
-.btn{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.08em;padding:15px 30px;transition:background .2s,color .2s,border-color .2s,transform .15s}
-.btn-solid{background:var(--ink);color:#fff;border:1px solid var(--ink)}
-.btn-solid:hover{background:#333;border-color:#333;transform:translateY(-2px)}
-.btn-line{border:1px solid var(--ink);color:var(--ink)}
+/* buttons */
+.btn{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.12em;padding:17px 36px;border:1px solid var(--ink);transition:background .18s,color .18s,transform .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn-solid{background:var(--ink);color:#fff}
+.btn-solid:hover{background:#fff;color:var(--ink)}
+.btn-line{background:transparent;color:var(--ink)}
 .btn-line:hover{background:var(--ink);color:#fff}
 
-.hero{padding:96px 0 84px;border-bottom:1px solid var(--line)}
-.eyebrow{font-size:11px;font-weight:700;letter-spacing:.34em;color:var(--muted);margin-bottom:26px}
-.hero h1{font-weight:900;line-height:1.02;letter-spacing:.01em;font-size:clamp(44px,9vw,96px);color:var(--ink);text-transform:uppercase}
-.hero h1 em{font-style:italic}
-.hero .jp{margin-top:28px;font-size:clamp(15px,2.2vw,18px);color:var(--text);max-width:34em}
-.hero .msg{margin-top:18px;font-size:13px;color:var(--muted);letter-spacing:.02em}
-.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
+/* hero */
+.hero{padding:104px 0 84px}
+.eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:34px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--ink)}
+.eyebrow span{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;letter-spacing:.3em;color:var(--mute);text-transform:uppercase}
+.hero h1{font-size:clamp(46px,10vw,120px);line-height:.94}
+.hero .jp{margin-top:34px;font-size:clamp(15px,2.2vw,18px);color:var(--text);max-width:34em;font-weight:500}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.tag{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;letter-spacing:.14em;border:1px solid var(--line);color:var(--text);padding:9px 14px;text-transform:uppercase}
+.tag b{color:var(--ink);font-weight:600}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px}
 
-.sec{padding:84px 0}
-.sec-soft{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.section-head{margin-bottom:46px}
-.section-head .lbl{font-size:11px;font-weight:700;letter-spacing:.3em;color:var(--muted);text-transform:uppercase}
-.section-head h2{font-size:clamp(26px,4vw,38px);font-weight:900;color:var(--ink);margin-top:12px;letter-spacing:.02em}
-.section-head p{color:var(--text);margin-top:14px;font-size:15px;max-width:40em}
+/* ticker */
+.tick{background:var(--ink);overflow:hidden}
+.tick-inner{display:flex;width:max-content;animation:tick 30s linear infinite}
+.tick-seq{display:flex;align-items:center;padding:13px 0}
+.tick-seq span{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;letter-spacing:.26em;color:#fff;text-transform:uppercase;padding:0 34px;position:relative}
+.tick-seq span::after{content:"";position:absolute;right:-3px;top:50%;width:6px;height:6px;background:#fff;transform:translateY(-50%) rotate(45deg)}
+@keyframes tick{to{transform:translateX(-50%)}}
 
-.price-card{border:1px solid var(--ink);display:grid;grid-template-columns:1fr 1.2fr}
-.price-figure{padding:48px 44px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--line)}
-.price-figure .tag{font-size:11px;letter-spacing:.22em;color:var(--muted);font-weight:700}
-.price-figure .amount{font-weight:900;line-height:1;margin:16px 0 8px;display:flex;align-items:baseline;gap:6px;color:var(--ink)}
-.price-figure .amount .yen{font-size:34px}
-.price-figure .amount .num{font-size:78px;letter-spacing:.01em}
-.price-figure .set{font-size:14px;color:var(--text)}
-.price-figure .ship{margin-top:20px;font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
-.price-figure .freebadge,.ship-figure .ship-free{display:inline-block;align-self:flex-start;margin-top:16px;border:1.5px solid var(--ink);color:var(--ink);font-size:12px;font-weight:800;letter-spacing:.05em;padding:8px 15px}
-.spec{padding:34px 44px}
-.spec .row{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);align-items:start}
+/* section scaffolding */
+.sec{padding:96px 0;border-top:1px solid var(--line)}
+.sec.alt{background:var(--soft)}
+.sec-head{margin-bottom:52px}
+.sec-head .lbl{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;letter-spacing:.3em;color:var(--mute);text-transform:uppercase;display:flex;align-items:center;gap:14px}
+.sec-head .lbl::after{content:"";flex:1;height:1px;background:var(--line)}
+.sec-head h2{font-size:clamp(28px,4.6vw,48px);margin-top:18px}
+.sec-head p{color:var(--text);margin-top:14px;font-size:15px;max-width:44em}
+
+/* philosophy */
+.philo p.big{font-size:clamp(21px,3.4vw,34px);font-weight:900;line-height:1.75;max-width:21em;letter-spacing:.01em}
+.philo p.big .dim{color:var(--mute)}
+.philo .sub{margin-top:26px;color:var(--text);font-size:15px;max-width:42em}
+
+/* price */
+.price-card{display:grid;grid-template-columns:.9fr 1.1fr;border:1px solid var(--ink)}
+.price-figure{background:var(--ink);color:#fff;padding:56px 48px;display:flex;flex-direction:column;justify-content:center}
+.price-figure .tag-l{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;letter-spacing:.26em;color:#9a9a9a;text-transform:uppercase}
+.price-figure .amount{display:flex;align-items:baseline;gap:8px;margin:20px 0 10px;line-height:1}
+.price-figure .yen{font-family:"Archivo",sans-serif;font-weight:900;font-size:38px}
+.price-figure .n{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:80%;font-size:clamp(72px,9vw,108px);letter-spacing:-.01em}
+.price-figure .set{font-size:14px;color:#cfcfcf}
+.price-figure .free{display:inline-block;align-self:flex-start;margin-top:24px;border:1.5px solid #fff;color:#fff;font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11.5px;letter-spacing:.14em;padding:10px 16px;text-transform:uppercase}
+.spec{padding:42px 48px;background:#fff}
+.spec .row{display:grid;grid-template-columns:140px 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--line);align-items:start}
 .spec .row:last-child{border-bottom:none}
-.spec dt{font-size:13px;font-weight:700;color:var(--ink);letter-spacing:.03em}
+.spec dt{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;letter-spacing:.12em;color:var(--ink);text-transform:uppercase;padding-top:4px}
 .spec dd{font-size:14px;color:var(--text)}
 .spec dd b{color:var(--ink);font-weight:700}
 
+/* shipping */
 .ship-card{border:1px solid var(--ink);display:grid;grid-template-columns:.9fr 1.1fr}
-.ship-figure{background:var(--soft);padding:44px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--line)}
-.ship-figure .case{font-size:11px;letter-spacing:.2em;color:var(--muted);font-weight:700}
-.ship-figure .weight{font-size:13px;color:var(--text);margin-top:8px}
-.ship-figure .amount{display:flex;align-items:baseline;gap:3px;margin-top:14px;color:var(--ink);font-weight:900;line-height:1}
-.ship-figure .amount .plus{font-size:26px}
-.ship-figure .amount .yen{font-size:24px}
-.ship-figure .amount .num{font-size:clamp(34px,5vw,46px);letter-spacing:.01em}
-.ship-figure .guide{margin-top:12px;font-size:12px;color:var(--muted)}
-.ship-body{padding:36px 44px;display:flex;flex-direction:column;justify-content:center}
-.ship-body .lead{font-size:16px;color:var(--ink);font-weight:900;margin-bottom:16px;letter-spacing:.02em}
+.ship-figure{background:var(--soft);padding:48px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--line)}
+.ship-figure .case{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;letter-spacing:.22em;color:var(--mute);text-transform:uppercase}
+.ship-figure .weight{font-size:13px;color:var(--text);margin-top:10px}
+.ship-figure .amount{display:flex;align-items:baseline;gap:4px;margin-top:16px;line-height:1}
+.ship-figure .plus{font-family:"Archivo",sans-serif;font-weight:900;font-size:28px}
+.ship-figure .yen2{font-family:"Archivo",sans-serif;font-weight:900;font-size:24px}
+.ship-figure .n2{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:80%;font-size:clamp(34px,5vw,50px);letter-spacing:0}
+.ship-figure .guide{margin-top:12px;font-size:12px;color:var(--mute)}
+.ship-figure .free2{display:inline-block;align-self:flex-start;margin-top:20px;border:1.5px solid var(--ink);color:var(--ink);font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;letter-spacing:.14em;padding:9px 15px;text-transform:uppercase}
+.ship-body{padding:42px 48px;display:flex;flex-direction:column;justify-content:center;background:#fff}
+.ship-body .lead{font-size:17px;font-weight:900;margin-bottom:18px}
 .ship-points{list-style:none}
-.ship-points li{font-size:14px;color:var(--text);padding:9px 0 9px 24px;position:relative;line-height:1.75}
-.ship-points li::before{content:"";position:absolute;left:0;top:15px;width:9px;height:1px;background:var(--ink)}
+.ship-points li{font-size:14px;color:var(--text);padding:10px 0 10px 26px;position:relative;border-bottom:1px solid var(--line)}
+.ship-points li:last-child{border-bottom:none}
+.ship-points li::before{content:"";position:absolute;left:0;top:20px;width:10px;height:1px;background:var(--ink)}
 .ship-points li b{color:var(--ink);font-weight:700}
-.ship-cta{margin-top:24px}
+.ship-cta{margin-top:26px}
 
-.mat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);background:#fff}
-.mat-card{padding:34px 30px;border-right:1px solid var(--line)}
-.mat-card:last-child{border-right:none}
-.mat-card .mk{font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--muted)}
-.mat-card h3{font-size:17px;font-weight:900;color:var(--ink);margin:10px 0 10px;letter-spacing:.02em}
+/* quality: spec sheet */
+.mat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.mat-card{padding:40px 34px;background:#fff}
+.mat-card .mi{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:10.5px;letter-spacing:.24em;color:var(--mute);text-transform:uppercase}
+.mat-card h3{font-size:18px;font-weight:900;margin:16px 0 12px}
 .mat-card p{font-size:14px;color:var(--text)}
 
-.step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.step{padding-top:18px;border-top:2px solid var(--ink)}
-.step .n{font-size:14px;font-weight:700;letter-spacing:.1em;color:var(--muted)}
-.step h3{font-size:18px;font-weight:900;color:var(--ink);margin:10px 0 8px}
+/* steps */
+.step-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink)}
+.step{padding:38px 32px 8px 0;border-right:1px solid var(--line)}
+.step:last-child{border-right:none}
+.step .n{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:80%;font-size:64px;line-height:1;-webkit-text-stroke:2px var(--ink);color:transparent}
+.step h3{font-size:17px;font-weight:900;margin:20px 0 10px}
 .step p{font-size:14px;color:var(--text)}
 
-.notes ul{list-style:none;max-width:780px}
-.notes li{font-size:13.5px;color:var(--text);padding:9px 0 9px 22px;position:relative}
-.notes li::before{content:"";position:absolute;left:0;top:15px;width:6px;height:6px;background:var(--ink);border-radius:50%}
+/* notes */
+.notes ul{list-style:none;max-width:840px}
+.notes li{font-size:13.5px;color:var(--text);padding:10px 0 10px 26px;position:relative;line-height:1.85}
+.notes li::before{content:"";position:absolute;left:0;top:20px;width:10px;height:1px;background:var(--ink)}
 
-.cta{padding:90px 0;text-align:center}
-.cta h2{font-size:clamp(26px,4.4vw,40px);font-weight:900;color:var(--ink);letter-spacing:.02em}
-.cta h2 em{font-style:italic}
-.cta p{color:var(--text);margin:16px auto 32px;max-width:34em;font-size:15px}
+/* cta */
+.cta{padding:120px 0;text-align:center}
+.cta h2{font-size:clamp(34px,7vw,72px)}
+.cta p{color:var(--text);margin:22px auto 40px;max-width:34em;font-size:15px}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
-footer{background:var(--ink);color:#9a9a9a;padding:48px 0 32px;font-size:13px}
-.foot-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.12)}
-.foot-brand{font-weight:900;font-size:19px;color:#fff;letter-spacing:.12em}
-.foot-brand span{font-weight:400;color:#9a9a9a}
-.foot-links{display:flex;gap:26px;font-weight:700;letter-spacing:.1em;font-size:12px}
-.foot-links a{color:#bdbdbd}
+/* footer */
+footer{background:var(--ink);color:#9a9a9a;padding:56px 0 36px;font-size:13px}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.14)}
+.foot-brand{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:115%;font-size:20px;color:#fff;letter-spacing:.02em;text-transform:uppercase}
+.foot-links{display:flex;gap:28px;font-weight:700;letter-spacing:.12em;font-size:11.5px}
 .foot-links a:hover{color:#fff}
-.copy{margin-top:22px;font-size:12px;letter-spacing:.04em}
+.copy{margin-top:24px;font-size:12px;letter-spacing:.04em}
 
-@media(max-width:860px){
-  .price-card{grid-template-columns:1fr}
-  .price-figure{border-right:none;border-bottom:1px solid var(--line)}
-  .ship-card{grid-template-columns:1fr}
+@media(max-width:880px){
+  .price-card,.ship-card{grid-template-columns:1fr}
   .ship-figure{border-right:none;border-bottom:1px solid var(--line)}
   .mat-grid{grid-template-columns:1fr}
-  .mat-card{border-right:none;border-bottom:1px solid var(--line)}
-  .mat-card:last-child{border-bottom:none}
-  .step-grid{grid-template-columns:1fr;gap:0}
-  .step{margin-bottom:28px}
-  .nav-links{position:absolute;top:66px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:8px 28px 16px;border-bottom:1px solid var(--line);display:none}
+  .step-grid{grid-template-columns:1fr}
+  .step{border-right:none;border-bottom:1px solid var(--line);padding:32px 0}
+  .step:last-child{border-bottom:none}
+  .nav-links{position:absolute;top:68px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:6px 28px 14px;border-bottom:1px solid var(--line);display:none}
   .nav-links.open{display:flex}
-  .nav-links a{padding:12px 0;border-bottom:1px solid var(--line);width:100%}
-  .nav-links .lang-btn{margin-top:14px}
+  .nav-links a{padding:14px 0;border-bottom:1px solid var(--line);width:100%}
+  .nav-links a.active{box-shadow:none}
   .nav-toggle{display:block}
 }
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto;transition:none!important}
+  .tick-inner{animation:none}
+}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <a href="index.html" class="brand">ZELOS <span>UNIFORM</span></a>
+    <a href="index.html" class="brand">Zelos Uniform</a>
     <div class="nav-right">
       <nav class="nav-links" id="nav">
         <a href="index.html" class="active">HOME</a>
@@ -158,42 +197,67 @@ footer{background:var(--ink);color:#9a9a9a;padding:48px 0 32px;font-size:13px}
 
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow">ZELOS ORIGINAL FOOTBALL UNIFORM</p>
-    <h1>Make your<br><em>original</em> kit.</h1>
-    <p class="jp" data-en="Original football kits for your team, club, or crew. Premium fabric, ¥6,000 per top-and-shorts set (design included). Free shipping on orders of 20+ sets.">あなたのチーム、サークル、仲間のためのオリジナルサッカーユニフォーム。高品質な素材で、上下セット ¥6,000（デザイン費込み）。20着以上のご注文で送料無料です。</p>
-    <p class="msg" data-en="Our design stays simple. The color comes from the kit you create.">デザインはどこまでもシンプルに。色は、あなたのつくる一着から。</p>
+    <div class="eyebrow"><span>Zelos Original Football Kit — Made in Laos</span></div>
+    <h1 class="disp">You bring<br>the <span class="outline">color</span>.</h1>
+    <p class="jp" data-en="Original football kits for your team, your crew, your people. Premium fabric, ¥6,000 per set with design included. Free shipping on 20+ kits.">あなたのチーム、サークル、仲間のためのオリジナルサッカーユニフォーム。高品質な素材で、上下セット ¥6,000（デザイン費込み）。20着以上のご注文で送料無料です。</p>
+    <div class="hero-tags">
+      <span class="tag"><b>¥6,000</b> / SET</span>
+      <span class="tag" data-en="DESIGN INCLUDED">デザイン費込み</span>
+      <span class="tag" data-en="FREE SHIPPING 20+">20着以上 送料無料</span>
+      <span class="tag" data-en="MIN. ORDER 10">最低オーダー 10枚〜</span>
+    </div>
     <div class="hero-cta">
       <a href="samples.html" class="btn btn-solid" data-en="View design samples">デザインサンプルを見る</a>
-      <a href="contact.html" class="btn btn-line" data-en="Contact">お問い合わせ</a>
+      <a href="contact.html" class="btn btn-line" data-en="Contact us">お問い合わせ</a>
     </div>
+  </div>
+</section>
+
+<!-- stadium ticker -->
+<div class="tick" aria-hidden="true">
+  <div class="tick-inner">
+    <div class="tick-seq">
+      <span>Original Football Kit</span><span>¥6,000 per set</span><span>Design included</span><span>Free shipping 20+</span><span>Sublimation print</span><span>Made in Laos</span>
+    </div>
+    <div class="tick-seq">
+      <span>Original Football Kit</span><span>¥6,000 per set</span><span>Design included</span><span>Free shipping 20+</span><span>Sublimation print</span><span>Made in Laos</span>
+    </div>
+  </div>
+</div>
+
+<!-- PHILOSOPHY -->
+<section class="sec philo">
+  <div class="wrap">
+    <div class="sec-head"><span class="lbl">Our Color</span></div>
+    <p class="big" data-en="We wear no color of our own. <span class='dim'>The color you choose becomes ours.</span>">余計な色は、私たちはまといません。<span class="dim">あなたが選んだ色が、そのまま私たちの色になる。</span></p>
+    <p class="sub" data-en="Zelos Uniform builds the base — simple and sharp. The color comes from you, the team who wears it. The bolder the kits you create, the more color our brand takes on. That is the relationship we are after.">ZELOS UNIFORM がつくるのは、シンプルでかっこいいベース。そこに色を与えるのは、チームをつくるあなた自身です。鮮やかなデザインを選び、身にまとうほど、私たちのブランドにも色がついていく——そんな関係を目指しています。</p>
   </div>
 </section>
 
 <!-- PRICE -->
 <section class="sec">
   <div class="wrap">
-    <div class="section-head">
+    <div class="sec-head">
       <span class="lbl">Price &amp; Terms</span>
-      <h2 data-en="Pricing &amp; Terms">価格と製作条件</h2>
-      <p data-en="Simple pricing. Names and numbers are included at no extra cost, however many you add.">シンプルな価格設定。名入れ・背番号は何枚入れても追加料金はかかりません。</p>
+      <h2 class="disp" data-en="Price &amp; terms">価格と製作条件</h2>
+      <p data-en="One simple price. Names and numbers cost nothing extra, no matter how many you add.">シンプルな価格設定。名入れ・背番号は何枚入れても追加料金はかかりません。</p>
     </div>
     <div class="price-card">
       <div class="price-figure">
-        <span class="tag" data-en="UNIFORM SET (top &amp; shorts, design included)">UNIFORM SET（上下・デザイン費込み）</span>
-        <div class="amount"><span class="yen">¥</span><span class="num">6,000</span></div>
-        <span class="set" data-en="Shirt + shorts set, per set (design included)">シャツ＋パンツ 上下セット・1着あたり（デザイン費込み）</span>
-        <span class="ship" data-en="Shipping calculated separately (see below)">送料は別途計算（下記参照）</span>
-        <span class="freebadge" data-en="Free shipping on orders of 20+">20着以上のご注文で送料無料</span>
+        <span class="tag-l" data-en="Uniform set / Shirt + Shorts / Design included">上下セット・デザイン費込み</span>
+        <div class="amount"><span class="yen">¥</span><span class="n">6,000</span></div>
+        <span class="set" data-en="Per set — shirt and shorts, design included">シャツ＋パンツ 上下セット・1着あたり（デザイン費込み）</span>
+        <span class="free" data-en="Free shipping on 20+ kits">20着以上のご注文で送料無料</span>
       </div>
       <div class="spec">
         <dl>
-          <div class="row"><dt data-en="Design fee">デザイン費</dt><dd data-en="<b>Included</b>  Design work is part of the ¥6,000 base price. No extra charge."><b>基本料金に込み</b>　¥6,000にデザイン作成費が含まれます。追加費用はかかりません。</dd></div>
-          <div class="row"><dt data-en="Minimum order">最低オーダー</dt><dd data-en="<b>From 10 sets</b>  Orders start at 10 sets."><b>10枚〜</b>　まずは10枚からご注文いただけます。</dd></div>
-          <div class="row"><dt data-en="Add-on order">追加オーダー</dt><dd data-en="<b>In units of 5</b>  Additional orders are taken in units of 5."><b>5枚単位</b>　追加でのご注文は5枚単位で承ります。</dd></div>
-          <div class="row"><dt data-en="New design">新規デザイン</dt><dd data-en="Switching to a brand-new design also requires <b>10 sets minimum</b>.">デザインを新しく作り替える場合も、<b>10枚〜</b>のご注文をお願いします。</dd></div>
-          <div class="row"><dt data-en="Names &amp; numbers">名入れ・背番号</dt><dd data-en="Done with <b>sublimation print</b>, so the price stays the same however many you add."><b>昇華プリント</b>で加工するため、何枚入れても料金は変わりません。</dd></div>
-          <div class="row"><dt data-en="Delivery">納期</dt><dd data-en="Delivered <b>about 1 month</b> after your order is confirmed.">ご注文確定から<b>約1ヶ月</b>でお手元にお届けします。</dd></div>
-          <div class="row"><dt data-en="Shipping">送料</dt><dd data-en="<b>Calculated separately</b> by region and quantity (around +¥8,000–10,000 for 10 sets). <b>Free on orders of 20+ sets</b>.">地域・枚数により<b>別途計算</b>（10着で+¥8,000〜10,000が目安）。<b>20着以上のご注文で送料無料</b>です。</dd></div>
+          <div class="row"><dt>Design</dt><dd data-en="<b>Included in the price.</b> The ¥6,000 covers design work — no extra fees."><b>基本料金に込み</b>　¥6,000にデザイン作成費が含まれます。追加費用はかかりません。</dd></div>
+          <div class="row"><dt>Min. Order</dt><dd data-en="<b>From 10 kits.</b> Start with as few as ten."><b>10枚〜</b>　まずは10枚からご注文いただけます。</dd></div>
+          <div class="row"><dt>Reorder</dt><dd data-en="<b>In units of 5.</b> Additional orders come in sets of five."><b>5枚単位</b>　追加でのご注文は5枚単位で承ります。</dd></div>
+          <div class="row"><dt>New Design</dt><dd data-en="Switching to a brand-new design also starts <b>from 10 kits</b>.">デザインを新しく作り替える場合も、<b>10枚〜</b>のご注文をお願いします。</dd></div>
+          <div class="row"><dt>Names &amp; No.</dt><dd data-en="<b>Sublimation printed</b> — add as many as you like at no extra cost."><b>昇華プリント</b>で加工するため、何枚入れても料金は変わりません。</dd></div>
+          <div class="row"><dt>Delivery</dt><dd data-en="About <b>one month</b> from order confirmation to your door.">ご注文確定から<b>約1ヶ月</b>でお手元にお届けします。</dd></div>
+          <div class="row"><dt>Shipping</dt><dd data-en="Calculated separately by region and quantity (10 kits ≈ +¥8,000–10,000). <b>Free on 20+ kits.</b>">地域・枚数により<b>別途計算</b>（10着で+¥8,000〜10,000が目安）。<b>20着以上のご注文で送料無料</b>です。</dd></div>
         </dl>
       </div>
     </div>
@@ -203,26 +267,26 @@ footer{background:var(--ink);color:#9a9a9a;padding:48px 0 32px;font-size:13px}
 <!-- SHIPPING -->
 <section class="sec">
   <div class="wrap">
-    <div class="section-head">
+    <div class="sec-head">
       <span class="lbl">Shipping</span>
-      <h2 data-en="Shipping">送料について</h2>
-      <p data-en="Shipping depends on weight and destination. No hidden fees — the figures below are estimates.">送料は重さと配送先で決まります。隠れた費用はありません。下記はあくまで目安です。</p>
+      <h2 class="disp" data-en="Shipping">送料について</h2>
+      <p data-en="Shipping depends on weight and destination. No hidden costs — the figures below are a guide.">送料は重さと配送先で決まります。隠れた費用はありません。下記はあくまで目安です。</p>
     </div>
     <div class="ship-card">
       <div class="ship-figure">
-        <span class="case" data-en="For an order of 10 sets (estimate)">10着のご注文の場合（目安）</span>
-        <span class="weight" data-en="Total weight approx. 5kg">総重量 約5kg</span>
-        <div class="amount"><span class="plus">+</span><span class="yen">¥</span><span class="num">8,000–10,000</span></div>
+        <span class="case" data-en="Example: order of 10 kits">10着のご注文の場合（目安）</span>
+        <span class="weight" data-en="Total weight approx. 5 kg">総重量 約5kg</span>
+        <div class="amount"><span class="plus">+</span><span class="yen2">¥</span><span class="n2">8,000–10,000</span></div>
         <span class="guide" data-en="Varies by quantity and destination">枚数・配送先により変動します</span>
-        <span class="ship-free" data-en="Free over 20 sets">20着以上で送料無料</span>
+        <span class="free2" data-en="Free shipping 20+">20着以上で送料無料</span>
       </div>
       <div class="ship-body">
-        <p class="lead" data-en="Free shipping on orders of 20+ sets.">20着以上のご注文で、送料無料。</p>
+        <p class="lead" data-en="Order 20 or more, and shipping is free.">20着以上のご注文で、送料無料。</p>
         <ul class="ship-points">
-          <li data-en="<b>20+ sets ship free.</b> The bigger the team, the more you save by ordering together."><b>20着以上なら送料は無料。</b>大人数のチームほど、まとめてお得にご注文いただけます。</li>
-          <li data-en="<b>We aim for the industry's lowest prices.</b> Even including shipping, we pursue a price you'll be happy with."><b>業界最安値を目指しています。</b>送料を含めても、ご納得いただける価格を追求します。</li>
-          <li data-en="<b>Shipping discounts are possible under 20 sets too.</b> We stay flexible based on quantity."><b>20着未満でも、送料の割引をご相談可能。</b>枚数に応じて柔軟に対応します。</li>
-          <li data-en="Exact shipping is quoted based on design, quantity, and destination.">正確な送料は、デザイン・枚数・お届け先をもとにお見積り時にご案内します。</li>
+          <li data-en="<b>Free shipping from 20 kits.</b> The bigger the squad, the better the deal."><b>20着以上なら送料は無料。</b>大人数のチームほど、まとめてお得にご注文いただけます。</li>
+          <li data-en="<b>We aim for the lowest rates in the industry.</b> Even with shipping, the total should feel right."><b>業界最安値を目指しています。</b>送料を含めても、ご納得いただける価格を追求します。</li>
+          <li data-en="<b>Under 20 kits? Shipping discounts are negotiable</b> depending on quantity."><b>20着未満でも、送料の割引をご相談可能。</b>枚数に応じて柔軟に対応します。</li>
+          <li data-en="Exact shipping is quoted with your estimate — based on design, quantity, and destination.">正確な送料は、デザイン・枚数・お届け先をもとにお見積り時にご案内します。</li>
         </ul>
         <div class="ship-cta">
           <a href="contact.html" class="btn btn-solid" data-en="Ask about shipping">送料について相談する</a>
@@ -232,29 +296,29 @@ footer{background:var(--ink);color:#9a9a9a;padding:48px 0 32px;font-size:13px}
   </div>
 </section>
 
-<!-- MATERIAL -->
-<section class="sec sec-soft">
+<!-- QUALITY -->
+<section class="sec alt">
   <div class="wrap">
-    <div class="section-head">
+    <div class="sec-head">
       <span class="lbl">Quality</span>
-      <h2 data-en="Quality You Can Feel">素材へのこだわり</h2>
-      <p data-en="Affordable, but built to satisfy. We use fabric made for sport.">価格はおさえつつ、満足いただける品質を。スポーツに最適な生地を使用しています。</p>
+      <h2 class="disp" data-en="Built for the game">素材へのこだわり</h2>
+      <p data-en="Priced low, made right. We use fabric built for sport.">価格はおさえつつ、満足いただける品質を。スポーツに最適な生地を使用しています。</p>
     </div>
     <div class="mat-grid">
       <div class="mat-card">
-        <div class="mk">01 — FABRIC</div>
-        <h3 data-en="High-quality fabric">高品質な生地</h3>
-        <p data-en="Substantial yet lightweight. A quality sports fabric that holds up to intense movement.">しっかりとした質感ながら軽量。激しい動きにも耐える、スポーツ向けの高品質素材を採用しています。</p>
+        <div class="mi">Spec 01 — Fabric</div>
+        <h3 data-en="Premium fabric">高品質な生地</h3>
+        <p data-en="Substantial yet light. High-grade sports fabric that holds up to hard play.">しっかりとした質感ながら軽量。激しい動きにも耐える、スポーツ向けの高品質素材を採用しています。</p>
       </div>
       <div class="mat-card">
-        <div class="mk">02 — BREATHABLE</div>
-        <h3 data-en="Great breathability">優れた通気性</h3>
-        <p data-en="Highly breathable fabric that wicks sweat fast, staying comfortable throughout the match.">汗をすばやく逃がす通気性の高い生地。蒸れにくく、試合中も快適な着心地を保ちます。</p>
+        <div class="mi">Spec 02 — Breathability</div>
+        <h3 data-en="Superior airflow">優れた通気性</h3>
+        <p data-en="Wicks sweat fast and stays cool — comfortable through the full ninety minutes.">汗をすばやく逃がす通気性の高い生地。蒸れにくく、試合中も快適な着心地を保ちます。</p>
       </div>
       <div class="mat-card">
-        <div class="mk">03 — PRINT</div>
+        <div class="mi">Spec 03 — Sublimation</div>
         <h3 data-en="Sublimation print">昇華プリント</h3>
-        <p data-en="Names, numbers, and logos dyed into the fabric. Durable, with huge design freedom.">名前・背番号・ロゴを生地に染め込む昇華プリント。剥がれにくく、デザインの自由度も高い加工方法です。</p>
+        <p data-en="Names, numbers, and logos dyed into the fabric itself. No peeling, total design freedom.">名前・背番号・ロゴを生地に染め込む昇華プリント。剥がれにくく、デザインの自由度も高い加工方法です。</p>
       </div>
     </div>
   </div>
@@ -263,42 +327,39 @@ footer{background:var(--ink);color:#9a9a9a;padding:48px 0 32px;font-size:13px}
 <!-- STEPS -->
 <section class="sec">
   <div class="wrap">
-    <div class="section-head">
-      <span class="lbl">How it works</span>
-      <h2 data-en="How It Works">ご注文の流れ</h2>
+    <div class="sec-head">
+      <span class="lbl">How It Works</span>
+      <h2 class="disp" data-en="From idea to kickoff">ご注文の流れ</h2>
     </div>
     <div class="step-grid">
       <div class="step">
-        <div class="n">STEP 01</div>
-        <h3 data-en="Discuss the design">デザインを相談</h3>
-        <p data-en="Pick a design from our samples, or tell us your idea. New designs are created free of charge.">サンプルからお好きなデザインを選ぶか、ご希望のイメージをお知らせください。新規デザインも無料で作成します。</p>
+        <div class="n">01</div>
+        <h3 data-en="Talk design">デザインを相談</h3>
+        <p data-en="Pick a favorite from our samples or tell us your idea. New designs are created free of charge.">サンプルからお好きなデザインを選ぶか、ご希望のイメージをお知らせください。新規デザインも無料で作成します。</p>
       </div>
       <div class="step">
-        <div class="n">STEP 02</div>
-        <h3 data-en="Confirm the order">オーダー確定</h3>
-        <p data-en="Lock in the design, sizes, quantity (10+), and names. We send a quote (kit + shipping).">デザイン・サイズ・枚数（10枚〜）・名入れ内容を確定。お見積り（本体＋送料）をご案内します。</p>
+        <div class="n">02</div>
+        <h3 data-en="Confirm your order">オーダー確定</h3>
+        <p data-en="Lock in design, sizes, quantity (10+), and names. We send a full quote — kits plus shipping.">デザイン・サイズ・枚数（10枚〜）・名入れ内容を確定。お見積り（本体＋送料）をご案内します。</p>
       </div>
       <div class="step">
-        <div class="n">STEP 03</div>
-        <h3 data-en="Delivered in ~1 month">約1ヶ月でお届け</h3>
-        <p data-en="About one month after confirmation, your finished kits are delivered to you.">ご注文確定後、約1ヶ月で製作。完成したユニフォームをお手元までお届けします。</p>
+        <div class="n">03</div>
+        <h3 data-en="Delivered in a month">約1ヶ月でお届け</h3>
+        <p data-en="Production takes about one month from confirmation. Your finished kits arrive at your door.">ご注文確定後、約1ヶ月で製作。完成したユニフォームをお手元までお届けします。</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- NOTES -->
-<section class="sec sec-soft notes">
+<section class="sec alt notes">
   <div class="wrap">
-    <div class="section-head" style="margin-bottom:26px">
-      <span class="lbl">Notes</span>
-    </div>
     <ul>
-      <li data-en="Listed price is per top-and-shorts set, design included. Shipping is calculated separately.">表示価格は上下セット1着あたり・デザイン費込みの金額です。送料は別途計算となります。</li>
-      <li data-en="Minimum order is 10 sets; add-ons in units of 5. Switching to a new design also starts at 10 sets.">最低オーダーは10枚から、追加は5枚単位で承ります。新規デザインへの作り替えも10枚からとなります。</li>
-      <li data-en="Names and numbers use sublimation print, so any number or variety adds no extra cost.">名入れ・背番号は昇華プリントのため、何枚・何種類入れても追加料金はかかりません。</li>
-      <li data-en="Delivery is about one month after confirmation, and may vary depending on the season.">納期はご注文確定後から約1ヶ月が目安です。時期により前後する場合があります。</li>
-      <li data-en="Shipping runs about +¥8,000–10,000 for 10 sets. Free on orders of 20+; discounts can be discussed under 20 too.">送料は10着で+¥8,000〜10,000が目安です。20着以上のご注文で送料無料。20着未満でも枚数に応じて割引をご相談いただけます。</li>
+      <li data-en="Listed price is per set (shirt + shorts), design included. Shipping is calculated separately.">表示価格は上下セット1着あたり・デザイン費込みの金額です。送料は別途計算となります。</li>
+      <li data-en="Minimum order is 10 kits; reorders in units of 5. Switching to a new design also starts from 10.">最低オーダーは10枚から、追加は5枚単位で承ります。新規デザインへの作り替えも10枚からとなります。</li>
+      <li data-en="Names and numbers are sublimation printed — no extra cost, however many you add.">名入れ・背番号は昇華プリントのため、何枚・何種類入れても追加料金はかかりません。</li>
+      <li data-en="Delivery is about one month from order confirmation and may vary by season.">納期はご注文確定後から約1ヶ月が目安です。時期により前後する場合があります。</li>
+      <li data-en="Shipping guide: about +¥8,000–10,000 for 10 kits. Free on 20+; discounts negotiable under 20.">送料は10着で+¥8,000〜10,000が目安です。20着以上のご注文で送料無料。20着未満でも枚数に応じて割引をご相談いただけます。</li>
     </ul>
   </div>
 </section>
@@ -306,11 +367,11 @@ footer{background:var(--ink);color:#9a9a9a;padding:48px 0 32px;font-size:13px}
 <!-- CTA -->
 <section class="cta">
   <div class="wrap">
-    <h2 data-en="Make it <em>yours</em>.">あなただけの<em>一着</em>を、つくろう。</h2>
-    <p data-en="Get inspired by our design samples. Any questions, just reach out.">デザインサンプルからイメージを膨らませて。気になることがあれば、お気軽にお問い合わせください。</p>
+    <h2 class="disp">Make it <span class="outline">yours</span>.</h2>
+    <p data-en="Start with the samples, then tell us what you have in mind. We are happy to help.">デザインサンプルからイメージを膨らませて。気になることがあれば、お気軽にお問い合わせください。</p>
     <div class="cta-btns">
       <a href="samples.html" class="btn btn-solid" data-en="View design samples">デザインサンプルを見る</a>
-      <a href="contact.html" class="btn btn-line" data-en="Contact">お問い合わせ</a>
+      <a href="contact.html" class="btn btn-line" data-en="Contact us">お問い合わせ</a>
     </div>
   </div>
 </section>
@@ -318,7 +379,7 @@ footer{background:var(--ink);color:#9a9a9a;padding:48px 0 32px;font-size:13px}
 <footer>
   <div class="wrap">
     <div class="foot-top">
-      <a href="index.html" class="foot-brand">ZELOS <span>UNIFORM</span></a>
+      <a href="index.html" class="foot-brand">Zelos Uniform</a>
       <nav class="foot-links">
         <a href="index.html">HOME</a>
         <a href="samples.html">SAMPLES</a>
@@ -330,30 +391,26 @@ footer{background:var(--ink);color:#9a9a9a;padding:48px 0 32px;font-size:13px}
 </footer>
 
 <script>
-/* 日英切り替え（選択は localStorage に保存し、3ページ共通で適用） */
+/* 日英切り替え（localStorage共有・3ページ共通） */
 (function(){
   var KEY='zlu_lang';
   function apply(lang){
-    var en = (lang==='en');
+    var en=(lang==='en');
     document.querySelectorAll('[data-en]').forEach(function(el){
       if(el.getAttribute('data-ja')===null) el.setAttribute('data-ja', el.innerHTML);
       el.innerHTML = en ? el.getAttribute('data-en') : el.getAttribute('data-ja');
     });
-    document.querySelectorAll('[data-en-ph]').forEach(function(el){
-      if(el.getAttribute('data-ja-ph')===null) el.setAttribute('data-ja-ph', el.getAttribute('placeholder')||'');
-      el.setAttribute('placeholder', en ? el.getAttribute('data-en-ph') : el.getAttribute('data-ja-ph'));
-    });
-    document.documentElement.lang = en ? 'en' : 'ja';
+    document.documentElement.lang = en?'en':'ja';
     var t=document.getElementById('langToggle');
-    if(t) t.textContent = en ? '日本語' : 'ENGLISH';
-    try{ localStorage.setItem(KEY, lang); }catch(e){}
+    if(t) t.textContent = en?'日本語':'ENGLISH';
+    try{localStorage.setItem(KEY,lang);}catch(e){}
   }
   window.toggleLang=function(){
-    var cur='ja'; try{ cur=localStorage.getItem(KEY)||'ja'; }catch(e){}
+    var cur='ja'; try{cur=localStorage.getItem(KEY)||'ja';}catch(e){}
     apply(cur==='en'?'ja':'en');
   };
   var init='ja';
-  try{ var s=localStorage.getItem(KEY); if(s) init=s; }catch(e){}
+  try{var s=localStorage.getItem(KEY); if(s) init=s;}catch(e){}
   if(/[?&]lang=en/.test(location.search)) init='en';
   if(/[?&]lang=ja/.test(location.search)) init='ja';
   apply(init);

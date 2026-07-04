@@ -8,75 +8,81 @@
 <meta name="description" content="ZELOS UNIFORM のオリジナルユニフォーム製作に関するお問い合わせはこちらから。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#111111;--grey:#6b6b6b;--grey-2:#9a9a9a;--line:#e8e8e6;--bg:#ffffff;--soft:#f5f5f3}
+:root{--ink:#0d0d0d;--text:#454545;--mute:#8f8f8c;--line:#e7e7e4;--paper:#ffffff;--soft:#f6f6f4}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:var(--ink);background:var(--bg);line-height:1.85;-webkit-font-smoothing:antialiased}
+body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:var(--ink);background:var(--paper);line-height:1.9;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1100px;margin:0 auto;padding:0 28px}
-.outline{-webkit-text-stroke:2px var(--ink);color:transparent}
+button{font-family:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.disp{font-family:"Archivo","Noto Sans JP",sans-serif;font-weight:900;font-stretch:115%;text-transform:uppercase;letter-spacing:-.015em}
+.outline{-webkit-text-stroke:2.5px var(--ink);color:transparent}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
-.nav-right{display:flex;align-items:center;gap:24px}
-.brand{font-family:"Archivo",sans-serif;font-weight:900;letter-spacing:.04em;font-size:18px}
-.nav-links{display:flex;align-items:center;gap:30px;font-size:12px;font-weight:700;letter-spacing:.12em}
-.nav-links a{color:var(--grey);transition:color .2s}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:115%;letter-spacing:.02em;font-size:17px;text-transform:uppercase}
+.nav-right{display:flex;align-items:center;gap:26px}
+.nav-links{display:flex;align-items:center;gap:30px;font-size:11.5px;font-weight:700;letter-spacing:.14em}
+.nav-links a{color:var(--mute);transition:color .18s;padding:4px 0}
 .nav-links a:hover,.nav-links a.active{color:var(--ink)}
-.lang-btn{font-family:"Archivo",sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--ink);background:none;border:1px solid var(--ink);padding:6px 12px;cursor:pointer;transition:background .2s,color .2s;line-height:1}
+.nav-links a.active{box-shadow:0 2px 0 var(--ink)}
+.lang-btn{font-size:10.5px;font-weight:600;font-family:"IBM Plex Mono",monospace;letter-spacing:.14em;color:var(--ink);background:none;border:1px solid var(--ink);padding:7px 13px;cursor:pointer;transition:background .18s,color .18s;line-height:1}
 .lang-btn:hover{background:var(--ink);color:#fff}
-.nav-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer}
+.nav-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--ink)}
 
-.page-hero{padding:108px 0 64px;border-bottom:1px solid var(--line)}
-.page-hero .lbl{font-size:11px;font-weight:700;letter-spacing:.3em;color:var(--grey-2)}
-.page-hero h1{font-family:"Archivo",sans-serif;font-size:clamp(40px,9vw,88px);font-weight:900;text-transform:uppercase;letter-spacing:-.01em;margin:18px 0 18px;line-height:.98}
-.page-hero p{color:var(--grey);max-width:40em;font-size:15px}
+.page-hero{padding:100px 0 58px}
+.eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--ink)}
+.eyebrow span{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;letter-spacing:.3em;color:var(--mute);text-transform:uppercase}
+.page-hero h1{font-size:clamp(40px,9vw,96px);line-height:.96}
+.page-hero p{color:var(--text);max-width:42em;font-size:15px;margin-top:22px}
 
-.contact{padding:72px 0 96px}
-.cgrid{display:grid;grid-template-columns:1fr 1.4fr;gap:0;border:1px solid var(--ink)}
+.contact{padding:64px 0 100px;border-top:1px solid var(--line)}
+.cgrid{display:grid;grid-template-columns:1fr 1.45fr;border:1px solid var(--ink)}
 
-.direct{background:#fff;color:var(--grey);padding:42px 36px}
-.direct h2{font-family:"Archivo","Noto Sans JP",sans-serif;color:var(--ink);font-size:18px;font-weight:800;letter-spacing:.02em;margin-bottom:10px}
-.direct p{font-size:14px;margin-bottom:26px}
-.mail-label{font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--grey-2)}
-.mail-link{display:inline-block;margin-top:8px;font-size:18px;font-weight:700;color:var(--ink);word-break:break-all;border-bottom:1px solid var(--ink);padding-bottom:4px}
-.mail-link:hover{color:var(--grey);border-color:var(--grey)}
-.direct .meta{margin-top:30px;border-top:1px solid var(--line);padding-top:22px;font-size:13px;line-height:1.95}
+.direct{background:#fff;color:var(--text);padding:46px 40px;border-right:1px solid var(--line)}
+.direct h2{font-size:18px;font-weight:900;letter-spacing:.02em;margin-bottom:10px;color:var(--ink)}
+.direct p{font-size:14px;margin-bottom:28px}
+.mail-label{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:10.5px;letter-spacing:.24em;color:var(--mute);text-transform:uppercase}
+.mail-link{display:inline-block;margin-top:10px;font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:16px;color:var(--ink);word-break:break-all;border-bottom:2px solid var(--ink);padding-bottom:5px;transition:color .18s,border-color .18s}
+.mail-link:hover{color:var(--mute);border-color:var(--mute)}
+.direct .meta{margin-top:32px;border-top:1px solid var(--line);padding-top:24px;font-size:13px;line-height:2}
 .direct .meta b{color:var(--ink)}
 
-.form-card{background:#fff;padding:42px 38px;border-left:1px solid var(--ink)}
-.form-card h2{font-family:"Archivo","Noto Sans JP",sans-serif;font-size:18px;font-weight:800;margin-bottom:8px;letter-spacing:.02em}
-.form-card .sub{font-size:13px;color:var(--grey);margin-bottom:28px}
-.field{margin-bottom:20px}
-.field label{display:block;font-size:13px;font-weight:700;margin-bottom:8px}
-.field .req{color:var(--grey-2);font-size:11px;font-weight:700;margin-left:6px;letter-spacing:.08em}
-.field input,.field select,.field textarea{width:100%;font-family:inherit;font-size:14px;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:13px 14px;transition:border-color .2s}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--ink)}
-.field textarea{resize:vertical;min-height:128px}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.submit{width:100%;margin-top:8px;background:var(--ink);color:#fff;font-family:inherit;font-weight:700;font-size:14px;letter-spacing:.06em;border:1px solid var(--ink);padding:17px;cursor:pointer;transition:background .2s,color .2s}
-.submit:hover{background:#fff;color:var(--ink)}
-.fineprint{font-size:12px;color:var(--grey-2);margin-top:16px;line-height:1.75}
+.form-card{background:#fff;padding:46px 42px}
+.form-card h2{font-size:18px;font-weight:900;margin-bottom:8px;letter-spacing:.02em}
+.form-card .sub{font-size:13px;color:var(--text);margin-bottom:30px}
+.field{margin-bottom:22px}
+.field label{display:block;font-size:12.5px;font-weight:700;margin-bottom:8px;letter-spacing:.04em}
+.field .req{font-family:"IBM Plex Mono",monospace;color:var(--mute);font-size:10px;font-weight:600;margin-left:8px;letter-spacing:.14em;text-transform:uppercase}
+.field input,.field select,.field textarea{width:100%;font-family:inherit;font-size:14px;color:var(--ink);background:var(--soft);border:1px solid var(--line);padding:14px 15px;transition:border-color .18s,background .18s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--ink);background:#fff}
+.field textarea{resize:vertical;min-height:132px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.submit{width:100%;margin-top:10px;background:var(--ink);color:#fff;font-weight:700;font-size:14px;letter-spacing:.1em;border:1px solid var(--ink);padding:18px;cursor:pointer;transition:background .18s,color .18s,transform .18s}
+.submit:hover{background:#fff;color:var(--ink);transform:translateY(-2px)}
+.fineprint{font-size:12px;color:var(--mute);margin-top:16px;line-height:1.8}
 
-footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
-.foot-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.12)}
-.foot-brand{font-family:"Archivo",sans-serif;font-weight:900;font-size:20px;color:#fff;letter-spacing:.04em}
-.foot-links{display:flex;gap:26px;font-weight:700;letter-spacing:.1em;font-size:12px}
+footer{background:var(--ink);color:#9a9a9a;padding:56px 0 36px;font-size:13px}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.14)}
+.foot-brand{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:115%;font-size:20px;color:#fff;letter-spacing:.02em;text-transform:uppercase}
+.foot-links{display:flex;gap:28px;font-weight:700;letter-spacing:.12em;font-size:11.5px}
 .foot-links a:hover{color:#fff}
 .copy{margin-top:24px;font-size:12px}
 
-@media(max-width:860px){
+@media(max-width:880px){
   .cgrid{grid-template-columns:1fr}
-  .form-card{border-left:none;border-top:1px solid var(--ink)}
-  .nav-links{position:absolute;top:66px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:6px 28px 14px;border-bottom:1px solid var(--line);display:none}
+  .direct{border-right:none;border-bottom:1px solid var(--line)}
+  .nav-links{position:absolute;top:68px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:6px 28px 14px;border-bottom:1px solid var(--line);display:none}
   .nav-links.open{display:flex}
-  .nav-links a{padding:13px 0;border-bottom:1px solid var(--line);width:100%}
-  .nav-links .lang-btn{margin-top:14px}
+  .nav-links a{padding:14px 0;border-bottom:1px solid var(--line);width:100%}
+  .nav-links a.active{box-shadow:none}
   .nav-toggle{display:block}
 }
-@media(max-width:520px){.two{grid-template-columns:1fr}}
+@media(max-width:540px){.two{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
 </style>
 </head>
@@ -84,7 +90,7 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
 
 <header>
   <div class="wrap nav">
-    <a href="index.html" class="brand">ZELOS UNIFORM</a>
+    <a href="index.html" class="brand">Zelos Uniform</a>
     <div class="nav-right">
       <nav class="nav-links" id="nav">
         <a href="index.html">HOME</a>
@@ -99,9 +105,9 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
 
 <section class="page-hero">
   <div class="wrap">
-    <span class="lbl">CONTACT</span>
-    <h1>Get in <span class="outline">touch</span>.</h1>
-    <p data-en="Questions about production, quotes, or samples? Feel free to get in touch.">ユニフォーム製作のご相談・お見積り・サンプルについてのご質問など、お気軽にお問い合わせください。</p>
+    <div class="eyebrow"><span>Contact</span></div>
+    <h1 class="disp">Get in <span class="outline">touch</span>.</h1>
+    <p data-en="Questions about kit production, quotes, or the samples — we are happy to help with any of it.">ユニフォーム製作のご相談・お見積り・サンプルについてのご質問など、お気軽にお問い合わせください。</p>
   </div>
 </section>
 
@@ -109,65 +115,64 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
   <div class="wrap cgrid">
 
     <aside class="direct">
-      <h2 data-en="Get in touch">お問い合わせはこちら</h2>
-      <p data-en="You're also welcome to email us directly at the address below.">下記アドレス宛に直接メールをお送りいただいてもかまいません。</p>
-      <div class="mail-label">EMAIL</div>
-      <!-- お問い合わせ先メールアドレス（設定済み） -->
+      <h2 data-en="Reach us directly">お問い合わせはこちら</h2>
+      <p data-en="You are welcome to email us directly at the address below.">下記アドレス宛に直接メールをお送りいただいてもかまいません。</p>
+      <div class="mail-label">Email</div>
       <a class="mail-link" href="mailto:t.watanabe@svzfc.com">t.watanabe@svzfc.com</a>
       <div class="meta">
-        <p data-en="<b>Reply</b>: usually within 2–3 business days."><b>ご返信</b>：通常2〜3営業日以内にご連絡します。</p>
-        <p style="margin-top:8px" data-en="<b>Operated by</b>: ZELOS Inc."><b>運営</b>：株式会社ZELOS</p>
+        <p data-en="<b>Response:</b> usually within 2–3 business days."><b>ご返信</b>：通常2〜3営業日以内にご連絡します。</p>
+        <p style="margin-top:8px" data-en="<b>Operated by:</b> ZELOS Inc."><b>運営</b>：株式会社ZELOS</p>
       </div>
     </aside>
 
     <div class="form-card">
-      <h2 data-en="Inquiry form">お問い合わせフォーム</h2>
-      <p class="sub" data-en="Fill in the fields and submit. Pressing the button opens your email app.">必要事項をご記入のうえ送信してください。送信ボタンを押すと、ご利用のメールアプリが立ち上がります。</p>
+      <h2 data-en="Contact form">お問い合わせフォーム</h2>
+      <p class="sub" data-en="Fill in the fields and press send — your email app will open with everything in place.">必要事項をご記入のうえ送信してください。送信ボタンを押すと、ご利用のメールアプリが立ち上がります。</p>
 
       <div class="field">
-        <label data-en="Name <span class='req'>required</span>">お名前 <span class="req">必須</span></label>
-        <input type="text" id="f-name" placeholder="山田 太郎" data-en-ph="Taro Yamada">
+        <label data-en="Name <span class='req'>Required</span>">お名前 <span class="req">必須</span></label>
+        <input type="text" id="f-name" placeholder="山田 太郎">
       </div>
 
       <div class="two">
         <div class="field">
-          <label data-en="Email <span class='req'>required</span>">メールアドレス <span class="req">必須</span></label>
-          <input type="email" id="f-email" placeholder="you@example.com" data-en-ph="you@example.com">
+          <label data-en="Email <span class='req'>Required</span>">メールアドレス <span class="req">必須</span></label>
+          <input type="email" id="f-email" placeholder="you@example.com">
         </div>
         <div class="field">
           <label data-en="Team / Organization">チーム名・団体名</label>
-          <input type="text" id="f-team" placeholder="〇〇FC" data-en-ph="Your FC">
+          <input type="text" id="f-team" placeholder="〇〇FC">
         </div>
       </div>
 
       <div class="two">
         <div class="field">
           <label data-en="Quantity">ご希望枚数</label>
-          <input type="text" id="f-qty" placeholder="例：15枚（最低10枚〜）" data-en-ph="e.g. 15 sets (min 10)">
+          <input type="text" id="f-qty" placeholder="例：15枚（最低10枚〜）">
         </div>
         <div class="field">
           <label data-en="Design">デザイン</label>
           <select id="f-design">
-            <option value="" data-en="Please select">選択してください</option>
-            <option data-en="Choose from samples">サンプルから選びたい</option>
-            <option data-en="Want a new design">新規デザインを希望</option>
-            <option data-en="Not sure yet / want to discuss">まだ決まっていない・相談したい</option>
+            <option value="" data-en="Choose one">選択してください</option>
+            <option data-en="Pick from the samples">サンプルから選びたい</option>
+            <option data-en="Request a new design">新規デザインを希望</option>
+            <option data-en="Not decided — let's discuss">まだ決まっていない・相談したい</option>
           </select>
         </div>
       </div>
 
       <div class="field">
-        <label data-en="Sample number (optional)">サンプル番号（任意）</label>
-        <input type="text" id="f-sample" placeholder="例：No.03" data-en-ph="e.g. No.03">
+        <label data-en="Sample No. (optional)">サンプル番号（任意）</label>
+        <input type="text" id="f-sample" placeholder="例：No.03">
       </div>
 
       <div class="field">
-        <label data-en="Message <span class='req'>required</span>">お問い合わせ内容 <span class="req">必須</span></label>
-        <textarea id="f-msg" placeholder="ご希望のカラー、納期、ご質問などをご記入ください。" data-en-ph="Tell us your preferred colors, timing, or any questions."></textarea>
+        <label data-en="Message <span class='req'>Required</span>">お問い合わせ内容 <span class="req">必須</span></label>
+        <textarea id="f-msg" placeholder="ご希望のカラー、納期、ご質問などをご記入ください。"></textarea>
       </div>
 
-      <button class="submit" onclick="sendInquiry()" data-en="Create email with these details">この内容でメールを作成する</button>
-      <p class="fineprint" data-en="Pressing the button opens your email app with the details filled in. Press Send there to finish.">※ 送信ボタンを押すと、入力内容が本文に反映された状態でメールアプリが開きます。最後に「送信」を押して完了してください。</p>
+      <button class="submit" onclick="sendInquiry()" data-en="Compose email with these details">この内容でメールを作成する</button>
+      <p class="fineprint" data-en="Pressing send opens your email app with the form contents in the body. Press send there to finish.">※ 送信ボタンを押すと、入力内容が本文に反映された状態でメールアプリが開きます。最後に「送信」を押して完了してください。</p>
     </div>
 
   </div>
@@ -176,7 +181,7 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
 <footer>
   <div class="wrap">
     <div class="foot-top">
-      <a href="index.html" class="foot-brand">ZELOS UNIFORM</a>
+      <a href="index.html" class="foot-brand">Zelos Uniform</a>
       <nav class="foot-links">
         <a href="index.html">HOME</a>
         <a href="samples.html">SAMPLES</a>
@@ -188,61 +193,35 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
 </footer>
 
 <script>
-/* 日英切り替え */
-(function(){
-  var KEY='zlu_lang';
-  function apply(lang){
-    var en = (lang==='en');
-    document.querySelectorAll('[data-en]').forEach(function(el){
-      if(el.getAttribute('data-ja')===null) el.setAttribute('data-ja', el.innerHTML);
-      el.innerHTML = en ? el.getAttribute('data-en') : el.getAttribute('data-ja');
-    });
-    document.querySelectorAll('[data-en-ph]').forEach(function(el){
-      if(el.getAttribute('data-ja-ph')===null) el.setAttribute('data-ja-ph', el.getAttribute('placeholder')||'');
-      el.setAttribute('placeholder', en ? el.getAttribute('data-en-ph') : el.getAttribute('data-ja-ph'));
-    });
-    document.documentElement.lang = en ? 'en' : 'ja';
-    var t=document.getElementById('langToggle');
-    if(t) t.textContent = en ? '日本語' : 'ENGLISH';
-    try{ localStorage.setItem(KEY, lang); }catch(e){}
-  }
-  window.toggleLang=function(){
-    var cur='ja'; try{ cur=localStorage.getItem(KEY)||'ja'; }catch(e){}
-    apply(cur==='en'?'ja':'en');
-  };
-  window.currentLang=function(){ try{ return localStorage.getItem(KEY)||'ja'; }catch(e){ return 'ja'; } };
-  var init='ja';
-  try{ var s=localStorage.getItem(KEY); if(s) init=s; }catch(e){}
-  if(/[?&]lang=en/.test(location.search)) init='en';
-  if(/[?&]lang=ja/.test(location.search)) init='ja';
-  apply(init);
-})();
-
 /* お問い合わせ先メールアドレス（設定済み） */
 const CONTACT_EMAIL = "t.watanabe@svzfc.com";
+
+function currentLang(){
+  try{ return localStorage.getItem('zlu_lang')||'ja'; }catch(e){ return 'ja'; }
+}
 
 function sendInquiry(){
   const v = id => (document.getElementById(id).value || "").trim();
   const name = v('f-name'), email = v('f-email'), msg = v('f-msg');
-  const en = (window.currentLang && window.currentLang()==='en');
+  const en = currentLang()==='en';
 
   if(!name || !email || !msg){
     alert(en ? "Name, email, and message are required." : "お名前・メールアドレス・お問い合わせ内容は必須項目です。");
     return;
   }
 
-  const none = en ? "(blank)" : "（未記入）";
-  const body = en ?
-`Name: ${name}
+  const none = en ? "(not provided)" : "（未記入）";
+  const body = en
+? `Name: ${name}
 Email: ${email}
 Team / Organization: ${v('f-team') || none}
 Quantity: ${v('f-qty') || none}
-Design: ${v('f-design') || "(not selected)"}
+Design: ${v('f-design') || none}
 Sample No.: ${v('f-sample') || "(none)"}
 
 [Message]
-${msg}` :
-`お名前：${name}
+${msg}`
+: `お名前：${name}
 メールアドレス：${email}
 チーム名・団体名：${v('f-team') || none}
 ご希望枚数：${v('f-qty') || none}
@@ -252,10 +231,38 @@ ${msg}` :
 【お問い合わせ内容】
 ${msg}`;
 
-  const subject = en ? ("[Uniform] Inquiry: " + name) : ("【ユニフォーム】お問い合わせ：" + name);
-  const url = "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-  window.location.href = url;
+  const subject = en ? `[Uniform] Inquiry: ${name}` : `【ユニフォーム】お問い合わせ：${name}`;
+  window.location.href = "mailto:" + CONTACT_EMAIL +
+    "?subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(body);
 }
+</script>
+
+<script>
+/* 日英切り替え（localStorage共有・3ページ共通） */
+(function(){
+  var KEY='zlu_lang';
+  function apply(lang){
+    var en=(lang==='en');
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      if(el.getAttribute('data-ja')===null) el.setAttribute('data-ja', el.innerHTML);
+      el.innerHTML = en ? el.getAttribute('data-en') : el.getAttribute('data-ja');
+    });
+    document.documentElement.lang = en?'en':'ja';
+    var t=document.getElementById('langToggle');
+    if(t) t.textContent = en?'日本語':'ENGLISH';
+    try{localStorage.setItem(KEY,lang);}catch(e){}
+  }
+  window.toggleLang=function(){
+    var cur='ja'; try{cur=localStorage.getItem(KEY)||'ja';}catch(e){}
+    apply(cur==='en'?'ja':'en');
+  };
+  var init='ja';
+  try{var s=localStorage.getItem(KEY); if(s) init=s;}catch(e){}
+  if(/[?&]lang=en/.test(location.search)) init='en';
+  if(/[?&]lang=ja/.test(location.search)) init='ja';
+  apply(init);
+})();
 </script>
 
 </body>

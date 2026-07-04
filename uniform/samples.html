@@ -8,107 +8,113 @@
 <meta name="description" content="ZELOS UNIFORM のオリジナルユニフォーム デザインサンプル一覧。気に入ったデザインはそのままテンプレートとして製作いただけます。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#111111;--grey:#6b6b6b;--grey-2:#9a9a9a;--line:#e8e8e6;--bg:#ffffff;--soft:#f5f5f3}
+:root{--ink:#0d0d0d;--text:#454545;--mute:#8f8f8c;--line:#e7e7e4;--paper:#ffffff;--soft:#f6f6f4}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:var(--ink);background:var(--bg);line-height:1.85;-webkit-font-smoothing:antialiased}
+body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:var(--ink);background:var(--paper);line-height:1.9;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1100px;margin:0 auto;padding:0 28px}
-.outline{-webkit-text-stroke:2px var(--ink);color:transparent}
+button{font-family:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.disp{font-family:"Archivo","Noto Sans JP",sans-serif;font-weight:900;font-stretch:115%;text-transform:uppercase;letter-spacing:-.015em}
+.mono{font-family:"IBM Plex Mono",monospace;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+.outline{-webkit-text-stroke:2.5px var(--ink);color:transparent}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
-.nav-right{display:flex;align-items:center;gap:24px}
-.brand{font-family:"Archivo",sans-serif;font-weight:900;letter-spacing:.04em;font-size:18px}
-.nav-links{display:flex;align-items:center;gap:30px;font-size:12px;font-weight:700;letter-spacing:.12em}
-.nav-links a{color:var(--grey);transition:color .2s}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:115%;letter-spacing:.02em;font-size:17px;text-transform:uppercase}
+.nav-right{display:flex;align-items:center;gap:26px}
+.nav-links{display:flex;align-items:center;gap:30px;font-size:11.5px;font-weight:700;letter-spacing:.14em}
+.nav-links a{color:var(--mute);transition:color .18s;padding:4px 0}
 .nav-links a:hover,.nav-links a.active{color:var(--ink)}
-.lang-btn{font-family:inherit;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--ink);background:none;border:1px solid var(--ink);padding:6px 12px;cursor:pointer;transition:background .2s,color .2s;line-height:1}
+.nav-links a.active{box-shadow:0 2px 0 var(--ink)}
+.lang-btn{font-size:10.5px;font-weight:600;font-family:"IBM Plex Mono",monospace;letter-spacing:.14em;color:var(--ink);background:none;border:1px solid var(--ink);padding:7px 13px;cursor:pointer;transition:background .18s,color .18s;line-height:1}
 .lang-btn:hover{background:var(--ink);color:#fff}
-.nav-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer}
+.nav-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--ink)}
 
-.btn{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.1em;padding:16px 34px;border:1px solid var(--ink);transition:background .2s,color .2s}
-.btn-fill{background:var(--ink);color:#fff}
-.btn-fill:hover{background:#fff;color:var(--ink)}
+.btn{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.12em;padding:17px 36px;border:1px solid var(--ink);transition:background .18s,color .18s,transform .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn-solid{background:var(--ink);color:#fff}
+.btn-solid:hover{background:#fff;color:var(--ink)}
 
-.page-hero{padding:108px 0 60px;border-bottom:1px solid var(--line)}
-.page-hero .lbl{font-size:11px;font-weight:700;letter-spacing:.3em;color:var(--grey-2)}
-.page-hero h1{font-family:"Archivo",sans-serif;font-size:clamp(40px,9vw,88px);font-weight:900;text-transform:uppercase;letter-spacing:-.01em;margin:18px 0 18px;line-height:.98}
-.page-hero p{color:var(--grey);max-width:42em;font-size:15px}
+.page-hero{padding:100px 0 58px}
+.eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--ink)}
+.eyebrow span{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;letter-spacing:.3em;color:var(--mute);text-transform:uppercase}
+.page-hero h1{font-size:clamp(40px,9vw,96px);line-height:.96}
+.page-hero p{color:var(--text);max-width:42em;font-size:15px;margin-top:22px}
 
-/* ---------- Sample catalog ---------- */
-.gallery{padding:56px 0 36px}
-.count{display:flex;align-items:baseline;gap:12px;margin-bottom:26px;border-bottom:1px solid var(--ink);padding-bottom:16px}
-.count .n{font-family:"Archivo",sans-serif;font-size:20px;font-weight:800}
-.count .t{font-size:12px;letter-spacing:.16em;color:var(--grey-2);font-weight:700}
+.gallery{padding:56px 0 40px;border-top:1px solid var(--line)}
+.count{display:flex;align-items:baseline;gap:14px;margin-bottom:30px;border-bottom:2px solid var(--ink);padding-bottom:16px}
+.count .n{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:80%;font-size:24px}
+.count .t{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;letter-spacing:.24em;color:var(--mute);text-transform:uppercase}
 
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.card{background:#fff;border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
-.card:hover{box-shadow:0 12px 30px rgba(17,17,17,.08);transform:translateY(-3px)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{background:#fff;border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .2s,transform .2s}
+.card:hover{border-color:var(--ink);box-shadow:0 16px 40px rgba(13,13,13,.08);transform:translateY(-4px)}
 
-/* 画像スペース（3:2）。img があれば写真、なければプレースホルダー枠 */
 .thumb{aspect-ratio:3/2;background:var(--soft);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .thumb.has-img{background:#fff;cursor:zoom-in}
-.thumb img{width:100%;height:100%;object-fit:contain;display:block}
+.thumb img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .35s ease}
+.card:hover .thumb img{transform:scale(1.035)}
+.thumb .badge{position:absolute;top:12px;left:12px;font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:10.5px;letter-spacing:.14em;background:var(--ink);color:#fff;padding:6px 10px;line-height:1}
 .ph{display:flex;flex-direction:column;align-items:center;gap:10px}
-.ph .pno{font-family:"Archivo",sans-serif;font-size:40px;font-weight:900;line-height:1;-webkit-text-stroke:1.6px var(--grey-2);color:transparent;letter-spacing:-.02em}
-.ph .pt{font-size:10px;font-weight:700;letter-spacing:.24em;color:var(--grey-2)}
+.ph .pno{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:80%;font-size:42px;line-height:1;-webkit-text-stroke:1.6px var(--mute);color:transparent}
+.ph .pt{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:10px;letter-spacing:.26em;color:var(--mute);text-transform:uppercase}
 
-/* 拡大表示（ライトボックス） */
-.lightbox{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(8,8,8,.95);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
 .lightbox.open{display:flex}
-.lightbox img{max-width:94vw;max-height:90vh;object-fit:contain}
+.lightbox img{max-width:94vw;max-height:88vh;object-fit:contain;background:#fff}
 .lightbox .lb-close{position:absolute;top:18px;right:24px;color:#fff;font-size:30px;font-weight:300;line-height:1;background:none;border:none;cursor:pointer;font-family:"Archivo",sans-serif}
-.lightbox .lb-cap{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#cfcfcf;font-size:13px;letter-spacing:.06em}
+.lightbox .lb-cap{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#cfcfcf;font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
 
 .info{padding:20px 22px 24px}
-.info .no{font-family:"Archivo",sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;color:var(--grey-2)}
-.info .name{font-family:"Archivo","Noto Sans JP",sans-serif;font-size:18px;font-weight:800;letter-spacing:.01em;margin-top:6px}
-.info .jpname{font-size:12px;color:var(--grey-2);font-weight:700;letter-spacing:.06em;margin-top:2px}
-.info .desc{font-size:13px;color:var(--grey);margin-top:12px;line-height:1.7}
+.info .name{font-family:"Archivo","Noto Sans JP",sans-serif;font-weight:900;font-stretch:110%;font-size:17px;letter-spacing:.01em;text-transform:uppercase}
+.info .jpname{font-size:12px;color:var(--mute);font-weight:700;letter-spacing:.06em;margin-top:4px}
+.info .desc{font-size:13px;color:var(--text);margin-top:12px;line-height:1.75}
 
-.howto{padding:84px 0;border-top:1px solid var(--line);background:var(--soft)}
-.howto-box{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start}
-.howto .lbl{font-size:11px;font-weight:700;letter-spacing:.26em;color:var(--grey-2)}
-.howto h2{font-family:"Archivo","Noto Sans JP",sans-serif;font-size:clamp(24px,3.6vw,34px);font-weight:800;letter-spacing:-.01em;margin-top:14px;line-height:1.3}
-.howto p{color:var(--grey);margin-top:16px;font-size:15px}
-.howto .panel{background:#fff;border:1px solid var(--ink);padding:32px 30px}
-.howto .panel h3{font-family:"Archivo",sans-serif;font-size:13px;font-weight:800;letter-spacing:.12em;margin-bottom:16px}
-.howto .panel li{list-style:none;font-size:14px;color:var(--grey);padding:9px 0 9px 24px;position:relative;border-bottom:1px solid var(--line)}
+.howto{padding:88px 0;border-top:1px solid var(--line);background:var(--soft)}
+.howto-box{display:grid;grid-template-columns:1.1fr 1fr;gap:52px;align-items:start}
+.howto .lbl{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;letter-spacing:.3em;color:var(--mute);text-transform:uppercase}
+.howto h2{font-size:clamp(24px,3.6vw,34px);font-weight:900;letter-spacing:-.01em;margin-top:16px;line-height:1.4}
+.howto p{color:var(--text);margin-top:16px;font-size:15px}
+.howto .panel{background:#fff;border:1px solid var(--ink);padding:34px 32px}
+.howto .panel h3{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:12px;letter-spacing:.2em;margin-bottom:16px;text-transform:uppercase}
+.howto .panel li{list-style:none;font-size:14px;color:var(--text);padding:10px 0 10px 26px;position:relative;border-bottom:1px solid var(--line)}
 .howto .panel li:last-child{border-bottom:none}
-.howto .panel li::before{content:"";position:absolute;left:0;top:15px;width:9px;height:1px;background:var(--ink)}
+.howto .panel li::before{content:"";position:absolute;left:0;top:20px;width:10px;height:1px;background:var(--ink)}
 
-.cta{padding:104px 0;text-align:center}
-.cta h2{font-family:"Archivo",sans-serif;font-size:clamp(28px,5.4vw,56px);font-weight:900;text-transform:uppercase;letter-spacing:-.01em}
-.cta p{color:var(--grey);margin:18px auto 34px;max-width:32em;font-size:15px}
+.cta{padding:112px 0;text-align:center}
+.cta h2{font-size:clamp(30px,6vw,64px)}
+.cta p{color:var(--text);margin:20px auto 36px;max-width:32em;font-size:15px}
 
-footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
-.foot-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.12)}
-.foot-brand{font-family:"Archivo",sans-serif;font-weight:900;font-size:20px;color:#fff;letter-spacing:.04em}
-.foot-links{display:flex;gap:26px;font-weight:700;letter-spacing:.1em;font-size:12px}
+footer{background:var(--ink);color:#9a9a9a;padding:56px 0 36px;font-size:13px}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.14)}
+.foot-brand{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:115%;font-size:20px;color:#fff;letter-spacing:.02em;text-transform:uppercase}
+.foot-links{display:flex;gap:28px;font-weight:700;letter-spacing:.12em;font-size:11.5px}
 .foot-links a:hover{color:#fff}
 .copy{margin-top:24px;font-size:12px}
 
-@media(max-width:860px){
+@media(max-width:880px){
   .grid{grid-template-columns:1fr 1fr;gap:18px}
-  .howto-box{grid-template-columns:1fr;gap:32px}
-  .nav-links{position:absolute;top:66px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:6px 28px 14px;border-bottom:1px solid var(--line);display:none}
+  .howto-box{grid-template-columns:1fr;gap:34px}
+  .nav-links{position:absolute;top:68px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:6px 28px 14px;border-bottom:1px solid var(--line);display:none}
   .nav-links.open{display:flex}
-  .nav-links a{padding:13px 0;border-bottom:1px solid var(--line);width:100%}
-  .nav-links .lang-btn{margin-top:12px}
+  .nav-links a{padding:14px 0;border-bottom:1px solid var(--line);width:100%}
+  .nav-links a.active{box-shadow:none}
   .nav-toggle{display:block}
 }
-@media(max-width:520px){.grid{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+@media(max-width:540px){.grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}.card:hover .thumb img{transform:none}}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <a href="index.html" class="brand">ZELOS UNIFORM</a>
+    <a href="index.html" class="brand">Zelos Uniform</a>
     <div class="nav-right">
       <nav class="nav-links" id="nav">
         <a href="index.html">HOME</a>
@@ -123,8 +129,8 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
 
 <section class="page-hero">
   <div class="wrap">
-    <span class="lbl">DESIGN SAMPLES</span>
-    <h1>Design <span class="outline">index</span></h1>
+    <div class="eyebrow"><span>Design Samples</span></div>
+    <h1 class="disp">Design <span class="outline">index</span></h1>
     <p data-en="A catalog of designs we have produced. Note the No. of any design you like and mention it when you contact us — we will build it as a template in your colors, team name, and logo.">これまでに製作したデザインの一覧です。気になるデザインの「No.」を控えて、お問い合わせ時にお知らせください。そのままテンプレートとして、お好きなカラー・チーム名・ロゴで製作いたします。</p>
   </div>
 </section>
@@ -133,7 +139,7 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
   <div class="wrap">
     <div class="count">
       <span class="n" id="count-n">00</span>
-      <span class="t">DESIGN SAMPLES</span>
+      <span class="t">Design Samples</span>
     </div>
     <div class="grid" id="grid"><!-- sample cards injected below --></div>
   </div>
@@ -142,17 +148,17 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
 <section class="howto">
   <div class="wrap howto-box">
     <div>
-      <span class="lbl">Use as template</span>
+      <span class="lbl">Use As Template</span>
       <h2 data-en="Use any design you like<br>as a template">気に入ったデザインを、<br>テンプレートとして使えます</h2>
       <p data-en="Choose a design from the list as your base, and we will build it to match your team colors, name, logo, and numbers. Brand-new original designs are also created free of charge.">一覧からベースにしたいデザインを選んでいただければ、そのレイアウトをもとに、あなたのチームカラー・チーム名・ロゴ・背番号に合わせて製作します。もちろん、まったく新しいデザインの新規作成も無料で承ります。</p>
     </div>
     <div class="panel">
-      <h3>HOW TO ORDER</h3>
+      <h3>How To Order</h3>
       <ul>
         <li data-en="Note the No. of the design you like">気になるデザインの「No.」をお控えください</li>
         <li data-en="Send the number and your request via the contact form">お問い合わせフォームから番号とご希望をお知らせください</li>
         <li data-en="Confirm colors, names, and quantity (10+) together">カラー・名入れ・枚数（10枚〜）を相談のうえ確定</li>
-        <li data-en="Design is free. Delivered in about one month">デザイン費は無料。約1ヶ月でお届けします</li>
+        <li data-en="Design is included. Delivered in about one month">デザイン費込み。約1ヶ月でお届けします</li>
       </ul>
     </div>
   </div>
@@ -160,16 +166,16 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
 
 <section class="cta">
   <div class="wrap">
-    <h2>Make it <span class="outline">yours</span>.</h2>
+    <h2 class="disp">Make it <span class="outline">yours</span>.</h2>
     <p data-en="Send us the design number and your request — feel free to reach out anytime.">デザイン番号とご希望を添えて、お気軽にお問い合わせください。</p>
-    <a href="contact.html" class="btn btn-fill" data-en="Contact us">お問い合わせはこちら</a>
+    <a href="contact.html" class="btn btn-solid" data-en="Contact us">お問い合わせはこちら</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <div class="foot-top">
-      <a href="index.html" class="foot-brand">ZELOS UNIFORM</a>
+      <a href="index.html" class="foot-brand">Zelos Uniform</a>
       <nav class="foot-links">
         <a href="index.html">HOME</a>
         <a href="samples.html">SAMPLES</a>
@@ -183,11 +189,9 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
 <script>
 /* ===========================================================
    デザインサンプル一覧
-   -----------------------------------------------------------
-   ■ 画像の入れ方： 各サンプルの "img" に画像パスを入れると表示。
-     空（""）ならプレースホルダー枠。例：img:"img/sample-01.png"
-   ■ 日英： jp/desc が日本語、jpEn/descEn が英語。言語トグルで自動切替。
-   ■ 追加・削除： 下の SAMPLES 配列を編集するだけ。No. は自動採番。
+   ■ 画像： "img" に画像パス。空（""）ならプレースホルダー枠。
+   ■ 日英： jp/desc が日本語、jpEn/descEn が英語。トグルで自動切替。
+   ■ 追加・削除： SAMPLES 配列を編集するだけ。No. は自動採番。
    =========================================================== */
 const SAMPLES = [
   {img:"img/sample-03.png", name:"SVZ FC", jp:"サバナケットゼロスFC｜オフィシャル", jpEn:"Savannakhet Zelos FC｜Official", desc:"サバナケット・ゼロスFC オフィシャルモデル。襟付き×ペイントストライプの本格派。背名・背番号も自由に対応します。", descEn:"The official Savannakhet Zelos FC model. A true club kit with a collar and paint-stripe graphics. Names and numbers fully customizable."},
@@ -215,13 +219,12 @@ grid.innerHTML = SAMPLES.map((s, i) => {
   const no = String(i + 1).padStart(2, '0');
   const cap = `No.${no} ${s.name}`;
   const thumb = s.img
-    ? `<div class="thumb has-img" onclick="openLightbox('${esc(s.img)}','${esc(cap)}')"><img src="${esc(s.img)}" alt="${esc(s.name)}"></div>`
-    : `<div class="thumb"><div class="ph"><div class="pno">${no}</div><div class="pt">IMAGE</div></div></div>`;
+    ? `<div class="thumb has-img" onclick="openLightbox('${esc(s.img)}','${esc(cap)}')"><span class="badge">No.${no}</span><img src="${esc(s.img)}" alt="${esc(s.name)}"></div>`
+    : `<div class="thumb"><span class="badge">No.${no}</span><div class="ph"><div class="pno">${no}</div><div class="pt">Image Coming</div></div></div>`;
   return `
   <article class="card">
     ${thumb}
     <div class="info">
-      <div class="no">No.${no}</div>
       <div class="name">${esc(s.name)}</div>
       <div class="jpname" data-en="${esc(s.jpEn)}">${esc(s.jp)}</div>
       <div class="desc" data-en="${esc(s.descEn)}">${esc(s.desc)}</div>
@@ -230,7 +233,7 @@ grid.innerHTML = SAMPLES.map((s, i) => {
 }).join('');
 document.getElementById('count-n').textContent = String(SAMPLES.length).padStart(2, '0');
 
-/* ライトボックス（画像クリックで拡大） */
+/* ライトボックス */
 function openLightbox(src, cap){
   document.getElementById('lb-img').src = src;
   document.getElementById('lb-cap').textContent = cap || '';
@@ -250,26 +253,26 @@ document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox
 </div>
 
 <script>
-/* 日英切り替え（選択は localStorage に保存し、3ページ共通で適用） */
+/* 日英切り替え（localStorage共有・3ページ共通） */
 (function(){
   var KEY='zlu_lang';
   function apply(lang){
-    var en = (lang==='en');
+    var en=(lang==='en');
     document.querySelectorAll('[data-en]').forEach(function(el){
       if(el.getAttribute('data-ja')===null) el.setAttribute('data-ja', el.innerHTML);
       el.innerHTML = en ? el.getAttribute('data-en') : el.getAttribute('data-ja');
     });
-    document.documentElement.lang = en ? 'en' : 'ja';
+    document.documentElement.lang = en?'en':'ja';
     var t=document.getElementById('langToggle');
-    if(t) t.textContent = en ? '日本語' : 'ENGLISH';
-    try{ localStorage.setItem(KEY, lang); }catch(e){}
+    if(t) t.textContent = en?'日本語':'ENGLISH';
+    try{localStorage.setItem(KEY,lang);}catch(e){}
   }
   window.toggleLang=function(){
-    var cur='ja'; try{ cur=localStorage.getItem(KEY)||'ja'; }catch(e){}
+    var cur='ja'; try{cur=localStorage.getItem(KEY)||'ja';}catch(e){}
     apply(cur==='en'?'ja':'en');
   };
   var init='ja';
-  try{ var s=localStorage.getItem(KEY); if(s) init=s; }catch(e){}
+  try{var s=localStorage.getItem(KEY); if(s) init=s;}catch(e){}
   if(/[?&]lang=en/.test(location.search)) init='en';
   if(/[?&]lang=ja/.test(location.search)) init='ja';
   apply(init);
