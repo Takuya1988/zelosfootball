@@ -8,107 +8,113 @@
 <meta name="description" content="ZELOS UNIFORM のオリジナルユニフォーム デザインサンプル一覧。気に入ったデザインはそのままテンプレートとして製作いただけます。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#111111;--grey:#6b6b6b;--grey-2:#9a9a9a;--line:#e8e8e6;--bg:#ffffff;--soft:#f5f5f3}
+:root{--ink:#0d0d0d;--text:#454545;--mute:#8f8f8c;--line:#e7e7e4;--paper:#ffffff;--soft:#f6f6f4}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:var(--ink);background:var(--bg);line-height:1.85;-webkit-font-smoothing:antialiased}
+body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:var(--ink);background:var(--paper);line-height:1.9;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1100px;margin:0 auto;padding:0 28px}
-.outline{-webkit-text-stroke:2px var(--ink);color:transparent}
+button{font-family:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.disp{font-family:"Archivo","Noto Sans JP",sans-serif;font-weight:900;font-stretch:115%;text-transform:uppercase;letter-spacing:-.015em}
+.mono{font-family:"IBM Plex Mono",monospace;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+.outline{-webkit-text-stroke:2.5px var(--ink);color:transparent}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
-.nav-right{display:flex;align-items:center;gap:24px}
-.brand{font-family:"Archivo",sans-serif;font-weight:900;letter-spacing:.04em;font-size:18px}
-.nav-links{display:flex;align-items:center;gap:30px;font-size:12px;font-weight:700;letter-spacing:.12em}
-.nav-links a{color:var(--grey);transition:color .2s}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:115%;letter-spacing:.02em;font-size:17px;text-transform:uppercase}
+.nav-right{display:flex;align-items:center;gap:26px}
+.nav-links{display:flex;align-items:center;gap:30px;font-size:11.5px;font-weight:700;letter-spacing:.14em}
+.nav-links a{color:var(--mute);transition:color .18s;padding:4px 0}
 .nav-links a:hover,.nav-links a.active{color:var(--ink)}
-.lang-btn{font-family:inherit;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--ink);background:none;border:1px solid var(--ink);padding:6px 12px;cursor:pointer;transition:background .2s,color .2s;line-height:1}
+.nav-links a.active{box-shadow:0 2px 0 var(--ink)}
+.lang-btn{font-size:10.5px;font-weight:600;font-family:"IBM Plex Mono",monospace;letter-spacing:.14em;color:var(--ink);background:none;border:1px solid var(--ink);padding:7px 13px;cursor:pointer;transition:background .18s,color .18s;line-height:1}
 .lang-btn:hover{background:var(--ink);color:#fff}
-.nav-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer}
+.nav-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--ink)}
 
-.btn{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.1em;padding:16px 34px;border:1px solid var(--ink);transition:background .2s,color .2s}
-.btn-fill{background:var(--ink);color:#fff}
-.btn-fill:hover{background:#fff;color:var(--ink)}
+.btn{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.12em;padding:17px 36px;border:1px solid var(--ink);transition:background .18s,color .18s,transform .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn-solid{background:var(--ink);color:#fff}
+.btn-solid:hover{background:#fff;color:var(--ink)}
 
-.page-hero{padding:108px 0 60px;border-bottom:1px solid var(--line)}
-.page-hero .lbl{font-size:11px;font-weight:700;letter-spacing:.3em;color:var(--grey-2)}
-.page-hero h1{font-family:"Archivo",sans-serif;font-size:clamp(40px,9vw,88px);font-weight:900;text-transform:uppercase;letter-spacing:-.01em;margin:18px 0 18px;line-height:.98}
-.page-hero p{color:var(--grey);max-width:42em;font-size:15px}
+.page-hero{padding:100px 0 58px}
+.eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--ink)}
+.eyebrow span{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;letter-spacing:.3em;color:var(--mute);text-transform:uppercase}
+.page-hero h1{font-size:clamp(40px,9vw,96px);line-height:.96}
+.page-hero p{color:var(--text);max-width:42em;font-size:15px;margin-top:22px}
 
-/* ---------- Sample catalog ---------- */
-.gallery{padding:56px 0 36px}
-.count{display:flex;align-items:baseline;gap:12px;margin-bottom:26px;border-bottom:1px solid var(--ink);padding-bottom:16px}
-.count .n{font-family:"Archivo",sans-serif;font-size:20px;font-weight:800}
-.count .t{font-size:12px;letter-spacing:.16em;color:var(--grey-2);font-weight:700}
+.gallery{padding:56px 0 40px;border-top:1px solid var(--line)}
+.count{display:flex;align-items:baseline;gap:14px;margin-bottom:30px;border-bottom:2px solid var(--ink);padding-bottom:16px}
+.count .n{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:80%;font-size:24px}
+.count .t{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;letter-spacing:.24em;color:var(--mute);text-transform:uppercase}
 
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.card{background:#fff;border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
-.card:hover{box-shadow:0 12px 30px rgba(17,17,17,.08);transform:translateY(-3px)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{background:#fff;border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .2s,transform .2s}
+.card:hover{border-color:var(--ink);box-shadow:0 16px 40px rgba(13,13,13,.08);transform:translateY(-4px)}
 
-/* 画像スペース（3:2）。img があれば写真、なければプレースホルダー枠 */
 .thumb{aspect-ratio:3/2;background:var(--soft);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .thumb.has-img{background:#fff;cursor:zoom-in}
-.thumb img{width:100%;height:100%;object-fit:contain;display:block}
+.thumb img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .35s ease}
+.card:hover .thumb img{transform:scale(1.035)}
+.thumb .badge{position:absolute;top:12px;left:12px;font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:10.5px;letter-spacing:.14em;background:var(--ink);color:#fff;padding:6px 10px;line-height:1}
 .ph{display:flex;flex-direction:column;align-items:center;gap:10px}
-.ph .pno{font-family:"Archivo",sans-serif;font-size:40px;font-weight:900;line-height:1;-webkit-text-stroke:1.6px var(--grey-2);color:transparent;letter-spacing:-.02em}
-.ph .pt{font-size:10px;font-weight:700;letter-spacing:.24em;color:var(--grey-2)}
+.ph .pno{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:80%;font-size:42px;line-height:1;-webkit-text-stroke:1.6px var(--mute);color:transparent}
+.ph .pt{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:10px;letter-spacing:.26em;color:var(--mute);text-transform:uppercase}
 
-/* 拡大表示（ライトボックス） */
-.lightbox{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(8,8,8,.95);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
 .lightbox.open{display:flex}
-.lightbox img{max-width:94vw;max-height:90vh;object-fit:contain}
+.lightbox img{max-width:94vw;max-height:88vh;object-fit:contain;background:#fff}
 .lightbox .lb-close{position:absolute;top:18px;right:24px;color:#fff;font-size:30px;font-weight:300;line-height:1;background:none;border:none;cursor:pointer;font-family:"Archivo",sans-serif}
-.lightbox .lb-cap{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#cfcfcf;font-size:13px;letter-spacing:.06em}
+.lightbox .lb-cap{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#cfcfcf;font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
 
 .info{padding:20px 22px 24px}
-.info .no{font-family:"Archivo",sans-serif;font-size:11px;font-weight:800;letter-spacing:.12em;color:var(--grey-2)}
-.info .name{font-family:"Archivo","Noto Sans JP",sans-serif;font-size:18px;font-weight:800;letter-spacing:.01em;margin-top:6px}
-.info .jpname{font-size:12px;color:var(--grey-2);font-weight:700;letter-spacing:.06em;margin-top:2px}
-.info .desc{font-size:13px;color:var(--grey);margin-top:12px;line-height:1.7}
+.info .name{font-family:"Archivo","Noto Sans JP",sans-serif;font-weight:900;font-stretch:110%;font-size:17px;letter-spacing:.01em;text-transform:uppercase}
+.info .jpname{font-size:12px;color:var(--mute);font-weight:700;letter-spacing:.06em;margin-top:4px}
+.info .desc{font-size:13px;color:var(--text);margin-top:12px;line-height:1.75}
 
-.howto{padding:84px 0;border-top:1px solid var(--line);background:var(--soft)}
-.howto-box{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:start}
-.howto .lbl{font-size:11px;font-weight:700;letter-spacing:.26em;color:var(--grey-2)}
-.howto h2{font-family:"Archivo","Noto Sans JP",sans-serif;font-size:clamp(24px,3.6vw,34px);font-weight:800;letter-spacing:-.01em;margin-top:14px;line-height:1.3}
-.howto p{color:var(--grey);margin-top:16px;font-size:15px}
-.howto .panel{background:#fff;border:1px solid var(--ink);padding:32px 30px}
-.howto .panel h3{font-family:"Archivo",sans-serif;font-size:13px;font-weight:800;letter-spacing:.12em;margin-bottom:16px}
-.howto .panel li{list-style:none;font-size:14px;color:var(--grey);padding:9px 0 9px 24px;position:relative;border-bottom:1px solid var(--line)}
+.howto{padding:88px 0;border-top:1px solid var(--line);background:var(--soft)}
+.howto-box{display:grid;grid-template-columns:1.1fr 1fr;gap:52px;align-items:start}
+.howto .lbl{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;letter-spacing:.3em;color:var(--mute);text-transform:uppercase}
+.howto h2{font-size:clamp(24px,3.6vw,34px);font-weight:900;letter-spacing:-.01em;margin-top:16px;line-height:1.4}
+.howto p{color:var(--text);margin-top:16px;font-size:15px}
+.howto .panel{background:#fff;border:1px solid var(--ink);padding:34px 32px}
+.howto .panel h3{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:12px;letter-spacing:.2em;margin-bottom:16px;text-transform:uppercase}
+.howto .panel li{list-style:none;font-size:14px;color:var(--text);padding:10px 0 10px 26px;position:relative;border-bottom:1px solid var(--line)}
 .howto .panel li:last-child{border-bottom:none}
-.howto .panel li::before{content:"";position:absolute;left:0;top:15px;width:9px;height:1px;background:var(--ink)}
+.howto .panel li::before{content:"";position:absolute;left:0;top:20px;width:10px;height:1px;background:var(--ink)}
 
-.cta{padding:104px 0;text-align:center}
-.cta h2{font-family:"Archivo",sans-serif;font-size:clamp(28px,5.4vw,56px);font-weight:900;text-transform:uppercase;letter-spacing:-.01em}
-.cta p{color:var(--grey);margin:18px auto 34px;max-width:32em;font-size:15px}
+.cta{padding:112px 0;text-align:center}
+.cta h2{font-size:clamp(30px,6vw,64px)}
+.cta p{color:var(--text);margin:20px auto 36px;max-width:32em;font-size:15px}
 
-footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
-.foot-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.12)}
-.foot-brand{font-family:"Archivo",sans-serif;font-weight:900;font-size:20px;color:#fff;letter-spacing:.04em}
-.foot-links{display:flex;gap:26px;font-weight:700;letter-spacing:.1em;font-size:12px}
+footer{background:var(--ink);color:#9a9a9a;padding:56px 0 36px;font-size:13px}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.14)}
+.foot-brand{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:115%;font-size:20px;color:#fff;letter-spacing:.02em;text-transform:uppercase}
+.foot-links{display:flex;gap:28px;font-weight:700;letter-spacing:.12em;font-size:11.5px}
 .foot-links a:hover{color:#fff}
 .copy{margin-top:24px;font-size:12px}
 
-@media(max-width:860px){
+@media(max-width:880px){
   .grid{grid-template-columns:1fr 1fr;gap:18px}
-  .howto-box{grid-template-columns:1fr;gap:32px}
-  .nav-links{position:absolute;top:66px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:6px 28px 14px;border-bottom:1px solid var(--line);display:none}
+  .howto-box{grid-template-columns:1fr;gap:34px}
+  .nav-links{position:absolute;top:68px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:6px 28px 14px;border-bottom:1px solid var(--line);display:none}
   .nav-links.open{display:flex}
-  .nav-links a{padding:13px 0;border-bottom:1px solid var(--line);width:100%}
-  .nav-links .lang-btn{margin-top:12px}
+  .nav-links a{padding:14px 0;border-bottom:1px solid var(--line);width:100%}
+  .nav-links a.active{box-shadow:none}
   .nav-toggle{display:block}
 }
-@media(max-width:520px){.grid{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+@media(max-width:540px){.grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}.card:hover .thumb img{transform:none}}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <a href="index.html" class="brand">ZELOS UNIFORM</a>
+    <a href="index.html" class="brand">Zelos Uniform</a>
     <div class="nav-right">
       <nav class="nav-links" id="nav">
         <a href="index.html">HOME</a>
@@ -123,8 +129,8 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
 
 <section class="page-hero">
   <div class="wrap">
-    <span class="lbl">DESIGN SAMPLES</span>
-    <h1>Design <span class="outline">index</span></h1>
+    <div class="eyebrow"><span>Design Samples</span></div>
+    <h1 class="disp">Design <span class="outline">index</span></h1>
     <p data-en="A catalog of designs we have produced. Note the No. of any design you like and mention it when you contact us — we will build it as a template in your colors, team name, and logo.">これまでに製作したデザインの一覧です。気になるデザインの「No.」を控えて、お問い合わせ時にお知らせください。そのままテンプレートとして、お好きなカラー・チーム名・ロゴで製作いたします。</p>
   </div>
 </section>
@@ -133,7 +139,7 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
   <div class="wrap">
     <div class="count">
       <span class="n" id="count-n">00</span>
-      <span class="t">DESIGN SAMPLES</span>
+      <span class="t">Design Samples</span>
     </div>
     <div class="grid" id="grid"><!-- sample cards injected below --></div>
   </div>
@@ -142,17 +148,17 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
 <section class="howto">
   <div class="wrap howto-box">
     <div>
-      <span class="lbl">Use as template</span>
+      <span class="lbl">Use As Template</span>
       <h2 data-en="Use any design you like<br>as a template">気に入ったデザインを、<br>テンプレートとして使えます</h2>
       <p data-en="Choose a design from the list as your base, and we will build it to match your team colors, name, logo, and numbers. Brand-new original designs are also created free of charge.">一覧からベースにしたいデザインを選んでいただければ、そのレイアウトをもとに、あなたのチームカラー・チーム名・ロゴ・背番号に合わせて製作します。もちろん、まったく新しいデザインの新規作成も無料で承ります。</p>
     </div>
     <div class="panel">
-      <h3>HOW TO ORDER</h3>
+      <h3>How To Order</h3>
       <ul>
         <li data-en="Note the No. of the design you like">気になるデザインの「No.」をお控えください</li>
         <li data-en="Send the number and your request via the contact form">お問い合わせフォームから番号とご希望をお知らせください</li>
         <li data-en="Confirm colors, names, and quantity (10+) together">カラー・名入れ・枚数（10枚〜）を相談のうえ確定</li>
-        <li data-en="Design is free. Delivered in about one month">デザイン費は無料。約1ヶ月でお届けします</li>
+        <li data-en="Design is included. Delivered in about one month">デザイン費込み。約1ヶ月でお届けします</li>
       </ul>
     </div>
   </div>
@@ -160,16 +166,16 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
 
 <section class="cta">
   <div class="wrap">
-    <h2>Make it <span class="outline">yours</span>.</h2>
+    <h2 class="disp">Make it <span class="outline">yours</span>.</h2>
     <p data-en="Send us the design number and your request — feel free to reach out anytime.">デザイン番号とご希望を添えて、お気軽にお問い合わせください。</p>
-    <a href="contact.html" class="btn btn-fill" data-en="Contact us">お問い合わせはこちら</a>
+    <a href="contact.html" class="btn btn-solid" data-en="Contact us">お問い合わせはこちら</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <div class="foot-top">
-      <a href="index.html" class="foot-brand">ZELOS UNIFORM</a>
+      <a href="index.html" class="foot-brand">Zelos Uniform</a>
       <nav class="foot-links">
         <a href="index.html">HOME</a>
         <a href="samples.html">SAMPLES</a>
@@ -183,23 +189,65 @@ footer{background:var(--ink);color:#9a9a9a;padding:54px 0 34px;font-size:13px}
 <script>
 /* ===========================================================
    デザインサンプル一覧
-   -----------------------------------------------------------
-   ■ 画像の入れ方： 各サンプルの "img" に画像パスを入れると表示。
-     空（""）ならプレースホルダー枠。例：img:"img/sample-01.png"
-   ■ 日英： jp/desc が日本語、jpEn/descEn が英語。言語トグルで自動切替。
-   ■ 追加・削除： 下の SAMPLES 配列を編集するだけ。No. は自動採番。
+   ■ 画像： "img" に画像パス。空（""）ならプレースホルダー枠。
+   ■ 日英： jp/desc が日本語、jpEn/descEn が英語。トグルで自動切替。
+   ■ 追加・削除： SAMPLES 配列を編集するだけ。No. は自動採番。
    =========================================================== */
 const SAMPLES = [
   {img:"img/sample-03.png", name:"SVZ FC", jp:"サバナケットゼロスFC｜オフィシャル", jpEn:"Savannakhet Zelos FC｜Official", desc:"サバナケット・ゼロスFC オフィシャルモデル。襟付き×ペイントストライプの本格派。背名・背番号も自由に対応します。", descEn:"The official Savannakhet Zelos FC model. A true club kit with a collar and paint-stripe graphics. Names and numbers fully customizable."},
   {img:"img/sample-01.png", name:"SIMPLE LINE", jp:"シンプルライン｜秋田書店蹴球部", jpEn:"Simple Line｜Akita Shoten FC", desc:"秋田書店蹴球部 様の制作例。中央に走るブルー×ブラックのラインが映える、シンプルで力強い一着。", descEn:"Made for Akita Shoten FC. A simple, powerful kit defined by a blue-and-black line running down the center."},
   {img:"img/sample-05.png", name:"FC HAMISENNA", jp:"FCハミセンナ｜チェッカーボード", jpEn:"FC Hamisenna｜Checkerboard", desc:"FCハミセンナ オフィシャルモデル。ネイビー×ゴールドのチェッカーボード柄に、エンブレムとスターをあしらった風格あるデザイン。", descEn:"The official FC Hamisenna model. A navy-and-gold checkerboard with an emblem and star — a kit full of prestige."},
   {img:"img/sample-04.png", name:"ZELOS FC", jp:"ゼロスFC｜稲妻グラフィック", jpEn:"Zelos FC｜Lightning Graphic", desc:"稲妻のような激しさは、情熱の表れ。ブラック×イエローの大胆なグラフィックで魅せる、ZELOS FC のアグレッシブな一着。", descEn:"Intensity like a lightning bolt — the mark of passion. An aggressive Zelos FC kit with bold black-and-yellow graphics."},
-  {img:"", name:"CENTER STRIPE", jp:"センターストライプ", jpEn:"Center Stripe", desc:"中央を縦に貫くストライプ。クラシックで力強い。", descEn:"A stripe running vertically down the center. Classic and powerful."},
-  {img:"", name:"GRADATION", jp:"グラデーション", jpEn:"Gradation", desc:"昇華プリントならではの滑らかな色の移り変わり。", descEn:"Smooth color transitions only sublimation printing can deliver."},
-  {img:"", name:"PINSTRIPE", jp:"ピンストライプ", jpEn:"Pinstripe", desc:"細い縦縞で上品に。落ち着いた印象に仕上がる。", descEn:"Thin vertical stripes for an elegant, composed look."},
-  {img:"", name:"COLOR BLOCK", jp:"カラーブロック", jpEn:"Color Block", desc:"面で色を切り替える、モダンな配色デザイン。", descEn:"A modern design that switches color panel by panel."},
-  {img:"", name:"CAMO", jp:"カモ柄", jpEn:"Camo", desc:"迷彩パターン。個性を出したいチームに。", descEn:"A camouflage pattern for teams that want to stand out."},
-  {img:"", name:"GEOMETRIC", jp:"幾何学パターン", jpEn:"Geometric", desc:"図形を散りばめた、デザイン性の高い一着。", descEn:"A design-forward kit scattered with geometric shapes."},
+  {img:"img/sample-06.png", name:"BLACK & GOLD", jp:"ブラック×ゴールド｜ZELOSカモ", jpEn:"Black & Gold｜Zelos Camo", desc:"黒地にゴールドが浮かぶカモフラージュ柄。「ONE SAVANNAKHET」を背に、高級感と迫力を両立した一着。", descEn:"Gold camouflage rising from deep black. With ONE SAVANNAKHET across the back — luxury and power in one kit."},
+  {img:"img/sample-07.png", name:"CLOUD WHITE", jp:"クラウドホワイト", jpEn:"Cloud White", desc:"淡いブルーの雲柄をまとったホワイトベース。ネイビーの襟と袖が引き締める、爽やかで上品なデザイン。", descEn:"A white base wrapped in pale blue clouds, sharpened by navy trim. Fresh, clean, and refined."},
+  {img:"img/sample-08.png", name:"DEEP BLUE CAMO", jp:"ディープブルーカモ", jpEn:"Deep Blue Camo", desc:"ネイビー×ブルーの深海のようなカモ柄に、ライトブルーの差し色。力強さと爽やかさを併せ持つ一着。", descEn:"A deep-sea camo of navy and blue with light-blue accents — strength and freshness in equal measure."},
+  {img:"img/sample-09.png", name:"CRIMSON", jp:"クリムゾン", jpEn:"Crimson", desc:"燃えるようなレッドのアブストラクト柄。黒パンツと合わせて、ピッチで最も目を引く情熱の一着。", descEn:"A blazing red abstract print. Paired with black shorts — the most eye-catching kit on the pitch."},
+  {img:"img/sample-10.png", name:"BAROQUE", jp:"バロック｜フローラルチェーン", jpEn:"Baroque｜Floral Chain", desc:"オレンジの花とチェーンを敷き詰めたバロック調。他にはない、圧倒的な個性を放つデザイン。", descEn:"Orange florals and chains in full baroque style. A one-of-a-kind design with overwhelming character."},
+  {img:"img/sample-11.png", name:"RED PINSTRIPE", jp:"レッドピンストライプ", jpEn:"Red Pinstripe", desc:"白地に赤のドットストライプ。クラシックで清潔感があり、どんなチームにも似合う王道デザイン。", descEn:"Red dotted pinstripes on white. Classic, clean, and a natural fit for any team."},
+  {img:"img/sample-12.png", name:"GREEN HOOPS", jp:"グリーンフープス", jpEn:"Green Hoops", desc:"グリーン×ホワイトの太ボーダー。伝統と風格を感じる、クラシックの王道スタイル。", descEn:"Bold green-and-white hoops. A classic style with tradition and presence."},
+  {img:"img/sample-13.png", name:"CANARY YELLOW", jp:"カナリアイエロー", jpEn:"Canary Yellow", desc:"鮮やかなイエローに黒の差し色。ピッチで一番目立つ、元気あふれる一着。", descEn:"Vivid yellow with black accents — the brightest, most energetic kit on the pitch."},
+  {img:"img/sample-14.png", name:"THUNDER WHITE", jp:"サンダーホワイト", jpEn:"Thunder White", desc:"白地に走るブラウンの稲妻ストローク。スピード感あふれるシャープなデザイン。", descEn:"Brown lightning strokes across white. Sharp, fast, full of motion."},
+  {img:"img/sample-15.png", name:"PRISM YELLOW", jp:"プリズムイエロー", jpEn:"Prism Yellow", desc:"イエロー×ブラック×ホワイトの大胆な幾何学。モダンで攻撃的な印象に。", descEn:"Bold geometry in yellow, black, and white. Modern and aggressive."},
+  {img:"img/sample-16.png", name:"NAVY PULSE", jp:"ネイビーパルス", jpEn:"Navy Pulse", desc:"ネイビーに浮かぶライトブルーのハーフトーン。テクニカルで洗練された一着。", descEn:"Light-blue halftones rising on navy. Technical and refined."},
+  {img:"img/sample-17.png", name:"EMERALD SHARDS", jp:"エメラルドシャード", jpEn:"Emerald Shards", desc:"深いグリーンに散る光の破片。上品さと個性を両立したデザイン。", descEn:"Shards of light scattered on deep green — elegant yet distinctive."},
+  {img:"img/sample-18.png", name:"BLUE HOOPS", jp:"ブルーフープス｜襟付き", jpEn:"Blue Hoops｜Collared", desc:"ブルー×ホワイトの太ボーダーに襟付き。レトロで気品のあるクラシックスタイル。", descEn:"Blue-and-white hoops with a collar. Retro, refined, classic."},
+  {img:"img/sample-19.png", name:"STORM SLEEVE", jp:"ストームスリーブ", jpEn:"Storm Sleeve", desc:"ネイビーボディに袖だけカモ柄。さりげなく個性が光る、通好みの一着。", descEn:"Navy body with camo sleeves only — subtle individuality for connoisseurs."},
+  {img:"img/sample-20.png", name:"TRICOLORE", jp:"トリコロール", jpEn:"Tricolore", desc:"ブルーにレッド×ホワイトのバンド。国旗を思わせる誇り高いカラーリング。", descEn:"Red and white bands on blue — proud, flag-inspired colors."},
+  {img:"img/sample-21.png", name:"MONO BLOCK", jp:"モノブロック", jpEn:"Mono Block", desc:"黒×白のツートーン切り替え。無駄のない、洗練されたミニマルデザイン。", descEn:"A clean black-and-white two-tone block. Minimal and refined."},
+  {img:"img/sample-22.png", name:"RETRO PINSTRIPE", jp:"レトロピンストライプ｜襟付き", jpEn:"Retro Pinstripe｜Collared", desc:"黒地に白のピンストライプ×襟付き。90年代を思わせるヴィンテージスタイル。", descEn:"White pinstripes on black with a collar — vintage nineties style."},
+  {img:"img/sample-23.png", name:"ZIGZAG GREEN", jp:"ジグザググリーン", jpEn:"Zigzag Green", desc:"グリーン×ホワイト×ブラックのジグザグ。世界で話題になったあの名作を思わせる一着。", descEn:"Green, white, and black zigzags — echoes of a world-famous classic."},
+  {img:"img/sample-24.png", name:"SKY STRIPES", jp:"スカイストライプ", jpEn:"Sky Stripes", desc:"空色×白のストライプ。世界王者の風格をまとう、憧れのカラーリング。", descEn:"Sky-blue and white stripes — the look of world champions."},
+  {img:"img/sample-25.png", name:"CLARET & BLUE", jp:"クラレット＆ブルー｜長袖", jpEn:"Claret & Blue｜Long Sleeve", desc:"エンジ×淡いブルーの長袖モデル。ソックスまで揃う、英国調のクラシックセット。", descEn:"A long-sleeve claret and pale-blue model with matching socks — British classic."},
+  {img:"img/sample-26.png", name:"NAVY FLAME", jp:"ネイビーフレイム", jpEn:"Navy Flame", desc:"ネイビーにオレンジのラインが映える。シックで大人っぽい配色の一着。", descEn:"Orange lines glowing on navy — chic and mature."},
+  {img:"img/sample-27.png", name:"NEON PINK", jp:"ネオンピンク", jpEn:"Neon Pink", desc:"ピンクの万華鏡パターン×ネオンイエロー。誰よりも目立ちたいチームへ。", descEn:"A pink kaleidoscope with neon yellow — for teams that refuse to blend in."},
+  {img:"img/sample-28.png", name:"TEAL WAVE", jp:"ティールウェーブ", jpEn:"Teal Wave", desc:"ティールブルーの波模様にライムの差し色。爽やかで新しい配色の提案。", descEn:"Teal wave patterns with lime accents — fresh and unexpected."},
+  {img:"img/sample-29.png", name:"LAVENDER BLOOM", jp:"ラベンダーブルーム", jpEn:"Lavender Bloom", desc:"ラベンダーの花柄をまとった珍しい一着。やわらかさと個性を兼ね備えたデザイン。", descEn:"A rare lavender floral kit — soft, gentle, and unmistakably unique."},
+  {img:"img/sample-30.png", name:"MONO STRIPE PINK", jp:"モノストライプ×ピンク", jpEn:"Mono Stripe × Pink", desc:"白黒ストライプにピンクのパイピング。イタリアの名門を思わせる粋なアレンジ。", descEn:"Black-and-white stripes with pink piping — a stylish twist on an Italian great."},
+  {img:"img/sample-31.png", name:"BLUE BAROQUE", jp:"ブルーバロック", jpEn:"Blue Baroque", desc:"黒地に青の唐草が渦巻くバロック調。ソックスまで揃う、豪華で艶やかな一着。", descEn:"Blue baroque swirls on black, socks included — luxurious and dramatic."},
+  {img:"img/sample-32.png", name:"GOLD STRIPES", jp:"ゴールドストライプ", jpEn:"Gold Stripes", desc:"白黒ストライプにゴールドのピンライン。高級感をまとったクラシックスタイル。", descEn:"Black-and-white stripes traced with gold pinlines — classic with a luxurious touch."},
+  {img:"img/sample-33.png", name:"BLUE BLACK HALF", jp:"ブルー×ブラック 左右切り替え", jpEn:"Blue × Black Half", desc:"ブルーとブラックを左右で切り替えた襟付きモデル。ソックスまで揃うフルセット。", descEn:"A collared half-and-half in blue and black, with matching socks — the full set."},
+  {img:"img/sample-34.png", name:"RAINBOW PINSTRIPE", jp:"レインボーピンストライプ", jpEn:"Rainbow Pinstripe", desc:"生成りの生地に多色のピンストライプ。ヴィンテージ感ただよう、他にない一着。", descEn:"Multicolor pinstripes on cream fabric — vintage feel, unlike anything else."},
+  {img:"img/sample-35.png", name:"ROYAL LINES", jp:"ロイヤルラインズ｜襟付き", jpEn:"Royal Lines｜Collared", desc:"ロイヤルブルーの斜線パターン×白襟。品のあるスピード感をまとうポロスタイル。", descEn:"Diagonal lines in royal blue with a white collar — elegant speed in polo style."},
+  {img:"img/sample-36.png", name:"CENTER STRIPE", jp:"センターストライプ｜ネイビー×レッド", jpEn:"Center Stripe｜Navy × Red", desc:"ネイビーの中央をレッド×ホワイトのストライプが貫く。花の都を思わせる気品の一着。", descEn:"A red-and-white stripe running down navy — evoking the elegance of Paris."},
+  {img:"img/sample-37.png", name:"MOSAIC SIDE", jp:"モザイクサイド", jpEn:"Mosaic Side", desc:"白ボディの脇に、緑×赤のモザイクパネル。ソックスまで揃う、個性派の一着。", descEn:"Green-and-red mosaic side panels on white, socks included — for the bold."},
+  {img:"img/sample-38.png", name:"CLARET TRIM", jp:"クラレットトリム", jpEn:"Claret Trim", desc:"白ベースにエンジ×ゴールドのトリム。名入れ例（SHIN 93）のように背名も自由自在。", descEn:"White with claret-and-gold trim. Names like the SHIN 93 example are fully customizable."},
+  {img:"img/sample-39.png", name:"DIAGONAL GOLD", jp:"ダイアゴナルゴールド", jpEn:"Diagonal Gold", desc:"黒と白を斜めに切り替え、ゴールドのロゴが映える。シャープで高級感のあるデザイン。", descEn:"A diagonal black-white split with gold lettering — sharp and premium."},
+  {img:"img/sample-40.png", name:"CENTER GRADIENT", jp:"センターグラデーション｜長袖", jpEn:"Center Gradient｜Long Sleeve", desc:"白の長袖に、赤×青のグラデーションストライプ。秋冬にも活躍する一着。", descEn:"Red-blue gradient stripes on a white long sleeve — ready for the cold season too."},
+  {img:"img/sample-41.png", name:"BLUE FADE", jp:"ブルーフェード｜襟付き", jpEn:"Blue Fade｜Collared", desc:"上から下へ淡く消えていくブルーのストライプ。爽やかで洗練された襟付きモデル。", descEn:"Blue stripes fading softly downward — a fresh, refined collared model."},
+  {img:"img/sample-42.png", name:"MARBLE NAVY", jp:"マーブルネイビー｜襟付き", jpEn:"Marble Navy｜Collared", desc:"ネイビーのマーブル柄×白襟。落ち着きと華やかさをあわせ持つポロスタイル。", descEn:"Navy marble with a white collar — calm yet striking polo style."},
+  {img:"img/sample-43.png", name:"SILVER WAVE", jp:"シルバーウェーブ", jpEn:"Silver Wave", desc:"シルバーグレーのジグザグ模様。メタリックな輝きを感じる、珍しいカラーの一着。", descEn:"Zigzag patterns in silver grey — a rare metallic look."},
+  {img:"img/sample-44.png", name:"ICE BLUE", jp:"アイスブルー", jpEn:"Ice Blue", desc:"淡いブルーにネイビー×オレンジのトリム。透明感のある上品なカラーリング。", descEn:"Pale blue with navy-and-orange trim — clear, light, and refined."},
+  {img:"img/sample-45.png", name:"RED WHITE HALF", jp:"レッド×ホワイト 左右切り替え", jpEn:"Red × White Half", desc:"レッドとホワイトの左右切り替え。ソックスまで揃う、視認性抜群の一着。", descEn:"A red-and-white half-and-half with matching socks — impossible to miss on the pitch."},
+  {img:"img/sample-46.png", name:"VIOLET PATTERN", jp:"ヴァイオレットパターン", jpEn:"Violet Pattern", desc:"パープルの総柄をまとった攻めの一着。ソックスまで同色で揃うフルコーデ。", descEn:"An all-over violet pattern, socks to match — a full-look statement kit."},
+  {img:"img/sample-47.png", name:"MONO CURVE", jp:"モノカーブ", jpEn:"Mono Curve", desc:"白ベースに黒とグレーの曲線パネル。ソックス付きの、スピード感あるクリーンな一着。", descEn:"Black and grey curved panels on white, socks included — clean with a sense of speed."},
+  {img:"img/sample-48.png", name:"ORANGE SPOT", jp:"オレンジスポット", jpEn:"Orange Spot", desc:"オレンジの総柄にグリーンの差し色。ソックスまで揃う、鮮烈で元気な一着。", descEn:"An all-over orange pattern with green accents, socks included — vivid and energetic."},
+  {img:"img/sample-49.png", name:"RED & GOLD HALF", jp:"レッド×ゴールドハーフ", jpEn:"Red & Gold Half", desc:"レッドとゴールドの左右切り替え。名門の風格をまとう、情熱的なカラーリング。", descEn:"A red-and-gold half split — passionate colors with the air of a storied club."},
+  {img:"img/sample-50.png", name:"DIAGONAL RED", jp:"ダイアゴナルレッド｜襟付き", jpEn:"Diagonal Red｜Collared", desc:"赤と白を斜めに切り替えた襟付きモデル。ソックス付きの、上品でクラシックな一着。", descEn:"A collared kit with a red-white diagonal split, socks included — elegant and classic."},
+  {img:"img/sample-51.png", name:"OCEAN BLUE", jp:"オーシャンブルー", jpEn:"Ocean Blue", desc:"海面のようなブルーの総柄×白ショルダー。ソックスまで揃う、涼やかで美しい一着。", descEn:"A sea-surface blue pattern with white shoulders, socks included — cool and beautiful."},
+  {img:"img/sample-52.png", name:"IVORY BRUSH", jp:"アイボリーブラッシュ", jpEn:"Ivory Brush", desc:"アイボリーにピンクとチャコールの筆致。ソックス付きの、アートのように繊細な一着。", descEn:"Pink and charcoal brushwork on ivory, socks included — delicate as a painting."},
+  {img:"img/sample-53.png", name:"SAVANNAKHET CLASSIC", jp:"サバナケットクラシック", jpEn:"Savannakhet Classic", desc:"白ボディに青袖、赤×青のセンターライン、ゴールドの縁取り。クラブレタリングが映える特別仕様。", descEn:"White body, blue sleeves, a red-blue center line and gold trim — with club lettering front and center."},
+  {img:"img/sample-54.png", name:"WHITE CENTER", jp:"ホワイトセンター", jpEn:"White Center", desc:"白地に黒×赤のセンターストライプ。ソックス付きの、シャープで清潔な一着。", descEn:"A black-and-red center stripe on white, socks included — sharp and clean."},
+  {img:"img/sample-55.png", name:"ROSSOBLU", jp:"ロッソブルー｜襟付き", jpEn:"Rossoblu｜Collared", desc:"ネイビー×レッドの縦縞に襟付き。イタリアの古豪を思わせる、渋く風格ある一着。", descEn:"Navy-and-red stripes with a collar — evoking an Italian classic, dignified and strong."},
   {img:"", name:"HALF & HALF", jp:"左右切り替え", jpEn:"Half & Half", desc:"左右で色を分ける、インパクトのあるデザイン。", descEn:"Split colors left and right for high impact."},
   {img:"", name:"HOOPS", jp:"ボーダー", jpEn:"Hoops", desc:"横縞の伝統的なデザイン。視認性が高い。", descEn:"A traditional horizontal-stripe design with great visibility."},
   {img:"", name:"MINIMAL", jp:"ミニマル", jpEn:"Minimal", desc:"装飾を削ぎ落とした、極限までシンプルな型。", descEn:"Stripped of decoration — minimal to the extreme."},
@@ -215,13 +263,12 @@ grid.innerHTML = SAMPLES.map((s, i) => {
   const no = String(i + 1).padStart(2, '0');
   const cap = `No.${no} ${s.name}`;
   const thumb = s.img
-    ? `<div class="thumb has-img" onclick="openLightbox('${esc(s.img)}','${esc(cap)}')"><img src="${esc(s.img)}" alt="${esc(s.name)}"></div>`
-    : `<div class="thumb"><div class="ph"><div class="pno">${no}</div><div class="pt">IMAGE</div></div></div>`;
+    ? `<div class="thumb has-img" onclick="openLightbox('${esc(s.img)}','${esc(cap)}')"><span class="badge">No.${no}</span><img src="${esc(s.img)}" alt="${esc(s.name)}" loading="lazy"></div>`
+    : `<div class="thumb"><span class="badge">No.${no}</span><div class="ph"><div class="pno">${no}</div><div class="pt">Image Coming</div></div></div>`;
   return `
   <article class="card">
     ${thumb}
     <div class="info">
-      <div class="no">No.${no}</div>
       <div class="name">${esc(s.name)}</div>
       <div class="jpname" data-en="${esc(s.jpEn)}">${esc(s.jp)}</div>
       <div class="desc" data-en="${esc(s.descEn)}">${esc(s.desc)}</div>
@@ -230,7 +277,7 @@ grid.innerHTML = SAMPLES.map((s, i) => {
 }).join('');
 document.getElementById('count-n').textContent = String(SAMPLES.length).padStart(2, '0');
 
-/* ライトボックス（画像クリックで拡大） */
+/* ライトボックス */
 function openLightbox(src, cap){
   document.getElementById('lb-img').src = src;
   document.getElementById('lb-cap').textContent = cap || '';
@@ -250,26 +297,26 @@ document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox
 </div>
 
 <script>
-/* 日英切り替え（選択は localStorage に保存し、3ページ共通で適用） */
+/* 日英切り替え（localStorage共有・3ページ共通） */
 (function(){
   var KEY='zlu_lang';
   function apply(lang){
-    var en = (lang==='en');
+    var en=(lang==='en');
     document.querySelectorAll('[data-en]').forEach(function(el){
       if(el.getAttribute('data-ja')===null) el.setAttribute('data-ja', el.innerHTML);
       el.innerHTML = en ? el.getAttribute('data-en') : el.getAttribute('data-ja');
     });
-    document.documentElement.lang = en ? 'en' : 'ja';
+    document.documentElement.lang = en?'en':'ja';
     var t=document.getElementById('langToggle');
-    if(t) t.textContent = en ? '日本語' : 'ENGLISH';
-    try{ localStorage.setItem(KEY, lang); }catch(e){}
+    if(t) t.textContent = en?'日本語':'ENGLISH';
+    try{localStorage.setItem(KEY,lang);}catch(e){}
   }
   window.toggleLang=function(){
-    var cur='ja'; try{ cur=localStorage.getItem(KEY)||'ja'; }catch(e){}
+    var cur='ja'; try{cur=localStorage.getItem(KEY)||'ja';}catch(e){}
     apply(cur==='en'?'ja':'en');
   };
   var init='ja';
-  try{ var s=localStorage.getItem(KEY); if(s) init=s; }catch(e){}
+  try{var s=localStorage.getItem(KEY); if(s) init=s;}catch(e){}
   if(/[?&]lang=en/.test(location.search)) init='en';
   if(/[?&]lang=ja/.test(location.search)) init='ja';
   apply(init);
