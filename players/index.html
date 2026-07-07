@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海外挑戦サポート | SAVANNAKHET ZELOS FC</title>
+<meta name="description" content="海外プロ契約相談、ラオスリーグ挑戦サポート、国内トライアウト。7カ国14クラブでプレーした現役選手兼オーナーが、あなたの海外挑戦を後押しします。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#c0272d;
+  --red-dark:#9e1f24;
+  --ink:#1a1a1a;
+  --gray:#6f6f6f;
+  --gray-light:#b8b8b8;
+  --line:#e6e6e6;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:var(--ink);background:#fff;line-height:1.85;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+
+/* ===== HEADER ===== */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1000px;margin:0 auto;padding:0 24px}
+.brand{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.05em;font-size:16px}
+.brand span{color:var(--red)}
+.nav-right{display:flex;align-items:center;gap:22px}
+.nav-links{display:flex;align-items:center;gap:26px;font-size:12px;font-weight:700;letter-spacing:.12em}
+.nav-links a{color:var(--gray);transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.lang-btn{font-family:"Bebas Neue",sans-serif;font-size:12px;letter-spacing:.15em;color:var(--ink);background:none;border:1px solid var(--ink);padding:7px 14px;cursor:pointer;transition:all .2s;line-height:1}
+.lang-btn:hover{background:var(--ink);color:#fff}
+
+/* ===== HERO ===== */
+.hero{padding:96px 0 64px}
+.kicker{font-family:"Bebas Neue",sans-serif;font-size:13px;letter-spacing:.35em;color:var(--red);margin-bottom:18px}
+.hero h1{font-family:"Oswald","Noto Sans JP",sans-serif;font-size:clamp(30px,5.5vw,50px);font-weight:700;line-height:1.4;border-bottom:2px solid var(--ink);display:inline-block;padding-bottom:22px;margin-bottom:26px;letter-spacing:.01em}
+.hero p{font-size:15px;line-height:2;color:var(--gray);max-width:560px}
+.cta{display:inline-block;margin-top:32px;padding:14px 36px;background:var(--red);color:#fff;font-weight:700;font-size:13px;letter-spacing:.08em;transition:background .2s}
+.cta:hover{background:var(--red-dark)}
+
+/* ===== SECTIONS ===== */
+section{padding:64px 0}
+.sec-title{font-family:"Oswald","Noto Sans JP",sans-serif;font-size:22px;font-weight:700;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:36px;letter-spacing:.02em}
+.sec-title span{font-family:"Bebas Neue",sans-serif;font-size:12px;color:var(--red);letter-spacing:.3em;margin-left:14px}
+
+/* ===== SERVICES ===== */
+.service{display:grid;grid-template-columns:56px 1fr;gap:22px;padding:34px 0;border-bottom:1px solid var(--line)}
+.service:last-child{border-bottom:none}
+.service .num{font-family:"Oswald",sans-serif;font-size:24px;font-weight:700;color:var(--red);line-height:1.2}
+.service h3{font-size:17px;font-weight:700;margin-bottom:10px}
+.service .lead{font-size:14px;line-height:1.9;color:var(--gray);margin-bottom:14px}
+.service ul{list-style:none;font-size:13px;line-height:2}
+.service li{position:relative;padding-left:18px}
+.service li::before{content:"—";position:absolute;left:0;color:var(--red)}
+
+/* ===== STATS ===== */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-bottom:36px}
+.stat{border-top:2px solid var(--ink);padding-top:14px}
+.stat .n{font-family:"Oswald",sans-serif;font-size:34px;font-weight:700;color:var(--red);line-height:1}
+.stat .u{font-size:12px;color:var(--gray);margin-left:3px}
+.stat p{font-size:12px;color:var(--gray);line-height:1.7;margin-top:8px}
+.note{font-size:14px;line-height:2;color:var(--gray);border-left:2px solid var(--red);padding-left:18px}
+
+/* ===== FLOW ===== */
+.flow{display:grid;grid-template-columns:48px 1fr;gap:22px;padding:22px 0;border-bottom:1px solid var(--line)}
+.flow:last-child{border-bottom:none}
+.flow .num{font-family:"Oswald",sans-serif;font-size:18px;font-weight:700;color:var(--gray-light)}
+.flow h4{font-size:15px;font-weight:700;margin-bottom:4px}
+.flow p{font-size:13px;color:var(--gray);line-height:1.8}
+
+/* ===== FORM ===== */
+.form input,.form select,.form textarea{width:100%;font-family:inherit;font-size:14px;color:var(--ink);background:#fff;border:none;border-bottom:1px solid var(--line);padding:13px 2px;margin-bottom:20px;transition:border-color .2s}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-bottom-color:var(--red)}
+.form textarea{resize:vertical;min-height:120px}
+.form-label{display:block;font-size:12px;font-weight:700;color:var(--gray);letter-spacing:.08em;margin:10px 0 6px}
+.form button{background:var(--red);color:#fff;font-family:inherit;font-weight:700;font-size:14px;letter-spacing:.08em;border:none;padding:16px 44px;cursor:pointer;transition:background .2s;margin-top:8px}
+.form button:hover{background:var(--red-dark)}
+.fineprint{font-size:12px;color:var(--gray-light);margin-top:18px;line-height:1.8}
+
+/* ===== RESULTS TEASER ===== */
+.results-teaser{background:#f7f7f5;border-left:3px solid var(--red);padding:32px 28px;margin-top:12px}
+.results-teaser .rt-label{font-family:"Bebas Neue",sans-serif;font-size:12px;letter-spacing:.3em;color:var(--red);margin-bottom:10px}
+.results-teaser h3{font-family:"Oswald","Noto Sans JP",sans-serif;font-size:20px;font-weight:700;margin-bottom:10px;line-height:1.5}
+.results-teaser p{font-size:14px;line-height:1.9;color:var(--gray);margin-bottom:18px}
+.results-teaser .rt-link{display:inline-block;font-family:"Bebas Neue",sans-serif;font-size:13px;letter-spacing:.2em;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:3px;transition:color .2s,border-color .2s}
+.results-teaser .rt-link:hover{color:var(--red);border-color:var(--red)}
+
+/* ===== FOOTER ===== */
+footer{border-top:1px solid var(--line);padding:44px 0 34px;font-size:12px;color:var(--gray)}
+.foot-inner{max-width:1000px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.foot-brand{font-family:"Oswald",sans-serif;font-weight:700;font-size:15px;color:var(--ink);letter-spacing:.05em}
+.foot-links{display:flex;gap:22px;font-weight:700;letter-spacing:.1em;font-size:11px}
+.foot-links a:hover{color:var(--ink)}
+
+@media(max-width:640px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  section{padding:48px 0}
+  .hero{padding:64px 0 48px}
+  .nav-links{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="nav">
+    <a href="https://svzfc.com/" class="brand">SVZFC <span>/</span> PLAYERS SUPPORT</a>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="#services" data-ja="サポート内容" data-en="SERVICES">サポート内容</a>
+        <a href="results/" data-ja="実績" data-en="RESULTS">実績</a>
+        <a href="#flow" data-ja="流れ" data-en="FLOW">流れ</a>
+        <a href="#apply" data-ja="申込" data-en="APPLY">申込</a>
+        <a href="https://svzfc.com/" data-ja="クラブ公式サイト" data-en="CLUB SITE">クラブ公式サイト</a>
+      </nav>
+      <button id="langToggle" class="lang-btn" onclick="toggleLang()">ENGLISH</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">OVERSEAS CHALLENGE SUPPORT</div>
+    <h1 data-ja="世界へ、ラオスへ。<br>次の挑戦を、ここから。" data-en="To the world. To Laos.<br>Your next challenge starts here.">世界へ、ラオスへ。<br>次の挑戦を、ここから。</h1>
+    <p data-ja="7カ国・14クラブでプレーし、現在はラオスでクラブオーナー兼現役選手として活動する渡邉卓矢が、海外挑戦のリアルな一歩を後押しします。" data-en="Takuya Watanabe — who has played for 14 clubs across 7 countries and now runs a club in Laos as an active player-owner — will back your first real step toward playing abroad.">7カ国・14クラブでプレーし、現在はラオスでクラブオーナー兼現役選手として活動する渡邉卓矢が、海外挑戦のリアルな一歩を後押しします。</p>
+    <a class="cta" href="#apply" data-ja="相談・申込フォームへ" data-en="GO TO APPLICATION FORM">相談・申込フォームへ</a>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="wrap">
+    <h2 class="sec-title" data-ja="3つのサポート<span>SERVICES</span>" data-en="Three Services<span>SERVICES</span>">3つのサポート<span>SERVICES</span></h2>
+
+    <div class="service">
+      <div class="num">01</div>
+      <div>
+        <h3 data-ja="海外プロ契約相談" data-en="Overseas Pro Contract Consulting">海外プロ契約相談</h3>
+        <p class="lead" data-ja="7カ国・14クラブでプレーした現役選手兼オーナーが、あなたの「海外で通用するのか」という問いに実践的に向き合います。" data-en="An active player-owner with experience at 14 clubs in 7 countries tackles your real question — 'Can I make it abroad?' — with practical answers.">7カ国・14クラブでプレーした現役選手兼オーナーが、あなたの「海外で通用するのか」という問いに実践的に向き合います。</p>
+        <ul>
+          <li data-ja="海外挑戦の可能性・タイミングの棚卸し" data-en="Assessing your potential and the right timing">海外挑戦の可能性・タイミングの棚卸し</li>
+          <li data-ja="エージェント/クラブとのマッチング相談" data-en="Agent / club matching consultation">エージェント/クラブとのマッチング相談</li>
+          <li data-ja="契約書の読み方・条件交渉のポイント整理" data-en="How to read contracts and negotiate terms">契約書の読み方・条件交渉のポイント整理</li>
+          <li data-ja="ビザ・渡航・現地生活の準備サポート" data-en="Visa, travel, and relocation preparation">ビザ・渡航・現地生活の準備サポート</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="num">02</div>
+      <div>
+        <h3 data-ja="ラオスリーグ挑戦サポート" data-en="Lao League Challenge Support">ラオスリーグ挑戦サポート</h3>
+        <p class="lead" data-ja="SVZFCの運営権を持つオーナーだからこそ、練習参加からトライアウト、契約までを現地から直接サポートできます。" data-en="As the owner-operator of SVZFC, we can directly support you on the ground — from training participation to tryouts and contracts.">SVZFCの運営権を持つオーナーだからこそ、練習参加からトライアウト、契約までを現地から直接サポートできます。</p>
+        <ul>
+          <li data-ja="SVZFCおよびラオスリーグ他クラブへのトライアウト調整" data-en="Tryout arrangements with SVZFC and other Lao league clubs">SVZFCおよびラオスリーグ他クラブへのトライアウト調整</li>
+          <li data-ja="就労ビザ・住居など現地生活の立ち上げ支援" data-en="Work visa, housing, and settling-in support">就労ビザ・住居など現地生活の立ち上げ支援</li>
+          <li data-ja="言語・文化面のフォロー(日本語対応)" data-en="Language and cultural support (Japanese available)">言語・文化面のフォロー(日本語対応)</li>
+          <li data-ja="「初めての海外挑戦」として比較的挑戦しやすい環境" data-en="A relatively accessible environment for a first overseas challenge">「初めての海外挑戦」として比較的挑戦しやすい環境</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="num">03</div>
+      <div>
+        <h3 data-ja="国内トライアウト" data-en="Tryouts in Japan">国内トライアウト</h3>
+        <p class="lead" data-ja="海外挑戦の一歩目として、日本国内でのトライアウトを定期開催。プレーを直接見た上で次のステップをご案内します。" data-en="Regular tryouts held in Japan as a first step. We watch you play in person, then guide you toward your next step.">海外挑戦の一歩目として、日本国内でのトライアウトを定期開催。プレーを直接見た上で次のステップをご案内します。</p>
+        <ul>
+          <li data-ja="定期開催のZELOS TRYOUTへの参加案内" data-en="Invitations to regularly held ZELOS TRYOUT events">定期開催のZELOS TRYOUTへの参加案内</li>
+          <li data-ja="参加後のフィードバックと個別面談" data-en="Post-tryout feedback and one-on-one consultation">参加後のフィードバックと個別面談</li>
+          <li data-ja="適性に応じた「ラオス」または「他国」への道筋提示" data-en="A pathway to Laos or other countries based on your fit">適性に応じた「ラオス」または「他国」への道筋提示</li>
+          <li data-ja="経歴・年齢を問わず挑戦したい方が対象" data-en="Open to anyone with the will to challenge, regardless of career or age">経歴・年齢を問わず挑戦したい方が対象</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY ZELOS ===== -->
+<section>
+  <div class="wrap">
+    <h2 class="sec-title" data-ja="なぜZELOSに相談するのか<span>WHY ZELOS</span>" data-en="Why ZELOS<span>WHY ZELOS</span>">なぜZELOSに相談するのか<span>WHY ZELOS</span></h2>
+    <div class="stats">
+      <div class="stat">
+        <div><span class="n">7</span><span class="u" data-ja="カ国" data-en="COUNTRIES">カ国</span></div>
+        <p data-ja="アルゼンチンを含む海外でのプレー経験" data-en="Playing experience abroad, including Argentina">アルゼンチンを含む海外でのプレー経験</p>
+      </div>
+      <div class="stat">
+        <div><span class="n">14</span><span class="u" data-ja="クラブ" data-en="CLUBS">クラブ</span></div>
+        <p data-ja="これまでに所属したクラブ数" data-en="Clubs played for so far">これまでに所属したクラブ数</p>
+      </div>
+      <div class="stat">
+        <div><span class="n">6</span><span class="u" data-ja="年" data-en="YEARS">年</span></div>
+        <p data-ja="ラオス在住・現地でのクラブ運営歴" data-en="Living in Laos and running a club on the ground">ラオス在住・現地でのクラブ運営歴</p>
+      </div>
+      <div class="stat">
+        <div><span class="n">50+</span><span class="u" data-ja="名" data-en="PLAYERS">名</span></div>
+        <p data-ja="海外挑戦をサポートしてきた選手数" data-en="Players supported in going abroad">海外挑戦をサポートしてきた選手数</p>
+      </div>
+    </div>
+    <p class="note" data-ja="「選ばれる側」としてプレーする経験と、「選ぶ側」としてクラブを運営する経験の両方を持つからこそ、海外挑戦に対して現実的で具体的な助言ができます。" data-en="With experience on both sides — as a player being chosen and as an owner doing the choosing — we can give realistic, concrete advice on your overseas challenge.">「選ばれる側」としてプレーする経験と、「選ぶ側」としてクラブを運営する経験の両方を持つからこそ、海外挑戦に対して現実的で具体的な助言ができます。</p>
+
+    <div class="results-teaser">
+      <div class="rt-label">RESULTS</div>
+      <h3 data-ja="彼らは、海外で戦っている。" data-en="They are fighting overseas.">彼らは、海外で戦っている。</h3>
+      <p data-ja="ZELOSがサポートしてきた選手たちの海外移籍実績を、国別・年別にまとめています。仲間たちの挑戦の記録が、あなたの背中を押します。" data-en="A country-by-country record of every player ZELOS has helped move abroad. Their journeys may be what push you to take yours.">ZELOSがサポートしてきた選手たちの海外移籍実績を、国別・年別にまとめています。仲間たちの挑戦の記録が、あなたの背中を押します。</p>
+      <a class="rt-link" href="results/" data-ja="移籍実績を見る →" data-en="VIEW ALL RESULTS →">移籍実績を見る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLOW ===== -->
+<section id="flow">
+  <div class="wrap">
+    <h2 class="sec-title" data-ja="サポートの流れ<span>FLOW</span>" data-en="How It Works<span>FLOW</span>">サポートの流れ<span>FLOW</span></h2>
+    <div class="flow">
+      <div class="num">01</div>
+      <div>
+        <h4 data-ja="相談・エントリー" data-en="Inquiry / Entry">相談・エントリー</h4>
+        <p data-ja="フォームまたはトライアウト参加からスタート。" data-en="Start with the form or a tryout.">フォームまたはトライアウト参加からスタート。</p>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="num">02</div>
+      <div>
+        <h4 data-ja="ヒアリング" data-en="Consultation">ヒアリング</h4>
+        <p data-ja="経歴・目標・希望環境を個別にすり合わせ。" data-en="One-on-one review of your career, goals, and preferred environment.">経歴・目標・希望環境を個別にすり合わせ。</p>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="num">03</div>
+      <div>
+        <h4 data-ja="マッチング" data-en="Matching">マッチング</h4>
+        <p data-ja="トライアウト先・挑戦先クラブをご案内。" data-en="We introduce tryout destinations and clubs to challenge.">トライアウト先・挑戦先クラブをご案内。</p>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="num">04</div>
+      <div>
+        <h4 data-ja="契約・渡航支援" data-en="Contract & Travel Support">契約・渡航支援</h4>
+        <p data-ja="契約条件の確認、ビザ・渡航準備をサポート。" data-en="Support with contract terms, visa, and travel preparation.">契約条件の確認、ビザ・渡航準備をサポート。</p>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="num">05</div>
+      <div>
+        <h4 data-ja="現地フォロー" data-en="On-site Follow-up">現地フォロー</h4>
+        <p data-ja="生活立ち上げから定着までラオス在住スタッフが同行。" data-en="Laos-based staff support you from settling in to establishing yourself.">生活立ち上げから定着までラオス在住スタッフが同行。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== APPLY ===== -->
+<section id="apply">
+  <div class="wrap">
+    <h2 class="sec-title" data-ja="相談・申込フォーム<span>APPLY</span>" data-en="Application Form<span>APPLY</span>">相談・申込フォーム<span>APPLY</span></h2>
+
+    <form class="form" action="https://formspree.io/f/xkokrplj" method="POST">
+      <input type="hidden" name="_subject" value="【svzfc.com/players】海外挑戦サポート申込">
+      <input type="hidden" name="_language" value="ja">
+      <input type="hidden" name="問い合わせ種別" value="海外挑戦サポート">
+
+      <label class="form-label" data-ja="【基本情報】" data-en="【Basic Information】">【基本情報】</label>
+      <input type="text" name="お名前" data-ja-ph="お名前 *" data-en-ph="Your Name *" placeholder="お名前 *" required>
+      <input type="email" name="メールアドレス" data-ja-ph="メールアドレス *" data-en-ph="Email Address *" placeholder="メールアドレス *" required>
+      <input type="tel" name="電話番号" data-ja-ph="電話番号(任意)" data-en-ph="Phone Number (Optional)" placeholder="電話番号(任意)">
+      <input type="text" name="年齢" data-ja-ph="年齢 *" data-en-ph="Age *" placeholder="年齢 *" required>
+      <input type="text" name="ポジション" data-ja-ph="ポジション(例: MF)" data-en-ph="Position (e.g. MF)" placeholder="ポジション(例: MF)">
+      <input type="text" name="現在の所属・経歴" data-ja-ph="現在の所属チーム・直近の経歴" data-en-ph="Current team / recent career" placeholder="現在の所属チーム・直近の経歴">
+
+      <label class="form-label" data-ja="【ご希望のサポート】" data-en="【Requested Support】">【ご希望のサポート】</label>
+      <select name="希望サポート" required>
+        <option value="" data-ja="ご希望のサポートを選択 *" data-en="Select Support Type *">ご希望のサポートを選択 *</option>
+        <option value="海外プロ契約相談" data-ja="海外プロ契約相談" data-en="Overseas Pro Contract Consulting">海外プロ契約相談</option>
+        <option value="ラオスリーグ挑戦サポート" data-ja="ラオスリーグ挑戦サポート" data-en="Lao League Challenge Support">ラオスリーグ挑戦サポート</option>
+        <option value="国内トライアウト参加希望" data-ja="国内トライアウト参加希望" data-en="Tryout in Japan">国内トライアウト参加希望</option>
+        <option value="その他・まずは相談したい" data-ja="その他・まずは相談したい" data-en="Other / General Consultation">その他・まずは相談したい</option>
+      </select>
+
+      <textarea name="相談内容" data-ja-ph="相談内容・自己PR(挑戦したい国・リーグ、現在の状況、質問など) *" data-en-ph="Your message / self-introduction (target countries, current situation, questions) *" placeholder="相談内容・自己PR(挑戦したい国・リーグ、現在の状況、質問など) *" required></textarea>
+
+      <button type="submit" data-ja="送信する" data-en="SEND">送信する</button>
+      <p class="fineprint" data-ja="※ 内容を確認のうえ、通常2〜3営業日以内に担当よりご連絡いたします。" data-en="* We will review your message and reply within 2-3 business days.">※ 内容を確認のうえ、通常2〜3営業日以内に担当よりご連絡いたします。</p>
+    </form>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="foot-inner">
+    <a href="https://svzfc.com/" class="foot-brand">SAVANNAKHET ZELOS FC</a>
+    <nav class="foot-links">
+      <a href="https://svzfc.com/" data-ja="クラブ公式サイト" data-en="CLUB SITE">クラブ公式サイト</a>
+      <a href="https://svzfc.com/uniform/">UNIFORM</a>
+      <a href="#apply" data-ja="申込" data-en="APPLY">申込</a>
+    </nav>
+    <div>© 2026 ZELOS Inc. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+/* 日英切り替え(uniformサイトと同方式・localStorage共有なし独立キー) */
+(function(){
+  var KEY='svzfc_players_lang';
+  function apply(lang){
+    var en=(lang==='en');
+    document.querySelectorAll('[data-ja][data-en]').forEach(function(el){
+      var text=el.getAttribute(en?'data-en':'data-ja');
+      if(el.tagName==='OPTION'||el.tagName==='BUTTON'){ el.textContent=text; }
+      else{ el.innerHTML=text; }
+    });
+    document.querySelectorAll('[data-ja-ph][data-en-ph]').forEach(function(el){
+      el.setAttribute('placeholder', el.getAttribute(en?'data-en-ph':'data-ja-ph'));
+    });
+    document.getElementById('htmlRoot').setAttribute('lang', en?'en':'ja');
+    var t=document.getElementById('langToggle');
+    if(t) t.textContent = en?'日本語':'ENGLISH';
+    var f=document.querySelector('input[name="_language"]');
+    if(f) f.value = en?'en':'ja';
+    try{ localStorage.setItem(KEY, lang); }catch(e){}
+  }
+  window.toggleLang=function(){
+    var cur='ja'; try{ cur=localStorage.getItem(KEY)||'ja'; }catch(e){}
+    apply(cur==='en'?'ja':'en');
+  };
+  var init='ja';
+  try{ var s=localStorage.getItem(KEY); if(s) init=s; }catch(e){}
+  if(/[?&]lang=en/.test(location.search)) init='en';
+  if(/[?&]lang=ja/.test(location.search)) init='ja';
+  apply(init);
+})();
+</script>
+
+</body>
+</html>
