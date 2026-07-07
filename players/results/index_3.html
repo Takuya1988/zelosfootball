@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ja" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>移籍実績 | 海外挑戦サポート | SAVANNAKHET ZELOS FC</title>
+<meta name="description" content="ZELOSがサポートしてきた選手たちの海外移籍実績。タイ、カンボジア、モンゴル、ラオスなどアジア各国での挑戦実績をまとめています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#c0272d;
+  --red-dark:#9e1f24;
+  --ink:#1a1a1a;
+  --gray:#6f6f6f;
+  --gray-light:#b8b8b8;
+  --line:#e6e6e6;
+  --bg-soft:#f7f7f5;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:var(--ink);background:#fff;line-height:1.85;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.wrap-narrow{max-width:760px;margin:0 auto;padding:0 24px}
+
+/* ===== HEADER ===== */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1100px;margin:0 auto;padding:0 24px}
+.brand{font-family:"Oswald",sans-serif;font-weight:700;letter-spacing:.05em;font-size:16px}
+.brand span{color:var(--red)}
+.nav-right{display:flex;align-items:center;gap:22px}
+.nav-links{display:flex;align-items:center;gap:26px;font-size:12px;font-weight:700;letter-spacing:.12em}
+.nav-links a{color:var(--gray);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.lang-btn{font-family:"Bebas Neue",sans-serif;font-size:12px;letter-spacing:.15em;color:var(--ink);background:none;border:1px solid var(--ink);padding:7px 14px;cursor:pointer;transition:all .2s;line-height:1}
+.lang-btn:hover{background:var(--ink);color:#fff}
+
+/* ===== BREADCRUMB ===== */
+.crumb{font-size:11px;color:var(--gray);letter-spacing:.1em;padding:22px 0 0}
+.crumb a{color:var(--gray);transition:color .2s}
+.crumb a:hover{color:var(--red)}
+.crumb .sep{margin:0 8px;color:var(--gray-light)}
+
+/* ===== HERO ===== */
+.hero{padding:40px 0 56px;border-bottom:1px solid var(--line)}
+.kicker{font-family:"Bebas Neue",sans-serif;font-size:13px;letter-spacing:.35em;color:var(--red);margin-bottom:18px}
+.hero h1{font-family:"Oswald","Noto Sans JP",sans-serif;font-size:clamp(28px,4.5vw,42px);font-weight:700;line-height:1.35;letter-spacing:.01em;margin-bottom:18px}
+.hero p{font-size:15px;line-height:2;color:var(--gray);max-width:640px}
+
+/* ===== STATS ===== */
+.stats-bar{padding:44px 0;border-bottom:1px solid var(--line);background:var(--bg-soft)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;max-width:900px;margin:0 auto}
+.stat{text-align:center;border-left:1px solid var(--line);padding:0 14px}
+.stat:first-child{border-left:none}
+.stat .n{font-family:"Oswald",sans-serif;font-size:38px;font-weight:700;color:var(--red);line-height:1}
+.stat .u{font-size:12px;color:var(--gray);margin-left:3px}
+.stat p{font-size:12px;color:var(--gray);line-height:1.6;margin-top:6px}
+
+/* ===== SECTION TITLE ===== */
+section{padding:64px 0}
+.sec-title{font-family:"Oswald","Noto Sans JP",sans-serif;font-size:22px;font-weight:700;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:36px;letter-spacing:.02em}
+.sec-title span{font-family:"Bebas Neue",sans-serif;font-size:12px;color:var(--red);letter-spacing:.3em;margin-left:14px}
+
+/* ===== FILTER TABS ===== */
+.filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.filter-btn{font-family:"Bebas Neue",sans-serif;font-size:12px;letter-spacing:.15em;padding:9px 18px;border:1px solid var(--line);background:#fff;color:var(--gray);cursor:pointer;transition:all .2s}
+.filter-btn:hover{border-color:var(--ink);color:var(--ink)}
+.filter-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* ===== RESULT CARDS ===== */
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.result-card{background:#fff;border:1px solid var(--line);transition:all .25s;display:flex;flex-direction:column;overflow:hidden}
+.result-card:hover{transform:translateY(-3px);border-color:var(--gray-light);box-shadow:0 10px 24px rgba(0,0,0,.06)}
+.result-photo{position:relative;padding-top:100%;background:var(--bg-soft);overflow:hidden}
+.result-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.result-card:hover .result-photo img{transform:scale(1.04)}
+.result-photo-placeholder{position:absolute;inset:0;display:grid;place-items:center;background:var(--bg-soft);color:var(--gray-light);font-family:"Bebas Neue",sans-serif;font-size:14px;letter-spacing:.2em}
+.result-flag{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-family:"Bebas Neue",sans-serif;font-size:11px;letter-spacing:.2em;padding:5px 10px}
+.result-year{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.95);color:var(--ink);font-family:"Oswald",sans-serif;font-size:13px;font-weight:700;padding:4px 10px;letter-spacing:.05em}
+.result-body{padding:20px 22px 24px;flex-grow:1;display:flex;flex-direction:column}
+.result-name{font-size:16px;font-weight:700;margin-bottom:4px;color:var(--ink)}
+.result-name-en{font-family:"Oswald",sans-serif;font-size:12px;color:var(--gray);letter-spacing:.05em;margin-bottom:14px}
+.result-club{font-size:14px;font-weight:700;color:var(--ink);padding:10px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:12px}
+.result-meta{display:flex;gap:14px;font-size:11px;color:var(--gray);letter-spacing:.05em}
+.result-meta span{display:inline-flex;align-items:center;gap:4px}
+.result-meta b{color:var(--ink);font-weight:700}
+.result-note{font-size:12px;color:var(--gray);line-height:1.7;margin-top:12px}
+
+/* ===== EMPTY STATE ===== */
+.empty{text-align:center;padding:60px 20px;color:var(--gray);font-size:13px;grid-column:1/-1;border:1px dashed var(--line)}
+
+/* ===== EDIT NOTE (dev-only comment style block) ===== */
+.edit-note{background:#fffbe6;border:1px dashed #d4b800;padding:16px 20px;font-size:12px;color:#7a5f00;margin-bottom:32px;line-height:1.7}
+.edit-note b{color:#5c4700}
+.edit-note code{background:#fff;padding:1px 6px;border-radius:2px;font-size:11px;color:#333}
+
+/* ===== CTA ===== */
+.cta-band{background:var(--ink);color:#fff;padding:56px 0;text-align:center}
+.cta-band h3{font-family:"Oswald","Noto Sans JP",sans-serif;font-size:24px;font-weight:700;margin-bottom:12px}
+.cta-band p{color:rgba(255,255,255,.7);font-size:14px;margin-bottom:24px}
+.cta-btn{display:inline-block;background:var(--red);color:#fff;padding:14px 40px;font-weight:700;font-size:13px;letter-spacing:.08em;transition:background .2s}
+.cta-btn:hover{background:var(--red-dark)}
+
+/* ===== FOOTER ===== */
+footer{border-top:1px solid var(--line);padding:44px 0 34px;font-size:12px;color:var(--gray)}
+.foot-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.foot-brand{font-family:"Oswald",sans-serif;font-weight:700;font-size:15px;color:var(--ink);letter-spacing:.05em}
+.foot-links{display:flex;gap:22px;font-weight:700;letter-spacing:.1em;font-size:11px}
+.foot-links a:hover{color:var(--ink)}
+
+@media(max-width:900px){
+  .results-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .stat{border-left:none;border-top:1px solid var(--line);padding-top:14px}
+  .stat:nth-child(1),.stat:nth-child(2){border-top:none;padding-top:0}
+}
+@media(max-width:520px){
+  .results-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  section{padding:48px 0}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="nav">
+    <a href="https://svzfc.com/" class="brand">SVZFC <span>/</span> PLAYERS SUPPORT</a>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="../">TOP</a>
+        <a href="./" class="active" data-ja="実績" data-en="RESULTS">実績</a>
+        <a href="../#apply" data-ja="申込" data-en="APPLY">申込</a>
+        <a href="https://svzfc.com/" data-ja="クラブ公式" data-en="CLUB">クラブ公式</a>
+      </nav>
+      <button id="langToggle" class="lang-btn" onclick="toggleLang()">ENGLISH</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== BREADCRUMB ===== -->
+<div class="wrap">
+  <div class="crumb">
+    <a href="https://svzfc.com/">HOME</a>
+    <span class="sep">/</span>
+    <a href="../" data-ja="海外挑戦サポート" data-en="PLAYERS SUPPORT">海外挑戦サポート</a>
+    <span class="sep">/</span>
+    <span data-ja="移籍実績" data-en="RESULTS">移籍実績</span>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">TRANSFER RESULTS</div>
+    <h1 data-ja="彼らは、海外で戦っている。" data-en="They are fighting overseas.">彼らは、海外で戦っている。</h1>
+    <p data-ja="これまでにZELOSがサポートしてきた選手たちの海外移籍実績です。タイ、カンボジア、モンゴル、ラオス — アジア各国で挑戦を続ける仲間たちの一歩が、次にあなたの一歩へ。" data-en="A record of the players ZELOS has supported to date. Thailand, Cambodia, Mongolia, Laos — teammates challenging themselves across Asia. Their first step may lead to yours.">これまでにZELOSがサポートしてきた選手たちの海外移籍実績です。タイ、カンボジア、モンゴル、ラオス — アジア各国で挑戦を続ける仲間たちの一歩が、次にあなたの一歩へ。</p>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="stats-bar">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat">
+        <div><span class="n">50+</span><span class="u" data-ja="名" data-en="PLAYERS">名</span></div>
+        <p data-ja="海外挑戦サポート実績" data-en="Players supported">海外挑戦サポート実績</p>
+      </div>
+      <div class="stat">
+        <div><span class="n">7</span><span class="u" data-ja="カ国" data-en="COUNTRIES">カ国</span></div>
+        <p data-ja="移籍先の国数" data-en="Destination countries">移籍先の国数</p>
+      </div>
+      <div class="stat">
+        <div><span class="n">10</span><span class="u" data-ja="年" data-en="YEARS">年</span></div>
+        <p data-ja="サポート活動年数" data-en="Years of activity">サポート活動年数</p>
+      </div>
+      <div class="stat">
+        <div><span class="n">10</span><span class="u" data-ja="名/年" data-en="/YR">名/年</span></div>
+        <p data-ja="ラオス所有クラブでの日本人契約可能枠(最大)" data-en="Max Japanese player slots at our Laos club per year">ラオス所有クラブでの日本人契約可能枠(最大)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESULTS SECTION ===== -->
+<section>
+  <div class="wrap">
+    <h2 class="sec-title" data-ja="選手一覧<span>ALL RESULTS</span>" data-en="All Players<span>ALL RESULTS</span>">選手一覧<span>ALL RESULTS</span></h2>
+
+    <!-- ↓ このメモは編集用です。公開前にこのブロック全体(<div class="edit-note">〜</div>)を削除してください -->
+    <div class="edit-note">
+      <b>【編集メモ】</b>選手を追加する時は、下の <code>&lt;!-- CARD START --&gt;</code> 〜 <code>&lt;!-- CARD END --&gt;</code> のブロックをコピーして貼り付け、以下の項目を書き換えてください:<br>
+      ① <code>data-country</code> の値(フィルター用: japan / thailand / cambodia / mongolia / laos / nepal / vietnam / other)<br>
+      ② 写真: <code>&lt;img src="results/xxx.jpg"&gt;</code> の xxx を実際のファイル名に。写真がない場合は <code>&lt;img&gt;</code> タグごと削除すればプレースホルダー表示になります<br>
+      ③ 国名バッジ、年、選手名、クラブ名、ポジション、備考<br>
+      写真ファイルは <code>players/results/</code> フォルダに置いてください(例: <code>players/results/tanaka.jpg</code>)。
+    </div>
+
+    <!-- FILTER -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all" data-ja="ALL" data-en="ALL">ALL</button>
+      <button class="filter-btn" data-filter="thailand" data-ja="タイ" data-en="THAILAND">タイ</button>
+      <button class="filter-btn" data-filter="cambodia" data-ja="カンボジア" data-en="CAMBODIA">カンボジア</button>
+      <button class="filter-btn" data-filter="mongolia" data-ja="モンゴル" data-en="MONGOLIA">モンゴル</button>
+      <button class="filter-btn" data-filter="laos" data-ja="ラオス" data-en="LAOS">ラオス</button>
+      <button class="filter-btn" data-filter="nepal" data-ja="ネパール" data-en="NEPAL">ネパール</button>
+      <button class="filter-btn" data-filter="vietnam" data-ja="ベトナム" data-en="VIETNAM">ベトナム</button>
+      <button class="filter-btn" data-filter="other" data-ja="その他" data-en="OTHER">その他</button>
+    </div>
+
+    <!-- CARDS GRID -->
+    <div class="results-grid" id="resultsGrid">
+
+      <!-- ============================================ -->
+      <!-- CARD START (テンプレート: コピペで増やせます) -->
+      <!-- ============================================ -->
+      <div class="result-card" data-country="thailand">
+        <div class="result-photo">
+          <!-- 写真がある場合: img タグを残す / 無い場合: img タグを削除 -->
+          <img src="results/sample-01.jpg" alt="選手名" onerror="this.style.display='none'">
+          <div class="result-photo-placeholder">PHOTO</div>
+          <div class="result-flag" data-ja="タイ" data-en="THAILAND">タイ</div>
+          <div class="result-year">2025</div>
+        </div>
+        <div class="result-body">
+          <div class="result-name">選手名 サンプル</div>
+          <div class="result-name-en">SAMPLE PLAYER</div>
+          <div class="result-club" data-ja="クラブ名 FC" data-en="Sample FC">クラブ名 FC</div>
+          <div class="result-meta">
+            <span><b>POS</b> MF</span>
+            <span><b>LEAGUE</b> Thai League 3</span>
+          </div>
+          <p class="result-note" data-ja="※ ここに簡単な備考(移籍経緯、プレースタイル等)を書けます。不要なら削除してOK。" data-en="* Optional note about the transfer or player.">※ ここに簡単な備考(移籍経緯、プレースタイル等)を書けます。不要なら削除してOK。</p>
+        </div>
+      </div>
+      <!-- CARD END -->
+
+      <!-- ============================================ -->
+      <!-- サンプルカード② カンボジア -->
+      <!-- ============================================ -->
+      <div class="result-card" data-country="cambodia">
+        <div class="result-photo">
+          <img src="results/sample-02.jpg" alt="選手名" onerror="this.style.display='none'">
+          <div class="result-photo-placeholder">PHOTO</div>
+          <div class="result-flag" data-ja="カンボジア" data-en="CAMBODIA">カンボジア</div>
+          <div class="result-year">2024</div>
+        </div>
+        <div class="result-body">
+          <div class="result-name">選手名 サンプル②</div>
+          <div class="result-name-en">SAMPLE PLAYER 2</div>
+          <div class="result-club" data-ja="クラブ名 United" data-en="Sample United">クラブ名 United</div>
+          <div class="result-meta">
+            <span><b>POS</b> FW</span>
+            <span><b>LEAGUE</b> C-League</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================ -->
+      <!-- サンプルカード③ モンゴル (写真なし例) -->
+      <!-- ============================================ -->
+      <div class="result-card" data-country="mongolia">
+        <div class="result-photo">
+          <!-- 写真がない場合はimg タグを消して placeholder だけ残す -->
+          <div class="result-photo-placeholder">PHOTO</div>
+          <div class="result-flag" data-ja="モンゴル" data-en="MONGOLIA">モンゴル</div>
+          <div class="result-year">2023</div>
+        </div>
+        <div class="result-body">
+          <div class="result-name">選手名 サンプル③</div>
+          <div class="result-name-en">SAMPLE PLAYER 3</div>
+          <div class="result-club" data-ja="クラブ名 SC" data-en="Sample SC">クラブ名 SC</div>
+          <div class="result-meta">
+            <span><b>POS</b> DF</span>
+            <span><b>LEAGUE</b> Mongolian Premier</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ↑ ここまでサンプル。以下、実際の選手データをこの下に追加していってください -->
+      <!--
+      コピー用テンプレート:
+
+      <div class="result-card" data-country="国コード">
+        <div class="result-photo">
+          <img src="results/ファイル名.jpg" alt="" onerror="this.style.display='none'">
+          <div class="result-photo-placeholder">PHOTO</div>
+          <div class="result-flag" data-ja="国名JP" data-en="COUNTRY_EN">国名JP</div>
+          <div class="result-year">YYYY</div>
+        </div>
+        <div class="result-body">
+          <div class="result-name">選手名</div>
+          <div class="result-name-en">NAME IN ENGLISH</div>
+          <div class="result-club" data-ja="クラブ名(JP)" data-en="Club Name (EN)">クラブ名(JP)</div>
+          <div class="result-meta">
+            <span><b>POS</b> MF</span>
+            <span><b>LEAGUE</b> ○○ League</span>
+          </div>
+          <p class="result-note" data-ja="備考" data-en="Note">備考</p>
+        </div>
+      </div>
+      -->
+
+    </div><!-- /.results-grid -->
+
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-band">
+  <div class="wrap-narrow">
+    <h3 data-ja="次の一人は、あなたかもしれない。" data-en="The next one could be you.">次の一人は、あなたかもしれない。</h3>
+    <p data-ja="海外挑戦の相談・国内トライアウトへの参加を受付中です。" data-en="Open for consultations and tryout applications.">海外挑戦の相談・国内トライアウトへの参加を受付中です。</p>
+    <a class="cta-btn" href="../#apply" data-ja="相談・申込フォームへ" data-en="APPLY NOW">相談・申込フォームへ</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="foot-inner">
+    <a href="https://svzfc.com/" class="foot-brand">SAVANNAKHET ZELOS FC</a>
+    <nav class="foot-links">
+      <a href="../" data-ja="海外挑戦サポート" data-en="PLAYERS SUPPORT">海外挑戦サポート</a>
+      <a href="https://svzfc.com/">CLUB</a>
+      <a href="https://svzfc.com/uniform/">UNIFORM</a>
+    </nav>
+    <div>© 2026 ZELOS Inc. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+/* 日英切り替え */
+(function(){
+  var KEY='svzfc_players_lang';
+  function apply(lang){
+    var en=(lang==='en');
+    document.querySelectorAll('[data-ja][data-en]').forEach(function(el){
+      var text=el.getAttribute(en?'data-en':'data-ja');
+      if(el.tagName==='OPTION'||el.tagName==='BUTTON'){ el.textContent=text; }
+      else{ el.innerHTML=text; }
+    });
+    document.getElementById('htmlRoot').setAttribute('lang', en?'en':'ja');
+    var t=document.getElementById('langToggle');
+    if(t) t.textContent = en?'日本語':'ENGLISH';
+    try{ localStorage.setItem(KEY, lang); }catch(e){}
+  }
+  window.toggleLang=function(){
+    var cur='ja'; try{ cur=localStorage.getItem(KEY)||'ja'; }catch(e){}
+    apply(cur==='en'?'ja':'en');
+  };
+  var init='ja';
+  try{ var s=localStorage.getItem(KEY); if(s) init=s; }catch(e){}
+  if(/[?&]lang=en/.test(location.search)) init='en';
+  if(/[?&]lang=ja/.test(location.search)) init='ja';
+  apply(init);
+})();
+
+/* フィルター機能 */
+(function(){
+  var buttons=document.querySelectorAll('.filter-btn');
+  var cards=document.querySelectorAll('.result-card');
+  var grid=document.getElementById('resultsGrid');
+
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      buttons.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var filter=btn.getAttribute('data-filter');
+      var visible=0;
+      cards.forEach(function(card){
+        if(filter==='all' || card.getAttribute('data-country')===filter){
+          card.style.display='';
+          visible++;
+        } else {
+          card.style.display='none';
+        }
+      });
+      /* 該当なしメッセージ */
+      var oldEmpty=grid.querySelector('.empty');
+      if(oldEmpty) oldEmpty.remove();
+      if(visible===0){
+        var empty=document.createElement('div');
+        empty.className='empty';
+        empty.textContent='該当する実績はまだありません / No results yet.';
+        grid.appendChild(empty);
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
