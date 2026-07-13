@@ -3,14 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<base href="/unokigoods/">
 <title>鵜木選手グッズ | UNOKI GOODS</title>
 <meta name="description" content="鵜木選手の実着用品・レアアイテムを販売。ご購入いただいた方には、購入者様のお名前を添えてサインをしてお送りします。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0d0d0d;--text:#454545;--mute:#8f8f8c;--line:#e7e7e4;--paper:#ffffff;--soft:#f6f6f4}
+:root{--ink:#0d0d0d;--text:#454545;--mute:#8f8f8c;--line:#e7e7e4;--paper:#ffffff;--soft:#f6f6f4;--green:#006633;--orange:#ff6600}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:var(--ink);background:var(--paper);line-height:1.9;-webkit-font-smoothing:antialiased}
@@ -20,6 +19,10 @@ button{font-family:inherit}
 .disp{font-family:"Archivo","Noto Sans JP",sans-serif;font-weight:900;font-stretch:115%;text-transform:uppercase;letter-spacing:-.015em}
 .mono{font-family:"IBM Plex Mono",monospace;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
 .outline{-webkit-text-stroke:2.5px var(--ink);color:transparent}
+.outline.green{-webkit-text-stroke-color:var(--green)}
+.outline.orange{-webkit-text-stroke-color:var(--orange)}
+.c-green{color:var(--green)}
+.c-orange{color:var(--orange)}
 :focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -43,7 +46,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 
 .page-hero{padding:100px 0 58px}
 .eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:26px}
-.eyebrow::before{content:"";width:34px;height:1px;background:var(--ink)}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--green)}
 .eyebrow span{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;letter-spacing:.3em;color:var(--mute);text-transform:uppercase}
 .page-hero h1{font-size:clamp(40px,9vw,96px);line-height:.96}
 .page-hero p{color:var(--text);max-width:42em;font-size:15px;margin-top:22px}
@@ -61,7 +64,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .thumb.has-img{background:#fff;cursor:zoom-in}
 .thumb img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .35s ease}
 .card:hover .thumb img{transform:scale(1.035)}
-.thumb .badge{position:absolute;top:12px;left:12px;font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:10.5px;letter-spacing:.14em;background:var(--ink);color:#fff;padding:6px 10px;line-height:1;z-index:2}
+.thumb .badge{position:absolute;top:12px;left:12px;font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:10.5px;letter-spacing:.14em;background:var(--orange);color:#fff;padding:6px 10px;line-height:1;z-index:2}
 .thumb .soldflag{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(255,255,255,.82);z-index:3}
 .thumb .soldflag span{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:110%;font-size:26px;letter-spacing:.08em;text-transform:uppercase;border:2px solid var(--ink);padding:10px 22px}
 .card.sold .thumb .soldflag{display:flex}
@@ -127,7 +130,6 @@ footer{background:var(--ink);color:#9a9a9a;padding:56px 0 36px;font-size:13px}
     <div class="nav-right">
       <nav class="nav-links" id="nav">
         <a href="index.html" class="active">GOODS</a>
-        <a href="https://svzfc.com/" target="_blank" rel="noopener">SVZFC</a>
         <a href="https://lin.ee/nWIZPck" target="_blank" rel="noopener">CONTACT</a>
       </nav>
       <button id="langToggle" class="lang-btn" onclick="toggleLang()">ENGLISH</button>
@@ -139,7 +141,7 @@ footer{background:var(--ink);color:#9a9a9a;padding:56px 0 36px;font-size:13px}
 <section class="page-hero">
   <div class="wrap">
     <div class="eyebrow"><span>Match &amp; Training Worn</span></div>
-    <h1 class="disp">Unoki <span class="outline">Goods</span></h1>
+    <h1 class="disp"><span class="c-green">Unoki</span> <span class="outline orange">Goods</span></h1>
     <p data-en="Boots actually worn by Unoki, plus rare items. Every purchase is signed with the buyer's name before it ships — a genuinely one-of-a-kind piece.">鵜木選手の実着用品・レアアイテムを販売しています。ご購入いただいた方には、購入者様のお名前を添えてサインをしてお送りします。世界にひとつだけの一品です。</p>
   </div>
 </section>
@@ -175,7 +177,7 @@ footer{background:var(--ink);color:#9a9a9a;padding:56px 0 36px;font-size:13px}
 
 <section class="cta">
   <div class="wrap">
-    <h2 class="disp">Get <span class="outline">yours</span>.</h2>
+    <h2 class="disp"><span class="c-green">Get</span> <span class="outline orange">yours</span>.</h2>
     <p data-en="Have a question, or ready to buy? Reach out anytime on LINE.">ご質問・ご購入は、LINEからお気軽にどうぞ。</p>
     <a href="https://lin.ee/nWIZPck" target="_blank" rel="noopener" class="btn btn-line-green" data-en="Chat on LINE">LINEで相談・購入する</a>
   </div>
@@ -187,7 +189,6 @@ footer{background:var(--ink);color:#9a9a9a;padding:56px 0 36px;font-size:13px}
       <a href="index.html" class="foot-brand">Unoki Goods</a>
       <nav class="foot-links">
         <a href="index.html">GOODS</a>
-        <a href="https://svzfc.com/" target="_blank" rel="noopener">SVZFC</a>
         <a href="https://lin.ee/nWIZPck" target="_blank" rel="noopener">CONTACT</a>
       </nav>
     </div>
