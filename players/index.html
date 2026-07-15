@@ -16,6 +16,8 @@
   --gray:#6f6f6f;
   --gray-light:#b8b8b8;
   --line:#e6e6e6;
+  --linegreen:#06C755;
+  --linegreen-dark:#05b64d;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -82,6 +84,25 @@ section{padding:64px 0}
 .form button:hover{background:var(--red-dark)}
 .fineprint{font-size:12px;color:var(--gray-light);margin-top:18px;line-height:1.8}
 
+/* ===== LINE 問い合わせ ===== */
+.btn-line{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--linegreen);color:#fff;font-weight:700;font-size:14px;letter-spacing:.06em;padding:15px 34px;border:none;transition:background .2s,transform .2s;line-height:1.3}
+.btn-line:hover{background:var(--linegreen-dark);transform:translateY(-2px)}
+.btn-line svg{width:19px;height:19px;fill:currentColor;flex-shrink:0}
+.cta-line{margin-top:32px;margin-left:14px}
+.line-panel{border:1px solid var(--line);border-left:3px solid var(--linegreen);padding:30px 30px 32px;margin-bottom:40px;background:#fafafa}
+.line-panel .lp-kicker{font-family:"Bebas Neue",sans-serif;font-size:13px;letter-spacing:.22em;color:var(--linegreen);margin-bottom:10px}
+.line-panel h3{font-family:"Oswald","Noto Sans JP",sans-serif;font-size:19px;font-weight:700;line-height:1.55;margin-bottom:12px}
+.line-panel p{font-size:14px;line-height:1.95;color:var(--gray);margin-bottom:20px;max-width:56em}
+.line-panel .lp-note{font-size:12px;color:var(--gray-light);margin:14px 0 0;line-height:1.8}
+.form-divider{display:flex;align-items:center;gap:18px;margin:0 0 34px;color:var(--gray-light)}
+.form-divider::before,.form-divider::after{content:"";flex:1;height:1px;background:var(--line)}
+.form-divider span{font-family:"Bebas Neue",sans-serif;font-size:13px;letter-spacing:.2em}
+@media(max-width:600px){
+  .cta-line{margin-left:0;display:flex}
+  .line-panel{padding:24px 20px 26px}
+  .btn-line{width:100%}
+}
+
 /* ===== RESULTS TEASER ===== */
 .results-teaser{background:#f7f7f5;border-left:3px solid var(--red);padding:32px 28px;margin-top:12px}
 .results-teaser .rt-label{font-family:"Bebas Neue",sans-serif;font-size:12px;letter-spacing:.3em;color:var(--red);margin-bottom:10px}
@@ -118,6 +139,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 34px;font-size:12px;color
         <a href="results/" data-ja="実績" data-en="RESULTS">実績</a>
         <a href="#flow" data-ja="流れ" data-en="FLOW">流れ</a>
         <a href="#apply" data-ja="申込" data-en="APPLY">申込</a>
+        <a href="https://lin.ee/nWIZPck" target="_blank" rel="noopener" data-ja="LINE相談" data-en="LINE">LINE相談</a>
         <a href="https://svzfc.com/" data-ja="クラブ公式サイト" data-en="CLUB SITE">クラブ公式サイト</a>
       </nav>
       <button id="langToggle" class="lang-btn" onclick="toggleLang()">ENGLISH</button>
@@ -132,6 +154,10 @@ footer{border-top:1px solid var(--line);padding:44px 0 34px;font-size:12px;color
     <h1 data-ja="世界へ、ラオスへ。<br>次の挑戦を、ここから。" data-en="To the world. To Laos.<br>Your next challenge starts here.">世界へ、ラオスへ。<br>次の挑戦を、ここから。</h1>
     <p data-ja="7カ国・14クラブでプレーし、現在はラオスでクラブオーナー兼現役選手として活動する渡邉卓矢が、海外挑戦のリアルな一歩を後押しします。" data-en="Takuya Watanabe — who has played for 14 clubs across 7 countries and now runs a club in Laos as an active player-owner — will back your first real step toward playing abroad.">7カ国・14クラブでプレーし、現在はラオスでクラブオーナー兼現役選手として活動する渡邉卓矢が、海外挑戦のリアルな一歩を後押しします。</p>
     <a class="cta" href="#apply" data-ja="相談・申込フォームへ" data-en="GO TO APPLICATION FORM">相談・申込フォームへ</a>
+    <a class="btn-line cta-line" href="https://lin.ee/nWIZPck" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 5.64 2 10.12c0 4.02 3.55 7.39 8.35 8.03.32.07.77.21.88.49.1.25.07.65.03.9l-.14.85c-.04.25-.2.98.86.53s5.72-3.37 7.8-5.77C21.2 13.6 22 11.96 22 10.12 22 5.64 17.52 2 12 2M7.9 12.9H6.02a.53.53 0 0 1-.53-.53V8.63c0-.29.24-.53.53-.53s.53.24.53.53v3.21H7.9c.29 0 .53.24.53.53s-.24.53-.53.53m2.07-.53a.53.53 0 0 1-1.06 0V8.63a.53.53 0 0 1 1.06 0zm4.31 0a.53.53 0 0 1-.36.5.5.5 0 0 1-.17.03.53.53 0 0 1-.43-.21l-1.93-2.62v2.3a.53.53 0 0 1-1.06 0V8.63c0-.23.15-.43.36-.5a.53.53 0 0 1 .6.18l1.93 2.63v-2.3a.53.53 0 0 1 1.06 0zm2.83-2.4c.29 0 .53.24.53.53s-.24.53-.53.53h-1.35v.81h1.35c.29 0 .53.24.53.53s-.24.53-.53.53h-1.88a.53.53 0 0 1-.53-.53V8.63c0-.29.24-.53.53-.53h1.88c.29 0 .53.24.53.53s-.24.53-.53.53h-1.35v.81z"/></svg>
+      <span data-ja="LINEで相談" data-en="CHAT ON LINE">LINEで相談</span>
+    </a>
   </div>
 </section>
 
@@ -225,7 +251,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 34px;font-size:12px;color
       <div class="num">01</div>
       <div>
         <h4 data-ja="相談・エントリー" data-en="Inquiry / Entry">相談・エントリー</h4>
-        <p data-ja="フォームまたはトライアウト参加からスタート。" data-en="Start with the form or a tryout.">フォームまたはトライアウト参加からスタート。</p>
+        <p data-ja="LINE・フォーム、またはトライアウト参加からスタート。" data-en="Start via LINE, the form, or a tryout.">LINE・フォーム、またはトライアウト参加からスタート。</p>
       </div>
     </div>
     <div class="flow">
@@ -262,7 +288,21 @@ footer{border-top:1px solid var(--line);padding:44px 0 34px;font-size:12px;color
 <!-- ===== APPLY ===== -->
 <section id="apply">
   <div class="wrap">
-    <h2 class="sec-title" data-ja="相談・申込フォーム<span>APPLY</span>" data-en="Application Form<span>APPLY</span>">相談・申込フォーム<span>APPLY</span></h2>
+    <h2 class="sec-title" data-ja="相談・申込<span>APPLY</span>" data-en="Apply / Contact<span>APPLY</span>">相談・申込<span>APPLY</span></h2>
+
+    <!-- LINE で相談 -->
+    <div class="line-panel">
+      <div class="lp-kicker">LINE</div>
+      <h3 data-ja="まずは気軽に、LINEで相談。" data-en="Just want to ask? Message us on LINE.">まずは気軽に、LINEで相談。</h3>
+      <p data-ja="「何から始めればいいか分からない」「まずは話を聞いてみたい」という段階でも大丈夫です。LINEなら、フォームに記入せずそのままメッセージを送れます。渡邉本人が直接やり取りします。" data-en="Not sure where to start, or just want to ask a quick question first? You can message us directly on LINE without filling in the form. Takuya Watanabe replies personally.">「何から始めればいいか分からない」「まずは話を聞いてみたい」という段階でも大丈夫です。LINEなら、フォームに記入せずそのままメッセージを送れます。渡邉本人が直接やり取りします。</p>
+      <a class="btn-line" href="https://lin.ee/nWIZPck" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 5.64 2 10.12c0 4.02 3.55 7.39 8.35 8.03.32.07.77.21.88.49.1.25.07.65.03.9l-.14.85c-.04.25-.2.98.86.53s5.72-3.37 7.8-5.77C21.2 13.6 22 11.96 22 10.12 22 5.64 17.52 2 12 2M7.9 12.9H6.02a.53.53 0 0 1-.53-.53V8.63c0-.29.24-.53.53-.53s.53.24.53.53v3.21H7.9c.29 0 .53.24.53.53s-.24.53-.53.53m2.07-.53a.53.53 0 0 1-1.06 0V8.63a.53.53 0 0 1 1.06 0zm4.31 0a.53.53 0 0 1-.36.5.5.5 0 0 1-.17.03.53.53 0 0 1-.43-.21l-1.93-2.62v2.3a.53.53 0 0 1-1.06 0V8.63c0-.23.15-.43.36-.5a.53.53 0 0 1 .6.18l1.93 2.63v-2.3a.53.53 0 0 1 1.06 0zm2.83-2.4c.29 0 .53.24.53.53s-.24.53-.53.53h-1.35v.81h1.35c.29 0 .53.24.53.53s-.24.53-.53.53h-1.88a.53.53 0 0 1-.53-.53V8.63c0-.29.24-.53.53-.53h1.88c.29 0 .53.24.53.53s-.24.53-.53.53h-1.35v.81z"/></svg>
+        <span data-ja="LINEで相談する" data-en="Chat on LINE">LINEで相談する</span>
+      </a>
+      <p class="lp-note" data-ja="※ 友だち追加後、そのままメッセージをお送りください。海外在住の方もご利用いただけます。" data-en="* Add us as a friend, then send your message directly. Available from overseas as well.">※ 友だち追加後、そのままメッセージをお送りください。海外在住の方もご利用いただけます。</p>
+    </div>
+
+    <div class="form-divider"><span data-ja="または フォームから" data-en="OR USE THE FORM">または フォームから</span></div>
 
     <form class="form" action="https://formspree.io/f/xkokrplj" method="POST">
       <input type="hidden" name="_subject" value="【svzfc.com/players】海外挑戦サポート申込">
@@ -302,6 +342,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 34px;font-size:12px;color
       <a href="https://svzfc.com/" data-ja="クラブ公式サイト" data-en="CLUB SITE">クラブ公式サイト</a>
       <a href="https://svzfc.com/uniform/">UNIFORM</a>
       <a href="#apply" data-ja="申込" data-en="APPLY">申込</a>
+      <a href="https://lin.ee/nWIZPck" target="_blank" rel="noopener" data-ja="LINEで相談" data-en="LINE">LINEで相談</a>
     </nav>
     <div>© 2026 ZELOS Inc. All Rights Reserved.</div>
   </div>
