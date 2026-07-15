@@ -153,6 +153,33 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .cta p{color:var(--text);margin:22px auto 40px;max-width:34em;font-size:15px}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
+
+/* clients */
+.client-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.client-card{background:#fff;padding:0 0 26px}
+.client-card .cimg{aspect-ratio:3/2;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.client-card .cimg img{width:100%;height:100%;object-fit:contain}
+.client-card .cbody{padding:20px 24px 0}
+.client-card .ci{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:10.5px;letter-spacing:.24em;color:var(--mute);text-transform:uppercase}
+.client-card h3{font-size:17px;font-weight:900;margin:12px 0 8px}
+.client-card p{font-size:13.5px;color:var(--text)}
+/* support (買い足し・紹介) */
+.sup-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.sup-card{border:1px solid var(--ink);padding:36px 32px;background:#fff}
+.sup-card .si{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:10.5px;letter-spacing:.24em;color:var(--mute);text-transform:uppercase}
+.sup-card h3{font-size:19px;font-weight:900;margin:14px 0 12px}
+.sup-card p{font-size:14px;color:var(--text)}
+.sup-card .note{font-size:12px;color:var(--mute);margin-top:14px}
+/* size table */
+.size-wrap{overflow-x:auto;border:1px solid var(--ink)}
+table.size{width:100%;border-collapse:collapse;background:#fff;min-width:640px}
+table.size th{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:#fff;padding:14px 12px;text-align:center}
+table.size td{font-size:14px;color:var(--text);padding:13px 12px;text-align:center;border-bottom:1px solid var(--line)}
+table.size td:first-child{font-weight:700;color:var(--ink)}
+table.size tr:last-child td{border-bottom:none}
+.size-note{font-size:12.5px;color:var(--mute);margin-top:16px;line-height:1.9}
+@media(max-width:880px){.client-grid{grid-template-columns:1fr}.sup-grid{grid-template-columns:1fr}}
+
 /* footer */
 footer{background:var(--ink);color:#9a9a9a;padding:56px 0 36px;font-size:13px}
 .foot-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.14)}
@@ -237,6 +264,44 @@ footer{background:var(--ink);color:#9a9a9a;padding:56px 0 36px;font-size:13px}
   </div>
 </section>
 
+<!-- CLIENTS -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="lbl">Clients</span>
+      <h2 class="disp" data-en="Teams we\u2019ve kitted">制作実績</h2>
+      <p data-en="Real clubs already play in ZELOS kits. Yours could be next.">実際にZELOSのユニフォームでプレーしているチームをご紹介します。次は、あなたのチームの番です。</p>
+    </div>
+    <div class="client-grid">
+      <div class="client-card">
+        <div class="cimg"><img src="img/sample-01.png" alt="秋田書店蹴球部 ユニフォーム" loading="lazy"></div>
+        <div class="cbody">
+          <div class="ci">Case 01 — Tokyo, Japan</div>
+          <h3 data-en="Akita Shoten FC">秋田書店蹴球部</h3>
+          <p data-en="A clean white kit with a blue-and-black center line — simple, sharp, and unmistakably theirs.">ブルー×ブラックのセンターラインが映えるホワイトキット。シンプルで力強い、チームの顔となる一着を制作しました。</p>
+        </div>
+      </div>
+      <div class="client-card">
+        <div class="cimg"><img src="img/sample-02.png" alt="GERME KASHIWA ユニフォーム" loading="lazy"></div>
+        <div class="cbody">
+          <div class="ci">Case 02 — Kashiwa, Japan</div>
+          <h3>GERME KASHIWA</h3>
+          <p data-en="A 4th-anniversary model: collar and stripes in London-classic style, made to mark the club\u2019s milestone.">チーム4周年の記念モデル。襟付き×ボーダーのロンドンクラシック調で、節目にふさわしい特別な一着に。</p>
+        </div>
+      </div>
+      <div class="client-card">
+        <div class="cimg"><img src="img/sample-05.png" alt="FC HAMISENNA ユニフォーム" loading="lazy"></div>
+        <div class="cbody">
+          <div class="ci">Case 03</div>
+          <h3>FC HAMISENNA</h3>
+          <p data-en="Navy and gold checkerboard with an emblem and star — a kit with real presence on the pitch.">ネイビー×ゴールドのチェッカーボードにエンブレムとスター。ピッチで風格を放つオフィシャルモデルです。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- PRICE -->
 <section class="sec">
   <div class="wrap">
@@ -256,7 +321,7 @@ footer{background:var(--ink);color:#9a9a9a;padding:56px 0 36px;font-size:13px}
         <dl>
           <div class="row"><dt>Design</dt><dd data-en="<b>Included in the price.</b> The ¥6,000 covers design work — no extra fees."><b>基本料金に込み</b>　¥6,000にデザイン作成費が含まれます。追加費用はかかりません。</dd></div>
           <div class="row"><dt>Min. Order</dt><dd data-en="<b>From 10 kits.</b> Start with as few as ten."><b>10枚〜</b>　まずは10枚からご注文いただけます。</dd></div>
-          <div class="row"><dt>Reorder</dt><dd data-en="<b>In units of 5.</b> Additional orders come in sets of five."><b>5枚単位</b>　追加でのご注文は5枚単位で承ります。</dd></div>
+          <div class="row"><dt>Reorder</dt><dd data-en="<b>In units of 5.</b> Additional orders come in sets of five."><b>5枚単位</b>　追加は5枚単位でOK。デザインデータ無料保管で、新メンバーの買い足しもカンタンです。</dd></div>
           <div class="row"><dt>New Design</dt><dd data-en="Switching to a brand-new design also starts <b>from 10 kits</b>.">デザインを新しく作り替える場合も、<b>10枚〜</b>のご注文をお願いします。</dd></div>
           <div class="row"><dt>Names &amp; No.</dt><dd data-en="<b>Sublimation printed</b> — add as many as you like at no extra cost."><b>昇華プリント</b>で加工するため、何枚入れても料金は変わりません。</dd></div>
           <div class="row"><dt>Delivery</dt><dd data-en="About <b>one month</b> from order confirmation to your door.">ご注文確定から<b>約1ヶ月</b>でお手元にお届けします。</dd></div>
@@ -355,6 +420,66 @@ footer{background:var(--ink);color:#9a9a9a;padding:56px 0 36px;font-size:13px}
   </div>
 </section>
 
+<!-- SUPPORT -->
+<section class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="lbl">Keep Playing</span>
+      <h2 class="disp" data-en="With your team, for seasons to come">ずっと、チームとともに。</h2>
+      <p data-en="Kits are not a one-time purchase. We support your team as it grows and changes.">ユニフォームは作って終わりではありません。入れ替わり、増えていくチームをずっとサポートします。</p>
+    </div>
+    <div class="sup-grid">
+      <div class="sup-card">
+        <div class="si">Support 01 — Reorder</div>
+        <h3 data-en="Easy restock for new members">新メンバーの買い足しもカンタン</h3>
+        <p data-en="Your design data is stored free of charge. When new members join, we reproduce the exact same kit — same colors, same design — in units of 5, with names and numbers included.">デザインデータは<b>無料で保管</b>。新しいメンバーが入っても、同じデザイン・同じカラーのユニフォームを<b>5枚単位</b>ですぐに追加製作できます。名入れ・背番号ももちろん無料です。</p>
+        <p class="note" data-en="Every year, as your team changes, your kit stays the same.">毎年メンバーが入れ替わっても、チームの一着は変わらずに。</p>
+      </div>
+      <div class="sup-card">
+        <div class="si">Support 02 — Referral</div>
+        <h3 data-en="Refer a team, get a free kit">チーム紹介で、1着無料</h3>
+        <p data-en="Introduce another team to us, and when their order is confirmed, you receive one kit free with your next order. Team sport spreads through connections — and we want to thank you for yours.">お知り合いのチームをご紹介いただき、そのチームのご注文が成立したら、<b>次回のご注文時に1着無料</b>でプレゼント。チームスポーツは、つながりで広がっていくものだから。</p>
+        <p class="note" data-en="Details available on request — just ask us on LINE or by email.">※ 詳細はLINEまたはメールでお気軽にお問い合わせください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIZE -->
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="lbl">Size Chart</span>
+      <h2 class="disp" data-en="Size chart">サイズ表</h2>
+      <p data-en="Standard Japanese sportswear sizing (JASPO-based). Use this as a guide when ordering.">日本の一般的なスポーツウェア規格（JASPO準拠）のサイズです。ご注文時の目安にしてください。</p>
+    </div>
+    <div class="size-wrap">
+      <table class="size">
+        <thead>
+          <tr>
+            <th data-en="Size">サイズ</th>
+            <th data-en="Height (cm)">適応身長</th>
+            <th data-en="Length (cm)">着丈</th>
+            <th data-en="Width (cm)">身幅</th>
+            <th data-en="Shorts length (cm)">パンツ丈</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>SS</td><td>155–165</td><td>63.5</td><td>45</td><td>40</td></tr>
+          <tr><td>S</td><td>160–170</td><td>66</td><td>47</td><td>42</td></tr>
+          <tr><td>M</td><td>165–175</td><td>68.5</td><td>49</td><td>44</td></tr>
+          <tr><td>L</td><td>170–180</td><td>71</td><td>51</td><td>46</td></tr>
+          <tr><td>XL（O）</td><td>175–185</td><td>73.5</td><td>53</td><td>48</td></tr>
+          <tr><td>2XL（XO）</td><td>180–190</td><td>76</td><td>55</td><td>50</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="size-note" data-en="Junior sizes (130\u2013160) are also available \u2014 feel free to ask. Measurements are a guide and may vary by \u00b11\u20132 cm depending on production. Between sizes? We recommend sizing up for a comfortable fit.">ジュニアサイズ（130〜160）もご用意できます。お気軽にご相談ください。<br>※ 寸法は目安です。製造上、±1〜2cm程度の誤差が生じる場合があります。迷ったら、ワンサイズ上のゆったりめがおすすめです。</p>
+  </div>
+</section>
+
+
+
 <!-- NOTES -->
 <section class="sec alt notes">
   <div class="wrap">
@@ -364,6 +489,8 @@ footer{background:var(--ink);color:#9a9a9a;padding:56px 0 36px;font-size:13px}
       <li data-en="Names and numbers are sublimation printed — no extra cost, however many you add.">名入れ・背番号は昇華プリントのため、何枚・何種類入れても追加料金はかかりません。</li>
       <li data-en="Delivery is about one month from order confirmation and may vary by season.">納期はご注文確定後から約1ヶ月が目安です。時期により前後する場合があります。</li>
       <li data-en="Shipping guide: about +¥8,000–10,000 for 10 kits. Free on 20+; discounts negotiable under 20.">送料は10着で+¥8,000〜10,000が目安です。20着以上のご注文で送料無料。20着未満でも枚数に応じて割引をご相談いただけます。</li>
+      <li data-en="Design data is stored free of charge — reorders for new members are easy, in units of 5.">デザインデータは無料保管。新メンバーの買い足しも5枚単位でカンタンに追加できます。</li>
+      <li data-en="Referral reward: introduce a team and receive one free kit with your next order (when their order is confirmed).">紹介特典あり：ご紹介いただいたチームのご注文成立で、次回ご注文時に1着無料。</li>
     </ul>
   </div>
 </section>
