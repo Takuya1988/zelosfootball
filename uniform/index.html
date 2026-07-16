@@ -180,6 +180,33 @@ table.size tr:last-child td{border-bottom:none}
 .size-note{font-size:12.5px;color:var(--mute);margin-top:16px;line-height:1.9}
 @media(max-width:880px){.client-grid{grid-template-columns:1fr}.sup-grid{grid-template-columns:1fr}}
 
+
+/* simulator */
+.sim-card{border:1px solid var(--ink);background:#fff;padding:44px 46px}
+.sim-qty-row{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:8px}
+.sim-qty-label{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;letter-spacing:.24em;color:var(--mute);text-transform:uppercase}
+.sim-qty{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:80%;font-size:clamp(44px,6vw,64px);line-height:1}
+.sim-qty small{font-size:22px;font-weight:900;margin-left:4px}
+input[type=range].sim-range{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:var(--line);outline:none;margin:22px 0 6px}
+input[type=range].sim-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:26px;height:26px;background:var(--ink);cursor:pointer;border:none}
+input[type=range].sim-range::-moz-range-thumb{width:26px;height:26px;background:var(--ink);cursor:pointer;border:none;border-radius:0}
+.sim-scale{display:flex;justify-content:space-between;font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--mute);letter-spacing:.08em;margin-bottom:26px}
+.sim-free{margin:6px 0 26px}
+.sim-free .bar{height:8px;background:var(--soft);border:1px solid var(--line);position:relative;overflow:hidden}
+.sim-free .fill{position:absolute;left:0;top:0;bottom:0;background:var(--ink);transition:width .25s ease}
+.sim-free .msg{font-size:13.5px;font-weight:700;margin-top:10px}
+.sim-free .msg.free{color:#0a8f43}
+.sim-rows{border-top:2px solid var(--ink)}
+.sim-row{display:flex;justify-content:space-between;align-items:baseline;padding:15px 0;border-bottom:1px solid var(--line);gap:14px}
+.sim-row .k{font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:11px;letter-spacing:.14em;color:var(--ink);text-transform:uppercase}
+.sim-row .v{font-size:16px;font-weight:700;text-align:right}
+.sim-row.total .v{font-family:"Archivo",sans-serif;font-weight:900;font-stretch:90%;font-size:clamp(24px,3.4vw,32px)}
+.sim-row .v .strike{text-decoration:line-through;color:var(--mute);font-weight:500;font-size:13px;margin-right:8px}
+.sim-row .v .free-tag{color:#0a8f43}
+.sim-note{font-size:12.5px;color:var(--mute);margin-top:16px;line-height:1.9}
+.sim-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+@media(max-width:880px){.sim-card{padding:32px 24px}}
+
 /* footer */
 footer{background:var(--ink);color:#9a9a9a;padding:56px 0 36px;font-size:13px}
 .foot-top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.14)}
@@ -365,6 +392,57 @@ footer{background:var(--ink);color:#9a9a9a;padding:56px 0 36px;font-size:13px}
   </div>
 </section>
 
+<!-- SIMULATOR -->
+<section class="sec alt" id="simulator">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="lbl">Price Simulator</span>
+      <h2 class="disp" data-en="Estimate in seconds">かんたん見積りシミュレーター</h2>
+      <p data-en="Slide to your team size and see the full picture — kits, shipping, and total — instantly.">枚数を動かすだけで、商品代・送料・合計の目安がその場でわかります。</p>
+    </div>
+    <div class="sim-card">
+      <div class="sim-qty-row">
+        <span class="sim-qty-label" data-en="Quantity">ご注文枚数</span>
+        <span class="sim-qty"><span id="simQty">20</span><small data-en=" kits">着</small></span>
+      </div>
+      <input type="range" class="sim-range" id="simRange" min="10" max="60" step="1" value="20" aria-label="枚数">
+      <div class="sim-scale"><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span><span>60</span></div>
+
+      <div class="sim-free">
+        <div class="bar"><div class="fill" id="simFill"></div></div>
+        <div class="msg" id="simMsg"></div>
+      </div>
+
+      <div class="sim-rows">
+        <div class="sim-row">
+          <span class="k" data-en="Kits">商品代（¥6,000 × 枚数）</span>
+          <span class="v" id="simGoods">—</span>
+        </div>
+        <div class="sim-row">
+          <span class="k" data-en="Shipping (est.)">送料（目安）</span>
+          <span class="v" id="simShip">—</span>
+        </div>
+        <div class="sim-row total">
+          <span class="k" data-en="Total (est.)">合計（目安）</span>
+          <span class="v" id="simTotal">—</span>
+        </div>
+        <div class="sim-row">
+          <span class="k" data-en="Per kit incl. shipping">1着あたり（送料込み）</span>
+          <span class="v" id="simPer">—</span>
+        </div>
+      </div>
+
+      <p class="sim-note" data-en="Estimates only. Shipping varies by destination and season — 20 kits or more ship free, and discounts are negotiable under 20. Exact quotes provided on request.">※ 金額は目安です。送料はお届け先・時期により変動します。20着以上は送料無料、20着未満も割引のご相談が可能です。正式なお見積りはお気軽にご依頼ください。</p>
+
+      <div class="sim-cta">
+        <a href="https://lin.ee/nWIZPck" target="_blank" rel="noopener" class="btn btn-line-green" data-en="Get an exact quote on LINE">この内容でLINE相談する</a>
+        <a href="contact.html" class="btn btn-line" data-en="Request by email">メールで見積り依頼</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- QUALITY -->
 <section class="sec alt">
   <div class="wrap">
@@ -521,6 +599,51 @@ footer{background:var(--ink);color:#9a9a9a;padding:56px 0 36px;font-size:13px}
     <p class="copy">© 2026 ZELOS Inc. All Rights Reserved.</p>
   </div>
 </footer>
+
+
+<script>
+/* 見積りシミュレーター */
+(function(){
+  var UNIT=6000, FREE_AT=20, SHIP_LOW=800, SHIP_HIGH=1000;
+  var range=document.getElementById('simRange');
+  if(!range) return;
+  function lang(){ try{return localStorage.getItem('zlu_lang')||'ja';}catch(e){return 'ja';} }
+  function yen(n){ return '\u00a5'+n.toLocaleString('ja-JP'); }
+  function r100(n){ return Math.round(n/100)*100; }
+  function calc(){
+    var q=parseInt(range.value,10);
+    var en=(lang()==='en');
+    document.getElementById('simQty').textContent=q;
+    var goods=q*UNIT;
+    var el;
+    document.getElementById('simGoods').textContent=yen(goods);
+    var fill=document.getElementById('simFill');
+    var msg=document.getElementById('simMsg');
+    if(q>=FREE_AT){
+      fill.style.width='100%';
+      msg.className='msg free';
+      msg.textContent= en ? 'Free shipping applied \ud83c\udf89' : '\u9001\u6599\u7121\u6599\u304c\u9069\u7528\u3055\u308c\u307e\u3059 \ud83c\udf89';
+      document.getElementById('simShip').innerHTML='<span class="strike">'+yen(r100(q*SHIP_LOW))+'\u301c</span><span class="free-tag">'+(en?'FREE':'\u7121\u6599 \u00a50')+'</span>';
+      document.getElementById('simTotal').textContent=yen(goods);
+      document.getElementById('simPer').textContent=yen(UNIT);
+    }else{
+      var rest=FREE_AT-q;
+      fill.style.width=Math.round(q/FREE_AT*100)+'%';
+      msg.className='msg';
+      msg.textContent= en ? ('Add '+rest+' more kit'+(rest>1?'s':'')+' for free shipping') : ('\u3042\u3068'+rest+'\u7740\u3067\u9001\u6599\u7121\u6599\uff01');
+      var sl=r100(q*SHIP_LOW), sh=r100(q*SHIP_HIGH);
+      document.getElementById('simShip').textContent='+'+yen(sl)+'\u301c'+yen(sh);
+      document.getElementById('simTotal').textContent=yen(goods+sl)+'\u301c'+yen(goods+sh);
+      var pl=Math.round((goods+sl)/q), ph=Math.round((goods+sh)/q);
+      document.getElementById('simPer').textContent=yen(pl)+'\u301c'+yen(ph);
+    }
+  }
+  range.addEventListener('input',calc);
+  var t=document.getElementById('langToggle');
+  if(t) t.addEventListener('click',function(){ setTimeout(calc,0); });
+  calc();
+})();
+</script>
 
 <script>
 /* 日英切り替え（localStorage共有・3ページ共通） */
