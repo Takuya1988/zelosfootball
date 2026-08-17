@@ -2407,7 +2407,147 @@ footer {
   width: 100%; height: 100%;
   border: 0;
 }
- 
+
+/* ========================= YOUTUBE PAGE ========================= */
+.yt-hero {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 55%, var(--navy-light) 100%);
+  color: #fff;
+  padding: 64px 24px 56px;
+  text-align: center;
+}
+.yt-hero-inner { max-width: 900px; margin: 0 auto; }
+.yt-hero-kicker {
+  font-family: "Oswald", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.35em;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.yt-hero h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 56px;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+}
+.yt-hero h1 em { font-style: normal; color: var(--gold); }
+.yt-hero-sub {
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.85);
+}
+.yt-hero-actions {
+  margin-top: 28px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.yt-sub-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  background: #ff0000;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.yt-sub-btn:hover { background: #cc0000; transform: translateY(-2px); }
+.yt-sub-btn svg { width: 22px; height: 16px; flex: none; }
+.yt-ghost-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 26px;
+  border: 1px solid rgba(255,255,255,0.6);
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.yt-ghost-btn:hover { background: #fff; color: var(--navy); }
+
+.yt-section { max-width: 1080px; margin: 0 auto; padding: 56px 24px 0; }
+.yt-section:last-of-type { padding-bottom: 80px; }
+.yt-player-wrap {
+  position: relative;
+  padding-top: 56.25%;
+  background: #000;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.yt-player-wrap iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+.yt-note {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--sub);
+  text-align: right;
+}
+.yt-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 24px;
+}
+.yt-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--navy);
+  padding: 26px 22px;
+  transition: border-top-color 0.2s, transform 0.2s;
+}
+.yt-card:hover { border-top-color: var(--gold); transform: translateY(-3px); }
+.yt-card h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  color: var(--navy);
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+.yt-card .ja {
+  font-size: 12px;
+  color: var(--gold-deep);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.yt-card p { font-size: 13px; line-height: 1.85; color: var(--sub); }
+.yt-cta {
+  margin-top: 56px;
+  background: var(--navy);
+  color: #fff;
+  padding: 44px 24px;
+  text-align: center;
+}
+.yt-cta h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 30px;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+.yt-cta p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 24px;
+}
+@media (max-width: 900px) {
+  .yt-cards { grid-template-columns: 1fr; }
+  .yt-hero h1 { font-size: 40px; }
+  .yt-hero { padding: 48px 20px 44px; }
+  .yt-section { padding: 40px 16px 0; }
+}
+
 </style>
 </head>
 <body>
@@ -2419,7 +2559,7 @@ footer {
     <a href="#" target="_blank" rel="noopener">Facebook</a>
     <a href="https://x.com/svzfc_official" target="_blank" rel="noopener">X</a>
     <a href="https://www.instagram.com/svzfc_official" target="_blank" rel="noopener">Instagram</a>
-    <a href="#" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://www.youtube.com/@ZELOS-SV" target="_blank" rel="noopener">YouTube</a>
   </div>
 </div>
 
@@ -2444,14 +2584,15 @@ footer {
 <!-- ==================== MAIN NAV ==================== -->
 <nav class="main-nav">
   <ul>
-    <li><a class="active" onclick="showPage('home')" data-ja="NEWS" data-en="NEWS">NEWS</a></li>
-    <li><a onclick="showPage('schedule')" data-ja="GAME" data-en="GAME">GAME</a></li>
-    <li><a onclick="showPage('players')" data-ja="TEAM" data-en="TEAM">TEAM</a></li>
-    <li><a onclick="showPage('about')" data-ja="CLUB" data-en="CLUB">CLUB</a></li>
-   <li><a onclick="showPage('access')" data-ja="ACCESS" data-en="ACCESS">ACCESS</a></li>
-　<li><a onclick="showPage('goods')" data-ja="SHOP" data-en="SHOP">SHOP</a></li>
-    <li><a onclick="showPage('sponsor')" data-ja="SPONSOR" data-en="SPONSOR">SPONSOR</a></li>
-    <li><a onclick="showPage('contact')" data-ja="CONTACT" data-en="CONTACT">CONTACT</a></li>
+    <li><a class="active" data-page="home" onclick="showPage('home')" data-ja="NEWS" data-en="NEWS">NEWS</a></li>
+    <li><a data-page="schedule" onclick="showPage('schedule')" data-ja="GAME" data-en="GAME">GAME</a></li>
+    <li><a data-page="players" onclick="showPage('players')" data-ja="TEAM" data-en="TEAM">TEAM</a></li>
+    <li><a data-page="about" onclick="showPage('about')" data-ja="CLUB" data-en="CLUB">CLUB</a></li>
+    <li><a data-page="youtube" onclick="showPage('youtube')" data-ja="YOUTUBE" data-en="YOUTUBE">YOUTUBE</a></li>
+    <li><a data-page="access" onclick="showPage('access')" data-ja="ACCESS" data-en="ACCESS">ACCESS</a></li>
+    <li><a data-page="goods" onclick="showPage('goods')" data-ja="SHOP" data-en="SHOP">SHOP</a></li>
+    <li><a data-page="sponsor" onclick="showPage('sponsor')" data-ja="SPONSOR" data-en="SPONSOR">SPONSOR</a></li>
+    <li><a data-page="contact" onclick="showPage('contact')" data-ja="CONTACT" data-en="CONTACT">CONTACT</a></li>
     <li class="lang"><a id="langToggle" onclick="toggleLang()" data-ja="ENGLISH" data-en="日本語">ENGLISH</a></li>
   </ul>
 </nav>
@@ -3926,6 +4067,89 @@ footer {
 </div>
 </div><!-- end page-contact -->
 
+<!-- ==================== YOUTUBE PAGE ==================== -->
+<div class="page" id="page-youtube">
+
+<!-- HERO -->
+<section class="yt-hero">
+  <div class="yt-hero-inner">
+    <div class="yt-hero-kicker" data-ja="OFFICIAL YOUTUBE CHANNEL" data-en="OFFICIAL YOUTUBE CHANNEL">OFFICIAL YOUTUBE CHANNEL</div>
+    <h1 data-ja="WATCH<br><em>ZELOS</em>." data-en="WATCH<br><em>ZELOS</em>.">WATCH<br><em>ZELOS</em>.</h1>
+    <p class="yt-hero-sub" data-ja="試合ハイライト、ライブ配信、選手たちの舞台裏。<br>ラオス・サバナケットからのすべての映像を、公式YouTubeチャンネルでお届けします。" data-en="Match highlights, live streams and behind the scenes.<br>Every moment from Savannakhet, Laos — on our official YouTube channel.">
+      試合ハイライト、ライブ配信、選手たちの舞台裏。<br>
+      ラオス・サバナケットからのすべての映像を、公式YouTubeチャンネルでお届けします。
+    </p>
+    <div class="yt-hero-actions">
+      <a class="yt-sub-btn" href="https://www.youtube.com/@ZELOS-SV?sub_confirmation=1" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 17" aria-hidden="true"><path fill="#fff" d="M23.5 2.7A3 3 0 0 0 21.4.6C19.5 0 12 0 12 0S4.5 0 2.6.6A3 3 0 0 0 .5 2.7 31 31 0 0 0 0 8.5c0 2 .2 4 .5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.3-1.9.5-3.8.5-5.8s-.2-4-.5-5.8z"/><path fill="#ff0000" d="M9.6 12.1 15.8 8.5 9.6 4.9z"/></svg>
+        <span data-ja="チャンネル登録" data-en="SUBSCRIBE">チャンネル登録</span>
+      </a>
+      <a class="yt-ghost-btn" href="https://www.youtube.com/@ZELOS-SV" target="_blank" rel="noopener" data-ja="チャンネルを見る →" data-en="VIEW CHANNEL →">チャンネルを見る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST VIDEOS PLAYER -->
+<section class="yt-section">
+  <div class="section-title" style="padding-left:0;padding-right:0">
+    <div>
+      <h2>LATEST VIDEOS</h2>
+      <span class="ja" data-ja="最新動画" data-en="Latest Videos">最新動画</span>
+    </div>
+  </div>
+  <div class="yt-player-wrap">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/videoseries?list=UUV3AZ1CMxQCTxb15uMuwWAA&rel=0"
+      title="SAVANNAKHET ZELOS FC - Latest Videos"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+  <div class="yt-note" data-ja="※ 新しい動画が公開されると自動的に反映されます。" data-en="* New uploads appear here automatically.">※ 新しい動画が公開されると自動的に反映されます。</div>
+</section>
+
+<!-- CONTENT TYPES -->
+<section class="yt-section">
+  <div class="section-title" style="padding-left:0;padding-right:0">
+    <div>
+      <h2>CONTENTS</h2>
+      <span class="ja" data-ja="チャンネルで配信している内容" data-en="What we broadcast">チャンネルで配信している内容</span>
+    </div>
+  </div>
+  <div class="yt-cards">
+    <div class="yt-card">
+      <h3>MATCH HIGHLIGHTS</h3>
+      <div class="ja" data-ja="試合ハイライト" data-en="Match Highlights">試合ハイライト</div>
+      <p data-ja="ラオス・プレミアリーグ全試合のゴールシーンと見どころを、試合後にダイジェストでお届けします。" data-en="Goals and key moments from every Lao Premier League match, delivered as a post-match digest.">ラオス・プレミアリーグ全試合のゴールシーンと見どころを、試合後にダイジェストでお届けします。</p>
+    </div>
+    <div class="yt-card">
+      <h3>LIVE STREAMING</h3>
+      <div class="ja" data-ja="ライブ配信" data-en="Live Streaming">ライブ配信</div>
+      <p data-ja="ホームゲームを中心にライブ配信を実施。日本からでもリアルタイムでゼロスを応援できます。" data-en="Live streams centred on home games — support Zelos in real time, even from Japan.">ホームゲームを中心にライブ配信を実施。日本からでもリアルタイムでゼロスを応援できます。</p>
+    </div>
+    <div class="yt-card">
+      <h3>BEHIND THE SCENES</h3>
+      <div class="ja" data-ja="舞台裏・選手密着" data-en="Behind The Scenes">舞台裏・選手密着</div>
+      <p data-ja="練習風景、選手インタビュー、クラブの日常。ピッチの外のゼロスFCをお見せします。" data-en="Training sessions, player interviews and daily club life — Zelos FC off the pitch.">練習風景、選手インタビュー、クラブの日常。ピッチの外のゼロスFCをお見せします。</p>
+    </div>
+  </div>
+
+  <div class="yt-cta">
+    <h3 data-ja="SUBSCRIBE TO OUR CHANNEL" data-en="SUBSCRIBE TO OUR CHANNEL">SUBSCRIBE TO OUR CHANNEL</h3>
+    <p data-ja="チャンネル登録で、新しい動画とライブ配信の通知を受け取れます。<br>ラオスから世界へ挑むクラブの歩みを、一緒に見届けてください。" data-en="Subscribe to get notified of new videos and live streams.<br>Follow the journey of a club taking on the world from Laos.">
+      チャンネル登録で、新しい動画とライブ配信の通知を受け取れます。<br>
+      ラオスから世界へ挑むクラブの歩みを、一緒に見届けてください。
+    </p>
+    <a class="yt-sub-btn" href="https://www.youtube.com/@ZELOS-SV?sub_confirmation=1" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 17" aria-hidden="true"><path fill="#fff" d="M23.5 2.7A3 3 0 0 0 21.4.6C19.5 0 12 0 12 0S4.5 0 2.6.6A3 3 0 0 0 .5 2.7 31 31 0 0 0 0 8.5c0 2 .2 4 .5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.3-1.9.5-3.8.5-5.8s-.2-4-.5-5.8z"/><path fill="#ff0000" d="M9.6 12.1 15.8 8.5 9.6 4.9z"/></svg>
+      <span data-ja="チャンネル登録する" data-en="SUBSCRIBE NOW">チャンネル登録する</span>
+    </a>
+  </div>
+</section>
+
+</div><!-- end page-youtube -->
+
 <!-- ==================== FOOTER ==================== -->
 <footer>
   <div class="footer-inner">
@@ -3956,6 +4180,7 @@ footer {
           <ul>
             <li onclick="showPage('goods')" data-ja="グッズ" data-en="Goods">グッズ</li>
             <li onclick="showPage('fanclub')" data-ja="ファンクラブ" data-en="Fan Club">ファンクラブ</li>
+            <li onclick="showPage('youtube')" data-ja="YouTube" data-en="YouTube">YouTube</li>
             <li data-ja="ブログ" data-en="Blog">ブログ</li>
           </ul>
         </div>
@@ -3964,7 +4189,7 @@ footer {
         <a href="#" target="_blank" rel="noopener">Facebook</a>
         <a href="https://x.com/svzfc_official" target="_blank" rel="noopener">X (Twitter)</a>
         <a href="https://www.instagram.com/svzfc_official" target="_blank" rel="noopener">Instagram</a>
-        <a href="#" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.youtube.com/@ZELOS-SV" target="_blank" rel="noopener">YouTube</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -3983,11 +4208,8 @@ function showPage(pageId) {
 
   // Update nav active state (exclude language toggle)
   document.querySelectorAll('nav.main-nav li:not(.lang) a').forEach(a => a.classList.remove('active'));
-  const navMap = {home:0, schedule:1, players:2, about:3, access:4, goods:5, sponsor:6, contact:7};
-  const navItems = document.querySelectorAll('nav.main-nav li:not(.lang) a');
-  if (navMap[pageId] !== undefined && navItems[navMap[pageId]]) {
-    navItems[navMap[pageId]].classList.add('active');
-  }
+  const navLink = document.querySelector('nav.main-nav li:not(.lang) a[data-page="' + pageId + '"]');
+  if (navLink) navLink.classList.add('active');
 
   // Scroll to top
   window.scrollTo({top: 0, behavior: 'smooth'});
