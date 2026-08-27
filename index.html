@@ -352,6 +352,52 @@ nav.main-nav li.lang a {
   border-top: 1px solid var(--line);
 }
 
+/* ========================= PRESEASON RESULTS ========================= */
+.preseason-results {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px 48px;
+}
+.preseason-summary {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  color: var(--gold-deep);
+  margin-bottom: 16px;
+}
+.preseason-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+.preseason-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--line);
+  padding: 12px 16px;
+  font-size: 14px;
+}
+.preseason-item.win { border-left-color: var(--navy); }
+.preseason-item.draw { border-left-color: var(--gold); }
+.preseason-item.loss { border-left-color: var(--sub); }
+.ps-mark {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 16px;
+  width: 18px;
+  text-align: center;
+  color: var(--navy);
+}
+.ps-score {
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  color: var(--navy);
+  min-width: 40px;
+}
+.ps-opponent { color: var(--ink); }
+
 /* ========================= NEWS ========================= */
 .news-wrap { background: var(--bg); padding: 16px 0 80px; }
 .news-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
@@ -2634,6 +2680,27 @@ footer {
   </div>
 </section>
 
+<!-- PRESEASON RESULTS -->
+<div class="section-title">
+  <div>
+    <h2>PRESEASON RESULTS</h2>
+    <span class="ja" data-ja="プレシーズン戦績" data-en="Preseason Results">プレシーズン戦績</span>
+  </div>
+</div>
+<div class="preseason-results">
+  <div class="preseason-summary" data-ja="4勝2分2敗" data-en="4W-2D-2L">4勝2分2敗</div>
+  <div class="preseason-list">
+    <div class="preseason-item win"><span class="ps-mark">〇</span><span class="ps-score">2-1</span><span class="ps-opponent" data-ja="vs サラワンユナイテッド" data-en="vs Salavan United">vs サラワンユナイテッド</span></div>
+    <div class="preseason-item win"><span class="ps-mark">〇</span><span class="ps-score">6-4</span><span class="ps-opponent" data-ja="vs Ezra" data-en="vs Ezra">vs Ezra</span></div>
+    <div class="preseason-item draw"><span class="ps-mark">△</span><span class="ps-score">4-4</span><span class="ps-opponent" data-ja="vs Ezra" data-en="vs Ezra">vs Ezra</span></div>
+    <div class="preseason-item win"><span class="ps-mark">〇</span><span class="ps-score">2-1</span><span class="ps-opponent" data-ja="vs ラオス代表U-20" data-en="vs Laos U-20 National Team">vs ラオス代表U-20</span></div>
+    <div class="preseason-item loss"><span class="ps-mark">×</span><span class="ps-score">1-8</span><span class="ps-opponent" data-ja="vs Ezra" data-en="vs Ezra">vs Ezra</span></div>
+    <div class="preseason-item win"><span class="ps-mark">〇</span><span class="ps-score">3-2</span><span class="ps-opponent" data-ja="vs BIS" data-en="vs BIS">vs BIS</span></div>
+    <div class="preseason-item loss"><span class="ps-mark">×</span><span class="ps-score">0-1</span><span class="ps-opponent" data-ja="vs Mazda GB" data-en="vs Mazda GB">vs Mazda GB</span></div>
+    <div class="preseason-item draw"><span class="ps-mark">△</span><span class="ps-score">1-1</span><span class="ps-opponent" data-ja="vs Namtha United" data-en="vs Namtha United">vs Namtha United</span></div>
+  </div>
+</div>
+
 <!-- GAME SCHEDULE -->
 <div class="section-title">
   <div>
@@ -2696,6 +2763,46 @@ footer {
       <button class="news-tab" data-cat="sponsor" data-ja="スポンサー" data-en="SPONSOR">スポンサー</button>
     </div>
     <div class="news-list">
+      <a class="news-item fade-in">
+        <div class="news-date" data-ja="プレシーズン" data-en="Preseason">プレシーズン</div>
+        <div class="news-category event" data-ja="試合・イベント" data-en="MATCH & EVENT">EVENT</div>
+        <div class="news-title" data-ja="【プレシーズンマッチ】〇 2-1 vs サラワンユナイテッド" data-en="[Preseason Match] W 2-1 vs Salavan United">【プレシーズンマッチ】〇 2-1 vs サラワンユナイテッド</div>
+      </a>
+      <a class="news-item fade-in">
+        <div class="news-date" data-ja="プレシーズン" data-en="Preseason">プレシーズン</div>
+        <div class="news-category event" data-ja="試合・イベント" data-en="MATCH & EVENT">EVENT</div>
+        <div class="news-title" data-ja="【プレシーズンマッチ】〇 6-4 vs Ezra" data-en="[Preseason Match] W 6-4 vs Ezra">【プレシーズンマッチ】〇 6-4 vs Ezra</div>
+      </a>
+      <a class="news-item fade-in">
+        <div class="news-date" data-ja="プレシーズン" data-en="Preseason">プレシーズン</div>
+        <div class="news-category event" data-ja="試合・イベント" data-en="MATCH & EVENT">EVENT</div>
+        <div class="news-title" data-ja="【プレシーズンマッチ】△ 4-4 vs Ezra" data-en="[Preseason Match] D 4-4 vs Ezra">【プレシーズンマッチ】△ 4-4 vs Ezra</div>
+      </a>
+      <a class="news-item fade-in">
+        <div class="news-date" data-ja="プレシーズン" data-en="Preseason">プレシーズン</div>
+        <div class="news-category event" data-ja="試合・イベント" data-en="MATCH & EVENT">EVENT</div>
+        <div class="news-title" data-ja="【プレシーズンマッチ】〇 2-1 vs ラオス代表U-20" data-en="[Preseason Match] W 2-1 vs Laos U-20 National Team">【プレシーズンマッチ】〇 2-1 vs ラオス代表U-20</div>
+      </a>
+      <a class="news-item fade-in">
+        <div class="news-date" data-ja="プレシーズン" data-en="Preseason">プレシーズン</div>
+        <div class="news-category event" data-ja="試合・イベント" data-en="MATCH & EVENT">EVENT</div>
+        <div class="news-title" data-ja="【プレシーズンマッチ】× 1-8 vs Ezra" data-en="[Preseason Match] L 1-8 vs Ezra">【プレシーズンマッチ】× 1-8 vs Ezra</div>
+      </a>
+      <a class="news-item fade-in">
+        <div class="news-date" data-ja="プレシーズン" data-en="Preseason">プレシーズン</div>
+        <div class="news-category event" data-ja="試合・イベント" data-en="MATCH & EVENT">EVENT</div>
+        <div class="news-title" data-ja="【プレシーズンマッチ】〇 3-2 vs BIS" data-en="[Preseason Match] W 3-2 vs BIS">【プレシーズンマッチ】〇 3-2 vs BIS</div>
+      </a>
+      <a class="news-item fade-in">
+        <div class="news-date" data-ja="プレシーズン" data-en="Preseason">プレシーズン</div>
+        <div class="news-category event" data-ja="試合・イベント" data-en="MATCH & EVENT">EVENT</div>
+        <div class="news-title" data-ja="【プレシーズンマッチ】× 0-1 vs Mazda GB" data-en="[Preseason Match] L 0-1 vs Mazda GB">【プレシーズンマッチ】× 0-1 vs Mazda GB</div>
+      </a>
+      <a class="news-item fade-in">
+        <div class="news-date" data-ja="プレシーズン" data-en="Preseason">プレシーズン</div>
+        <div class="news-category event" data-ja="試合・イベント" data-en="MATCH & EVENT">EVENT</div>
+        <div class="news-title" data-ja="【プレシーズンマッチ】△ 1-1 vs Namtha United" data-en="[Preseason Match] D 1-1 vs Namtha United">【プレシーズンマッチ】△ 1-1 vs Namtha United</div>
+      </a>
       <a class="news-item fade-in">
     <div class="news-date">2026.08.16</div>
         <div class="news-category" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</div>
