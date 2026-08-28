@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://zelosfootball.com/yokotanaka/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://zelosfootball.com/yokotanaka/vision.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://zelosfootball.com/yokotanaka/service.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://zelosfootball.com/yokotanaka/profile.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zelosfootball.com/yokotanaka/member_jungeun.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://zelosfootball.com/yokotanaka/member_jungeun_ko.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://zelosfootball.com/yokotanaka/member_jungeun.html"/>
+  </url>
+  <url>
+    <loc>https://zelosfootball.com/yokotanaka/member_jungeun_ko.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zelosfootball.com/yokotanaka/activity.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zelosfootball.com/yokotanaka/contact.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zelosfootball.com/yokotanaka/tokushoho.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://zelosfootball.com/yokotanaka/privacy.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://zelosfootball.com/yokotanaka/event.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url><loc>https://zelosfootball.com/yokotanaka/schedule.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+</urlset>

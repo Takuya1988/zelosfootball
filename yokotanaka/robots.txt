@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /yokotanaka/
+
+Sitemap: https://zelosfootball.com/yokotanaka/sitemap.xml

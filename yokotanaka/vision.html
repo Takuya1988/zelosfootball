@@ -3,21 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>田中陽子 ｜ 自ら決めて、感謝を忘れず直向きに ― 想いと歩み</title>
-<meta name="description" content="元なでしこジャパン・田中陽子（レノファ山口FCレディース）。12歳で地元を離れ、スペイン・韓国を経て地元・山口へ。限られた環境のなかで自分の価値を証明してきた歩みと、子どもたちに伝えたい想い。">
+<title>ビジョン ｜ 環境を理由に、あきらめなくていい世界へ ― 田中陽子プロジェクト</title>
+<meta name="description" content="女子スポーツの環境は、まだ整っていません。選手が自分の言葉と経験で立てる形をつくる。経験を伝えることが対価になり、その対価が次の挑戦を支える。この取り組みが目指す世界について。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%2312222f'/%3E%3Ctext x='32' y='45' font-family='Helvetica,Arial,sans-serif' font-size='33' font-weight='bold' fill='%23e8622a' text-anchor='middle'%3E10%3C/text%3E%3C/svg%3E">
-<link rel="canonical" href="https://zelosfootball.com/yokotanaka/">
+<link rel="canonical" href="https://zelosfootball.com/yokotanaka/vision.html">
 <meta property="og:site_name" content="ZELOS FOOTBALL">
-<meta property="og:title" content="田中陽子 ｜ 自ら決めて、感謝を忘れず直向きに ― 想いと歩み">
-<meta property="og:description" content="元なでしこジャパン・田中陽子（レノファ山口FCレディース）。12歳で地元を離れ、スペイン・韓国を経て地元・山口へ。限られた環境のなかで自分の価値を証明してきた歩みと、子どもたちに伝えたい想い。">
+<meta property="og:title" content="ビジョン ｜ 環境を理由に、あきらめなくていい世界へ ― 田中陽子プロジェクト">
+<meta property="og:description" content="女子スポーツの環境は、まだ整っていません。選手が自分の言葉と経験で立てる形をつくる。経験を伝えることが対価になり、その対価が次の挑戦を支える。この取り組みが目指す世界について。">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://zelosfootball.com/yokotanaka/">
+<meta property="og:url" content="https://zelosfootball.com/yokotanaka/vision.html">
 <meta property="og:image" content="https://zelosfootball.com/yokotanaka/ogp.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="田中陽子 ｜ 自ら決めて、感謝を忘れず直向きに ― 想いと歩み">
-<meta name="twitter:description" content="元なでしこジャパン・田中陽子（レノファ山口FCレディース）。12歳で地元を離れ、スペイン・韓国を経て地元・山口へ。限られた環境のなかで自分の価値を証明してきた歩みと、子どもたちに伝えたい想い。">
-<meta name="twitter:image" content="https://zelosfootball.com/yokotanaka/ogp.png">
 <meta name="theme-color" content="#12222f">
 <style>
   :root{
@@ -395,40 +392,93 @@
   .twoup .d{font-size:14.5px;color:var(--ink-soft);line-height:1.85}
   .twoup .go{margin-top:16px;font-size:14px;font-weight:700;color:var(--accent)}
   @media(max-width:760px){.twoup{grid-template-columns:1fr}}
+
+  .tabs a{padding:8px 10px;font-size:12.5px}
+  @media(max-width:1240px){.navname span{display:none}}
+  @media(max-width:1040px){
+    nav .wrap{height:auto;padding-top:10px;padding-bottom:10px;flex-wrap:wrap;justify-content:center}
+    .navname{width:100%;text-align:center;font-size:15px}
+    .tabs{order:3;width:100%;justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .tabs a{padding:8px 11px;font-size:12px;flex-shrink:0}
+  }
+
+  /* ---------- ビジョン・ヒーロー ---------- */
+  .vhero{background:var(--bg-deep);color:#fff;padding:96px 0 86px;position:relative;overflow:hidden}
+  .vhero::after{content:"";position:absolute;right:-180px;top:-180px;width:520px;height:520px;
+    border-radius:50%;background:radial-gradient(circle,rgba(232,98,42,.22),transparent 68%)}
+  .vhero .wrap{position:relative;z-index:2}
+  .vhero .kicker{font-size:11.5px;letter-spacing:.28em;color:var(--accent);font-weight:700;margin-bottom:20px}
+  .vhero .rule{width:52px;height:3px;background:var(--accent);border-radius:2px;margin-bottom:30px}
+  .vhero h1{font-size:clamp(30px,5.6vw,52px);font-weight:900;line-height:1.42;letter-spacing:.01em}
+  .vhero h1 em{font-style:normal;color:var(--accent)}
+  .vhero p{margin-top:30px;color:#c3ced8;font-size:clamp(15.5px,2vw,17px);line-height:2.0;max-width:660px}
+
+  /* ---------- 現実（数字なしの事実カード） ---------- */
+  .facts4{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .fact4{background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);
+    border-radius:0 10px 10px 0;padding:26px 28px}
+  .fact4 b{display:block;font-size:12px;letter-spacing:.14em;color:var(--accent);font-weight:700;margin-bottom:10px}
+  .fact4 p{font-size:15.5px;color:var(--ink-soft);line-height:1.9;margin:0}
+  .fact4 p strong{color:var(--ink);font-weight:700}
+  @media(max-width:760px){.facts4{grid-template-columns:1fr}}
+
+  /* ---------- 循環 ---------- */
+  .cycle{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:8px 0 0}
+  .cyc{position:relative;padding:32px 22px;text-align:center;background:#fff;
+    border:1px solid var(--line);border-right:none}
+  .cyc:last-child{border-right:1px solid var(--line)}
+  .cyc .n{display:inline-block;width:30px;height:30px;line-height:30px;border-radius:50%;
+    background:var(--accent);color:#fff;font-size:13px;font-weight:900;margin-bottom:14px}
+  .cyc b{display:block;font-size:16.5px;font-weight:900;line-height:1.55;margin-bottom:9px}
+  .cyc p{font-size:14px;color:var(--ink-soft);line-height:1.85;margin:0}
+  .cyc::after{content:"";position:absolute;right:-9px;top:50%;transform:translateY(-50%) rotate(45deg);
+    width:16px;height:16px;background:#fff;border-top:1px solid var(--line);border-right:1px solid var(--line);z-index:2}
+  .cyc:last-child::after{display:none}
+  @media(max-width:860px){
+    .cycle{grid-template-columns:1fr}
+    .cyc{border-right:1px solid var(--line);border-bottom:none}
+    .cyc:last-child{border-bottom:1px solid var(--line)}
+    .cyc::after{right:auto;left:50%;top:auto;bottom:-9px;transform:translateX(-50%) rotate(135deg)}
+  }
+  .cycnote{margin-top:22px;font-size:16px;color:var(--ink-soft);line-height:1.95}
+
+  /* ---------- ロードマップ ---------- */
+  .road{border-left:2px solid var(--line);margin-left:10px}
+  .roaditem{position:relative;padding:0 0 40px 34px}
+  .roaditem:last-child{padding-bottom:0}
+  .roaditem::before{content:"";position:absolute;left:-9px;top:6px;width:16px;height:16px;
+    border-radius:50%;background:#fff;border:4px solid var(--accent)}
+  .roaditem .ph{background:none;border:none;color:var(--accent);padding:0;font-size:11.5px;
+    letter-spacing:.18em;font-weight:700;display:block;margin-bottom:7px}
+  .roaditem h4{font-size:19px;font-weight:900;line-height:1.55;margin-bottom:10px}
+  .roaditem p{font-size:15.5px;color:var(--ink-soft);line-height:1.95;margin-bottom:10px}
+  .roaditem p:last-child{margin-bottom:0}
+
+  /* ---------- 一緒に歩みたい人 ---------- */
+  .with{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .withitem{background:#fff;border:1px solid var(--line);border-radius:10px;padding:26px 28px}
+  .withitem b{display:block;font-size:16.5px;font-weight:900;margin-bottom:9px;line-height:1.6}
+  .withitem p{font-size:15px;color:var(--ink-soft);line-height:1.9;margin:0}
+  @media(max-width:760px){.with{grid-template-columns:1fr}}
+
+  /* ---------- 大きな締め ---------- */
+  .closing{background:var(--bg-deep);color:#fff;padding:92px 0;position:relative;overflow:hidden}
+  .closing::before{content:"";position:absolute;left:-150px;bottom:-150px;width:420px;height:420px;
+    border-radius:50%;background:radial-gradient(circle,rgba(232,98,42,.18),transparent 68%)}
+  .closing .wrap{position:relative;z-index:2}
+  .closing p{font-size:clamp(19px,2.9vw,27px);font-weight:900;line-height:1.85;margin-bottom:22px}
+  .closing p:last-child{margin-bottom:0;color:#c3ced8;font-size:16.5px;font-weight:400;line-height:2.0}
+  .closing em{font-style:normal;color:var(--accent)}
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "田中 陽子",
-  "alternateName": ["TANAKA Yoko", "たなか ようこ"],
-  "jobTitle": "プロサッカー選手",
-  "birthDate": "1993-07-30",
-  "birthPlace": { "@type": "Place", "name": "山口県山口市" },
-  "nationality": "JP",
-  "url": "https://zelosfootball.com/yokotanaka/",
-  "image": "https://zelosfootball.com/yokotanaka/ogp.png",
-  "description": "レノファ山口FCレディース所属のミッドフィールダー。元なでしこジャパン。JFAアカデミー福島1期生、INAC神戸レオネッサ、ノジマステラ神奈川相模原、スポルティング・ウエルバ（スペイン）、ラージョ・バジェカーノ（スペイン）、仁川現代製鉄レッドエンジェルズ（韓国）を経て、2024年12月に地元・山口へ。",
-  "affiliation": { "@type": "SportsTeam", "name": "レノファ山口FCレディース" },
-  "knowsAbout": ["女子サッカー", "海外挑戦", "キャリア形成", "アスリートのメンタル", "地域スポーツ"],
-  "sameAs": [
-    "https://www.instagram.com/yoko_tanaka08",
-    "https://x.com/TANAKAYoko20",
-    "https://note.com/yokotanaka0730",
-    "https://ja.wikipedia.org/wiki/%E7%94%B0%E4%B8%AD%E9%99%BD%E5%AD%90_(%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC%E9%81%B8%E6%89%8B)",
-    "https://www.renofa.com/archives/ladiesplayer2026/mf10-tanaka/"
-  ]
-}
-</script>
 </head>
 <body>
 
 <nav>
   <div class="wrap">
-    <div class="navname">田中陽子<span>TANAKA Yoko</span></div>
+    <div class="navname">田中陽子<span>PROJECT</span></div>
     <div class="tabs">
-      <a href="/yokotanaka/" class="on">想い・歩み</a>
-      <a href="/yokotanaka/vision.html">ビジョン</a>
+      <a href="/yokotanaka/">想い・歩み</a>
+      <a href="/yokotanaka/vision.html" class="on">ビジョン</a>
       <a href="/yokotanaka/profile.html">伝えられること</a>
       <a href="/yokotanaka/service.html">実施内容・料金</a>
       <a href="/yokotanaka/event.html">開催予定</a>
@@ -441,229 +491,186 @@
     <a class="navcta" href="/yokotanaka/contact.html">ご依頼・ご相談</a>
   </div>
 </nav>
-<header class="hero">
+
+<header class="vhero">
   <div class="wrap">
-    <div class="herogrid">
-      <div class="herotext">
-        <div class="eyebrow">TANAKA YOKO ／ 想いと歩み</div>
-        <div class="rule"></div>
-        <h1>自ら決めて、感謝を忘れず直向きに。<br><em>どんな場所であれ常に志を持ち続けてきた。</em></h1>
-        <p class="lead">12歳で地元を離れ、25歳でスペインへ、29歳で韓国へ。そして31歳、地元・山口に戻った。</p>
-        <div class="herobtns">
-          <a class="btn btn-primary" href="#story">彼女の歩みを読む</a>
-          <a class="btn btn-ghost" href="/yokotanaka/contact.html">ご依頼・ご相談</a>
-        </div>
-        <div class="sig">
-          <strong>田中 陽子</strong><br>
-          サッカー選手／レノファ山口FCレディース MF・背番号10<br>
-          元なでしこジャパン・元U-20日本代表
-        </div>
-      </div>
-      <div class="herophoto">
-        <img src="/yokotanaka/tanaka-yoko.png" width="600" height="618" alt="田中陽子選手（レノファ山口FCレディース）">
-      </div>
-    </div>
+    <div class="kicker">VISION ／ 目指す世界</div>
+    <div class="rule"></div>
+    <h1>環境を理由に、<br><em>あきらめなくていい世界へ。</em></h1>
+    <p>住んでいる場所。性別。整っていない制度。<br>
+       それらを理由に、続けたい人が続けられなくなる。<br>
+       そういうことが、少しずつでも減っていく未来をつくりたいと考えています。</p>
   </div>
 </header>
 
-<div class="creed">
-  <div class="wrap">
-    <div class="creeditem">
-      <span>01</span>
-      <b>環境を理由にしない</b>
-      <p>整うのを待つのではなく、続けられる場所まで自分が動く。12歳で福島へ、25歳でスペインへ。それを当たり前として繰り返してきました。</p>
-    </div>
-    <div class="creeditem">
-      <span>02</span>
-      <b>一番難しい場所を選ぶ</b>
-      <p>複数のオファーがあるなかで、条件の良い場所ではなく自分が試される場所を選ぶ。2024年、地元・山口への決断がその最新の実例です。</p>
-    </div>
-    <div class="creeditem">
-      <span>03</span>
-      <b>淡々と、続ける</b>
-      <p>人が「よく続くね」と言う努力を、特別なことをしている意識すらないまま積み重ねる。20年以上、彼女がやってきたのはこれだけです。</p>
-    </div>
-  </div>
-</div>
-
-<section id="story">
-  <div class="wrap narrow story">
-    <div class="sechead">
-      <div class="kicker">HER STORY</div>
-      <h2>「続けるために、地元を離れた」</h2>
-      <p>順風だったわけではありません。思うようにいかない時期も、給与が支払われない現実もありました。それでも彼女は、そのたびに矢印を自分へ向け、成長のための決断を重ねてきました。彼女の話が人に届くのは、その乗り越え方が具体的だからです。</p>
-    </div>
-
-    <h3><span class="ch">CHAPTER 01</span>12歳、地元を離れるという最初の決断</h3>
-    <p>山口県山口市小郡生まれ。5歳、友達とのボール蹴り遊びからサッカーを始めました。2006年、小学校卒業と同時に、日本サッカー協会が運営する中高一貫の育成機関・JFAアカデミー福島へ1期生として入校します。</p>
-    <p>山口にいたままでは、その先のサッカーは続けられない。12歳の子どもが家族と地元を離れ、福島で寮生活に入る。男子であれば選択肢は各地にありましたが、当時の女子にとって「続けるために地元を離れる」はほとんど唯一の道でした。彼女の挑戦の原点はここにあります。</p>
-
-    <h3><span class="ch">CHAPTER 02</span>常に自分に矢印を向け続けた挑戦</h3>
-    <p>15歳で飛び級のU-17女子ワールドカップ選出。2010年の同大会では6試合4ゴールを挙げ準優勝。2012年のU-20女子ワールドカップでは、トップ下からサイドバックまで務めながら全6試合で6ゴール2アシスト、日本を大会初の銅メダルへ導き、シルバーシューズ賞を受賞しました。2013年にはなでしこジャパンにも初選出されています。</p>
-    <p>その後入団したINAC神戸レオネッサは、タイトルを重ねる強豪でした。そのなかで思うように出場機会を得られない時期もありました。<strong>それでも彼女は、まわりに理由を求めませんでした。矢印を自分に向け、いま何が足りないのか、どこでなら力を伸ばせるのかを考え続けます。</strong></p>
-    <p>そして2015年、彼女が選んだのは当時2部のノジマステラ神奈川相模原でした。「攻撃も守備も90分間チーム一丸となって走っている姿を見て、このチームで1部昇格を達成したい」。<strong>安定を選ぶのではなく、自分が必要とされ、成長できる場所へ進む。</strong>その決断どおり、翌2016年に2部優勝・1部昇格を果たします。</p>
-    <p>10代で世界と戦い、20代で自分と向き合った。<strong>どの時期も、彼女は立ち止まっていません。常に前を向き、成長のための決断を重ねてきました。</strong></p>
-
-    <h3><span class="ch">CHAPTER 03</span>スペインで、一番苦手なことを続けた</h3>
-    <p>2019年、スペイン1部スポルティング・ウエルバへ。しかし2シーズン目、彼女は行き詰まります。技術的には通用している。それなのにボールが来ない。</p>
-    <figure class="photo">
-      <img src="/yokotanaka/photo-huelva.jpg" width="900" height="600" loading="lazy" alt="スポルティング・ウエルバでプレーする田中陽子選手">
-      <figcaption>スペイン1部・スポルティング・ウエルバに移籍した際の田中陽子選手</figcaption>
-    </figure>
-    <p>転機は、スペインに長く住む日本人からの助言でした。スペインでは「こうしたい」を強く表現することが不可欠だ、と。</p>
-    <blockquote>
-      ボールをもらえなかったときに、ちゃんと欲しかったと表情や言葉で伝える。出してくれるように強くアピールする。たとえ演技でもいいから表現することが必要だと教わりました。
-      <cite>― 田中陽子</cite>
-    </blockquote>
-    <p>アピールは、彼女がもっとも苦手とすることでした。それでも試合前に「取ったらワンタッチで出してね」と毎回声をかけ、練習でも同じ要求を繰り返す。やがて監督やコーチの見る目が変わり、パスが来るようになり、得点もアシストも増えていきました。</p>
-    <p>「実力不足」と抽象化せず、ボールが来ない → 要求が伝わっていない → 苦手でも表現する、と分解して行動を変えた。技術ではなく、姿勢の話です。</p>
-
-    <h3><span class="ch">CHAPTER 04</span>理不尽と、隣の国と</h3>
-    <p>スペインで最後に所属したクラブでは、給与の未払いと契約をめぐるトラブルが起きました。女子サッカーの環境の厳しさが、もっとも具体的な形で表れた出来事です。</p>
-    <p>そこへ声をかけたのが韓国のエージェントでした。2022年8月、WKリーグ11連覇の強豪・仁川現代製鉄レッドエンジェルズへ。ユニフォームの名前表記は「요코（ようこ）」。在籍中に2度のリーグ優勝を経験します。</p>
-    <figure class="photo">
-      <img src="/yokotanaka/photo-korea.jpg" width="1100" height="716" loading="lazy" alt="仁川現代製鉄レッドエンジェルズでプレーする田中陽子選手">
-      <figcaption>韓国WKリーグ・仁川現代製鉄レッドエンジェルズ時代。背番号25。ユニフォームの名前表記は「요코（ようこ）」だった</figcaption>
-    </figure>
-    <p>韓国の女子サッカーにプロリーグはなく、企業スポーツのような仕組み。設備は整うが観客は少ない。スピードとフィジカルは日本より強く、中盤で組み立てる選手が少ないからこそ日本人の技術と戦術眼が評価される——。環境を評論するのではなく、その環境で自分の価値がどこにあるかを見つける。国が変わるたびに、彼女はそれをやってきました。</p>
-
-    <h3><span class="ch">CHAPTER 05</span>そして、一番難しい場所へ帰ってきた</h3>
-    <p>2024年12月、レノファ山口FCレディース加入が発表されます。クラブ初のプロ契約選手であり、地域リーグのチームにとっては異例のニュースでした。契約が決まらなかったからではありません。韓国の他クラブやWEリーグを含め、複数のオファーがある中での選択です。</p>
-    <blockquote>
-      「一番難しい場所に身を置くことが、自分をもっと成長させてくれる」と思って、これまで積み重ねてきた経験や力を還元できる場所はどこだろうと考えたときに、レノファレディースが最も自分に合っていると感じました。
-      <cite>― 田中陽子</cite>
-    </blockquote>
-    <p>加入1年目の2025年、チームは10年近く届かなかったなでしこリーグ2部昇格を達成。2026年、背番号10を背負い、4月4日にリーグ通算150試合出場を記録しました。初出場は2010年4月4日。ちょうど16年後の同じ日でした。</p>
-    <p>チームメイトの多くはフルタイムで働きながらプレーしています。仕事の都合で練習に来られない選手もいる。それでも誰も弱音を吐かない。世界を見てきた彼女は、その環境を下に見るのではなく「プロ選手とはまた違う強い思い」があると語ります。</p>
-
-    <h3><span class="ch">CHAPTER 06</span>彼女の芯にあるもの</h3>
-    <p>話をしていると、いつも同じところに行き着きます。彼女は、自分の置かれた状況を「与えられたもの」として引き受けます。うまくいかないときも、環境が整わないときも、それは自分の実力が導いた結果であり、自分が選んだ場所なのだと考える。</p>
-    <p>だから彼女は、誰かを批判しません。制度や環境を嘆くこともしません。代わりに「この状況で、自分に何ができるか」を考えます。そして、支えてくれる人たちへの感謝を口にする。ベクトルは、いつも自分自身と、周りの人に向いています。</p>
-    <p>そのうえで、淡々と続けます。人が「よく続くね」と言うような努力を、当たり前の顔でやり続ける。特別なことをしているという意識すらないまま、毎日を積み重ねていく。</p>
-    <p>12歳で地元を離れてから、20年以上。彼女がやってきたのは、突き詰めればこれだけです。そしてこれは才能ではなく姿勢なので、誰にでも真似ができます。彼女の話が人に届くのは、そこに理由があります。</p>
-  </div>
-</section>
-
-<div class="pull">
-  <div class="wrap narrow">
-    <p>一番難しい場所に身を置くことが、<br>自分をもっと成長させてくれる。</p>
-    <cite>― 田中陽子（2024年、地元・山口への移籍を決めて）</cite>
-  </div>
-</div>
-
-<section class="reader">
-  <div class="wrap narrow">
-    <div class="kicker">TO THE READER</div>
-    <h2>いま、思うようにいっていない方へ</h2>
-    <p>環境が整わない。努力が結果に結びつかない。周りと比べて、自分だけ取り残されている気がする。そういう時期は、誰にでもあります。</p>
-    <p>田中陽子にも、同じ時期がありました。代表に選ばれながらピッチには立てず、技術は通用しているのにボールは回ってこず、給与が支払われないことさえありました。</p>
-    <p>それでも彼女がやったのは、特別なことではありません。<strong>状況を誰かのせいにせず、その場で自分にできることを探し、淡々と続けた。</strong>ただそれだけです。</p>
-    <p class="last">だからこの話は、そのまま持ち帰れます。競技が違っても、立場が違っても構いません。何か一つでも重なるものがあれば、それがきっと次の一歩になります。</p>
-  </div>
-</section>
-
-<section id="message" class="alt">
-  <div class="wrap">
-    <div class="msgbox">
-      <div class="kicker">MESSAGE</div>
-      <h3>子どもたちに伝えたいこと</h3>
-
-      <div class="msgitem">
-        <b>うまくなる楽しさを、忘れないでほしい</b>
-        <p>昨日できなかったことが、今日できるようになる。サッカーのいちばん面白いところは、たぶんここです。そしてこの感覚は、何歳になっても変わりません。勝ち負けや評価より先に、日々の練習のなかにあるその楽しさを持っていてほしいと思っています。</p>
-      </div>
-
-      <div class="msgitem">
-        <b>「どんな選手になりたいか」を考えてほしい</b>
-        <p>夢を持つことは大切です。ただ「プロになりたい」で止まらずに、そこへ「どんな」を足してみてほしい。人を笑顔にできる選手。見ている人に勇気を与えられる選手。うまいだけではない何かを、自分で決めてほしいのです。</p>
-      </div>
-
-      <div class="msgitem">
-        <b>そこまで考えられる人は、感謝ができる人になる</b>
-        <p>誰かのために、という視点を持つと、自分がどれだけ支えられているかが見えてきます。送り迎えをしてくれる家族、一緒に走る仲間、指導してくれるコーチ。感謝は教わって身につくものではなく、そこに気づいたときに自然と生まれるものだと思っています。</p>
-      </div>
-
-      <div class="msgitem">
-        <b>技術より先に、人としてどうあるか</b>
-        <p>うまい選手はたくさんいます。けれど、人に良い影響を与えられる選手は多くありません。田中陽子が子どもたちに手渡したいのは、そちらです。技術はそのあとから、いくらでもついてきます。</p>
-      </div>
-
-      <div class="msgclose">
-        <p>どんな環境に置かれても、夢を持ち、目標を掲げて挑戦を続けてきた。だからこそ、彼女には伝えられることがあります。</p>
-        <p><em>「どんな選手になりたいか」「どんな人になりたいか」。</em>子どもたちがその問いを考えるとき、彼女の歩みそのものが、ひとつの答えになります。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="about">
+<section>
   <div class="wrap narrow">
     <div class="sechead">
-      <div class="kicker">ABOUT THIS PROJECT</div>
-      <h2>この取り組みについて</h2>
+      <div class="kicker">REALITY</div>
+      <h2>これは、昔話ではありません</h2>
+      <p>田中陽子が20年以上のキャリアで実際に立ってきた場所を並べると、女子スポーツの現在地が見えてきます。</p>
     </div>
-    <p style="font-size:16.5px;color:var(--ink-soft);margin-bottom:18px">田中陽子は、女子サッカー選手であると同時に、4つの国と地域で自分の価値を証明してきた一人の挑戦者です。そしていま、地元・山口でその経験を還元しようとしています。競技者としてだけでなく、考え方や姿勢そのものが人に何かを手渡せる人だと考えています。</p>
-    <p style="font-size:16.5px;color:var(--ink-soft);margin-bottom:18px">この取り組みは、彼女の魅力をより多くの人に知ってもらうこと、そして彼女の挑戦が<strong>より豊かに、持続的に、精力的に</strong>続いていくことを目的に立ち上げました。特定のチームや組織に属する企画ではなく、田中陽子という一人の選手を独立してサポートする場です。</p>
-    <p style="font-size:16.5px;color:var(--ink-soft);margin-bottom:18px">いただいた参加費は、彼女の競技活動と、こうした発信を続けていくためにあてられます。経験を伝えることが正当な対価につながり、その対価がまた次の挑戦を支える。その循環をつくることが、この場の役割です。</p>
-    <p style="font-size:16.5px;color:var(--ink-soft);margin-bottom:18px">女子スポーツの環境は、まだ整っているとは言えません。だからこそ、選手が自分の言葉と経験で立てる形をつくりたいと考えています。参加していただくこと自体が、その実例をひとつ増やすことになります。</p>
-    <p style="font-size:16.5px;color:var(--ink-soft)">そして本人も、<strong>自分の想いに共感してくれる仲間と一緒に歩んでいきたい</strong>と話しています。一人で走るのではなく、同じ方向を向いた人たちと。この場が、その出会いの入口になればと考えています。</p>
+    <div class="facts4">
+      <div class="fact4">
+        <b>日本 ／ 12歳</b>
+        <p>地元・山口にいたままでは競技を続けられず、<strong>家族と離れて福島へ移りました。</strong>男子であれば各地に選択肢がありました。</p>
+      </div>
+      <div class="fact4">
+        <b>スペイン ／ 20代後半</b>
+        <p>1部リーグでプレーしながら、所属クラブで<strong>給与の未払いと契約トラブル</strong>が起きました。</p>
+      </div>
+      <div class="fact4">
+        <b>韓国 ／ 29歳</b>
+        <p>女子サッカーに<strong>プロリーグは存在せず</strong>、企業スポーツとして運営されています。設備は整うが観客は少ない。</p>
+      </div>
+      <div class="fact4">
+        <b>山口 ／ いま</b>
+        <p>チームメイトの多くは<strong>フルタイムで働きながらプレー</strong>しています。仕事の都合で練習に来られない選手もいます。</p>
+      </div>
+    </div>
+    <p style="font-size:16.5px;color:var(--ink-soft);margin-top:28px">4つの環境に共通しているのは、<strong>competitor としての力とは無関係なところで、続けることが難しくなる</strong>という構造です。そしてこれは過去の話ではなく、いま起きていることです。</p>
   </div>
 </section>
 
 <section class="alt">
-  <div class="wrap">
-    <div class="sechead narrow" style="text-align:center">
-      <div class="kicker">MEMBERS</div>
-      <h2>プロジェクトメンバー</h2>
-      <p>この取り組みは、田中陽子ひとりのものではありません。想いに共感してくれた選手とともに歩んでいます。</p>
+  <div class="wrap narrow">
+    <div class="sechead">
+      <div class="kicker">THE WORLD WE WANT</div>
+      <h2>目指すのは、この4つです</h2>
     </div>
-    <div class="twoup">
-      <a href="/yokotanaka/index.html">
-        <div class="k">MEMBER 01</div>
-        <div class="t">田中 陽子</div>
-        <div class="d">レノファ山口FCレディース MF・背番号10 ／ 元なでしこジャパン<br>12歳で地元を離れ、スペイン・韓国を経て地元・山口へ。</div>
-        <div class="go">このページを読む ↑</div>
-      </a>
-      <a href="/yokotanaka/member_jungeun.html">
-        <div class="k">MEMBER 02</div>
-        <div class="t">イ ジョンウン</div>
-        <div class="d">レノファ山口FCレディース MF・背番号11 ／ 韓国代表歴<br>韓国から日本へ。座右の銘は「問題は問題ではない」。</div>
-        <div class="go">紹介ページを見る →</div>
-      </a>
+    <div class="with" style="grid-template-columns:1fr">
+      <div class="withitem">
+        <b>01 ／ 女性のスポーツ環境を、前に進める</b>
+        <p>女子スポーツの環境は、競技力とは関係のないところで「続けること」を難しくしています。制度が変わるのを待つのではなく、選手個人の単位で成立する形を積み上げていく。ひとつの実例ができれば、それが次の誰かの道になります。</p>
+      </div>
+      <div class="withitem">
+        <b>02 ／ 地方の子どもが、夢を持って世界へ飛び出す</b>
+        <p>田中陽子は12歳で山口を離れ、25歳でスペインへ渡りました。地方にいるから無理だ、とは思ってほしくない。世界を見てきた選手が地元のグラウンドに立ち、同じピッチでボールを蹴る。そこから「自分にもできるかもしれない」が生まれます。</p>
+      </div>
+      <div class="withitem">
+        <b>03 ／ 困難でも、自分に矢印を向けて諦めない</b>
+        <p>うまくいかないとき、原因を環境や他人に求めるのは簡単です。彼女はそうしませんでした。<strong>「この状況は自分の実力が導いた結果だ」</strong>と引き受け、その場で自分にできることを探す。矢印を自分に向け続ける。これは才能ではなく、選択です。</p>
+      </div>
+      <div class="withitem">
+        <b>04 ／ 人に感謝をする</b>
+        <p>自分に矢印を向けられる人は、支えてくれている人が見えるようになります。送り迎えをしてくれる家族、一緒に走る仲間、指導してくれるコーチ、応援してくれる人。感謝は教わって身につくものではなく、そこに気づいたときに自然と生まれるものだと思っています。</p>
+      </div>
     </div>
+    <p style="font-size:16.5px;color:var(--ink-soft);margin-top:28px">この4つは、別々のものではありません。<strong>自分に矢印を向けられる人が、感謝できる人になる。感謝できる人が、環境を前に進める側に回る。そしてその姿を見た子どもが、次に飛び出していく。</strong>ひとつながりの話です。</p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="twoup">
-      <a href="/yokotanaka/profile.html">
-        <div class="k">NEXT</div>
-        <div class="t">伝えられること・経歴</div>
-        <div class="d">彼女の何が人に届くのかを7つに整理し、これまでの歩みを年表にまとめています。実際に聞ける質問の例も。</div>
-        <div class="go">詳しく見る →</div>
-      </a>
-      <a href="/yokotanaka/service.html">
-        <div class="k">SERVICE</div>
-        <div class="t">実施内容・料金</div>
-        <div class="d">オンライン対談・講演・個別セッション、そして山口県内への出張サッカー教室。料金とご依頼の流れをまとめています。</div>
-        <div class="go">詳しく見る →</div>
-      </a>
+    <div class="sechead narrow" style="text-align:center">
+      <div class="kicker">THE CYCLE</div>
+      <h2>つくりたいのは、ひとつの循環です</h2>
+      <p>寄付や支援を集める仕組みではありません。選手が持っているものを、価値として回していく仕組みです。</p>
+    </div>
+    <div class="cycle">
+      <div class="cyc">
+        <div class="n">1</div>
+        <b>経験を伝える</b>
+        <p>対談、講演、サッカー教室。選手が歩んできたことを、必要としている人に届ける。</p>
+      </div>
+      <div class="cyc">
+        <div class="n">2</div>
+        <b>対価が生まれる</b>
+        <p>届いた価値に、正当な対価が支払われる。競技以外の収入源が、現役のうちにできる。</p>
+      </div>
+      <div class="cyc">
+        <div class="n">3</div>
+        <b>挑戦が続く</b>
+        <p>生活の不安が減れば、競技に集中できる。挑戦がより豊かに、持続的になる。</p>
+      </div>
+      <div class="cyc">
+        <div class="n">4</div>
+        <b>次の人へ渡る</b>
+        <p>実例がひとつできれば、続く選手の道になる。そしてまた1に戻る。</p>
+      </div>
+    </div>
+    <p class="cycnote narrow"><strong>この循環がひとつでも回れば、それは女子スポーツの環境に対するささやかな回答になります。</strong>制度が変わるのを待つのではなく、選手個人の単位で成立する形をつくる。それがこの取り組みのやり方です。</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap narrow">
+    <div class="sechead">
+      <div class="kicker">ROADMAP</div>
+      <h2>これからの道のり</h2>
+      <p>大きなことを一度にやろうとは考えていません。順番に積み上げます。</p>
+    </div>
+    <div class="road">
+      <div class="roaditem">
+        <span class="ph">NOW ／ いま</span>
+        <h4>一人の選手から、始める</h4>
+        <p>田中陽子の経験を、対談・講演・サッカー教室という形で届けています。ここで実際に人が集まるのか、何が響くのかを確かめる段階です。</p>
+        <p>そして2026年、イ ジョンウンが仲間として加わりました。日本から韓国へ渡った選手と、韓国から日本へ渡ってきた選手。二人が並ぶことで、届く範囲が広がります。</p>
+      </div>
+      <div class="roaditem">
+        <span class="ph">NEXT ／ 次に</span>
+        <h4>仲間を増やし、地元に根づかせる</h4>
+        <p>想いに共感してくれる選手と一緒に歩んでいきます。競技も、現役か引退かも問いません。何人かで並べば、一人では届かなかった場所に届くようになります。</p>
+        <p>同時に、山口の子どもたちへの出張サッカー教室を継続的なものにしていきます。単発で終わらせず、地域に根づいた活動にすることが目標です。</p>
+      </div>
+      <div class="roaditem">
+        <span class="ph">FUTURE ／ その先に</span>
+        <h4>選手が使える「仕組み」にする</h4>
+        <p>いまは一人ひとりに合わせて手作りしています。これを、他の選手がそのまま使える形にしていきたい。経験を届ける場のつくり方、価格の決め方、企業や学校との関わり方。</p>
+        <p>誰かが最初にやらないと、後に続く人は道を探すところから始めなければなりません。<strong>その最初の一例になることが、この取り組みのいちばん大きな目的です。</strong></p>
+      </div>
     </div>
   </div>
 </section>
+
+<section>
+  <div class="wrap narrow">
+    <div class="sechead">
+      <div class="kicker">TOGETHER</div>
+      <h2>一緒に歩みたい方へ</h2>
+      <p>この景色は、一人ではつくれません。</p>
+    </div>
+    <div class="with">
+      <div class="withitem">
+        <b>挑戦している選手の方</b>
+        <p>限られた環境のなかで夢を持ち、目標に向かっている方。競技も、現役か引退かも問いません。まだ形になっていない構想でも、お話しさせてください。</p>
+      </div>
+      <div class="withitem">
+        <b>指導者・チーム・学校の方</b>
+        <p>子どもたちに何かを持ち帰ってほしいと考えている方。技術だけでない部分を、一緒に手渡せたらと思っています。</p>
+      </div>
+      <div class="withitem">
+        <b>企業・自治体の方</b>
+        <p>女性の挑戦、地域貢献、スポーツ支援。どの文脈からでも関わっていただけます。研修としても、パートナーシップとしても。</p>
+      </div>
+      <div class="withitem">
+        <b>ひとりの参加者として</b>
+        <p>対談に参加していただくこと自体が、この循環をひとつ回すことになります。特別なことは必要ありません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="closing">
+  <div class="wrap narrow">
+    <p>女子スポーツの環境は、まだ整っているとは言えません。<br>
+       <em>だからこそ、整うのを待たずに動きます。</em></p>
+    <p>田中陽子が20年以上やってきたのは、まさにそれでした。環境を理由にせず、その場で自分にできることを探し、淡々と続ける。この取り組みも、同じやり方で進めていきます。一足飛びにはいきませんが、一歩ずつなら必ず進みます。</p>
+  </div>
+</div>
 
 <section>
   <div class="wrap">
     <div class="nextcard">
       <div>
-        <div class="t">この話を、あなたの現場に届けませんか。</div>
-        <div class="d">まずは一行だけでも構いません。「話を聞いてみたい」だけでもお送りください。<br>原則3営業日以内にご返信します。</div>
+        <div class="t">この景色を、一緒に見にいきませんか。</div>
+        <div class="d">ご依頼でも、ご相談でも、まだ形になっていない話でも構いません。<br>原則3営業日以内にご返信します。</div>
       </div>
       <a class="btn btn-primary" href="/yokotanaka/contact.html">ご依頼・ご相談はこちら</a>
     </div>
   </div>
 </section>
+
 <div class="sticky" id="stickybar">
   <span>対談・講演・サッカー教室<br>受け付けています</span>
   <a href="/yokotanaka/contact.html">相談する</a>
@@ -678,14 +685,9 @@
       <a href="/yokotanaka/profile.html">伝えられること・経歴</a>
       <a href="/yokotanaka/service.html">実施内容・料金</a>
       <a href="/yokotanaka/event.html">開催予定</a>
+      <a href="/yokotanaka/activity.html">活動報告</a>
+      <a href="/yokotanaka/member_jungeun.html">メンバー紹介（イ ジョンウン）</a>
       <a href="/yokotanaka/contact.html">お問い合わせ</a>
-    </div>
-    <h5>SOURCES ／ 参考</h5>
-    <div class="srcs">
-      <a href="https://www.renofa.com/archives/ladiesplayer2026/mf10-tanaka/" target="_blank" rel="noopener">レノファ山口FC 公式 選手プロフィール（MF10／田中 陽子）</a>
-      <a href="https://www.beautynation.jp/interview_tanakayoko/" target="_blank" rel="noopener">B&amp; インタビュー「地元に帰ってきた理由『海外での経験を山口で伝えたい』」</a>
-      <a href="https://www.nadeshikoleague.jp/news/2026/0409_0430.html" target="_blank" rel="noopener">日本女子サッカーリーグ「【記録達成】リーグ戦通算150試合出場達成」</a>
-      <a href="https://ja.wikipedia.org/wiki/%E7%94%B0%E4%B8%AD%E9%99%BD%E5%AD%90_(%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC%E9%81%B8%E6%89%8B)" target="_blank" rel="noopener">Wikipedia「田中陽子（サッカー選手）」</a>
     </div>
     <h5>SNS</h5>
     <div class="srcs">
@@ -701,10 +703,7 @@
     </div>
     <h5>NOTE</h5>
     <p>
-      本ページは、田中陽子選手個人の活動を紹介し、その挑戦をサポートする目的で Takuya Watanabe が企画・運営しています。<br>
-      記載内容は2026年7月時点の公開情報にもとづきます。<br>
-      写真：<span class="ph">要・使用許諾の確認</span><br>
-      実施可否・条件については、所属クラブとの取り決めを確認のうえ個別にご相談させていただきます。<br>
+      本ページは、選手個人の活動を紹介し、その挑戦をサポートする目的で Takuya Watanabe が企画・運営しています。<br>
       お問い合わせ：<a href="mailto:t.watanabe@svzfc.com">t.watanabe@svzfc.com</a>
     </p>
     <p style="margin-top:22px;color:#586773">© 2026 Takuya Watanabe</p>
@@ -713,59 +712,8 @@
 
 <script>
   (function () {
-    var TO = 't.watanabe@svzfc.com';
-    var subject = '【ご依頼】オンライン対談・講演・サッカー教室について';
-    var body = [
-      '田中陽子さんへのご依頼について、ご連絡いたします。',
-      '',
-      '■ お名前・団体名：',
-      '■ ご希望の形式（対談／講演／個別セッション／サッカー教室）：',
-      '■ 想定参加者と人数：',
-      '■ ご希望日程（候補2〜3）：',
-      '■ 実施の目的・聞いてみたいテーマ：',
-      '■ ご予算の目安：',
-      '■ その他ご要望：',
-      ''
-    ].join('\n');
-    var mb = document.getElementById('mailbtn');
-    if (mb) mb.setAttribute('href','mailto:' + TO + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body));
-
-    document.querySelectorAll('.copybtn').forEach(function (b) {
-      b.addEventListener('click', function () {
-        var v = b.getAttribute('data-mail');
-        var done = function () { b.textContent = 'コピーしました'; setTimeout(function(){ b.textContent='アドレスをコピー'; }, 2000); };
-        if (navigator.clipboard) { navigator.clipboard.writeText(v).then(done, function(){}); }
-        else {
-          var t = document.createElement('textarea');
-          t.value = v; document.body.appendChild(t); t.select();
-          try { document.execCommand('copy'); done(); } catch (e) {}
-          document.body.removeChild(t);
-        }
-      });
-    });
-
     var bar = document.getElementById('stickybar');
-    var contact = document.getElementById('contact');
-    if (bar && contact && 'IntersectionObserver' in window) {
-      new IntersectionObserver(function (es) {
-        es.forEach(function (e) { bar.classList.toggle('hide', e.isIntersecting); });
-      }, { threshold: 0.15 }).observe(contact);
-    }
-    if (bar && !contact) { bar.classList.remove('hide'); }
-
-    document.querySelectorAll('a.mbtn, #formbtn').forEach(function (a) {
-      var h = a.getAttribute('href') || '';
-      if (h.indexOf('__') === 0) {
-        a.setAttribute('href', '#contact');
-        a.removeAttribute('target');
-        if (a.id === 'formbtn') { a.textContent = 'メールアドレスを確認する'; return; }
-        a.textContent = 'メールでお問い合わせ';
-        var note = a.nextElementSibling;
-        if (note && note.classList.contains('mnote')) {
-          note.textContent = '準備中です。ご希望の方はご連絡ください';
-        }
-      }
-    });
+    if (bar) bar.classList.remove('hide');
   })();
 </script>
 
