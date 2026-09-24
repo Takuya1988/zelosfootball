@@ -567,6 +567,113 @@ nav.main-nav li.lang a {
 }
 .stat-ja { font-size: 10px; color: rgba(255,255,255,0.5); }
 
+/* ========================= SPONSOR PAGE ========================= */
+#page-sponsor .sp-h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 22px;
+  color: var(--navy);
+  margin-top: 56px;
+  margin-bottom: 12px;
+  padding-left: 14px;
+  border-left: 4px solid var(--gold);
+}
+#page-sponsor .sp-lead { color: var(--sub); font-size: 14px; margin-bottom: 24px; line-height: 1.9; }
+#page-sponsor .sp-value-grid,
+#page-sponsor .sp-other-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+#page-sponsor .sp-value,
+#page-sponsor .sp-other {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 22px 20px;
+}
+#page-sponsor .sp-value-num {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 22px;
+  color: var(--gold-deep, #b8952f);
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+#page-sponsor .sp-value h4,
+#page-sponsor .sp-other h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 10px;
+}
+#page-sponsor .sp-value p,
+#page-sponsor .sp-other p { font-size: 13px; color: var(--sub); line-height: 1.85; margin: 0; }
+#page-sponsor .sp-plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+#page-sponsor .sp-plan {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--navy);
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+}
+#page-sponsor .sp-plan.featured { border-top-color: var(--gold); }
+#page-sponsor .sp-plan.sold { opacity: .72; }
+#page-sponsor .sp-plan-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+#page-sponsor .sp-plan-name { font-size: 17px; font-weight: 700; color: var(--navy); }
+#page-sponsor .sp-status {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+#page-sponsor .sp-status.open { background: var(--gold); color: var(--navy); }
+#page-sponsor .sp-status.sold-out { background: var(--navy); color: #fff; }
+#page-sponsor .sp-plan-price {
+  font-family: "Oswald", sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+#page-sponsor .sp-plan-price span { font-family: inherit; font-size: 12px; font-weight: 400; color: var(--sub); }
+#page-sponsor .sp-plan-price-sold { font-family: inherit; font-size: 14px; font-weight: 400; color: var(--sub); }
+#page-sponsor .sp-rights { list-style: none; margin: 0; padding: 0; }
+#page-sponsor .sp-rights li {
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 6px 0 6px 18px;
+  position: relative;
+}
+#page-sponsor .sp-rights li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 14px;
+  width: 6px; height: 6px;
+  background: var(--gold);
+}
+#page-sponsor .sp-note { margin-top: 18px; font-size: 13px; color: var(--sub); line-height: 1.9; }
+#page-sponsor .sp-terms {
+  margin-top: 28px;
+  padding: 20px;
+  background: var(--bg);
+  border-left: 3px solid var(--line);
+}
+#page-sponsor .sp-terms p { font-size: 12px; color: var(--sub); line-height: 1.9; margin: 0 0 10px; }
+#page-sponsor .sp-terms p:last-child { margin-bottom: 0; }
+
 /* ========================= SPONSORS ========================= */
 .sponsors {
   background: var(--bg);
@@ -3714,29 +3821,136 @@ footer {
   <p data-ja="サバナケット・ゼロスFCは、クラブの成長と共に歩んでいただけるスポンサー企業様を募集しています。" data-en="Savannakhet Zelos FC is looking for sponsor companies to grow together with our club.">サバナケット・ゼロスFCは、クラブの成長と共に歩んでいただけるスポンサー企業様を募集しています。</p>
   <p data-ja="日本とラオスを繋ぐクラブとして、両国のビジネス展開にも貢献いたします。" data-en="As a club bridging Japan and Laos, we also support your business expansion in both countries.">日本とラオスを繋ぐクラブとして、両国のビジネス展開にも貢献いたします。</p>
 
-  <h3 style="font-family:'Oswald',sans-serif;font-size:22px;color:var(--navy);margin-top:40px;margin-bottom:16px;padding-left:14px;border-left:4px solid var(--gold)">SPONSORSHIP PLAN</h3>
-  <table class="about-table">
-    <tr>
-      <th data-ja="胸スポンサー" data-en="Chest Sponsor">胸スポンサー</th>
-      <td data-ja="¥10,000,000 / シーズン" data-en="¥10,000,000 / Season">¥10,000,000 / シーズン</td>
-    </tr>
-    <tr class="sold-out-row">
-      <th data-ja="背中スポンサー" data-en="Back Sponsor">背中スポンサー</th>
-      <td><span class="sold-out-badge">SOLD OUT</span></td>
-    </tr>
-    <tr>
-      <th data-ja="袖スポンサー" data-en="Sleeve Sponsor">袖スポンサー</th>
-      <td data-ja="¥3,000,000 / シーズン" data-en="¥3,000,000 / Season">¥3,000,000 / シーズン</td>
-    </tr>
-    <tr>
-      <th data-ja="パンツスポンサー" data-en="Shorts Sponsor">パンツスポンサー</th>
-      <td data-ja="¥3,000,000 / シーズン" data-en="¥3,000,000 / Season">¥3,000,000 / シーズン</td>
-    </tr>
-  </table>
-  <p style="margin-top:16px;font-size:13px;color:var(--sub)" data-ja="※ 上記プラン以外にも、マッチデースポンサー、イベントスポンサーなど各種プランをご用意しております。詳細はお問い合わせください。" data-en="* Besides the plans above, we also offer Matchday Sponsor, Event Sponsor and other options. Please contact us for details.">※ 上記プラン以外にも、マッチデースポンサー、イベントスポンサーなど各種プランをご用意しております。詳細はお問い合わせください。</p>
+  <h3 class="sp-h3">WHAT YOU GET</h3>
+  <p class="sp-lead" data-ja="1シーズンを通じて御社が持ち帰るもの、5つ。" data-en="Five things your company takes away over a season.">1シーズンを通じて御社が持ち帰るもの、5つ。</p>
+  <div class="sp-value-grid">
+    <div class="sp-value">
+      <div class="sp-value-num">01</div>
+      <h4 data-ja="露出" data-en="Exposure">露出</h4>
+      <p data-ja="試合用ユニフォームとレプリカへのロゴ掲出、サバナケット・スタジアムでの掲出、全試合のクラブ公式YouTube配信内での露出、および日・英・ラオ3言語の公式SNSでの発信。" data-en="Logo placement on match and replica kits, signage at Savannakhet Stadium, exposure in the club's official YouTube broadcast of every match, and posts across our official social accounts in Japanese, English and Lao.">試合用ユニフォームとレプリカへのロゴ掲出、サバナケット・スタジアムでの掲出、全試合のクラブ公式YouTube配信内での露出、および日・英・ラオ3言語の公式SNSでの発信。</p>
+    </div>
+    <div class="sp-value">
+      <div class="sp-value-num">02</div>
+      <h4 data-ja="理念との結びつき" data-en="Alignment with our purpose">理念との結びつき</h4>
+      <p data-ja="クラブが公表している理念――プロとしての運営基準、選手への正当な対価、ラオス初のJリーガー輩出――との明示的な結びつき。買うことが難しく、二度は買えないポジションです。" data-en="An explicit association with what the club stands for: professional operating standards, fair pay for players, and producing the first J-League player from Laos. A position that is hard to buy, and cannot be bought twice.">クラブが公表している理念――プロとしての運営基準、選手への正当な対価、ラオス初のJリーガー輩出――との明示的な結びつき。買うことが難しく、二度は買えないポジションです。</p>
+    </div>
+    <div class="sp-value">
+      <div class="sp-value-num">03</div>
+      <h4 data-ja="現地アクセス" data-en="On-the-ground access">現地アクセス</h4>
+      <p data-ja="クラブの日本・東南アジアネットワークを通じた、ラオスおよびメコン地域での紹介と現地サポート。市場調査段階の企業へのビジネスマッチングも含みます。" data-en="Introductions and on-the-ground support across Laos and the Mekong region through the club's Japan and Southeast Asia network, including business matching for companies still at the market-research stage.">クラブの日本・東南アジアネットワークを通じた、ラオスおよびメコン地域での紹介と現地サポート。市場調査段階の企業へのビジネスマッチングも含みます。</p>
+    </div>
+    <div class="sp-value">
+      <div class="sp-value-num">04</div>
+      <h4 data-ja="コンテンツ" data-en="Content">コンテンツ</h4>
+      <p data-ja="選手・アカデミー・日ラオの物語を軸にした共同制作コンテンツを、御社の自社チャネルでもご活用いただけます。選手・クラブの肖像使用権も含みます。" data-en="Co-produced content built around our players, academy and the Japan–Laos story, usable on your own channels. Image rights for players and the club are included.">選手・アカデミー・日ラオの物語を軸にした共同制作コンテンツを、御社の自社チャネルでもご活用いただけます。選手・クラブの肖像使用権も含みます。</p>
+    </div>
+    <div class="sp-value">
+      <div class="sp-value-num">05</div>
+      <h4 data-ja="ホスピタリティ" data-en="Hospitality">ホスピタリティ</h4>
+      <p data-ja="サバナケット・スタジアムでの観戦チケットと接待対応、日本発のサポーターツアーの枠、両国でのクラブイベントへのご招待。" data-en="Match tickets and hosting at Savannakhet Stadium, places on supporter tours from Japan, and invitations to club events in both countries.">サバナケット・スタジアムでの観戦チケットと接待対応、日本発のサポーターツアーの枠、両国でのクラブイベントへのご招待。</p>
+    </div>
+  </div>
 
-  <h3 style="font-family:'Oswald',sans-serif;font-size:22px;color:var(--navy);margin-top:48px;margin-bottom:16px;padding-left:14px;border-left:4px solid var(--gold)">SPONSORSHIP INQUIRY</h3>
-  <p style="margin-bottom:16px" data-ja="スポンサーシップに関するお問い合わせは、以下のフォームよりお願いいたします。担当者より詳細資料をお送りいたします。" data-en="Please use the form below for any sponsorship inquiries. Our team will send you detailed materials.">スポンサーシップに関するお問い合わせは、以下のフォームよりお願いいたします。担当者より詳細資料をお送りいたします。</p>
+  <h3 class="sp-h3">SPONSORSHIP PLAN</h3>
+  <p class="sp-lead" data-ja="2026/27シーズンのユニフォームスポンサーです。各掲出位置はホーム・アウェイともシーズンを通じて1社様の独占となります。" data-en="Kit sponsorship for the 2026/27 season. Each placement is exclusive to a single company, home and away, for the whole season.">2026/27シーズンのユニフォームスポンサーです。各掲出位置はホーム・アウェイともシーズンを通じて1社様の独占となります。</p>
+
+  <div class="sp-plans">
+    <div class="sp-plan featured">
+      <div class="sp-plan-head">
+        <div class="sp-plan-name" data-ja="胸・メインパートナー" data-en="Chest · Main Partner">胸・メインパートナー</div>
+        <span class="sp-status open" data-ja="募集中" data-en="AVAILABLE">募集中</span>
+      </div>
+      <div class="sp-plan-price">¥20,000,000<span data-ja=" / シーズン（税別）" data-en=" / season (excl. tax)"> / シーズン（税別）</span></div>
+      <ul class="sp-rights">
+        <li data-ja="試合用・練習用ユニフォームの胸部メイン掲出" data-en="Main chest placement on match and training kit">試合用・練習用ユニフォームの胸部メイン掲出</li>
+        <li data-ja="クラブ公式発表・記者会見・取材背景での筆頭表記" data-en="Top billing in official announcements, press conferences and media backdrops">クラブ公式発表・記者会見・取材背景での筆頭表記</li>
+        <li data-ja="スタジアム掲出" data-en="Stadium signage">スタジアム掲出</li>
+        <li data-ja="専用コンテンツシリーズ" data-en="A dedicated content series">専用コンテンツシリーズ</li>
+        <li data-ja="ホスピタリティ" data-en="Hospitality">ホスピタリティ</li>
+        <li data-ja="ラオスでのビジネスマッチング支援" data-en="Business matching support in Laos">ラオスでのビジネスマッチング支援</li>
+      </ul>
+    </div>
+
+    <div class="sp-plan sold">
+      <div class="sp-plan-head">
+        <div class="sp-plan-name" data-ja="背中" data-en="Back">背中</div>
+        <span class="sp-status sold-out">SOLD OUT</span>
+      </div>
+      <div class="sp-plan-price sp-plan-price-sold" data-ja="2026/27シーズン 決定済み" data-en="Filled for the 2026/27 season">2026/27シーズン 決定済み</div>
+      <ul class="sp-rights">
+        <li data-ja="全公式戦のユニフォーム背面掲出" data-en="Kit back placement in every official match">全公式戦のユニフォーム背面掲出</li>
+        <li data-ja="スタジアム掲出" data-en="Stadium signage">スタジアム掲出</li>
+        <li data-ja="SNS・コンテンツ内掲載" data-en="Placement across social media and content">SNS・コンテンツ内掲載</li>
+        <li data-ja="ホスピタリティ" data-en="Hospitality">ホスピタリティ</li>
+      </ul>
+    </div>
+
+    <div class="sp-plan">
+      <div class="sp-plan-head">
+        <div class="sp-plan-name" data-ja="袖" data-en="Sleeve">袖</div>
+        <span class="sp-status open" data-ja="募集中" data-en="AVAILABLE">募集中</span>
+      </div>
+      <div class="sp-plan-price">¥3,000,000<span data-ja=" / シーズン（税別）" data-en=" / season (excl. tax)"> / シーズン（税別）</span></div>
+      <ul class="sp-rights">
+        <li data-ja="全試合用ユニフォームの袖部掲出" data-en="Sleeve placement on every match kit">全試合用ユニフォームの袖部掲出</li>
+        <li data-ja="スタジアム掲出" data-en="Stadium signage">スタジアム掲出</li>
+        <li data-ja="SNS・コンテンツ内掲載" data-en="Placement across social media and content">SNS・コンテンツ内掲載</li>
+        <li data-ja="ホスピタリティ" data-en="Hospitality">ホスピタリティ</li>
+      </ul>
+    </div>
+
+    <div class="sp-plan">
+      <div class="sp-plan-head">
+        <div class="sp-plan-name" data-ja="パンツ" data-en="Shorts">パンツ</div>
+        <span class="sp-status open" data-ja="募集中" data-en="AVAILABLE">募集中</span>
+      </div>
+      <div class="sp-plan-price">¥3,000,000<span data-ja=" / シーズン（税別）" data-en=" / season (excl. tax)"> / シーズン（税別）</span></div>
+      <ul class="sp-rights">
+        <li data-ja="全公式戦のパンツへの掲出" data-en="Shorts placement in every official match">全公式戦のパンツへの掲出</li>
+        <li data-ja="スタジアム掲出" data-en="Stadium signage">スタジアム掲出</li>
+        <li data-ja="SNS・コンテンツ内掲載" data-en="Placement across social media and content">SNS・コンテンツ内掲載</li>
+        <li data-ja="ホスピタリティ" data-en="Hospitality">ホスピタリティ</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sp-h3">OTHER PLANS</h3>
+  <p class="sp-lead" data-ja="別の入口をお探しの企業様、またはユニフォームプランへの追加をご検討の企業様に、以下をご用意しています。費用は施策内容に応じて個別にお見積りいたします。" data-en="For companies looking for a different entry point, or considering an addition to a kit plan. Pricing is quoted individually according to scope.">別の入口をお探しの企業様、またはユニフォームプランへの追加をご検討の企業様に、以下をご用意しています。費用は施策内容に応じて個別にお見積りいたします。</p>
+  <div class="sp-other-grid">
+    <div class="sp-other">
+      <h4 data-ja="マッチデースポンサー" data-en="Matchday Sponsor">マッチデースポンサー</h4>
+      <p data-ja="指定のホームゲームに冠協賛。スタジアム装飾、場内アナウンス・SNS連動、試合配信内での露出、ピッチ上でのセレモニー、ご来場者向けホスピタリティ。" data-en="Title sponsorship of a chosen home game: stadium dressing, PA and social tie-ins, exposure in the match broadcast, an on-pitch ceremony and hospitality for your guests.">指定のホームゲームに冠協賛。スタジアム装飾、場内アナウンス・SNS連動、試合配信内での露出、ピッチ上でのセレモニー、ご来場者向けホスピタリティ。</p>
+    </div>
+    <div class="sp-other">
+      <h4 data-ja="スタジアム看板・LED" data-en="Stadium Signage & LED">スタジアム看板・LED</h4>
+      <p data-ja="サバナケット・スタジアムのピッチ周辺および場内への年間掲出。ユニフォームプランとは独立してお申し込みいただけます。" data-en="Year-round placement around the pitch and inside Savannakhet Stadium. Available independently of the kit plans.">サバナケット・スタジアムのピッチ周辺および場内への年間掲出。ユニフォームプランとは独立してお申し込みいただけます。</p>
+    </div>
+    <div class="sp-other">
+      <h4 data-ja="練習着・移動着" data-en="Training & Travel Wear">練習着・移動着</h4>
+      <p data-ja="トレーニングウェアおよび移動着への掲出。日常のコンテンツや取材対応で、露出頻度が最も高い枠です。" data-en="Placement on training and travel wear — the highest-frequency slot, seen across everyday content and media appearances.">トレーニングウェアおよび移動着への掲出。日常のコンテンツや取材対応で、露出頻度が最も高い枠です。</p>
+    </div>
+    <div class="sp-other">
+      <h4 data-ja="アカデミー・育成支援" data-en="Academy & Youth Development">アカデミー・育成支援</h4>
+      <p data-ja="サバナケットでの育成・地域サッカー事業への冠協賛。クラブの社会的意義が最も明確に伝わる枠です。" data-en="Title sponsorship of our youth development and community football work in Savannakhet — where the club's social purpose comes through most clearly.">サバナケットでの育成・地域サッカー事業への冠協賛。クラブの社会的意義が最も明確に伝わる枠です。</p>
+    </div>
+    <div class="sp-other">
+      <h4 data-ja="デジタル・コンテンツ" data-en="Digital & Content">デジタル・コンテンツ</h4>
+      <p data-ja="日・英・ラオ3言語のクラブチャンネルで展開する共同制作コンテンツシリーズ。御社の自社メディアでの二次利用権付き。" data-en="A co-produced content series across the club's Japanese, English and Lao channels, with secondary usage rights for your own media.">日・英・ラオ3言語のクラブチャンネルで展開する共同制作コンテンツシリーズ。御社の自社メディアでの二次利用権付き。</p>
+    </div>
+    <div class="sp-other">
+      <h4 data-ja="イベント・オフィシャルサプライヤー" data-en="Events & Official Supplier">イベント・オフィシャルサプライヤー</h4>
+      <p data-ja="東京トライアウトやサポーターツアーを含む両国でのクラブイベント。用具、旅行、飲食、テクノロジー、ヘルスケア等のカテゴリーでのオフィシャルサプライヤー契約。" data-en="Club events in both countries, including the Tokyo tryouts and supporter tours, plus official supplier agreements in categories such as equipment, travel, food and drink, technology and healthcare.">東京トライアウトやサポーターツアーを含む両国でのクラブイベント。用具、旅行、飲食、テクノロジー、ヘルスケア等のカテゴリーでのオフィシャルサプライヤー契約。</p>
+    </div>
+  </div>
+  <p class="sp-note" data-ja="双方にメリットがある場合、現物協賛やレベニューシェア型のご契約も検討いたします。価格表から始まらないご相談も歓迎しております。" data-en="Where it works for both sides, we are open to value-in-kind and revenue-share arrangements. Conversations that do not start from the price list are welcome.">双方にメリットがある場合、現物協賛やレベニューシェア型のご契約も検討いたします。価格表から始まらないご相談も歓迎しております。</p>
+
+  <div class="sp-terms">
+    <p data-ja="※ 費用はシーズンあたりの金額で、消費税は別途申し受けます。ご契約はSavannakhet Zelos FC（ラオス法人）とのラオスキープまたはUSD建てとなり、分割でのお支払いもご相談いただけます。複数シーズンでのご契約には優遇条件をご用意しています。" data-en="* Fees are per season and exclude consumption tax. Agreements are made with Savannakhet Zelos FC (a Lao company) in Lao kip or USD, and instalment payments can be arranged. Preferential terms are available for multi-season agreements.">※ 費用はシーズンあたりの金額で、消費税は別途申し受けます。ご契約はSavannakhet Zelos FC（ラオス法人）とのラオスキープまたはUSD建てとなり、分割でのお支払いもご相談いただけます。複数シーズンでのご契約には優遇条件をご用意しています。</p>
+    <p data-ja="※ 上記の権利内容は各プランの標準的な構成であり、最終的な内容はご契約書にて確定いたします。ホスピタリティをコンテンツやデジタル施策に振り替えるなど、御社の目的に合わせた組み替えも可能です。" data-en="* The rights listed are the standard configuration for each plan; final terms are confirmed in the agreement. Elements can be re-balanced to suit your objectives — for example, converting hospitality into content or digital activity.">※ 上記の権利内容は各プランの標準的な構成であり、最終的な内容はご契約書にて確定いたします。ホスピタリティをコンテンツやデジタル施策に振り替えるなど、御社の目的に合わせた組み替えも可能です。</p>
+  </div>
+
+  <h3 class="sp-h3">SPONSORSHIP INQUIRY</h3>
+  <p style="margin-bottom:16px" data-ja="スポンサーシップに関するお問い合わせは、以下のフォームよりお願いいたします。おおよそ2週間以内に、推奨プラン・権利内容・活用施策・費用をまとめたご提案をお送りいたします。" data-en="Please use the form below for any sponsorship enquiry. We will come back within roughly two weeks with a proposal covering the recommended plan, rights, activation ideas and cost.">スポンサーシップに関するお問い合わせは、以下のフォームよりお願いいたします。おおよそ2週間以内に、推奨プラン・権利内容・活用施策・費用をまとめたご提案をお送りいたします。</p>
 
   <form class="contact-form" action="https://formspree.io/f/xkokrplj" method="POST">
     <input type="hidden" name="_subject" value="【svzfc.com】スポンサーお問い合わせ">
@@ -3749,9 +3963,15 @@ footer {
     <input type="tel" name="電話番号" data-ja-placeholder="電話番号(任意)" data-en-placeholder="Phone Number (Optional)" placeholder="電話番号(任意)">
     <select name="ご興味のあるプラン" required>
       <option value="" data-ja="ご興味のあるプランを選択 *" data-en="Select Your Interested Plan *">ご興味のあるプランを選択 *</option>
-      <option value="胸スポンサー(¥10,000,000)" data-ja="胸スポンサー(¥10,000,000)" data-en="Chest Sponsor (¥10,000,000)">胸スポンサー(¥10,000,000)</option>
+      <option value="胸・メインパートナー(¥20,000,000)" data-ja="胸・メインパートナー(¥20,000,000)" data-en="Chest / Main Partner (¥20,000,000)">胸・メインパートナー(¥20,000,000)</option>
       <option value="袖スポンサー(¥3,000,000)" data-ja="袖スポンサー(¥3,000,000)" data-en="Sleeve Sponsor (¥3,000,000)">袖スポンサー(¥3,000,000)</option>
       <option value="パンツスポンサー(¥3,000,000)" data-ja="パンツスポンサー(¥3,000,000)" data-en="Shorts Sponsor (¥3,000,000)">パンツスポンサー(¥3,000,000)</option>
+      <option value="マッチデースポンサー" data-ja="マッチデースポンサー" data-en="Matchday Sponsor">マッチデースポンサー</option>
+      <option value="スタジアム看板・LED" data-ja="スタジアム看板・LED" data-en="Stadium Signage & LED">スタジアム看板・LED</option>
+      <option value="練習着・移動着" data-ja="練習着・移動着" data-en="Training & Travel Wear">練習着・移動着</option>
+      <option value="アカデミー・育成支援" data-ja="アカデミー・育成支援" data-en="Academy & Youth Development">アカデミー・育成支援</option>
+      <option value="デジタル・コンテンツ" data-ja="デジタル・コンテンツ" data-en="Digital & Content">デジタル・コンテンツ</option>
+      <option value="イベント・オフィシャルサプライヤー" data-ja="イベント・オフィシャルサプライヤー" data-en="Events & Official Supplier">イベント・オフィシャルサプライヤー</option>
       <option value="その他のプラン" data-ja="その他のプラン" data-en="Other Plans">その他のプラン</option>
       <option value="まずは資料請求" data-ja="まずは資料請求" data-en="Request Materials First">まずは資料請求</option>
     </select>
