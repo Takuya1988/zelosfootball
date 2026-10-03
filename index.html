@@ -2950,6 +2950,11 @@ footer {
     </div>
     <div class="news-list">
       <a class="news-item fade-in">
+        <div class="news-date">2026.10.03</div>
+        <div class="news-category" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</div>
+        <div class="news-title" data-ja="【離脱】Ginga SHIGA選手、Shion MITARAI選手が移籍を前提とした準備のためチームを離脱いたしました。" data-en="[Departure] Ginga SHIGA and Shion MITARAI have left the squad to prepare for transfers.">【離脱】Ginga SHIGA選手、Shion MITARAI選手が移籍を前提とした準備のためチームを離脱いたしました。</div>
+      </a>
+      <a class="news-item fade-in">
         <div class="news-date" data-ja="プレシーズン" data-en="Preseason">プレシーズン</div>
         <div class="news-category event" data-ja="試合・イベント" data-en="MATCH & EVENT">EVENT</div>
         <div class="news-title" data-ja="【プレシーズンマッチ】〇 6-0 vs MIMBO CLUB" data-en="[Preseason Match] W 6-0 vs MIMBO CLUB">【プレシーズンマッチ】〇 6-0 vs MIMBO CLUB</div>
@@ -3155,7 +3160,7 @@ footer {
       <span class="jp" data-ja="選手・スタッフ一覧" data-en="SQUAD &amp; CLUB STAFF">選手・スタッフ一覧</span>
     </h2>
     <div class="tm-hero-meta">
-      <div><strong>24</strong><span data-ja="登録選手" data-en="SQUAD MEMBERS">登録選手</span></div>
+      <div><strong>22</strong><span data-ja="登録選手" data-en="SQUAD MEMBERS">登録選手</span></div>
       <div><strong>05</strong><span data-ja="スタッフ" data-en="STAFF">スタッフ</span></div>
       <div><strong>03</strong><span data-ja="国籍" data-en="NATIONS">国籍</span></div>
     </div>
@@ -3212,17 +3217,6 @@ footer {
       <div class="tm-pos-name-jp" data-ja="ディフェンダー" data-en="">ディフェンダー</div>
     </div>
     <div class="tm-grid">
-        <div class="tm-card fade-in" onclick="openPlayerModal('ginga')">
-          <div class="tm-img-wrap">
-            <div class="tm-number">2</div>
-            <div class="tm-pos-tag">DF</div>
-            <div class="tm-img"><svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg></div>
-          </div>
-          <div class="tm-info">
-            <div class="tm-name-jp" data-ja="Ginga SHIGA" data-en="Ginga SHIGA">Ginga SHIGA</div>
-            <div class="tm-name-en" data-ja="JAPAN" data-en="JAPAN">JAPAN</div>
-          </div>
-        </div>
         <div class="tm-card fade-in" onclick="openPlayerModal('inoue')">
           <div class="tm-img-wrap">
             <div class="tm-number">4</div>
@@ -3318,17 +3312,6 @@ footer {
           <div class="tm-info">
             <div class="tm-name-jp" data-ja="Phoutthasay KHOCHALERN" data-en="Phoutthasay KHOCHALERN">Phoutthasay KHOCHALERN</div>
             <div class="tm-name-en" data-ja="LAOS" data-en="LAOS">LAOS</div>
-          </div>
-        </div>
-        <div class="tm-card fade-in" onclick="openPlayerModal('mitarai')">
-          <div class="tm-img-wrap">
-            <div class="tm-number">8</div>
-            <div class="tm-pos-tag">MF</div>
-            <div class="tm-img"><svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg></div>
-          </div>
-          <div class="tm-info">
-            <div class="tm-name-jp" data-ja="Shion MITARAI" data-en="Shion MITARAI">Shion MITARAI</div>
-            <div class="tm-name-en" data-ja="JAPAN" data-en="JAPAN">JAPAN</div>
           </div>
         </div>
         <div class="tm-card fade-in" onclick="openPlayerModal('sounthonekhoud')">
@@ -4773,25 +4756,6 @@ const playerProfiles = {
     }
   },
 
-  ginga: {
-    num: '2',
-    name: { ja: 'Ginga SHIGA', en: 'Ginga SHIGA' },
-    nameEn: 'GINGA SHIGA',
-    tags: [{ type: 'pos', text: 'DF' }],
-    profile: {
-      ja: {
-        'ポジション': 'ディフェンダー',
-        '国籍': '日本',
-        'プロフィール': 'プロフィール情報は準備中です。詳細が決まり次第、随時公開いたします。',
-      },
-      en: {
-        'Position': 'Defender',
-        'Nationality': 'Japan',
-        'Profile': 'Profile information is being prepared. Details will be published as they become available.',
-      }
-    }
-  },
-
   inoue: {
     num: '4',
     name: { ja: 'Shota INOUE', en: 'Shota INOUE' },
@@ -4939,25 +4903,6 @@ const playerProfiles = {
       en: {
         'Position': 'Midfielder',
         'Nationality': 'Laos',
-        'Profile': 'Profile information is being prepared. Details will be published as they become available.',
-      }
-    }
-  },
-
-  mitarai: {
-    num: '8',
-    name: { ja: 'Shion MITARAI', en: 'Shion MITARAI' },
-    nameEn: 'SHION MITARAI',
-    tags: [{ type: 'pos', text: 'MF' }],
-    profile: {
-      ja: {
-        'ポジション': 'ミッドフィルダー',
-        '国籍': '日本',
-        'プロフィール': 'プロフィール情報は準備中です。詳細が決まり次第、随時公開いたします。',
-      },
-      en: {
-        'Position': 'Midfielder',
-        'Nationality': 'Japan',
         'Profile': 'Profile information is being prepared. Details will be published as they become available.',
       }
     }
