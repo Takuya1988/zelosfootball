@@ -863,6 +863,29 @@ nav.main-nav li.lang a {
   padding-bottom: 10px; transition: transform 0.5s; z-index: 1;
 }
 #page-players .tm-img svg { width: 75%; height: 85%; opacity: 0.45; }
+#page-players .tm-photo {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  z-index: 1;
+}
+.player-modal-photo { line-height: 0; background: var(--bg); }
+.player-modal-photo img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center 10%;
+  display: block;
+}
+#page-players .tm-card .tm-img-wrap:has(.tm-photo)::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 42%;
+  background: linear-gradient(to bottom, rgba(11,22,40,0.6), rgba(11,22,40,0));
+  z-index: 1;
+  pointer-events: none;
+}
 #page-players .tm-number {
   position: absolute; top: 12px; left: 14px;
   font-family: "Bebas Neue", sans-serif;
@@ -3190,7 +3213,7 @@ footer {
           <div class="tm-img-wrap">
             <div class="tm-number">1</div>
             <div class="tm-pos-tag">GK</div>
-            <div class="tm-img"><svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg></div>
+            <div class="tm-img"><img class="tm-photo" src="img/player-anthony.jpg" alt="Anthony MYLONAS" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg></div>
           </div>
           <div class="tm-info">
             <div class="tm-name-jp" data-ja="Anthony MYLONAS" data-en="Anthony MYLONAS">Anthony MYLONAS</div>
@@ -3221,29 +3244,18 @@ footer {
           <div class="tm-img-wrap">
             <div class="tm-number">4</div>
             <div class="tm-pos-tag">DF</div>
-            <div class="tm-img"><svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg></div>
+            <div class="tm-img"><img class="tm-photo" src="img/player-inoue.jpg" alt="Shota INOUE" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg></div>
           </div>
           <div class="tm-info">
             <div class="tm-name-jp" data-ja="Shota INOUE" data-en="Shota INOUE">Shota INOUE</div>
             <div class="tm-name-en" data-ja="JAPAN" data-en="JAPAN">JAPAN</div>
           </div>
         </div>
-        <div class="tm-card fade-in" onclick="openPlayerModal('orr')">
-          <div class="tm-img-wrap">
-            <div class="tm-number">5</div>
-            <div class="tm-pos-tag">DF</div>
-            <div class="tm-img"><svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg></div>
-          </div>
-          <div class="tm-info">
-            <div class="tm-name-jp" data-ja="Phisith ORR" data-en="Phisith ORR">Phisith ORR</div>
-            <div class="tm-name-en" data-ja="LAOS" data-en="LAOS">LAOS</div>
-          </div>
-        </div>
         <div class="tm-card fade-in" onclick="openPlayerModal('kodaira')">
           <div class="tm-img-wrap">
             <div class="tm-number">17</div>
             <div class="tm-pos-tag">DF</div>
-            <div class="tm-img"><svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg></div>
+            <div class="tm-img"><img class="tm-photo" src="img/player-kodaira.jpg" alt="Ryusei KODAIRA" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg></div>
           </div>
           <div class="tm-info">
             <div class="tm-name-jp" data-ja="Ryusei KODAIRA" data-en="Ryusei KODAIRA">Ryusei KODAIRA</div>
@@ -3292,11 +3304,22 @@ footer {
       <div class="tm-pos-name-jp" data-ja="ミッドフィルダー" data-en="">ミッドフィルダー</div>
     </div>
     <div class="tm-grid">
+        <div class="tm-card fade-in" onclick="openPlayerModal('orr')">
+          <div class="tm-img-wrap">
+            <div class="tm-number">5</div>
+            <div class="tm-pos-tag">MF</div>
+            <div class="tm-img"><img class="tm-photo" src="img/player-orr.jpg" alt="Phisith ORR" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg></div>
+          </div>
+          <div class="tm-info">
+            <div class="tm-name-jp" data-ja="Phisith ORR" data-en="Phisith ORR">Phisith ORR</div>
+            <div class="tm-name-en" data-ja="LAOS" data-en="LAOS">LAOS</div>
+          </div>
+        </div>
         <div class="tm-card fade-in" onclick="openPlayerModal('chakkavanh')">
           <div class="tm-img-wrap">
             <div class="tm-number">6</div>
             <div class="tm-pos-tag">MF</div>
-            <div class="tm-img"><svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg></div>
+            <div class="tm-img"><img class="tm-photo" src="img/player-chakkavanh.jpg" alt="Chakkavanh MANIVONG" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg></div>
           </div>
           <div class="tm-info">
             <div class="tm-name-jp" data-ja="Chakkavanh MANIVONG" data-en="Chakkavanh MANIVONG">Chakkavanh MANIVONG</div>
@@ -3307,7 +3330,7 @@ footer {
           <div class="tm-img-wrap">
             <div class="tm-number">7</div>
             <div class="tm-pos-tag">MF</div>
-            <div class="tm-img"><svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg></div>
+            <div class="tm-img"><img class="tm-photo" src="img/player-phoutthasay.jpg" alt="Phoutthasay KHOCHALERN" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg></div>
           </div>
           <div class="tm-info">
             <div class="tm-name-jp" data-ja="Phoutthasay KHOCHALERN" data-en="Phoutthasay KHOCHALERN">Phoutthasay KHOCHALERN</div>
@@ -3318,7 +3341,7 @@ footer {
           <div class="tm-img-wrap">
             <div class="tm-number">10</div>
             <div class="tm-pos-tag">MF</div>
-            <div class="tm-img"><svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg></div>
+            <div class="tm-img"><img class="tm-photo" src="img/player-sounthonekhoud.jpg" alt="Sounthonekhoud PHOMMAVONGXAY" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg></div>
           </div>
           <div class="tm-info">
             <div class="tm-name-jp" data-ja="Sounthonekhoud PHOMMAVONGXAY" data-en="Sounthonekhoud PHOMMAVONGXAY">Sounthonekhoud PHOMMAVONGXAY</div>
@@ -3437,7 +3460,7 @@ footer {
           <div class="tm-img-wrap">
             <div class="tm-number">21</div>
             <div class="tm-pos-tag">FW</div>
-            <div class="tm-img"><svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg></div>
+            <div class="tm-img"><img class="tm-photo" src="img/player-seike.jpg" alt="Ryusei SEIKE" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="50" cy="35" r="18" fill="#c9a84c"/><path d="M20 120 Q20 65 50 65 Q80 65 80 120 Z" fill="#c9a84c"/></svg></div>
           </div>
           <div class="tm-info">
             <div class="tm-name-jp" data-ja="Ryusei SEIKE" data-en="Ryusei SEIKE">Ryusei SEIKE</div>
@@ -3513,6 +3536,7 @@ footer {
 <div class="player-modal-overlay" id="playerModal" onclick="closePlayerModal(event)">
   <div class="player-modal" onclick="event.stopPropagation()">
     <button class="player-modal-close" onclick="closePlayerModal()">×</button>
+    <div class="player-modal-photo" id="modalPhoto"></div>
     <div class="player-modal-header">
       <div class="player-modal-num" id="modalNum"></div>
       <div>
@@ -4720,6 +4744,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const playerProfiles = {
   anthony: {
     num: '1',
+    photo: 'img/player-anthony.jpg',
     name: { ja: 'Anthony MYLONAS', en: 'Anthony MYLONAS' },
     nameEn: 'ANTHONY MYLONAS',
     tags: [{ type: 'pos', text: 'GK' }],
@@ -4758,6 +4783,7 @@ const playerProfiles = {
 
   inoue: {
     num: '4',
+    photo: 'img/player-inoue.jpg',
     name: { ja: 'Shota INOUE', en: 'Shota INOUE' },
     nameEn: 'SHOTA INOUE',
     tags: [{ type: 'pos', text: 'DF' }],
@@ -4777,17 +4803,18 @@ const playerProfiles = {
 
   orr: {
     num: '5',
+    photo: 'img/player-orr.jpg',
     name: { ja: 'Phisith ORR', en: 'Phisith ORR' },
     nameEn: 'PHISITH ORR',
-    tags: [{ type: 'pos', text: 'DF' }],
+    tags: [{ type: 'pos', text: 'MF' }],
     profile: {
       ja: {
-        'ポジション': 'ディフェンダー',
+        'ポジション': 'ミッドフィルダー',
         '国籍': 'ラオス',
         'プロフィール': 'プロフィール情報は準備中です。詳細が決まり次第、随時公開いたします。',
       },
       en: {
-        'Position': 'Defender',
+        'Position': 'Midfielder',
         'Nationality': 'Laos',
         'Profile': 'Profile information is being prepared. Details will be published as they become available.',
       }
@@ -4796,6 +4823,7 @@ const playerProfiles = {
 
   kodaira: {
     num: '17',
+    photo: 'img/player-kodaira.jpg',
     name: { ja: 'Ryusei KODAIRA', en: 'Ryusei KODAIRA' },
     nameEn: 'RYUSEI KODAIRA',
     tags: [{ type: 'pos', text: 'DF' }],
@@ -4872,6 +4900,7 @@ const playerProfiles = {
 
   chakkavanh: {
     num: '6',
+    photo: 'img/player-chakkavanh.jpg',
     name: { ja: 'Chakkavanh MANIVONG', en: 'Chakkavanh MANIVONG' },
     nameEn: 'CHAKKAVANH MANIVONG',
     tags: [{ type: 'pos', text: 'MF' }],
@@ -4891,6 +4920,7 @@ const playerProfiles = {
 
   phoutthasay: {
     num: '7',
+    photo: 'img/player-phoutthasay.jpg',
     name: { ja: 'Phoutthasay KHOCHALERN', en: 'Phoutthasay KHOCHALERN' },
     nameEn: 'PHOUTTHASAY KHOCHALERN',
     tags: [{ type: 'pos', text: 'MF' }],
@@ -4910,6 +4940,7 @@ const playerProfiles = {
 
   sounthonekhoud: {
     num: '10',
+    photo: 'img/player-sounthonekhoud.jpg',
     name: { ja: 'Sounthonekhoud PHOMMAVONGXAY', en: 'Sounthonekhoud PHOMMAVONGXAY' },
     nameEn: 'SOUNTHONEKHOUD PHOMMAVONGXAY',
     tags: [{ type: 'pos', text: 'MF' }],
@@ -5100,6 +5131,7 @@ const playerProfiles = {
 
   seike: {
     num: '21',
+    photo: 'img/player-seike.jpg',
     name: { ja: 'Ryusei SEIKE', en: 'Ryusei SEIKE' },
     nameEn: 'RYUSEI SEIKE',
     tags: [{ type: 'pos', text: 'FW' }],
@@ -5174,6 +5206,13 @@ function openPlayerModal(id) {
   if (!player) return;
 
   const lang = currentLang;
+
+  const photoEl = document.getElementById('modalPhoto');
+  if (player.photo) {
+    photoEl.innerHTML = '<img src="' + player.photo + '" alt="" onerror="this.parentElement.innerHTML=\'\'">';
+  } else {
+    photoEl.innerHTML = '';
+  }
 
   document.getElementById('modalNum').textContent = player.num;
   document.getElementById('modalName').textContent = player.name[lang];
