@@ -2895,6 +2895,81 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
   .hero-title-row { flex-direction: column; align-items: flex-start; gap: 14px; }
   .hero-emblem { width: 84px; }
 }
+
+/* ========================= NEXT MATCH COUNTDOWN ========================= */
+.cd { background: var(--navy); color: #fff; padding: 40px 24px 36px; border-bottom: 4px solid var(--gold); }
+.cd-inner { max-width: 1280px; margin: 0 auto; }
+.cd-top { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 18px; }
+.cd-kicker {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 13px; letter-spacing: 0.3em; color: var(--gold);
+}
+.cd-league { font-size: 11px; letter-spacing: 0.18em; color: rgba(255,255,255,0.55); }
+.cd-grid {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 28px; flex-wrap: wrap;
+}
+.cd-fixture { display: flex; align-items: center; gap: 16px; min-width: 0; }
+.cd-crest { flex: none; width: 60px; height: 60px; display: block; }
+.cd-crest img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.cd-opp { font-size: clamp(19px, 2.4vw, 30px); font-weight: 700; line-height: 1.2; }
+.cd-meta { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 6px; line-height: 1.7; }
+.cd-clock { display: flex; align-items: flex-start; gap: 6px; }
+.cd [hidden] { display: none !important; }
+.cd-unit { text-align: center; min-width: 62px; }
+.cd-unit b {
+  display: block;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(34px, 5.4vw, 60px);
+  font-weight: 700; line-height: 1; color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+.cd-unit span {
+  display: block; margin-top: 6px;
+  font-size: 10px; letter-spacing: 0.18em; color: rgba(255,255,255,0.6);
+}
+.cd-sep {
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(26px, 4vw, 44px); line-height: 1.1;
+  color: rgba(245,200,0,0.4);
+}
+.cd-live {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(24px, 4vw, 40px); letter-spacing: 0.16em;
+  color: var(--gold); animation: cdPulse 1.4s ease-in-out infinite;
+}
+@keyframes cdPulse { 0%,100% { opacity: 1 } 50% { opacity: 0.45 } }
+.cd-actions {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  margin-top: 26px; padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,0.14);
+}
+.cd-btn {
+  display: inline-block; padding: 12px 26px; cursor: pointer;
+  background: var(--gold); color: var(--navy);
+  font-size: 13px; font-weight: 700; letter-spacing: 0.08em;
+  transition: all 0.2s;
+}
+.cd-btn:hover { background: #fff; }
+.cd-btn.ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.45); }
+.cd-btn.ghost:hover { background: #fff; color: var(--navy); border-color: #fff; }
+.cd-share { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.cd-share-label { font-size: 11px; letter-spacing: 0.14em; color: rgba(255,255,255,0.55); }
+.cd-share a {
+  display: grid; place-items: center; width: 34px; height: 34px;
+  border: 1px solid rgba(255,255,255,0.35); border-radius: 50%;
+  font-family: "Bebas Neue", sans-serif; font-size: 11px; letter-spacing: 0.06em;
+  color: #fff; cursor: pointer; transition: all 0.2s;
+}
+.cd-share a:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+@media (max-width: 760px) {
+  .cd { padding: 30px 20px 28px; }
+  .cd-grid { gap: 20px; }
+  .cd-unit { min-width: 0; flex: 1; }
+  .cd-clock { width: 100%; justify-content: space-between; gap: 2px; }
+  .cd-sep { display: none; }
+  .cd-share { margin-left: 0; width: 100%; }
+}
 </style>
 </head>
 <body>
@@ -2965,6 +3040,48 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
       <div class="hero-buttons">
         <a class="btn-primary" data-ja="チケット購入" data-en="BUY TICKETS">チケット購入</a>
         <a class="btn-outline" onclick="showPage('about')" data-ja="クラブを知る" data-en="ABOUT THE CLUB">クラブを知る</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT MATCH COUNTDOWN -->
+<section class="cd" id="nextMatch" hidden>
+  <div class="cd-inner">
+    <div class="cd-top">
+      <span class="cd-kicker" id="cdKicker">NEXT MATCH</span>
+      <span class="cd-league" id="cdLeague"></span>
+    </div>
+
+    <div class="cd-grid">
+      <div class="cd-fixture">
+        <span class="cd-crest" id="cdCrest"></span>
+        <div>
+          <div class="cd-opp" id="cdOpp"></div>
+          <div class="cd-meta" id="cdMeta"></div>
+        </div>
+      </div>
+
+      <div class="cd-clock" id="cdClock">
+        <div class="cd-unit"><b id="cdD">--</b><span data-ja="日" data-en="DAYS">日</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><b id="cdH">--</b><span data-ja="時間" data-en="HRS">時間</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><b id="cdM">--</b><span data-ja="分" data-en="MIN">分</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><b id="cdS">--</b><span data-ja="秒" data-en="SEC">秒</span></div>
+      </div>
+      <div class="cd-live" id="cdLive" hidden data-ja="KICK OFF ・ 試合中" data-en="KICK OFF ・ LIVE NOW">KICK OFF ・ 試合中</div>
+    </div>
+
+    <div class="cd-actions">
+      <a class="cd-btn" onclick="showPage('contact')" data-ja="チケットを申し込む" data-en="GET TICKETS">チケットを申し込む</a>
+      <a class="cd-btn ghost" onclick="showPage('schedule')" data-ja="全日程を見る" data-en="FULL SCHEDULE">全日程を見る</a>
+      <div class="cd-share">
+        <span class="cd-share-label" data-ja="シェアして応援" data-en="SHARE">シェアして応援</span>
+        <a id="cdShareX" target="_blank" rel="noopener" aria-label="X">X</a>
+        <a id="cdShareF" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+        <a id="cdShareL" target="_blank" rel="noopener" aria-label="LINE">LINE</a>
       </div>
     </div>
   </div>
@@ -5448,6 +5565,124 @@ document.addEventListener('keydown', (e) => {
     else { c.style.display = 'none'; }
   });
   if (shown === 0) cards.slice(-4).forEach(function(c){ c.style.display = ''; });
+})();
+</script>
+
+<script>
+/* Next-match countdown: reads the homepage fixture cards, so it advances
+   through the season on its own with no further edits. */
+(function () {
+  var band = document.getElementById('nextMatch');
+  if (!band) return;
+  var wrap = document.querySelector('.game-schedule');
+  if (!wrap) return;
+
+  var KO_OFFSET = '+07:00';          // Laos time
+  var LIVE_MS = 2 * 60 * 60 * 1000;  // treat 2h after kick-off as "in play"
+
+  var fixtures = Array.prototype.slice.call(wrap.querySelectorAll('.game-card[data-date]'))
+    .filter(function (c) { return !c.classList.contains('is-bye'); })
+    .map(function (c) {
+      var oppEl = c.querySelector('.game-opponent span');
+      var img = c.querySelector('.game-logo');
+      var badge = c.querySelector('.game-badge');
+      return {
+        kick: new Date(c.getAttribute('data-date') + 'T15:30:00' + KO_OFFSET),
+        date: c.getAttribute('data-date'),
+        oppJa: oppEl ? (oppEl.getAttribute('data-ja') || oppEl.textContent) : '',
+        oppEn: oppEl ? (oppEl.getAttribute('data-en') || oppEl.textContent) : '',
+        crest: img ? img.cloneNode(true) : null,
+        venueJa: (c.querySelector('.game-venue') || {}).getAttribute ? c.querySelector('.game-venue').getAttribute('data-ja') : '',
+        venueEn: (c.querySelector('.game-venue') || {}).getAttribute ? c.querySelector('.game-venue').getAttribute('data-en') : '',
+        leagueJa: c.querySelector('.game-league') ? c.querySelector('.game-league').getAttribute('data-ja') : '',
+        leagueEn: c.querySelector('.game-league') ? c.querySelector('.game-league').getAttribute('data-en') : '',
+        home: badge ? badge.classList.contains('home') : false
+      };
+    })
+    .sort(function (a, b) { return a.kick - b.kick; });
+
+  if (!fixtures.length) return;
+
+  function pick() {
+    var now = Date.now();
+    for (var i = 0; i < fixtures.length; i++) {
+      if (fixtures[i].kick.getTime() + LIVE_MS > now) return fixtures[i];
+    }
+    return null;
+  }
+
+  var current = null;
+
+  function setText(el, ja, en) {
+    if (!el) return;
+    el.setAttribute('data-ja', ja);
+    el.setAttribute('data-en', en);
+    el.textContent = (typeof currentLang !== 'undefined' && currentLang === 'en') ? en : ja;
+  }
+
+  function mount(f) {
+    current = f;
+    band.hidden = false;
+
+    var isOpener = fixtures.indexOf(f) === 0;
+    setText(document.getElementById('cdKicker'),
+            isOpener ? '開幕戦まで' : '次の試合まで',
+            isOpener ? 'UNTIL THE OPENER' : 'NEXT MATCH IN');
+    setText(document.getElementById('cdLeague'), f.leagueJa, f.leagueEn);
+    setText(document.getElementById('cdOpp'), 'vs ' + f.oppJa.replace(/^vs\.?\s*/i, ''),
+                                              'vs ' + f.oppEn.replace(/^vs\.?\s*/i, ''));
+
+    var d = f.date.split('-');
+    var dow = ['日','月','火','水','木','金','土'][new Date(+d[0], d[1] - 1, +d[2]).getDay()];
+    var dowEn = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][new Date(+d[0], d[1] - 1, +d[2]).getDay()];
+    setText(document.getElementById('cdMeta'),
+      d[1] + '/' + d[2] + '（' + dow + '）15:30 キックオフ ／ 日本時間 17:30 ・ ' + (f.home ? 'ホーム' : 'アウェイ') + ' ・ ' + f.venueJa,
+      d[1] + '/' + d[2] + ' (' + dowEn + ') Kick-off 15:30 / 17:30 JST · ' + (f.home ? 'HOME' : 'AWAY') + ' · ' + f.venueEn);
+
+    var slot = document.getElementById('cdCrest');
+    slot.innerHTML = '';
+    if (f.crest) { var c = f.crest.cloneNode(true); c.removeAttribute('class'); slot.appendChild(c); }
+
+    share(f);
+  }
+
+  function share(f) {
+    var url = location.origin + location.pathname;
+    var days = Math.max(0, Math.ceil((f.kick - Date.now()) / 86400000));
+    var opp = f.oppJa.replace(/^vs\.?\s*/i, '');
+    var text = 'SAVANNAKHET ZELOS FC｜' + (days > 0 ? 'キックオフまであと' + days + '日！' : 'まもなくキックオフ！')
+             + ' vs ' + opp + '（' + f.date.split('-')[1] + '/' + f.date.split('-')[2] + ' 15:30 / 日本時間 17:30）#SVZFC';
+    var x = document.getElementById('cdShareX');
+    var fb = document.getElementById('cdShareF');
+    var ln = document.getElementById('cdShareL');
+    if (x) x.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url);
+    if (fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+    if (ln) ln.href = 'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text);
+  }
+
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+  function tick() {
+    var f = pick();
+    if (!f) { band.hidden = true; return; }
+    if (f !== current) mount(f);
+
+    var diff = f.kick - Date.now();
+    var clock = document.getElementById('cdClock');
+    var live = document.getElementById('cdLive');
+
+    if (diff <= 0) { clock.hidden = true; live.hidden = false; return; }
+    clock.hidden = false; live.hidden = true;
+
+    var sec = Math.floor(diff / 1000);
+    document.getElementById('cdD').textContent = Math.floor(sec / 86400);
+    document.getElementById('cdH').textContent = pad(Math.floor(sec % 86400 / 3600));
+    document.getElementById('cdM').textContent = pad(Math.floor(sec % 3600 / 60));
+    document.getElementById('cdS').textContent = pad(sec % 60);
+  }
+
+  tick();
+  setInterval(tick, 1000);
 })();
 </script>
 </body>
