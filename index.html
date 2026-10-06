@@ -3121,6 +3121,189 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
   .news-modal-head { padding: 26px 20px 18px; }
   .news-modal-body { padding: 20px 20px 30px; }
 }
+
+/* ==================== ACADEMY & COMMUNITY PAGE ==================== */
+.ac2-hero {
+  background: linear-gradient(135deg, #ffe566 0%, var(--gold) 55%, #e3b800 100%);
+  color: var(--navy);
+  padding: 72px 24px 64px;
+  position: relative;
+  overflow: hidden;
+}
+.ac2-hero::after {
+  content: "";
+  position: absolute; right: -80px; bottom: -120px;
+  width: 360px; height: 360px; border-radius: 50%;
+  background: rgba(0,0,0,0.05);
+  pointer-events: none;
+}
+.ac2-hero-inner { max-width: 1120px; margin: 0 auto; position: relative; z-index: 1; }
+.ac2-kicker {
+  font-family: "Oswald", sans-serif;
+  font-size: 12px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.26em; margin-bottom: 18px;
+  padding-bottom: 14px; border-bottom: 2px solid rgba(0,0,0,0.35);
+  display: inline-block;
+}
+.ac2-hero h1 {
+  font-family: "Oswald", "Noto Sans JP", sans-serif;
+  font-size: clamp(28px, 4.6vw, 54px);
+  font-weight: 700; line-height: 1.18; margin: 0 0 20px;
+  letter-spacing: 0.01em;
+}
+.ac2-lead { font-size: 15px; line-height: 1.95; max-width: 780px; margin: 0; }
+
+.ac2-wrap { padding-top: 56px; padding-bottom: 72px; }
+.ac2-h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(22px, 2.6vw, 32px);
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
+  margin: 0 0 10px; color: var(--ink);
+  padding-left: 16px; border-left: 6px solid var(--gold);
+}
+.ac2-sub { font-size: 14.5px; line-height: 1.9; color: var(--sub); margin: 0 0 30px; }
+.ac2-wrap > .ac2-h3:not(:first-child) { margin-top: 64px; }
+
+.ac2-pillars {
+  display: grid; gap: 18px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 36px;
+}
+@media (max-width: 1000px) { .ac2-pillars { grid-template-columns: repeat(2, 1fr); } }
+.ac2-pillar {
+  background: #fff; border: 1px solid var(--line); border-radius: 4px;
+  padding: 26px 22px 24px; position: relative;
+  border-top: 4px solid var(--gold);
+}
+.ac2-pillar-num {
+  font-family: "Oswald", sans-serif; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.16em; color: var(--gold-deep); margin-bottom: 10px;
+}
+.ac2-pillar h4 {
+  font-size: 18px; font-weight: 700; margin: 0 0 10px; color: var(--ink);
+}
+.ac2-pillar p { font-size: 13.5px; line-height: 1.85; color: var(--sub); margin: 0; }
+
+.ac2-table { margin-bottom: 30px; }
+
+.ac2-cta {
+  background: var(--navy); color: #fff; border-radius: 4px;
+  padding: 30px 28px; margin-bottom: 8px;
+  border-left: 6px solid var(--gold);
+}
+.ac2-cta h4 {
+  font-family: "Oswald", sans-serif; font-size: 20px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.04em; margin: 0 0 10px; color: var(--gold);
+}
+.ac2-cta p { font-size: 13.5px; line-height: 1.85; margin: 0 0 18px; color: rgba(255,255,255,0.86); }
+
+.ac2-note {
+  background: #fff; border: 1px solid var(--line); border-left: 6px solid var(--navy);
+  border-radius: 4px; padding: 24px 24px 22px; margin: 32px 0 0;
+}
+.ac2-note h4 {
+  font-family: "Oswald", sans-serif; font-size: 15px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.12em; margin: 0 0 12px; color: var(--ink);
+}
+.ac2-note p { font-size: 13.5px; line-height: 1.9; color: var(--sub); margin: 0 0 10px; }
+.ac2-note p:last-child { margin-bottom: 0; }
+
+.ac2-acts {
+  display: grid; gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-bottom: 36px;
+}
+.ac2-act {
+  background: #fff; border: 1px solid var(--line); border-radius: 4px;
+  padding: 26px 22px 24px;
+}
+.ac2-act-num {
+  font-family: "Oswald", sans-serif; font-size: 36px; font-weight: 700;
+  line-height: 1; color: var(--navy); margin-bottom: 12px;
+}
+.ac2-act-num small {
+  font-size: 12px; font-weight: 500; letter-spacing: 0.1em;
+  margin-left: 7px; color: var(--sub);
+}
+.ac2-act h4 { font-size: 17px; font-weight: 700; margin: 0 0 10px; color: var(--ink); }
+.ac2-act p { font-size: 13.5px; line-height: 1.85; color: var(--sub); margin: 0; }
+
+.ac2-partner {
+  background: var(--gold); color: var(--navy); border-radius: 4px;
+  padding: 30px 28px; margin-top: 44px;
+}
+.ac2-partner h4 {
+  font-family: "Oswald", sans-serif; font-size: 20px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.04em; margin: 0 0 10px;
+}
+.ac2-partner p { font-size: 13.5px; line-height: 1.85; margin: 0 0 18px; }
+.ac2-partner .cd-btn,
+.ac2-partner .cd-btn.ghost {
+  background: var(--navy); color: var(--gold); border: 1px solid var(--navy);
+}
+.ac2-partner .cd-btn:hover,
+.ac2-partner .cd-btn.ghost:hover { background: #000; color: #fff; border-color: #000; }
+
+/* photo gallery -- stays hidden until the photos are uploaded */
+.ac2-gallery {
+  column-count: 2; column-gap: 12px;
+  margin: 30px 0 8px;
+}
+.ac2-gallery[hidden] { display: none !important; }
+.ac2-gallery figure {
+  margin: 0 0 12px; break-inside: avoid; page-break-inside: avoid;
+  overflow: hidden; border-radius: 4px; background: var(--navy);
+  cursor: zoom-in; position: relative; line-height: 0;
+}
+.ac2-gallery img {
+  width: 100%; height: auto; display: block;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+}
+.ac2-gallery figure:hover img { transform: scale(1.04); opacity: 0.92; }
+.ac2-gallery figure.ac2-pano { column-span: all; }
+
+/* lightbox */
+.ac2-lb {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(10,10,13,0.94);
+  display: flex; align-items: center; justify-content: center;
+  padding: 36px 20px;
+}
+.ac2-lb[hidden] { display: none !important; }
+.ac2-lb img {
+  max-width: 100%; max-height: 100%;
+  object-fit: contain; border-radius: 3px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+.ac2-lb-close {
+  position: absolute; top: 18px; right: 22px;
+  width: 42px; height: 42px; border: 0; border-radius: 50%;
+  background: var(--gold); color: var(--navy);
+  font-size: 22px; line-height: 1; cursor: pointer;
+  font-family: "Oswald", sans-serif;
+}
+.ac2-lb-close:hover { background: #fff; }
+.ac2-lb-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 70px; border: 0; cursor: pointer;
+  background: rgba(255,255,255,0.12); color: #fff; font-size: 24px;
+}
+.ac2-lb-nav:hover { background: var(--gold); color: var(--navy); }
+.ac2-lb-prev { left: 12px; }
+.ac2-lb-next { right: 12px; }
+
+@media (max-width: 760px) {
+  .ac2-hero { padding: 48px 20px 44px; }
+  .ac2-lead { font-size: 14px; }
+  .ac2-wrap { padding-top: 40px; padding-bottom: 52px; }
+  .ac2-wrap > .ac2-h3:not(:first-child) { margin-top: 48px; }
+  .ac2-pillars, .ac2-acts { grid-template-columns: 1fr; }
+  .ac2-cta, .ac2-partner { padding: 24px 20px; }
+  .ac2-gallery { column-count: 1; }
+  .ac2-lb { padding: 20px 12px; }
+  .ac2-lb-nav { width: 36px; height: 56px; }
+}
+
 </style>
 </head>
 <body>
@@ -3159,6 +3342,7 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
     <li><a class="active" data-page="home" onclick="showPage('home')" data-ja="NEWS" data-en="NEWS">NEWS</a></li>
     <li><a data-page="schedule" onclick="showPage('schedule')" data-ja="GAME" data-en="GAME">GAME</a></li>
     <li><a data-page="players" onclick="showPage('players')" data-ja="TEAM" data-en="TEAM">TEAM</a></li>
+    <li><a data-page="academy" onclick="showPage('academy')" data-ja="ACADEMY" data-en="ACADEMY">ACADEMY</a></li>
     <li><a data-page="about" onclick="showPage('about')" data-ja="CLUB" data-en="CLUB">CLUB</a></li>
     <li><a data-page="youtube" onclick="showPage('youtube')" data-ja="YOUTUBE" data-en="YOUTUBE">YOUTUBE</a></li>
     <li><a data-page="access" onclick="showPage('access')" data-ja="ACCESS" data-en="ACCESS">ACCESS</a></li>
@@ -4117,6 +4301,99 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
   <p style="margin-top:32px;color:var(--sub);font-size:13px" data-ja="※ 出典：ラオスサッカー連盟（LFF）公式日程 2026/27 前半戦。キックオフはすべて15:30（ラオス時間／日本時間17:30）。日程・会場は変更になる場合があります。" data-en="* Source: Lao Football Federation (LFF) official 2026/27 first-leg schedule. All matches kick off at 15:30 Laos time (17:30 JST). Dates and venues may change.">※ 出典：ラオスサッカー連盟（LFF）公式日程 2026/27 前半戦。キックオフはすべて15:30（ラオス時間／日本時間17:30）。日程・会場は変更になる場合があります。</p>
 </div>
 </div><!-- end page-schedule -->
+
+<!-- ==================== ACADEMY & COMMUNITY PAGE ==================== -->
+<div class="page" id="page-academy">
+
+<section class="ac2-hero">
+  <div class="ac2-hero-inner">
+    <div class="ac2-kicker" data-ja="ACADEMY &amp; COMMUNITY" data-en="ACADEMY &amp; COMMUNITY">ACADEMY &amp; COMMUNITY</div>
+    <h1 data-ja="才能は、すでにここにある。" data-en="The talent is already here.">才能は、すでにここにある。</h1>
+    <p class="ac2-lead" data-ja="ラオスの育成年代は、国際大会で結果を残しています。足りないのは才能ではなく、その先にある進路です。サバナケット・ゼロスFCは、子どもたちが「目指せる場所」になることを目指しています。" data-en="Lao youth teams already win at international level. What is missing is not talent — it is a path to follow. Savannakhet Zelos FC exists to become the place those children can aim for.">ラオスの育成年代は、国際大会で結果を残しています。足りないのは才能ではなく、その先にある進路です。サバナケット・ゼロスFCは、子どもたちが「目指せる場所」になることを目指しています。</p>
+  </div>
+</section>
+
+<div class="generic-inner ac2-wrap">
+
+  <h3 class="ac2-h3">ZELOS ACADEMY</h3>
+  <p class="ac2-sub" data-ja="18歳以下を対象としたアカデミーを運営しています。サッカーだけを教える場所ではありません。" data-en="Our academy is open to players aged 18 and under — and it does not only teach football.">18歳以下を対象としたアカデミーを運営しています。サッカーだけを教える場所ではありません。</p>
+
+  <div class="ac2-pillars">
+    <div class="ac2-pillar">
+      <div class="ac2-pillar-num">01</div>
+      <h4 data-ja="サッカー" data-en="Football">サッカー</h4>
+      <p data-ja="SVZFCトップチームが使用する照明付き人工芝2面で、プロと同じ環境で練習します。" data-en="Training on the same two floodlit artificial pitches the SVZFC first team uses.">SVZFCトップチームが使用する照明付き人工芝2面で、プロと同じ環境で練習します。</p>
+    </div>
+    <div class="ac2-pillar">
+      <div class="ac2-pillar-num">02</div>
+      <h4 data-ja="英語" data-en="English">英語</h4>
+      <p data-ja="海外でプレーするために、そしてサッカー以外の進路を選んだときにも武器になる語学を学びます。" data-en="The language they need to play abroad — and that still serves them if they take a different path.">海外でプレーするために、そしてサッカー以外の進路を選んだときにも武器になる語学を学びます。</p>
+    </div>
+    <div class="ac2-pillar">
+      <div class="ac2-pillar-num">03</div>
+      <h4 data-ja="日本語" data-en="Japanese">日本語</h4>
+      <p data-ja="日本とラオスを繋ぐクラブとして、日本への挑戦を現実的な選択肢にするための日本語教育を行います。" data-en="As a club bridging Japan and Laos, we teach Japanese so that a move to Japan becomes a realistic option.">日本とラオスを繋ぐクラブとして、日本への挑戦を現実的な選択肢にするための日本語教育を行います。</p>
+    </div>
+    <div class="ac2-pillar">
+      <div class="ac2-pillar-num">04</div>
+      <h4 data-ja="AIの使い方" data-en="Working with AI">AIの使い方</h4>
+      <p data-ja="学び方そのものを身につけてもらうため、AIを使いこなす力を育てます。" data-en="We teach them how to use AI, so they learn how to learn.">学び方そのものを身につけてもらうため、AIを使いこなす力を育てます。</p>
+    </div>
+  </div>
+
+  <table class="about-table ac2-table">
+    <tr><th data-ja="対象" data-en="Who">対象</th><td data-ja="18歳以下" data-en="Aged 18 and under">18歳以下</td></tr>
+    <tr><th data-ja="開催" data-en="When">開催</th><td data-ja="土日 7:00-9:00 ／ 月8回" data-en="Sat &amp; Sun, 07:00-09:00 · 8 sessions a month">土日 7:00-9:00 ／ 月8回</td></tr>
+    <tr><th data-ja="会場" data-en="Where">会場</th><td data-ja="照明付き人工芝2面（SVZFCトップチーム練習場）【要確認：所在地】" data-en="Two floodlit artificial pitches (the SVZFC first-team training ground) [TO CONFIRM: location]">照明付き人工芝2面（SVZFCトップチーム練習場）【要確認：所在地】</td></tr>
+    <tr><th data-ja="会費" data-en="Fees">会費</th><td data-ja="1回 100,000キープ ／ 月額プラン 500,000キープ（月8回すべて参加可）" data-en="100,000 kip per session · 500,000 kip monthly for all 8 sessions">1回 100,000キープ ／ 月額プラン 500,000キープ（月8回すべて参加可）</td></tr>
+  </table>
+
+  <div class="ac2-cta">
+    <h4 data-ja="体験参加を受け付けています" data-en="Trial sessions are open">体験参加を受け付けています</h4>
+    <p data-ja="見学・体験はいつでも歓迎です。ご希望の日程をお問い合わせフォームからお知らせください。" data-en="You are welcome to come and watch, or to train with us. Let us know a date through the contact form.">見学・体験はいつでも歓迎です。ご希望の日程をお問い合わせフォームからお知らせください。</p>
+    <a class="cd-btn" onclick="showPage('contact')" data-ja="体験・入会のお問い合わせ" data-en="TRIAL &amp; ENROLMENT">体験・入会のお問い合わせ</a>
+  </div>
+
+  <div class="ac2-gallery" data-gallery="academy" hidden></div>
+
+  <h3 class="ac2-h3">WHY WE START HERE</h3>
+  <p class="ac2-sub" data-ja="なぜ育成からなのか。" data-en="Why development comes first.">なぜ育成からなのか。</p>
+  <div class="ac2-note">
+    <p data-ja="ラオスのU-12・U-14世代は、国際大会で確かな結果を残しています。それでも、その才能が年齢とともに失われていきます。原因は能力ではなく、「この先に何があるのか」が見えないことだと私たちは考えています。" data-en="Lao U-12 and U-14 sides have real results at international level. Yet that talent fades with age. We believe the cause is not ability, but the absence of a visible path to anything beyond.">ラオスのU-12・U-14世代は、国際大会で確かな結果を残しています。それでも、その才能が年齢とともに失われていきます。原因は能力ではなく、「この先に何があるのか」が見えないことだと私たちは考えています。</p>
+    <p data-ja="だからクラブは、ラオス初のJリーガーを輩出することを目標に掲げています。一人が海外に出て成功すれば、それは子どもたちにとって「頑張れば未来は変わる」という具体的な証明になります。" data-en="That is why the club aims to produce the first J-League player from Laos. One player succeeding abroad is concrete proof to every child here that effort can change the future.">だからクラブは、ラオス初のJリーガーを輩出することを目標に掲げています。一人が海外に出て成功すれば、それは子どもたちにとって「頑張れば未来は変わる」という具体的な証明になります。</p>
+  </div>
+
+  <h3 class="ac2-h3">COMMUNITY</h3>
+  <p class="ac2-sub" data-ja="クラブとZELOSが続けてきた、地域と社会への取り組みです。" data-en="What the club and ZELOS have been doing in the community.">クラブとZELOSが続けてきた、地域と社会への取り組みです。</p>
+
+  <div class="ac2-acts">
+    <div class="ac2-act">
+      <div class="ac2-act-num">1,100<small data-ja="足以上" data-en="pairs+">足以上</small></div>
+      <h4 data-ja="シューズ寄贈" data-en="Boot donations">シューズ寄贈</h4>
+      <p data-ja="10年にわたり、モンゴル・ラオス・カンボジア・ウガンダの子どもたちへサッカーシューズを届けてきました。背景に関わらずスポーツに触れられる環境をつくるための活動です。" data-en="Over ten years we have delivered football boots to children in Mongolia, Laos, Cambodia and Uganda — so that access to sport does not depend on background.">10年にわたり、モンゴル・ラオス・カンボジア・ウガンダの子どもたちへサッカーシューズを届けてきました。背景に関わらずスポーツに触れられる環境をつくるための活動です。</p>
+    </div>
+    <div class="ac2-act">
+      <div class="ac2-act-num">AED</div>
+      <h4 data-ja="AED寄贈" data-en="AED donation">AED寄贈</h4>
+      <p data-ja="カンボジアへAED（自動体外式除細動器）を寄贈しました。スポーツの現場で命を守る環境づくりに取り組んでいます。" data-en="We donated an AED in Cambodia, as part of making sport a safer place to be.">カンボジアへAED（自動体外式除細動器）を寄贈しました。スポーツの現場で命を守る環境づくりに取り組んでいます。</p>
+    </div>
+    <div class="ac2-act">
+      <div class="ac2-act-num">02<small data-ja="回開催" data-en="editions">回開催</small></div>
+      <h4 data-ja="東京トライアウト" data-en="Tokyo Tryouts">東京トライアウト</h4>
+      <p data-ja="日本国内で誰でも参加できるオープントライアウトを2回開催しました。国籍や経歴を問わず、海外挑戦の入口をつくる取り組みです。" data-en="We have held two open tryouts in Japan. Anyone can enter, whatever their nationality or background — a doorway to playing abroad.">日本国内で誰でも参加できるオープントライアウトを2回開催しました。国籍や経歴を問わず、海外挑戦の入口をつくる取り組みです。</p>
+    </div>
+  </div>
+
+  <div class="ac2-gallery" data-gallery="community" hidden></div>
+
+  <div class="ac2-partner">
+    <h4 data-ja="アカデミー・育成支援パートナー募集" data-en="Academy &amp; development partners">アカデミー・育成支援パートナー募集</h4>
+    <p data-ja="サバナケットでの育成・地域サッカー事業への冠協賛を受け付けています。クラブの社会的意義が最も明確に伝わる枠です。" data-en="Title sponsorship of our youth development and community football work is available — the place where the club&apos;s social purpose comes through most clearly.">サバナケットでの育成・地域サッカー事業への冠協賛を受け付けています。クラブの社会的意義が最も明確に伝わる枠です。</p>
+    <a class="cd-btn ghost" onclick="showPage('sponsor')" data-ja="スポンサーシップを見る" data-en="SEE SPONSORSHIP">スポンサーシップを見る</a>
+  </div>
+
+</div>
+</div><!-- end page-academy -->
 
 <!-- ==================== ABOUT PAGE ==================== -->
 <div class="page" id="page-about">
@@ -6107,5 +6384,104 @@ function closeNewsModal(event) {
   document.body.style.overflow = '';
 }
 </script>
+
+<script>
+/* ===== ACADEMY / COMMUNITY PHOTO GALLERY =====================================
+   TO ADD PHOTOS: just drop the files into img/ with these names. Nothing else.
+     Academy  : img/academy-1.jpg   .. img/academy-12.jpg
+     Community: img/community-1.jpg .. img/community-12.jpg
+   Every photo that exists is shown, at its own shape (tate / yoko / panorama all
+   work). Numbers may have gaps. A gallery with no photos stays fully hidden.
+   Click a photo to open it large; arrow keys and Esc work in the viewer.
+   ========================================================================== */
+(function () {
+  var MAX = 12;
+  var ALT = { academy: 'ZELOS ACADEMY', community: 'ZELOS IN THE COMMUNITY' };
+  var lb, lbImg, shots = [], at = 0;
+
+  function makeLightbox() {
+    if (lb) return;
+    lb = document.createElement('div');
+    lb.className = 'ac2-lb';
+    lb.hidden = true;
+    lb.innerHTML = '<button class="ac2-lb-close" aria-label="Close">&times;</button>' +
+                   '<button class="ac2-lb-nav ac2-lb-prev" aria-label="Previous">&#8249;</button>' +
+                   '<img alt="">' +
+                   '<button class="ac2-lb-nav ac2-lb-next" aria-label="Next">&#8250;</button>';
+    document.body.appendChild(lb);
+    lbImg = lb.querySelector('img');
+    lb.querySelector('.ac2-lb-close').onclick = close;
+    lb.querySelector('.ac2-lb-prev').onclick = function (e) { e.stopPropagation(); step(-1); };
+    lb.querySelector('.ac2-lb-next').onclick = function (e) { e.stopPropagation(); step(1); };
+    lb.onclick = function (e) { if (e.target === lb || e.target === lbImg) close(); };
+    document.addEventListener('keydown', function (e) {
+      if (lb.hidden) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') step(-1);
+      else if (e.key === 'ArrowRight') step(1);
+    });
+  }
+  function open(src) {
+    makeLightbox();
+    at = shots.indexOf(src); if (at < 0) at = 0;
+    lbImg.src = shots[at];
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function close() { lb.hidden = true; document.body.style.overflow = ''; }
+  function step(d) { at = (at + d + shots.length) % shots.length; lbImg.src = shots[at]; }
+
+  function build(box) {
+    var key = box.getAttribute('data-gallery');
+    if (!key) return;
+    var slots = [], pending = MAX;
+
+    for (var i = 1; i <= MAX; i++) {
+      (function (idx) {
+        var probe = new Image();
+        probe.onload  = function () {
+          slots[idx] = { src: probe.src,
+                         wide: probe.naturalWidth / probe.naturalHeight >= 2.4 };
+          done();
+        };
+        probe.onerror = function () { slots[idx] = null; done(); };
+        probe.src = 'img/' + key + '-' + idx + '.jpg';
+      })(i);
+    }
+
+    function done() {
+      if (--pending > 0) return;
+      var html = '', found = [];
+      for (var i = 1; i <= MAX; i++) {
+        if (!slots[i]) continue;
+        found.push(slots[i].src);
+        html += '<figure' + (slots[i].wide ? ' class="ac2-pano"' : '') +
+                '><img src="' + slots[i].src + '" alt="' + (ALT[key] || '') +
+                '" loading="lazy"></figure>';
+      }
+      if (!html) return;                 /* no photos yet -> stay hidden */
+      box.innerHTML = html;
+      box.hidden = false;
+      for (var j = 0; j < found.length; j++) {
+        if (shots.indexOf(found[j]) < 0) shots.push(found[j]);
+      }
+      box.addEventListener('click', function (e) {
+        var img = e.target.closest ? e.target.closest('figure') : null;
+        if (img && img.querySelector('img')) open(img.querySelector('img').src);
+      });
+    }
+  }
+
+  function init() {
+    var boxes = document.querySelectorAll('.ac2-gallery[data-gallery]');
+    for (var i = 0; i < boxes.length; i++) build(boxes[i]);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else { init(); }
+})();
+</script>
+
 </body>
 </html>
