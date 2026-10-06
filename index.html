@@ -3027,6 +3027,100 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
 .game-card .game-score i.loss { background: transparent; color: var(--sub); border: 1px solid var(--line); }
 .game-card.has-result .game-time { display: none; }
 .game-card.has-result { opacity: 0.92; }
+
+/* ========================= SEASON RECORD ========================= */
+.season-record[hidden] { display: none !important; }
+.season-record {
+  background: var(--navy); color: #fff;
+  padding: 20px 24px; margin-bottom: 28px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; flex-wrap: wrap;
+}
+.season-record .sr-line { display: flex; align-items: baseline; gap: 14px; }
+.season-record .sr-label {
+  font-family: "Bebas Neue", sans-serif; font-size: 12px;
+  letter-spacing: 0.22em; color: var(--gold);
+}
+.season-record .sr-wdl {
+  font-family: "Oswald", sans-serif; font-size: 26px; font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.season-record .sr-stats { display: flex; gap: 26px; flex-wrap: wrap; }
+.season-record .sr-stats > span { text-align: center; }
+.season-record .sr-stats em {
+  display: block; font-style: normal;
+  font-family: "Oswald", sans-serif; font-size: 22px; font-weight: 700;
+  color: var(--gold); font-variant-numeric: tabular-nums;
+}
+.season-record .sr-stats > span > span {
+  display: block; margin-top: 2px;
+  font-size: 10px; letter-spacing: 0.14em; color: rgba(255,255,255,0.6);
+}
+/* watch link on a fixture card */
+.game-watch {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 12px; padding: 7px 14px;
+  border: 1px solid var(--line); cursor: pointer;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  color: var(--navy); transition: all 0.2s;
+}
+.game-watch:hover { background: var(--navy); color: var(--gold); border-color: var(--navy); }
+.game-watch::before {
+  content: "▶"; font-size: 8px; color: #e53935;
+}
+.game-watch:hover::before { color: var(--gold); }
+@media (max-width: 760px) {
+  .season-record { padding: 16px 18px; }
+  .season-record .sr-stats { gap: 16px; width: 100%; justify-content: space-between; }
+}
+
+/* ===== player modal stats ===== */
+.player-modal-stats[hidden] { display: none !important; }
+.player-modal-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  background: var(--bg); border-bottom: 1px solid var(--line);
+}
+.player-modal-stats > div { text-align: center; padding: 16px 8px; }
+.player-modal-stats > div + div { border-left: 1px solid var(--line); }
+.player-modal-stats em {
+  display: block; font-style: normal;
+  font-family: "Oswald", sans-serif; font-size: 26px; font-weight: 700;
+  color: var(--navy); line-height: 1; font-variant-numeric: tabular-nums;
+}
+.player-modal-stats span {
+  display: block; margin-top: 5px;
+  font-size: 10px; letter-spacing: 0.16em; color: var(--sub);
+}
+
+/* ========================= NEWS ARTICLE MODAL ========================= */
+.news-modal { max-width: 720px; }
+.news-modal-head { padding: 34px 32px 22px; border-bottom: 1px solid var(--line); }
+.news-modal-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.news-modal-cat {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  padding: 5px 12px; background: var(--navy); color: var(--gold);
+}
+.news-modal-date {
+  font-family: "Oswald", sans-serif; font-size: 13px;
+  letter-spacing: 0.08em; color: var(--sub);
+}
+.news-modal-title {
+  font-size: clamp(19px, 2.3vw, 26px); font-weight: 700;
+  line-height: 1.5; color: var(--navy);
+}
+.news-modal-body { padding: 26px 32px 36px; }
+.news-modal-body p { font-size: 15px; line-height: 2; margin-bottom: 1.3em; }
+.news-modal-body p:last-child { margin-bottom: 0; }
+/* only items with a body behave like links */
+.news-item.has-body { cursor: pointer; }
+.news-item.has-body:hover .news-title { color: var(--gold-deep); text-decoration: underline; }
+.news-item.has-body .news-title::after {
+  content: " →"; font-family: "Oswald", sans-serif; color: var(--gold-deep);
+}
+@media (max-width: 760px) {
+  .news-modal-head { padding: 26px 20px 18px; }
+  .news-modal-body { padding: 20px 20px 30px; }
+}
 </style>
 </head>
 <body>
@@ -3315,7 +3409,7 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
       <a class="news-item fade-in">
         <div class="news-date">2026.10.03</div>
         <div class="news-category" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</div>
-        <div class="news-title" data-ja="【離脱】Ginga SHIGA選手、Shion MITARAI選手が移籍を前提とした準備のためチームを離脱いたしました。" data-en="[Departure] Ginga SHIGA and Shion MITARAI have left the squad to prepare for transfers.">【離脱】Ginga SHIGA選手、Shion MITARAI選手が移籍を前提とした準備のためチームを離脱いたしました。</div>
+        <div class="news-title" data-body-ja="このたび、Ginga SHIGA選手（DF・背番号2）およびShion MITARAI選手（MF・背番号8）が、移籍を前提とした準備のため、サバナケット・ゼロスFCを離脱することとなりましたのでお知らせいたします。||両選手はクラブの立ち上げから2026-27シーズンのプレシーズンまでチームを支えてくれました。クラブとしては残念な決断ですが、二人が次のステージで挑戦することを後押ししたいと考えています。||これまでのチームへの貢献に心より感謝するとともに、今後のさらなる活躍を祈念いたします。" data-body-en="Ginga SHIGA (DF, no. 2) and Shion MITARAI (MF, no. 8) have left Savannakhet Zelos FC to prepare for transfers.||Both players supported the squad from the club&apos;s launch through the 2026-27 pre-season. It is a difficult decision for the club, but we want to back them as they take on their next challenge.||We thank them sincerely for everything they gave the team and wish them every success." data-ja="【離脱】Ginga SHIGA選手、Shion MITARAI選手が移籍を前提とした準備のためチームを離脱いたしました。" data-en="[Departure] Ginga SHIGA and Shion MITARAI have left the squad to prepare for transfers.">【離脱】Ginga SHIGA選手、Shion MITARAI選手が移籍を前提とした準備のためチームを離脱いたしました。</div>
       </a>
       <a class="news-item fade-in">
         <div class="news-date" data-ja="プレシーズン" data-en="Preseason">プレシーズン</div>
@@ -3385,73 +3479,73 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
       <a class="news-item fade-in">
     <div class="news-date">2026.08.16</div>
         <div class="news-category" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</div>
-        <div class="news-title" data-ja="【新加入選手】2026-27シーズン 清家 隆誠選手が加入" data-en="[New Signing] Porci Joins for 2026-27 Season">【新加入選手】2026-27シーズン 清家 隆誠選手が加入</div>
+        <div class="news-title" data-body-ja="サバナケット・ゼロスFCは、2026-27シーズンより清家隆誠（せいけ りゅうせい）選手が加入することをお知らせいたします。背番号は21、ポジションはFWです。||清家選手は2000年5月7日生まれ。【要確認：前所属クラブ・経歴】||クラブからのコメント：【要確認：監督またはクラブ代表のコメント】||清家選手本人のコメント：【要確認：本人コメント】" data-body-en="Savannakhet Zelos FC is pleased to announce that Ryusei Seike joins the club for the 2026-27 season. He wears number 21 and plays as a forward.||Seike was born on 7 May 2000. [TO CONFIRM: previous club and career history]||Player comment: [TO CONFIRM]" data-ja="【新加入選手】2026-27シーズン 清家 隆誠選手が加入" data-en="[New Signing] Porci Joins for 2026-27 Season">【新加入選手】2026-27シーズン 清家 隆誠選手が加入</div>
       </a>  
 <a class="news-item fade-in">
     <div class="news-date">2026.08.16</div>
         <div class="news-category" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</div>
-        <div class="news-title" data-ja="【新加入選手】2026-27シーズン ポルチこと小平 龍世選手が加入" data-en="[New Signing] Porci Joins for 2026-27 Season">【新加入選手】2026-27シーズン ポルチこと小平 龍世選手が加入</div>
+        <div class="news-title" data-body-ja="サバナケット・ゼロスFCは、2026-27シーズンより小平龍世（こだいら りゅうせい）選手が加入することをお知らせいたします。背番号は17、ポジションはDFです。チーム内外では愛称の「ポルチ」で親しまれています。||小平選手は2003年2月1日生まれ。【要確認：前所属クラブ・経歴】||小平選手本人のコメント：【要確認：本人コメント】" data-body-en="Savannakhet Zelos FC is pleased to announce that Ryusei Kodaira joins the club for the 2026-27 season. He wears number 17 and plays as a defender, and is known to team-mates and supporters by his nickname, Porci.||Kodaira was born on 1 February 2003. [TO CONFIRM: previous club and career history]||Player comment: [TO CONFIRM]" data-ja="【新加入選手】2026-27シーズン ポルチこと小平 龍世選手が加入" data-en="[New Signing] Porci Joins for 2026-27 Season">【新加入選手】2026-27シーズン ポルチこと小平 龍世選手が加入</div>
       </a> 
        <a class="news-item fade-in">
         <div class="news-date">2026.08.16</div>
         <div class="news-category" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</div>
-        <div class="news-title" data-ja="【離脱】糸房 珠希選手が移籍を前提とした準備のためチームを離脱いたしました。" data-en="Itohusa move team">【離脱】糸房 珠希選手が移籍を前提とした準備のためチームを離脱いたしました。</div>
+        <div class="news-title" data-body-ja="このたび、糸房珠希（いとふさ しゅき）選手が、移籍を前提とした準備のため、サバナケット・ゼロスFCを離脱することとなりましたのでお知らせいたします。||糸房選手はMFとして背番号14を背負い、クラブの立ち上げ期を支えてくれました。【要確認：在籍期間中の出場数・得点などの実績】||これまでのチームへの貢献に心より感謝するとともに、今後のさらなる活躍を祈念いたします。" data-body-en="Shuki Itofusa has left Savannakhet Zelos FC to prepare for a transfer.||Itofusa wore number 14 as a midfielder and supported the squad through the club&amp;apos;s first months. [TO CONFIRM: appearances and goals during his spell]||We thank him sincerely for his contribution and wish him every success." data-ja="【離脱】糸房 珠希選手が移籍を前提とした準備のためチームを離脱いたしました。" data-en="Itohusa move team">【離脱】糸房 珠希選手が移籍を前提とした準備のためチームを離脱いたしました。</div>
       </a>
     <a class="news-item fade-in">
         <div class="news-date">2026.06.22</div>
         <div class="news-category" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</div>
-        <div class="news-title" data-ja="【退任】現地セールスマネージャーの砂原浩二が退任しました。" data-en="[New Staff] Koji Sunahara Appointed as Local Sales Manager">【新スタッフ】現地セールスマネージャーに砂原浩二が就任</div>
+        <div class="news-title" data-body-ja="現地セールスマネージャーを務めておりました砂原浩二が、2026年6月をもって退任いたしましたのでお知らせいたします。||砂原は2026年4月27日に現地セールスマネージャーに就任し、約2か月にわたりラオス現地でのスポンサー営業およびクラブ運営を担当いたしました。【要確認：在任中の主な功績】||クラブへの貢献に感謝するとともに、今後のご活躍をお祈りいたします。なお、後任については【要確認：後任の有無・体制】。" data-body-en="Koji Sunahara stepped down as Local Sales Manager in June 2026.||Sunahara was appointed Local Sales Manager on 27 April 2026 and led sponsorship sales and club operations on the ground in Laos for around two months. [TO CONFIRM: main achievements]||We thank him for his contribution and wish him well. [TO CONFIRM: successor or new structure]" data-ja="【退任】現地セールスマネージャーの砂原浩二が退任しました。" data-en="[Departure] Koji Sunahara steps down as Local Sales Manager">【退任】現地セールスマネージャーの砂原浩二が退任しました。</div>
       </a>
       
       <a class="news-item fade-in">
         <div class="news-date">2026.04.27</div>
         <div class="news-category" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</div>
-        <div class="news-title" data-ja="【新スタッフ】現地セールスマネージャーに砂原浩二が就任" data-en="[New Staff] Koji Sunahara Appointed as Local Sales Manager">【新スタッフ】現地セールスマネージャーに砂原浩二が就任</div>
+        <div class="news-title" data-body-ja="サバナケット・ゼロスFCは、現地セールスマネージャーに砂原浩二が就任したことをお知らせいたします。||砂原は【要確認：経歴・前職】。ラオス現地でのスポンサーセールスおよびパートナー企業との窓口を担当いたします。||クラブはラオスと日本の二カ国でパートナー企業を募集しており、現地体制の強化により、スポンサー企業の皆さまへより密度の高いサポートをお届けしてまいります。" data-body-en="Savannakhet Zelos FC is pleased to announce the appointment of Koji Sunahara as Local Sales Manager.||[TO CONFIRM: background and previous role] He will lead sponsorship sales in Laos and act as the main point of contact for partner companies.||The club recruits partners in both Laos and Japan, and this strengthened local structure allows us to support our sponsors more closely." data-ja="【新スタッフ】現地セールスマネージャーに砂原浩二が就任" data-en="[New Staff] Koji Sunahara Appointed as Local Sales Manager">【新スタッフ】現地セールスマネージャーに砂原浩二が就任</div>
       </a>
       <a class="news-item fade-in">
         <div class="news-date">2026.04.24</div>
         <div class="news-category event">EVENT</div>
-        <div class="news-title" data-ja="東京トライアウト VOL.2 開催報告" data-en="Tokyo Tryout VOL.2 Event Report">東京トライアウト VOL.2 開催報告</div>
+        <div class="news-title" data-body-ja="2026年4月24日、東京にてZELOS Sports Management主催のトライアウト VOL.2 を開催いたしました。ご参加いただいた選手の皆さま、関係者の皆さまに御礼申し上げます。||当日は【要確認：参加人数】名の選手が参加し、【要確認：実施内容。例：フィジカル測定、ミニゲーム形式の実戦など】を行いました。||トライアウトの結果については【要確認：合格者の発表方法・時期】。サバナケット・ゼロスFCは、国籍や経歴に関わらず挑戦できる場をつくるという理念のもと、今後もトライアウトを継続して開催してまいります。" data-body-en="ZELOS Sports Management held Tokyo Tryout VOL.2 on 24 April 2026. Our thanks go to every player and everyone who helped make it happen.||[TO CONFIRM: number of participants] players took part in [TO CONFIRM: what was run on the day].||[TO CONFIRM: how and when results will be announced] Savannakhet Zelos FC was founded on the belief that anyone should be able to pursue a challenge through sport, whatever their background or nationality, and we will continue to hold these tryouts." data-ja="東京トライアウト VOL.2 開催報告" data-en="Tokyo Tryout VOL.2 Event Report">東京トライアウト VOL.2 開催報告</div>
       </a>
       <a class="news-item fade-in">
         <div class="news-date">2026.04.18</div>
         <div class="news-category" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</div>
-        <div class="news-title" data-ja="【新加入選手】2026-27シーズン 本多涼祐選手（最終所属：明治学院大学体育会サッカー部）が加入" data-en="[New Signing] Ryosuke Honda Joins for 2026-27 Season (Previous: Meiji Gakuin University FC)">【新加入選手】2026-27シーズン 本多涼祐選手（最終所属：明治学院大学体育会サッカー部）が加入</div>
+        <div class="news-title" data-body-ja="サバナケット・ゼロスFCは、2026-27シーズンより本多涼祐（ほんだ りょうすけ）選手が加入することをお知らせいたします。最終所属は明治学院大学体育会サッカー部です。||【要確認：ポジション・背番号・生年月日】||本多選手本人のコメント：【要確認：本人コメント】" data-body-en="Savannakhet Zelos FC is pleased to announce that Ryosuke Honda joins the club for the 2026-27 season from Meiji Gakuin University FC.||[TO CONFIRM: position, shirt number, date of birth]||Player comment: [TO CONFIRM]" data-ja="【新加入選手】2026-27シーズン 本多涼祐選手（最終所属：明治学院大学体育会サッカー部）が加入" data-en="[New Signing] Ryosuke Honda Joins for 2026-27 Season (Previous: Meiji Gakuin University FC)">【新加入選手】2026-27シーズン 本多涼祐選手（最終所属：明治学院大学体育会サッカー部）が加入</div>
       </a>
       <a class="news-item fade-in">
         <div class="news-date">2026.04.18</div>
         <div class="news-category" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</div>
-        <div class="news-title" data-ja="【新加入選手】2026-27シーズン 御手洗紫苑選手が明海大学より加入" data-en="[New Signing] Shion Mitarai Joins from Meikai University for 2026-27 Season">【新加入選手】2026-27シーズン 御手洗紫苑選手が明海大学より加入</div>
+        <div class="news-title" data-body-ja="サバナケット・ゼロスFCは、2026-27シーズンより御手洗紫苑（みたらい しおん）選手が明海大学より加入することをお知らせいたします。ポジションはMF、背番号は8です。||御手洗選手は2006年8月10日生まれ。大学在学中からの海外挑戦となります。【要確認：大学での実績・特長】||御手洗選手本人のコメント：【要確認：本人コメント】" data-body-en="Savannakhet Zelos FC is pleased to announce that Shion Mitarai joins the club for the 2026-27 season from Meikai University. He plays as a midfielder and wears number 8.||Mitarai was born on 10 August 2006 and makes the move abroad while still at university. [TO CONFIRM: university record and playing style]||Player comment: [TO CONFIRM]" data-ja="【新加入選手】2026-27シーズン 御手洗紫苑選手が明海大学より加入" data-en="[New Signing] Shion Mitarai Joins from Meikai University for 2026-27 Season">【新加入選手】2026-27シーズン 御手洗紫苑選手が明海大学より加入</div>
       </a>
       <a class="news-item fade-in">
         <div class="news-date">2026.04.18</div>
         <div class="news-category" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</div>
-        <div class="news-title" data-ja="【新加入選手】2026-27シーズン 菅澤孝也選手がサラワンユナイテッドより加入" data-en="[New Signing] Takaya Sugasawa Joins from Salavan United for 2026-27 Season">【新加入選手】2026-27シーズン 菅澤孝也選手がサラワンユナイテッドより加入</div>
+        <div class="news-title" data-body-ja="サバナケット・ゼロスFCは、2026-27シーズンより菅澤孝也（すがさわ たかや）選手がサラワンユナイテッドより加入することをお知らせいたします。ポジションはFW、背番号は9です。||菅澤選手は1987年11月15日生まれ。ラオス・プレミアリーグでの経験を持つアタッカーで、【要確認：これまでの通算成績・特長】||菅澤選手本人のコメント：【要確認：本人コメント】" data-body-en="Savannakhet Zelos FC is pleased to announce that Takaya Sugasawa joins the club for the 2026-27 season from Salavan United. He plays as a forward and wears number 9.||Sugasawa was born on 15 November 1987 and arrives with Lao Premier League experience. [TO CONFIRM: career record and playing style]||Player comment: [TO CONFIRM]" data-ja="【新加入選手】2026-27シーズン 菅澤孝也選手がサラワンユナイテッドより加入" data-en="[New Signing] Takaya Sugasawa Joins from Salavan United for 2026-27 Season">【新加入選手】2026-27シーズン 菅澤孝也選手がサラワンユナイテッドより加入</div>
       </a>
       <a class="news-item fade-in">
         <div class="news-date">2026.04.18</div>
         <div class="news-category" data-ja="トップチーム" data-en="TOP TEAM">トップチーム</div>
-        <div class="news-title" data-ja="【新加入選手】2026-27シーズン ナロンシット選手がサラワンユナイテッドより加入" data-en="[New Signing] Nalongsit Joins from Salavan United for 2026-27 Season">【新加入選手】2026-27シーズン ナロンシット選手がサラワンユナイテッドより加入</div>
+        <div class="news-title" data-body-ja="サバナケット・ゼロスFCは、2026-27シーズンよりNalongsith CHANHTHALANGSY（ナロンシット）選手がサラワンユナイテッドより加入することをお知らせいたします。ポジションはDF、背番号は99です。||ナロンシット選手は2001年12月31日生まれのラオス人選手です。【要確認：これまでの実績・代表歴の有無】||ナロンシット選手本人のコメント：【要確認：本人コメント】" data-body-en="Savannakhet Zelos FC is pleased to announce that Nalongsith Chanhthalangsy joins the club for the 2026-27 season from Salavan United. He plays as a defender and wears number 99.||Nalongsith is a Lao player born on 31 December 2001. [TO CONFIRM: career record and any international caps]||Player comment: [TO CONFIRM]" data-ja="【新加入選手】2026-27シーズン ナロンシット選手がサラワンユナイテッドより加入" data-en="[New Signing] Nalongsit Joins from Salavan United for 2026-27 Season">【新加入選手】2026-27シーズン ナロンシット選手がサラワンユナイテッドより加入</div>
       </a>
       <a class="news-item fade-in">
         <div class="news-date">2026.04.15</div>
         <div class="news-category event">EVENT</div>
-        <div class="news-title" data-ja="【4/24 東京】ZELOS Sports Management Tokyo Tryout VOL.2 開催決定" data-en="[Apr 24 Tokyo] ZELOS Sports Management Tokyo Tryout VOL.2 Announced">【4/24 東京】ZELOS Sports Management Tokyo Tryout VOL.2 開催決定</div>
+        <div class="news-title" data-body-ja="ZELOS Sports Managementは、2026年4月24日（金）に東京にてトライアウト VOL.2 を開催いたします。||サバナケット・ゼロスFCをはじめとする海外クラブへの挑戦を目指す選手を対象としたトライアウトです。会場は【要確認：会場名・住所】、時間は【要確認：開始・終了時刻】、参加費は【要確認：参加費】となります。||お申し込みは【要確認：申込方法・締切】。国籍や経歴を問わず、どなたでもご参加いただけます。" data-body-en="ZELOS Sports Management will hold Tokyo Tryout VOL.2 in Tokyo on Friday 24 April 2026.||The tryout is open to players aiming to earn a move abroad, including to Savannakhet Zelos FC. Venue: [TO CONFIRM]. Time: [TO CONFIRM]. Entry fee: [TO CONFIRM].||To apply: [TO CONFIRM: how to apply and the deadline]. The tryout is open to everyone, whatever their nationality or background." data-ja="【4/24 東京】ZELOS Sports Management Tokyo Tryout VOL.2 開催決定" data-en="[Apr 24 Tokyo] ZELOS Sports Management Tokyo Tryout VOL.2 Announced">【4/24 東京】ZELOS Sports Management Tokyo Tryout VOL.2 開催決定</div>
       </a>
       <a class="news-item fade-in">
         <div class="news-date">2026.04.08</div>
         <div class="news-category goods" data-ja="グッズ" data-en="GOODS">グッズ</div>
-        <div class="news-title" data-ja="2026-27 新ユニフォームの日本国内からの購入方法について" data-en="How to Purchase 2026-27 New Uniforms from Within Japan">2026-27 新ユニフォームの日本国内からの購入方法について</div>
+        <div class="news-title" data-body-ja="2026-27シーズンの公式ユニフォームについて、日本国内からのご購入方法をご案内いたします。||価格は9,500円（税込）、サイズはS・M・L・XL・2XLをご用意しております。素材はポリエステルのドライメッシュです。お好きな名前と背番号の名入れも承っております（＋1,500円）。||ご注文はサイト内のSHOPページのフォームよりお願いいたします。お申し込み後、担当者より振込先およびPayPayのお支払い情報を記載したメールをお送りいたします。ご入金の確認後に発送となります。【要確認：送料・お届けまでの目安日数】" data-body-en="Here is how to order the 2026-27 official kit from within Japan.||The shirt is 9,500 yen including tax, in sizes S, M, L, XL and 2XL, made from polyester dry mesh. Custom name and number printing is available for an extra 1,500 yen.||Please order through the form on the SHOP page. Once we receive your order, we will email you our bank transfer and PayPay payment details, and the shirt ships once payment is confirmed. [TO CONFIRM: shipping cost and delivery time]" data-ja="2026-27 新ユニフォームの日本国内からの購入方法について" data-en="How to Purchase 2026-27 New Uniforms from Within Japan">2026-27 新ユニフォームの日本国内からの購入方法について</div>
       </a>
       <a class="news-item fade-in">
         <div class="news-date">2026.04.05</div>
         <div class="news-category" data-ja="スポンサー" data-en="SPONSOR">スポンサー</div>
-        <div class="news-title" data-ja="背中スポンサー決定のお知らせ" data-en="Back Sponsor Announcement">背中スポンサー決定のお知らせ</div>
+        <div class="news-title" data-body-ja="2026-27シーズンのユニフォーム背中スポンサーが決定いたしましたのでお知らせいたします。||背中スポンサーは【要確認：企業名】様です。【要確認：企業紹介・事業内容】||ご支援いただくパートナー企業の皆さまとともに、サバナケット・ゼロスFCはラオス・プレミアリーグでの戦いに臨んでまいります。引き続きご声援のほどよろしくお願いいたします。" data-body-en="The back-of-shirt sponsor for the 2026-27 season has been confirmed.||Our back sponsor is [TO CONFIRM: company name]. [TO CONFIRM: short introduction to the company]||Together with our partners, Savannakhet Zelos FC will take on the Lao Premier League this season. Thank you for your continued support." data-ja="背中スポンサー決定のお知らせ" data-en="Back Sponsor Announcement">背中スポンサー決定のお知らせ</div>
       </a>
       <a class="news-item fade-in">
         <div class="news-date">2026.04.03</div>
         <div class="news-category event">EVENT</div>
-        <div class="news-title" data-ja="東京トライアウト VOL.1 開催報告" data-en="Tokyo Tryout VOL.1 Event Report">東京トライアウト VOL.1 開催報告</div>
+        <div class="news-title" data-body-ja="2026年4月3日、東京にてZELOS Sports Management主催のトライアウト VOL.1 を開催いたしました。ご参加いただいた選手の皆さま、関係者の皆さまに御礼申し上げます。||当日は【要確認：参加人数】名の選手が参加し、【要確認：実施内容】を行いました。||サバナケット・ゼロスFCは、背景や国籍に関わらず誰もが挑戦できる環境をつくることを理念に掲げています。次回トライアウトの開催については、クラブ公式SNSおよび当サイトにてお知らせいたします。" data-body-en="ZELOS Sports Management held Tokyo Tryout VOL.1 on 3 April 2026. Our thanks go to every player and everyone who helped make it happen.||[TO CONFIRM: number of participants] players took part in [TO CONFIRM: what was run on the day].||Savannakhet Zelos FC exists to build an environment where anyone can take on a challenge, whatever their background or nationality. Details of the next tryout will be announced on the club&amp;apos;s social accounts and on this site." data-ja="東京トライアウト VOL.1 開催報告" data-en="Tokyo Tryout VOL.1 Event Report">東京トライアウト VOL.1 開催報告</div>
       </a>
     </div>
   </div>
@@ -3885,15 +3979,49 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
         <div class="player-modal-tags" id="modalTags"></div>
       </div>
     </div>
+    <div class="player-modal-stats" id="modalStats" hidden>
+      <div><em id="msApps">0</em><span data-ja="出場" data-en="APPS">出場</span></div>
+      <div><em id="msGoals">0</em><span data-ja="得点" data-en="GOALS">得点</span></div>
+      <div><em id="msAge">-</em><span data-ja="年齢" data-en="AGE">年齢</span></div>
+    </div>
     <div class="player-modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ==================== NEWS ARTICLE MODAL ==================== -->
+<div class="player-modal-overlay" id="newsModal" onclick="closeNewsModal(event)">
+  <div class="player-modal news-modal" onclick="event.stopPropagation()">
+    <button class="player-modal-close" onclick="closeNewsModal()">×</button>
+    <div class="news-modal-head">
+      <div class="news-modal-meta">
+        <span class="news-modal-cat" id="nmCat"></span>
+        <span class="news-modal-date" id="nmDate"></span>
+      </div>
+      <h3 class="news-modal-title" id="nmTitle"></h3>
+    </div>
+    <div class="news-modal-body" id="nmBody"></div>
   </div>
 </div>
 
 <!-- ==================== SCHEDULE PAGE ==================== -->
 <div class="page" id="page-schedule">
 <div class="generic-inner">
-  <h2>GAME SCHEDULE</h2>
-  <p style="color:var(--sub);margin-bottom:32px" data-ja="2026-27シーズン 試合日程一覧" data-en="2026-27 Season Full Match Schedule">2026-27シーズン 試合日程一覧</p>
+  <h2>GAME &amp; RESULT</h2>
+  <p style="color:var(--sub);margin-bottom:24px" data-ja="2026-27シーズン 日程・結果" data-en="2026-27 Season Fixtures &amp; Results">2026-27シーズン 日程・結果</p>
+
+  <div class="season-record" id="seasonRecord" hidden>
+    <div class="sr-line">
+      <span class="sr-label" data-ja="リーグ戦 通算" data-en="LEAGUE RECORD">リーグ戦 通算</span>
+      <span class="sr-wdl" id="srWDL"></span>
+    </div>
+    <div class="sr-stats">
+      <span><em id="srPlayed">0</em><span data-ja="試合" data-en="PLAYED">試合</span></span>
+      <span><em id="srPts">0</em><span data-ja="勝点" data-en="PTS">勝点</span></span>
+      <span><em id="srGF">0</em><span data-ja="得点" data-en="GF">得点</span></span>
+      <span><em id="srGA">0</em><span data-ja="失点" data-en="GA">失点</span></span>
+      <span><em id="srGD">0</em><span data-ja="得失点差" data-en="GD">得失点差</span></span>
+    </div>
+  </div>
 
   <div class="game-schedule" style="padding:0">
   <div class="game-card" data-date="2026-10-10">
@@ -5084,6 +5212,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const playerProfiles = {
   anthony: {
     num: '1',
+    dob: '2006-12-12', apps: 0, goals: 0,
     photo: 'img/player-anthony.jpg',
     name: { ja: 'Anthony MYLONAS', en: 'Anthony MYLONAS' },
     nameEn: 'ANTHONY MYLONAS',
@@ -5104,6 +5233,7 @@ const playerProfiles = {
 
   souksavanh: {
     num: '26',
+    dob: '1999-03-05', apps: 0, goals: 0,
     photo: 'img/player-souksavanh.jpg',
     name: { ja: 'Souksavanh SOUNTHAVONG', en: 'Souksavanh SOUNTHAVONG' },
     nameEn: 'SOUKSAVANH SOUNTHAVONG',
@@ -5124,6 +5254,7 @@ const playerProfiles = {
 
   inoue: {
     num: '4',
+    dob: '2001-09-28', apps: 0, goals: 0,
     photo: 'img/player-inoue.jpg',
     name: { ja: 'Shota INOUE', en: 'Shota INOUE' },
     nameEn: 'SHOTA INOUE',
@@ -5144,6 +5275,7 @@ const playerProfiles = {
 
   orr: {
     num: '5',
+    dob: '2009-01-08', apps: 0, goals: 0,
     photo: 'img/player-orr.jpg',
     name: { ja: 'Phisith ORR', en: 'Phisith ORR' },
     nameEn: 'PHISITH ORR',
@@ -5164,6 +5296,7 @@ const playerProfiles = {
 
   kodaira: {
     num: '17',
+    dob: '2003-02-01', apps: 0, goals: 0,
     photo: 'img/player-kodaira.jpg',
     name: { ja: 'Ryusei KODAIRA', en: 'Ryusei KODAIRA' },
     nameEn: 'RYUSEI KODAIRA',
@@ -5184,6 +5317,7 @@ const playerProfiles = {
 
   sato: {
     num: '32',
+    dob: '2002-06-07', apps: 0, goals: 0,
     photo: 'img/player-sato.jpg',
     name: { ja: 'Keita SATO', en: 'Keita SATO' },
     nameEn: 'KEITA SATO',
@@ -5204,6 +5338,7 @@ const playerProfiles = {
 
   kaneiki: {
     num: '55',
+    dob: '2002-06-07', apps: 0, goals: 0,
     photo: 'img/player-kaneiki.jpg',
     name: { ja: 'Hiroto KANEIKI', en: 'Hiroto KANEIKI' },
     nameEn: 'HIROTO KANEIKI',
@@ -5224,6 +5359,7 @@ const playerProfiles = {
 
   nalongsith: {
     num: '99',
+    dob: '2001-12-31', apps: 0, goals: 0,
     photo: 'img/player-nalongsith.jpg',
     name: { ja: 'Nalongsith CHANHTHALANGSY', en: 'Nalongsith CHANHTHALANGSY' },
     nameEn: 'NALONGSITH CHANHTHALANGSY',
@@ -5244,6 +5380,7 @@ const playerProfiles = {
 
   chakkavanh: {
     num: '6',
+    dob: '2006-03-27', apps: 0, goals: 0,
     photo: 'img/player-chakkavanh.jpg',
     name: { ja: 'Chakkavanh MANIVONG', en: 'Chakkavanh MANIVONG' },
     nameEn: 'CHAKKAVANH MANIVONG',
@@ -5264,6 +5401,7 @@ const playerProfiles = {
 
   phoutthasay: {
     num: '7',
+    dob: '1995-12-29', apps: 0, goals: 0,
     photo: 'img/player-phoutthasay.jpg',
     name: { ja: 'Phoutthasay KHOCHALERN', en: 'Phoutthasay KHOCHALERN' },
     nameEn: 'PHOUTTHASAY KHOCHALERN',
@@ -5284,6 +5422,7 @@ const playerProfiles = {
 
   sounthonekhoud: {
     num: '10',
+    dob: '2004-08-22', apps: 0, goals: 0,
     photo: 'img/player-sounthonekhoud.jpg',
     name: { ja: 'Sounthonekhoud PHOMMAVONGXAY', en: 'Sounthonekhoud PHOMMAVONGXAY' },
     nameEn: 'SOUNTHONEKHOUD PHOMMAVONGXAY',
@@ -5304,6 +5443,7 @@ const playerProfiles = {
 
   xayxana: {
     num: '16',
+    dob: '2006-08-11', apps: 0, goals: 0,
     photo: 'img/player-xayxana.jpg',
     name: { ja: 'Xayxana SIHALATH', en: 'Xayxana SIHALATH' },
     nameEn: 'XAYXANA SIHALATH',
@@ -5324,6 +5464,7 @@ const playerProfiles = {
 
   phouttoula: {
     num: '18',
+    dob: '2009-10-14', apps: 0, goals: 0,
     name: { ja: 'Phouttoula KETSOUVANNASAN', en: 'Phouttoula KETSOUVANNASAN' },
     nameEn: 'PHOUTTOULA KETSOUVANNASAN',
     tags: [{ type: 'pos', text: 'MF' }],
@@ -5343,6 +5484,7 @@ const playerProfiles = {
 
   sonexay: {
     num: '22',
+    dob: '2003-06-10', apps: 0, goals: 0,
     name: { ja: 'Sonexay PHANHTHAXAY', en: 'Sonexay PHANHTHAXAY' },
     nameEn: 'SONEXAY PHANHTHAXAY',
     tags: [{ type: 'pos', text: 'MF' }],
@@ -5362,6 +5504,7 @@ const playerProfiles = {
 
   somkhit: {
     num: '25',
+    dob: '2008-02-04', apps: 0, goals: 0,
     name: { ja: 'Somkhit PHOMMATHEP', en: 'Somkhit PHOMMATHEP' },
     nameEn: 'SOMKHIT PHOMMATHEP',
     tags: [{ type: 'pos', text: 'MF' }],
@@ -5381,6 +5524,7 @@ const playerProfiles = {
 
   nikky: {
     num: '36',
+    dob: '2010-12-08', apps: 0, goals: 0,
     name: { ja: 'Nikky INTHILEUTH', en: 'Nikky INTHILEUTH' },
     nameEn: 'NIKKY INTHILEUTH',
     tags: [{ type: 'pos', text: 'MF' }],
@@ -5400,6 +5544,7 @@ const playerProfiles = {
 
   vayer: {
     num: '87',
+    dob: '2008-09-29', apps: 0, goals: 0,
     name: { ja: 'Kongmengyang VAYER', en: 'Kongmengyang VAYER' },
     nameEn: 'KONGMENGYANG VAYER',
     tags: [{ type: 'pos', text: 'MF' }],
@@ -5419,6 +5564,7 @@ const playerProfiles = {
 
   sugasawa: {
     num: '9',
+    dob: '1987-11-15', apps: 0, goals: 0,
     photo: 'img/player-sugasawa.jpg',
     name: { ja: 'Takaya SUGASAWA', en: 'Takaya SUGASAWA' },
     nameEn: 'TAKAYA SUGASAWA',
@@ -5439,6 +5585,7 @@ const playerProfiles = {
 
   singthong: {
     num: '11',
+    dob: '1998-02-16', apps: 0, goals: 0,
     name: { ja: 'Singthong SIYAVONG', en: 'Singthong SIYAVONG' },
     nameEn: 'SINGTHONG SIYAVONG',
     tags: [{ type: 'pos', text: 'FW' }],
@@ -5458,6 +5605,7 @@ const playerProfiles = {
 
   hishida: {
     num: '19',
+    dob: '1993-08-14', apps: 0, goals: 0,
     photo: 'img/player-hishida.jpg',
     name: { ja: 'Taku HISHIDA', en: 'Taku HISHIDA' },
     nameEn: 'TAKU HISHIDA',
@@ -5478,6 +5626,7 @@ const playerProfiles = {
 
   seike: {
     num: '21',
+    dob: '2000-05-07', apps: 0, goals: 0,
     photo: 'img/player-seike.jpg',
     name: { ja: 'Ryusei SEIKE', en: 'Ryusei SEIKE' },
     nameEn: 'RYUSEI SEIKE',
@@ -5498,6 +5647,7 @@ const playerProfiles = {
 
   thanousack: {
     num: '88',
+    dob: '2006-08-21', apps: 0, goals: 0,
     photo: 'img/player-thanousack.jpg',
     name: { ja: 'Thanousack NANTHAVONGDOUANGSY', en: 'Thanousack NANTHAVONGDOUANGSY' },
     nameEn: 'THANOUSACK NANTHAVONGDOUANGSY',
@@ -5576,10 +5726,41 @@ function openPlayerModal(id) {
     tagsEl.appendChild(span);
   });
 
+  // Stats strip (appearances / goals / age)
+  const statsEl = document.getElementById('modalStats');
+  if (player.dob) {
+    const b = new Date(player.dob + 'T00:00:00');
+    const now = new Date();
+    let age = now.getFullYear() - b.getFullYear();
+    const md = now.getMonth() - b.getMonth();
+    if (md < 0 || (md === 0 && now.getDate() < b.getDate())) age--;
+    document.getElementById('msApps').textContent = player.apps != null ? player.apps : 0;
+    document.getElementById('msGoals').textContent = player.goals != null ? player.goals : 0;
+    document.getElementById('msAge').textContent = age;
+    statsEl.hidden = false;
+  } else {
+    statsEl.hidden = true;
+  }
+
   // Body
   const bodyEl = document.getElementById('modalBody');
   bodyEl.innerHTML = '';
-  const profileData = player.profile[lang];
+  const profileData = Object.assign({}, player.profile[lang]);
+  if (player.dob) {
+    const p = player.dob.split('-');
+    const row = (lang === 'en') ? 'Date of Birth' : '生年月日';
+    const val = (lang === 'en')
+      ? p[0] + '.' + p[1] + '.' + p[2]
+      : p[0] + '年' + (+p[1]) + '月' + (+p[2]) + '日';
+    const ordered = {};
+    Object.keys(profileData).forEach(function (k, i) {
+      ordered[k] = profileData[k];
+      if (i === 0) ordered[row] = val;   // right after Position
+    });
+    Object.keys(ordered).forEach(function (k) { profileData[k] = ordered[k]; });
+    for (var k in profileData) { delete profileData[k]; }
+    Object.keys(ordered).forEach(function (k) { profileData[k] = ordered[k]; });
+  }
   Object.keys(profileData).forEach(key => {
     const section = document.createElement('div');
     section.className = 'player-modal-section';
@@ -5828,9 +6009,103 @@ document.addEventListener('keydown', (e) => {
     document.getElementById('cdS').textContent = pad(sec % 60);
   }
 
+  /* --- season record, built from the entered scores --- */
+  (function () {
+    var box = document.getElementById('seasonRecord');
+    if (!box) return;
+    var played = fixtures.filter(function (f) { return f.score; });
+    if (!played.length) return;
+    var w = 0, d = 0, l = 0, gf = 0, ga = 0;
+    played.forEach(function (f) {
+      gf += f.score.us; ga += f.score.them;
+      if (f.score.outcome === 'win') w++;
+      else if (f.score.outcome === 'draw') d++;
+      else l++;
+    });
+    document.getElementById('srWDL').textContent = w + '勝 ' + d + '分 ' + l + '敗';
+    document.getElementById('srPlayed').textContent = played.length;
+    document.getElementById('srPts').textContent = w * 3 + d;
+    document.getElementById('srGF').textContent = gf;
+    document.getElementById('srGA').textContent = ga;
+    document.getElementById('srGD').textContent = (gf - ga > 0 ? '+' : '') + (gf - ga);
+    box.hidden = false;
+  })();
+
+  /* --- "watch on YouTube" link on every fixture card --- */
+  (function () {
+    var CHANNEL = 'https://www.youtube.com/@savannakhetzelosfc';
+    Array.prototype.forEach.call(document.querySelectorAll('.game-card[data-date]'), function (c) {
+      if (c.classList.contains('is-bye') || c.querySelector('.game-watch')) return;
+      var a = document.createElement('a');
+      a.className = 'game-watch';
+      a.href = c.getAttribute('data-video') || CHANNEL;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      var done = c.classList.contains('has-result');
+      a.setAttribute('data-ja', done ? 'ハイライトを見る' : 'YouTubeで観る');
+      a.setAttribute('data-en', done ? 'WATCH HIGHLIGHTS' : 'WATCH ON YOUTUBE');
+      a.textContent = (typeof currentLang !== 'undefined' && currentLang === 'en')
+        ? (done ? 'WATCH HIGHLIGHTS' : 'WATCH ON YOUTUBE')
+        : (done ? 'ハイライトを見る' : 'YouTubeで観る');
+      c.appendChild(a);
+    });
+  })();
+
   tick();
   setInterval(tick, 1000);
 })();
+</script>
+
+<script>
+/* News articles.
+   ---------------------------------------------------------------------
+   TO PUBLISH AN ARTICLE: on that item's .news-title add
+     data-body-ja="本文…||次の段落…"  data-body-en="English body…||…"
+   Use || to start a new paragraph. An item without a body stays plain
+   text, so nothing ever opens an empty page.
+   --------------------------------------------------------------------- */
+(function () {
+  Array.prototype.forEach.call(document.querySelectorAll('.news-item'), function (item) {
+    var t = item.querySelector('.news-title');
+    if (!t || !t.getAttribute('data-body-ja')) return;
+    item.classList.add('has-body');
+    item.addEventListener('click', function () { openNewsModal(item); });
+  });
+})();
+
+function openNewsModal(item) {
+  var t = item.querySelector('.news-title');
+  var cat = item.querySelector('.news-category');
+  var date = item.querySelector('.news-date');
+  var en = (typeof currentLang !== 'undefined' && currentLang === 'en');
+
+  document.getElementById('nmCat').textContent =
+    cat ? ((en ? cat.getAttribute('data-en') : cat.getAttribute('data-ja')) || cat.textContent).trim() : '';
+  document.getElementById('nmDate').textContent =
+    date ? ((en ? date.getAttribute('data-en') : date.getAttribute('data-ja')) || date.textContent).trim() : '';
+  document.getElementById('nmTitle').textContent =
+    (en ? t.getAttribute('data-en') : t.getAttribute('data-ja')) || t.textContent;
+
+  var raw = (en ? t.getAttribute('data-body-en') : t.getAttribute('data-body-ja'))
+            || t.getAttribute('data-body-ja') || '';
+  var body = document.getElementById('nmBody');
+  body.innerHTML = '';
+  raw.split('||').forEach(function (par) {
+    if (!par.trim()) return;
+    var p = document.createElement('p');
+    p.textContent = par.trim();
+    body.appendChild(p);
+  });
+
+  document.getElementById('newsModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeNewsModal(event) {
+  if (event && event.target.closest('.news-modal') && !event.target.classList.contains('player-modal-close')) return;
+  document.getElementById('newsModal').classList.remove('active');
+  document.body.style.overflow = '';
+}
 </script>
 </body>
 </html>
