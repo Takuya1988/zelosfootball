@@ -3262,6 +3262,32 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
 .ac2-gallery figure:hover img { transform: scale(1.04); opacity: 0.92; }
 .ac2-gallery figure.ac2-pano { column-span: all; }
 
+/* grid layout (PHOTO GALLERY) -- uniform thumbnails, scales to any number */
+.ac2-gallery.ac2-grid {
+  column-count: unset;
+  display: grid; gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.ac2-gallery.ac2-grid figure {
+  margin: 0; aspect-ratio: 4/3; position: relative;
+}
+.ac2-gallery.ac2-grid figure.is-hidden { display: none; }
+.ac2-gallery.ac2-grid img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+}
+.ac2-more { text-align: center; margin: 22px 0 8px; }
+.ac2-more[hidden] { display: none !important; }
+.ac2-more-btn {
+  font-family: "Oswald", sans-serif; font-size: 13px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.14em;
+  padding: 13px 34px; cursor: pointer;
+  background: transparent; color: var(--ink);
+  border: 1px solid var(--navy); border-radius: 2px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.ac2-more-btn:hover { background: var(--navy); color: var(--gold); }
+
 /* lightbox */
 .ac2-lb {
   position: fixed; inset: 0; z-index: 9999;
@@ -3300,6 +3326,7 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
   .ac2-pillars, .ac2-acts { grid-template-columns: 1fr; }
   .ac2-cta, .ac2-partner { padding: 24px 20px; }
   .ac2-gallery { column-count: 1; }
+  .ac2-gallery.ac2-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   .ac2-lb { padding: 20px 12px; }
   .ac2-lb-nav { width: 36px; height: 56px; }
 }
@@ -4385,6 +4412,14 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
   </div>
 
   <div class="ac2-gallery" data-gallery="community" hidden></div>
+
+  <h3 class="ac2-h3">PHOTO GALLERY</h3>
+  <p class="ac2-sub" data-ja="アカデミーの練習と、子どもたちの日常です。" data-en="Training sessions, and the everyday life of our players.">アカデミーの練習と、子どもたちの日常です。</p>
+  <div class="ac2-gallery ac2-grid" data-gallery="gallery" data-layout="grid" hidden></div>
+  <div class="ac2-more" hidden>
+    <button type="button" class="ac2-more-btn" data-for="gallery"
+            data-ja="もっと見る" data-en="SHOW MORE">もっと見る</button>
+  </div>
 
   <div class="ac2-partner">
     <h4 data-ja="アカデミー・育成支援パートナー募集" data-en="Academy &amp; development partners">アカデミー・育成支援パートナー募集</h4>
@@ -6386,19 +6421,29 @@ function closeNewsModal(event) {
 </script>
 
 <script>
-/* ===== ACADEMY / COMMUNITY PHOTO GALLERY =====================================
+/* ===== ACADEMY / COMMUNITY PHOTO GALLERIES ==================================
    TO ADD PHOTOS: just drop the files into img/ with these names. Nothing else.
-     Academy  : img/academy-1.jpg   .. img/academy-12.jpg
-     Community: img/community-1.jpg .. img/community-12.jpg
-   Every photo that exists is shown, at its own shape (tate / yoko / panorama all
-   work). Numbers may have gaps. A gallery with no photos stays fully hidden.
-   Click a photo to open it large; arrow keys and Esc work in the viewer.
+     ZELOS ACADEMY section : img/academy-1.jpg,   img/academy-2.jpg,   ...
+     COMMUNITY section     : img/community-1.jpg, img/community-2.jpg, ...
+     PHOTO GALLERY section : img/gallery-1.jpg,   img/gallery-2.jpg,   ...
+   Number them from 1 upwards with no gaps and there is no limit -- the page
+   keeps looking until it finds 4 missing numbers in a row, so gallery-15,
+   gallery-16 ... appear by themselves as soon as you upload them.
+   The first two galleries lay the photos out at their own shape (tate / yoko /
+   panorama all work). PHOTO GALLERY uses even thumbnails and shows 12 at a
+   time behind a MORE button. A gallery with no photos stays fully hidden.
+   Click any photo to open it large; arrow keys and Esc work in the viewer.
    ========================================================================== */
 (function () {
-  var MAX = 12;
-  var ALT = { academy: 'ZELOS ACADEMY', community: 'ZELOS IN THE COMMUNITY' };
+  var WAVE = 6;          /* how many numbers to look for at once */
+  var STOP_AFTER = 4;    /* give up after this many misses in a row */
+  var PAGE = 12;         /* thumbnails shown before the MORE button */
+  var ALT = { academy: 'ZELOS ACADEMY',
+              community: 'ZELOS IN THE COMMUNITY',
+              gallery: 'ZELOS ACADEMY' };
   var lb, lbImg, shots = [], at = 0;
 
+  /* ---------- viewer ---------- */
   function makeLightbox() {
     if (lb) return;
     lb = document.createElement('div');
@@ -6415,7 +6460,7 @@ function closeNewsModal(event) {
     lb.querySelector('.ac2-lb-next').onclick = function (e) { e.stopPropagation(); step(1); };
     lb.onclick = function (e) { if (e.target === lb || e.target === lbImg) close(); };
     document.addEventListener('keydown', function (e) {
-      if (lb.hidden) return;
+      if (!lb || lb.hidden) return;
       if (e.key === 'Escape') close();
       else if (e.key === 'ArrowLeft') step(-1);
       else if (e.key === 'ArrowRight') step(1);
@@ -6431,45 +6476,78 @@ function closeNewsModal(event) {
   function close() { lb.hidden = true; document.body.style.overflow = ''; }
   function step(d) { at = (at + d + shots.length) % shots.length; lbImg.src = shots[at]; }
 
+  /* ---------- find the photos ---------- */
+  function scan(key, onDone) {
+    var found = [], next = 1, misses = 0;
+
+    function wave() {
+      var batch = [], left = WAVE;
+      for (var i = 0; i < WAVE; i++) {
+        (function (num) {
+          var probe = new Image();
+          probe.onload = function () {
+            batch[num] = { src: probe.src,
+                           wide: probe.naturalWidth / probe.naturalHeight >= 2.4 };
+            settle();
+          };
+          probe.onerror = function () { batch[num] = null; settle(); };
+          probe.src = 'img/' + key + '-' + num + '.jpg';
+        })(next + i);
+      }
+      function settle() {
+        if (--left > 0) return;
+        for (var n = next; n < next + WAVE; n++) {
+          if (batch[n]) { found.push(batch[n]); misses = 0; }
+          else if (++misses >= STOP_AFTER) { return onDone(found); }
+        }
+        next += WAVE;
+        wave();
+      }
+    }
+    wave();
+  }
+
+  /* ---------- draw ---------- */
   function build(box) {
     var key = box.getAttribute('data-gallery');
     if (!key) return;
-    var slots = [], pending = MAX;
+    var paged = box.getAttribute('data-layout') === 'grid';
 
-    for (var i = 1; i <= MAX; i++) {
-      (function (idx) {
-        var probe = new Image();
-        probe.onload  = function () {
-          slots[idx] = { src: probe.src,
-                         wide: probe.naturalWidth / probe.naturalHeight >= 2.4 };
-          done();
-        };
-        probe.onerror = function () { slots[idx] = null; done(); };
-        probe.src = 'img/' + key + '-' + idx + '.jpg';
-      })(i);
-    }
+    scan(key, function (found) {
+      if (!found.length) return;           /* no photos yet -> stay hidden */
 
-    function done() {
-      if (--pending > 0) return;
-      var html = '', found = [];
-      for (var i = 1; i <= MAX; i++) {
-        if (!slots[i]) continue;
-        found.push(slots[i].src);
-        html += '<figure' + (slots[i].wide ? ' class="ac2-pano"' : '') +
-                '><img src="' + slots[i].src + '" alt="' + (ALT[key] || '') +
+      var html = '';
+      for (var i = 0; i < found.length; i++) {
+        var hide = paged && i >= PAGE ? ' is-hidden' : '';
+        html += '<figure class="' + (found[i].wide ? 'ac2-pano' : '') + hide +
+                '"><img src="' + found[i].src + '" alt="' + (ALT[key] || '') +
                 '" loading="lazy"></figure>';
+        if (shots.indexOf(found[i].src) < 0) shots.push(found[i].src);
       }
-      if (!html) return;                 /* no photos yet -> stay hidden */
       box.innerHTML = html;
       box.hidden = false;
-      for (var j = 0; j < found.length; j++) {
-        if (shots.indexOf(found[j]) < 0) shots.push(found[j]);
-      }
+
       box.addEventListener('click', function (e) {
-        var img = e.target.closest ? e.target.closest('figure') : null;
-        if (img && img.querySelector('img')) open(img.querySelector('img').src);
+        var fig = e.target.closest && e.target.closest('figure');
+        var img = fig && fig.querySelector('img');
+        if (img) open(img.src);
       });
-    }
+
+      if (paged && found.length > PAGE) {
+        var wrap = box.parentNode.querySelector('.ac2-more');
+        var btn  = wrap && wrap.querySelector('[data-for="' + key + '"]');
+        if (btn) {
+          wrap.hidden = false;
+          btn.onclick = function () {
+            var hidden = box.querySelectorAll('figure.is-hidden');
+            for (var j = 0; j < hidden.length && j < PAGE; j++) {
+              hidden[j].classList.remove('is-hidden');
+            }
+            if (!box.querySelector('figure.is-hidden')) wrap.hidden = true;
+          };
+        }
+      }
+    });
   }
 
   function init() {
