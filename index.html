@@ -3331,6 +3331,177 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
   .ac2-lb-nav { width: 36px; height: 56px; }
 }
 
+
+/* ---- deck additions: shared blocks ---- */
+.ac2-split {
+  display: grid; gap: 18px; grid-template-columns: 1fr 1fr;
+  margin-bottom: 36px;
+}
+.ac2-col-head {
+  font-family: "Oswald", sans-serif; font-size: 14px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  padding-bottom: 10px; margin: 0 0 14px; border-bottom: 2px solid var(--line);
+}
+.ac2-col-head.problem { color: #9c2b2b; border-bottom-color: #9c2b2b; }
+.ac2-col-head.answer  { color: var(--gold-deep); border-bottom-color: var(--gold); }
+.ac2-item {
+  background: #fff; border: 1px solid var(--line); border-radius: 4px;
+  padding: 20px 20px 18px; margin-bottom: 12px;
+}
+.ac2-item.problem { border-left: 5px solid #9c2b2b; }
+.ac2-item.answer  { border-left: 5px solid var(--gold); }
+.ac2-item-num {
+  font-family: "Oswald", sans-serif; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.14em; color: var(--sub); margin-bottom: 7px;
+}
+.ac2-item h5 { font-size: 15px; font-weight: 700; margin: 0 0 8px; color: var(--ink); }
+.ac2-item p { font-size: 13px; line-height: 1.8; color: var(--sub); margin: 0; }
+
+.ac2-stats {
+  display: flex; flex-wrap: wrap; gap: 36px; margin: 0 0 28px;
+}
+.ac2-stat { border-left: 5px solid var(--gold); padding-left: 14px; }
+.ac2-stat-num {
+  font-family: "Oswald", sans-serif; font-size: 34px; font-weight: 700;
+  line-height: 1.05; color: var(--ink);
+}
+.ac2-stat-label { font-size: 12px; color: var(--sub); margin-top: 5px; }
+
+.ac2-proof {
+  display: grid; gap: 18px; grid-template-columns: 1.05fr 1fr;
+  align-items: start; margin-bottom: 14px;
+}
+.ac2-proof-main {
+  background: var(--navy); color: #fff; border-radius: 4px;
+  padding: 26px 24px 24px; border-left: 6px solid var(--gold);
+}
+.ac2-proof-tag {
+  display: inline-block; font-family: "Oswald", sans-serif; font-size: 11px;
+  font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+  background: var(--gold); color: var(--navy);
+  padding: 5px 11px; border-radius: 2px; margin-bottom: 14px;
+}
+.ac2-proof-main h4 {
+  font-size: 19px; font-weight: 700; margin: 0 0 12px; color: var(--gold);
+  line-height: 1.5;
+}
+.ac2-proof-main p { font-size: 13.5px; line-height: 1.85; margin: 0; color: rgba(255,255,255,0.88); }
+.ac2-proof-side {
+  background: #fff; border: 1px solid var(--line); border-radius: 4px;
+  padding: 24px 24px 22px;
+}
+.ac2-proof-side h4 {
+  font-family: "Oswald", sans-serif; font-size: 14px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 14px; color: var(--ink);
+}
+.ac2-proof-side ul { margin: 0; padding-left: 18px; }
+.ac2-proof-side li { font-size: 13px; line-height: 1.8; color: var(--sub); margin-bottom: 10px; }
+.ac2-proof-side li:last-child { margin-bottom: 0; }
+
+.ac2-tiers {
+  display: grid; gap: 14px; grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 22px;
+}
+.ac2-tier {
+  background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--gold);
+  border-radius: 4px; padding: 22px 20px; text-align: center;
+}
+.ac2-tier.mid { background: var(--navy); border-color: var(--gold); }
+.ac2-tier.mid .ac2-tier-amt { color: var(--gold); }
+.ac2-tier.mid .ac2-tier-ppl { color: #fff; }
+.ac2-tier.mid .ac2-tier-sub { color: rgba(255,255,255,0.7); }
+.ac2-tier-amt {
+  font-family: "Oswald", sans-serif; font-size: 20px; font-weight: 600;
+  color: var(--ink); margin-bottom: 8px;
+}
+.ac2-tier-ppl {
+  font-family: "Oswald", sans-serif; font-size: 30px; font-weight: 700;
+  line-height: 1; color: var(--gold-deep);
+}
+.ac2-tier-sub { font-size: 11.5px; color: var(--sub); margin-top: 6px; }
+
+@media (max-width: 860px) {
+  .ac2-split, .ac2-proof { grid-template-columns: 1fr; }
+  .ac2-tiers { grid-template-columns: 1fr; }
+  .ac2-stats { gap: 24px; }
+}
+
+/* ---- deck additions: sponsor page ---- */
+.sp-reach-grid {
+  display: grid; gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-bottom: 14px;
+}
+.sp-reach {
+  background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--gold);
+  border-radius: 4px; padding: 22px 20px 20px;
+}
+.sp-reach h4 { font-size: 16px; font-weight: 700; margin: 0 0 10px; color: var(--ink); }
+.sp-reach p { font-size: 13px; line-height: 1.8; color: var(--sub); margin: 0; }
+
+.sp-flow { display: grid; gap: 20px; grid-template-columns: 1fr 1fr; margin-bottom: 14px; }
+.sp-step { display: flex; gap: 14px; margin-bottom: 18px; }
+.sp-step:last-child { margin-bottom: 0; }
+.sp-step-no {
+  flex: 0 0 30px; height: 30px; border: 1px solid var(--navy); border-radius: 2px;
+  font-family: "Oswald", sans-serif; font-size: 14px; font-weight: 600;
+  display: flex; align-items: center; justify-content: center; color: var(--ink);
+}
+.sp-step-body h4 { font-size: 15px; font-weight: 700; margin: 4px 0 7px; color: var(--ink); }
+.sp-step-body p { font-size: 13px; line-height: 1.8; color: var(--sub); margin: 0; }
+.sp-facts {
+  background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--gold);
+  border-radius: 4px; padding: 22px 22px 20px; margin-bottom: 16px;
+}
+.sp-facts h4 {
+  font-family: "Oswald", sans-serif; font-size: 14px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 14px; color: var(--ink);
+}
+.sp-facts ul { margin: 0; padding-left: 18px; }
+.sp-facts li { font-size: 13px; line-height: 1.8; color: var(--sub); margin-bottom: 9px; }
+.sp-facts li:last-child { margin-bottom: 0; }
+.sp-urgent {
+  background: var(--navy); color: #fff; border-radius: 4px;
+  padding: 22px 22px 20px; border-left: 5px solid var(--gold);
+}
+.sp-urgent h4 {
+  font-family: "Oswald", sans-serif; font-size: 14px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 12px; color: var(--gold);
+}
+.sp-urgent p { font-size: 13px; line-height: 1.8; margin: 0; color: rgba(255,255,255,0.88); }
+@media (max-width: 860px) { .sp-flow { grid-template-columns: 1fr; } }
+
+/* ---- deck additions: club page ---- */
+.cl-diff-grid {
+  display: grid; gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-bottom: 18px;
+}
+.cl-diff {
+  background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--gold);
+  border-radius: 4px; padding: 20px 20px 18px;
+}
+.cl-diff h4 { font-size: 15px; font-weight: 700; margin: 0 0 9px; color: var(--ink); }
+.cl-diff p { font-size: 13px; line-height: 1.8; color: var(--sub); margin: 0; }
+.cl-pledges {
+  display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); margin-bottom: 10px;
+}
+.cl-pledge {
+  background: var(--navy); color: #fff; border-radius: 4px;
+  padding: 22px 20px 20px; border-top: 4px solid var(--gold);
+}
+.cl-pledge h4 {
+  font-family: "Oswald", sans-serif; font-size: 15px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 11px; color: var(--gold);
+}
+.cl-pledge p { font-size: 13px; line-height: 1.8; margin: 0; color: rgba(255,255,255,0.86); }
+.cl-quote {
+  border-left: 6px solid var(--gold); padding: 6px 0 6px 20px;
+  font-size: clamp(16px, 2vw, 21px); font-weight: 700; line-height: 1.75;
+  color: var(--ink); margin: 0 0 30px;
+}
+@media (max-width: 860px) { .cl-pledges { grid-template-columns: 1fr; } }
+
 </style>
 </head>
 <body>
@@ -4383,12 +4554,73 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
 
   <div class="ac2-gallery" data-gallery="academy" hidden></div>
 
+  <h3 class="ac2-h3">PROVEN AT WORLD LEVEL</h3>
+  <p class="ac2-sub" data-ja="ラオスの12歳以下の世代は、すでに世界一を経験しています。" data-en="Laos&apos; under-12 generation has already been world champions.">ラオスの12歳以下の世代は、すでに世界一を経験しています。</p>
+
+  <div class="ac2-proof">
+    <div class="ac2-proof-main">
+      <span class="ac2-proof-tag" data-ja="2026年8月・千葉" data-en="August 2026 · Chiba">2026年8月・千葉</span>
+      <h4 data-ja="Mazda GB FC U-12（ラオス）が、FCバルセロナを破って優勝" data-en="Mazda GB FC U-12 of Laos beat FC Barcelona to win the title">Mazda GB FC U-12（ラオス）が、FCバルセロナを破って優勝</h4>
+      <p data-ja="ラオスのMazda GB FC U-12が、日本・千葉のフクダ電子アリーナで開催された「U-12ジュニアサッカーワールドチャレンジ2026」決勝で、優勝候補のFCバルセロナU-12を3-2で下し、初優勝を果たしました。0-2から3点を奪う逆転勝利で、ラオス国内でも大きく報じられています。" data-en="Mazda GB FC U-12 of Laos beat tournament favourites FC Barcelona U-12 3-2 in the final of the U-12 Junior Soccer World Challenge 2026, held at Fukuda Denshi Arena in Chiba, Japan — a first title, won from 0-2 down. It was widely reported across Laos.">ラオスのMazda GB FC U-12が、日本・千葉のフクダ電子アリーナで開催された「U-12ジュニアサッカーワールドチャレンジ2026」決勝で、優勝候補のFCバルセロナU-12を3-2で下し、初優勝を果たしました。0-2から3点を奪う逆転勝利で、ラオス国内でも大きく報じられています。</p>
+      <p style="margin-top:14px;font-size:12px;opacity:0.72" data-ja="※ この大会に出場・優勝したのはラオスのMazda GB FC U-12であり、サバナケット・ゼロスFCではありません。ラオスの育成年代が持つ実力を示す事例として紹介しています。" data-en="* The club that entered and won this tournament was Mazda GB FC U-12 of Laos, not Savannakhet Zelos FC. We cite it as evidence of what this country&apos;s youth generation can do.">※ この大会に出場・優勝したのはラオスのMazda GB FC U-12であり、サバナケット・ゼロスFCではありません。ラオスの育成年代が持つ実力を示す事例として紹介しています。</p>
+    </div>
+    <div class="ac2-proof-side">
+      <h4 data-ja="ラオスの育成年代が残してきた国際実績" data-en="What Lao youth sides have achieved">ラオスの育成年代が残してきた国際実績</h4>
+      <ul>
+        <li data-ja="IberCup（ポルトガル／世界最大級のユース大会）でラオスのユースアカデミーが2年連続優勝" data-en="A Lao youth academy has won IberCup in Portugal — one of the world's largest youth tournaments — two years running.">IberCup（ポルトガル／世界最大級のユース大会）でラオスのユースアカデミーが2年連続優勝</li>
+        <li data-ja="上海国際少年サッカー大会（白洋淀杯）で優勝。日本・スペイン・韓国・中国の強豪育成組織を撃破" data-en="Winners of the Shanghai international youth tournament, beating leading academies from Japan, Spain, Korea and China.">上海国際少年サッカー大会（白洋淀杯）で優勝。日本・スペイン・韓国・中国の強豪育成組織を撃破</li>
+        <li data-ja="日本のJリーグ育成組織を相手にした強豪撃破の実績も複数あり" data-en="Several further wins against J-League academy sides in Japan.">日本のJリーグ育成組織を相手にした強豪撃破の実績も複数あり</li>
+      </ul>
+    </div>
+  </div>
+  <p class="ac2-sub" style="margin-bottom:0" data-ja="これらはラオス国内の各クラブ・アカデミーが挙げた成績であり、単発の番狂わせではなく、複数の大会・複数世代にまたがって積み上がっている実績です。「才能は既にラオスの中にある」ことは、もはや仮説ではありません。サバナケット・ゼロスFCの役割は、その才能を18歳まで受け止め、国外へ送り出す出口をつくることです。" data-en="These are results achieved by clubs and academies across Laos — not one-off upsets, but a record built up over several tournaments and several age groups. That the talent is already here is no longer a hypothesis. Savannakhet Zelos FC&apos;s job is to be what catches that talent through to eighteen, and the door it leaves by.">これらはラオス国内の各クラブ・アカデミーが挙げた成績であり、単発の番狂わせではなく、複数の大会・複数世代にまたがって積み上がっている実績です。「才能は既にラオスの中にある」ことは、もはや仮説ではありません。サバナケット・ゼロスFCの役割は、その才能を18歳まで受け止め、国外へ送り出す出口をつくることです。</p>
+
   <h3 class="ac2-h3">WHY WE START HERE</h3>
   <p class="ac2-sub" data-ja="なぜ育成からなのか。" data-en="Why development comes first.">なぜ育成からなのか。</p>
   <div class="ac2-note">
     <p data-ja="ラオスのU-12・U-14世代は、国際大会で確かな結果を残しています。それでも、その才能が年齢とともに失われていきます。原因は能力ではなく、「この先に何があるのか」が見えないことだと私たちは考えています。" data-en="Lao U-12 and U-14 sides have real results at international level. Yet that talent fades with age. We believe the cause is not ability, but the absence of a visible path to anything beyond.">ラオスのU-12・U-14世代は、国際大会で確かな結果を残しています。それでも、その才能が年齢とともに失われていきます。原因は能力ではなく、「この先に何があるのか」が見えないことだと私たちは考えています。</p>
     <p data-ja="だからクラブは、ラオス初のJリーガーを輩出することを目標に掲げています。一人が海外に出て成功すれば、それは子どもたちにとって「頑張れば未来は変わる」という具体的な証明になります。" data-en="That is why the club aims to produce the first J-League player from Laos. One player succeeding abroad is concrete proof to every child here that effort can change the future.">だからクラブは、ラオス初のJリーガーを輩出することを目標に掲げています。一人が海外に出て成功すれば、それは子どもたちにとって「頑張れば未来は変わる」という具体的な証明になります。</p>
   </div>
+
+  <div class="ac2-split">
+    <div>
+      <div class="ac2-col-head problem" data-ja="なぜ消えるのか" data-en="Why it disappears">なぜ消えるのか</div>
+      <div class="ac2-item problem">
+        <div class="ac2-item-num">01</div>
+        <h5 data-ja="プロへの道筋の不在" data-en="No route to the professional game">プロへの道筋の不在</h5>
+        <p data-ja="U-12世代の実力を12歳以降も伸ばし続ける、日本基準のプロクラブ環境（契約・メディカル・スケジュール管理）がラオス国内に存在しませんでした。才能は「育成大会で勝つ」段階から先に進めません。" data-en="Until now there was no club in Laos running to Japanese professional standards — contracts, medical, schedule management — able to keep developing a player past twelve. Talent could not move beyond winning youth tournaments.">U-12世代の実力を12歳以降も伸ばし続ける、日本基準のプロクラブ環境（契約・メディカル・スケジュール管理）がラオス国内に存在しませんでした。才能は「育成大会で勝つ」段階から先に進めません。</p>
+      </div>
+      <div class="ac2-item problem">
+        <div class="ac2-item-num">02</div>
+        <h5 data-ja="経済的な現実" data-en="The economics">経済的な現実</h5>
+        <p data-ja="サッカーで生計を立てられる見通しが立たないため、有望な選手ほど10代半ばで進路を切り替えます。世界一を経験した選手でも例外ではありません。" data-en="With no prospect of making a living from football, the most promising players change direction in their mid-teens. Even those who have been world champions are no exception.">サッカーで生計を立てられる見通しが立たないため、有望な選手ほど10代半ばで進路を切り替えます。世界一を経験した選手でも例外ではありません。</p>
+      </div>
+      <div class="ac2-item problem">
+        <div class="ac2-item-num">03</div>
+        <h5 data-ja="海外からの不可視性" data-en="Invisible from abroad">海外からの不可視性</h5>
+        <p data-ja="試合映像やスカウティング網が整っていないため、実力があっても海外リーグの目に触れる機会自体がありません。「見つけられない」ことが、才能が消えたように見える最大の要因です。" data-en="Without match footage or scouting networks, even strong players are never seen by clubs abroad. Not being found is the single biggest reason the talent appears to vanish.">試合映像やスカウティング網が整っていないため、実力があっても海外リーグの目に触れる機会自体がありません。「見つけられない」ことが、才能が消えたように見える最大の要因です。</p>
+      </div>
+    </div>
+    <div>
+      <div class="ac2-col-head answer" data-ja="SVZFCによる解決" data-en="What SVZFC does about it">SVZFCによる解決</div>
+      <div class="ac2-item answer">
+        <div class="ac2-item-num">01</div>
+        <h5 data-ja="12歳〜18歳の一貫育成環境" data-en="One continuous pathway, 12 to 18">12歳〜18歳の一貫育成環境</h5>
+        <p data-ja="日本のプロクラブ基準で運営されるSVZFCが、U-12世代の実力をそのままトップ年代まで途切れさせずに伸ばす環境を提供します。" data-en="Run to Japanese professional club standards, SVZFC gives that under-12 ability an unbroken path all the way to the senior squad.">日本のプロクラブ基準で運営されるSVZFCが、U-12世代の実力をそのままトップ年代まで途切れさせずに伸ばす環境を提供します。</p>
+      </div>
+      <div class="ac2-item answer">
+        <div class="ac2-item-num">02</div>
+        <h5 data-ja="「続ける理由」を経済的に持てる仕組み" data-en="A reason to keep going">「続ける理由」を経済的に持てる仕組み</h5>
+        <p data-ja="クラブは選手に正当なプロの報酬を支払うことを約束しています。ラオス人選手には、運任せではない海外挑戦の道筋を用意します。選手と家族が、サッカーを続ける理由を現実的に持てる状態をつくります。" data-en="The club commits to paying players a proper professional wage, and gives Lao players a route abroad that does not depend on luck — so that a player and their family have a realistic reason to carry on.">クラブは選手に正当なプロの報酬を支払うことを約束しています。ラオス人選手には、運任せではない海外挑戦の道筋を用意します。選手と家族が、サッカーを続ける理由を現実的に持てる状態をつくります。</p>
+      </div>
+      <div class="ac2-item answer">
+        <div class="ac2-item-num">03</div>
+        <h5 data-ja="映像配信によるスカウティング基盤" data-en="Footage that makes players findable">映像配信によるスカウティング基盤</h5>
+        <p data-ja="全試合ライブ配信と選手個々のプレー映像制作を通じて、海外クラブ・エージェントに直接リーチできる可視性を確保しています。" data-en="Every match is streamed live and individual player footage is produced, so clubs and agents abroad can see our players directly.">全試合ライブ配信と選手個々のプレー映像制作を通じて、海外クラブ・エージェントに直接リーチできる可視性を確保しています。</p>
+      </div>
+    </div>
+  </div>
+
 
   <h3 class="ac2-h3">COMMUNITY</h3>
   <p class="ac2-sub" data-ja="クラブとZELOSが続けてきた、地域と社会への取り組みです。" data-en="What the club and ZELOS have been doing in the community.">クラブとZELOSが続けてきた、地域と社会への取り組みです。</p>
@@ -4412,6 +4644,71 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
   </div>
 
   <div class="ac2-gallery" data-gallery="community" hidden></div>
+
+  <h3 class="ac2-h3">EDUCATION &amp; THE THIRD PLACE</h3>
+  <p class="ac2-sub" data-ja="教育機会の断絶に、クラブができること。" data-en="What a football club can do about a gap in education.">教育機会の断絶に、クラブができること。</p>
+
+  <div class="ac2-stats">
+    <div class="ac2-stat">
+      <div class="ac2-stat-num" data-ja="約1,000校" data-en="~1,000">約1,000校</div>
+      <div class="ac2-stat-label" data-ja="サバナケット県内の小学校数" data-en="Primary schools in Savannakhet province">サバナケット県内の小学校数</div>
+    </div>
+    <div class="ac2-stat">
+      <div class="ac2-stat-num" data-ja="約100校" data-en="~100">約100校</div>
+      <div class="ac2-stat-label" data-ja="サバナケット県内の中学校数" data-en="Secondary schools in Savannakhet province">サバナケット県内の中学校数</div>
+    </div>
+  </div>
+
+  <div class="ac2-note">
+    <h4 data-ja="地域の課題" data-en="The local reality">地域の課題</h4>
+    <p data-ja="サバナケット県には小学校が約1,000校ある一方、中学校は約100校しかありません。進学の機会に恵まれない、あるいは小学校を卒業できずに退学してしまう子どもたちが一定数存在します。" data-en="Savannakhet province has around 1,000 primary schools but only about 100 secondary schools. A significant number of children never get the chance to go on — some do not finish primary school at all.">サバナケット県には小学校が約1,000校ある一方、中学校は約100校しかありません。進学の機会に恵まれない、あるいは小学校を卒業できずに退学してしまう子どもたちが一定数存在します。</p>
+    <p data-ja="進学しない・できない子どもたちの一部は、隣接するタイの地方都市へ出稼ぎに向かいます。安全で安定した進路の選択肢が限られていることは、地域の社会課題となっています。" data-en="Many of those children leave to find work in the Thai towns across the border. The shortage of safe, stable options for them is a recognised social problem in the region.">進学しない・できない子どもたちの一部は、隣接するタイの地方都市へ出稼ぎに向かいます。安全で安定した進路の選択肢が限られていることは、地域の社会課題となっています。</p>
+  </div>
+
+  <div class="ac2-acts" style="margin-top:28px">
+    <div class="ac2-act">
+      <div class="ac2-act-num" data-ja="第3の" data-en="The 3rd">第3の</div>
+      <h4 data-ja="学校以外の「第三の居場所」" data-en="A third place, outside school">学校以外の「第三の居場所」</h4>
+      <p data-ja="家庭でも学校でもない、子どもが安心して自分らしく過ごせる第3の場所。サッカーを通じてできた仲間と一緒に登校するという動機づけが、学校に通い続ける理由になり得ると考えています。" data-en="Not home, not school — a third place where a child can simply be themselves. Going to school alongside the friends they made through football can itself become the reason they keep going.">家庭でも学校でもない、子どもが安心して自分らしく過ごせる第3の場所。サッカーを通じてできた仲間と一緒に登校するという動機づけが、学校に通い続ける理由になり得ると考えています。</p>
+    </div>
+    <div class="ac2-act">
+      <div class="ac2-act-num">10<small data-ja="個／勝利ごと" data-en="balls per win">個／勝利ごと</small></div>
+      <h4 data-ja="勝利ごとのボール寄贈プロジェクト" data-en="Ten balls for every win">勝利ごとのボール寄贈プロジェクト</h4>
+      <p data-ja="クラブが試合に勝利するたびに、サッカーボール10個を地域の小学校に寄贈します。子どもたちがサッカーに触れる機会を増やし、仲間づくりのきっかけを広げる取り組みです。" data-en="Every time the club wins a match, we donate ten footballs to a local primary school — more chances to play, and more chances to make friends.">クラブが試合に勝利するたびに、サッカーボール10個を地域の小学校に寄贈します。子どもたちがサッカーに触れる機会を増やし、仲間づくりのきっかけを広げる取り組みです。</p>
+    </div>
+    <div class="ac2-act">
+      <div class="ac2-act-num" data-ja="女子" data-en="Women">女子</div>
+      <h4 data-ja="女子チームの設立" data-en="A women's team">女子チームの設立</h4>
+      <p data-ja="男子チームと並行して女子チームを設立し、女子選手として楽しみながらサッカーに取り組める選択肢をつくります。将来的には世界で戦えるレベルまで育成し、女子選手にとってサッカーを「仕事」として確立することを目指します。" data-en="Alongside the men's team we are building a women's team, so that playing football is a real option for girls here — and, in time, a profession they can compete in at world level.">男子チームと並行して女子チームを設立し、女子選手として楽しみながらサッカーに取り組める選択肢をつくります。将来的には世界で戦えるレベルまで育成し、女子選手にとってサッカーを「仕事」として確立することを目指します。</p>
+    </div>
+  </div>
+
+  <h3 class="ac2-h3">INVITING CHILDREN TO THE STADIUM</h3>
+  <p class="ac2-sub" data-ja="1枚200円の観戦チケットを企業様にご購入いただき、サバナケットの子どもたちを試合に招待するCSR・地域貢献プログラムです。" data-en="Companies buy match tickets at ¥200 each, and we fill the stands with children from Savannakhet. A CSR programme with a very direct result.">1枚200円の観戦チケットを企業様にご購入いただき、サバナケットの子どもたちを試合に招待するCSR・地域貢献プログラムです。</p>
+
+  <div class="ac2-tiers">
+    <div class="ac2-tier">
+      <div class="ac2-tier-amt">¥500,000</div>
+      <div class="ac2-tier-ppl">2,500</div>
+      <div class="ac2-tier-sub" data-ja="人を招待" data-en="children invited">人を招待</div>
+    </div>
+    <div class="ac2-tier mid">
+      <div class="ac2-tier-amt">¥1,000,000</div>
+      <div class="ac2-tier-ppl">5,000</div>
+      <div class="ac2-tier-sub" data-ja="人を招待" data-en="children invited">人を招待</div>
+    </div>
+    <div class="ac2-tier">
+      <div class="ac2-tier-amt">¥2,000,000</div>
+      <div class="ac2-tier-ppl">10,000</div>
+      <div class="ac2-tier-sub" data-ja="人を招待" data-en="children invited">人を招待</div>
+    </div>
+  </div>
+
+  <div class="ac2-note">
+    <h4 data-ja="プロジェクトの目的" data-en="Why we do it">プロジェクトの目的</h4>
+    <p data-ja="スタジアムで、ラオス人選手・日本人選手がプロとして活躍する姿を、子どもたちに直接見せる機会をつくります。地域出身の選手も含めたロールモデルとの出会いは、子どもたちにとって将来の夢を持つきっかけになり、「今を生きる」ことへのやりがいや、何かに打ち込む意欲を育むと考えています。" data-en="To let children see Lao and Japanese players working as professionals, in person. Meeting a role model — including players from their own province — is how a child starts to picture a future, and finds something worth throwing themselves into now.">スタジアムで、ラオス人選手・日本人選手がプロとして活躍する姿を、子どもたちに直接見せる機会をつくります。地域出身の選手も含めたロールモデルとの出会いは、子どもたちにとって将来の夢を持つきっかけになり、「今を生きる」ことへのやりがいや、何かに打ち込む意欲を育むと考えています。</p>
+    <p data-ja="招待した子どもの人数など、実施結果はシーズン中・シーズン終了時にご報告します。スタジアムでの招待児童向けアナウンス・企業名の掲出など、他のスポンサープランと組み合わせた展開も可能です。" data-en="We report back during and after the season on how many children were invited. Stadium announcements and signage can be combined with other sponsorship plans.">招待した子どもの人数など、実施結果はシーズン中・シーズン終了時にご報告します。スタジアムでの招待児童向けアナウンス・企業名の掲出など、他のスポンサープランと組み合わせた展開も可能です。</p>
+  </div>
 
   <h3 class="ac2-h3">PHOTO GALLERY</h3>
   <p class="ac2-sub" data-ja="アカデミーの練習と、子どもたちの日常です。" data-en="Training sessions, and the everyday life of our players.">アカデミーの練習と、子どもたちの日常です。</p>
@@ -4440,15 +4737,94 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
   </div>
 
   <div class="about-section">
-    <h3>VISION</h3>
-    <p data-ja="サバナケット・ゼロスFCは、日本とラオスを繋ぐ架け橋として、2026年に誕生した新しいクラブです。" data-en="Savannakhet Zelos FC is a new club born in 2026 as a bridge connecting Japan and Laos.">サバナケット・ゼロスFCは、日本とラオスを繋ぐ架け橋として、2026年に誕生した新しいクラブです。</p>
-    <p data-ja="私たちのビジョンは明確です。ラオス初のJリーガーを輩出し、25,000席のサバナケット・スタジアムを満員にすること。そして、サッカーを通じて両国の未来を切り拓くこと。" data-en="Our vision is clear: to produce the first J-League player from Laos, to fill the 25,000-seat Savannakhet Stadium, and to open a new future for both nations through football.">私たちのビジョンは明確です。ラオス初のJリーガーを輩出し、25,000席のサバナケット・スタジアムを満員にすること。そして、サッカーを通じて両国の未来を切り拓くこと。</p>
+    <p data-ja="サバナケット・ゼロスFCは、ラオス・プレミアリーグに所属するプロサッカークラブです。2026年に誕生し、ラオス法人のSavannakhet Zelos FCが運営しています。日本のプロクラブの運営基準を導入したラオス初のクラブであり、設立当初から日本とラオスの二カ国でパートナー企業を発信することを前提に設計されています。" data-en="Savannakhet Zelos FC is a professional club in the Lao Premier League. Founded in 2026 and operated by Savannakhet Zelos FC, a Lao company, it is the first club in Laos run to Japanese professional standards — and was designed from the outset to carry partner companies in both Japan and Laos.">サバナケット・ゼロスFCは、ラオス・プレミアリーグに所属するプロサッカークラブです。2026年に誕生し、ラオス法人のSavannakhet Zelos FCが運営しています。日本のプロクラブの運営基準を導入したラオス初のクラブであり、設立当初から日本とラオスの二カ国でパートナー企業を発信することを前提に設計されています。</p>
+    <div class="ac2-stats" style="margin-top:26px">
+      <div class="ac2-stat">
+        <div class="ac2-stat-num">2026</div>
+        <div class="ac2-stat-label" data-ja="クラブ設立年" data-en="Club founded">クラブ設立年</div>
+      </div>
+      <div class="ac2-stat">
+        <div class="ac2-stat-num">25,000</div>
+        <div class="ac2-stat-label" data-ja="ホームスタジアム収容人数" data-en="Home stadium capacity">ホームスタジアム収容人数</div>
+      </div>
+      <div class="ac2-stat">
+        <div class="ac2-stat-num" data-ja="2位" data-en="2nd">2位</div>
+        <div class="ac2-stat-label" data-ja="サバナケットの都市規模（ラオス国内）" data-en="Savannakhet's size among Lao cities">サバナケットの都市規模（ラオス国内）</div>
+      </div>
+      <div class="ac2-stat">
+        <div class="ac2-stat-num" data-ja="3言語" data-en="3">3言語</div>
+        <div class="ac2-stat-label" data-ja="クラブの運用言語（日・英・ラオ）" data-en="Languages the club runs in (JA / EN / Lao)">クラブの運用言語（日・英・ラオ）</div>
+      </div>
+    </div>
   </div>
 
   <div class="about-section">
-    <h3>MISSION</h3>
-    <p data-ja="ラオスのサッカーを世界水準に。日本人選手とラオス人選手が共に切磋琢磨する環境を作り、次世代のアジアのサッカーを育てます。" data-en="Bringing Lao football to world-class standards. We are creating an environment where Japanese and Laotian players grow together, shaping the next generation of Asian football.">ラオスのサッカーを世界水準に。日本人選手とラオス人選手が共に切磋琢磨する環境を作り、次世代のアジアのサッカーを育てます。</p>
-    <p data-ja="また、選手に正当な対価を支払い、ラオスの子どもたちに夢を与えるクラブであり続けることを約束します。" data-en="We also commit to paying players fairly and remaining a club that inspires dreams in the children of Laos.">また、選手に正当な対価を支払い、ラオスの子どもたちに夢を与えるクラブであり続けることを約束します。</p>
+    <h3>OUR PROMISE</h3>
+    <div class="cl-quote" data-ja="「ラオス初のJリーガーを輩出し、25,000席のサバナケット・スタジアムを満員にすること。そして、サッカーを通じて両国の未来を切り拓くこと。」" data-en="&ldquo;To produce the first J-League player from Laos, to fill all 25,000 seats of Savannakhet Stadium, and to open a future for both countries through football.&rdquo;">「ラオス初のJリーガーを輩出し、25,000席のサバナケット・スタジアムを満員にすること。そして、サッカーを通じて両国の未来を切り拓くこと。」</div>
+    <div class="cl-pledges">
+      <div class="cl-pledge">
+        <h4 data-ja="ビジョン" data-en="Vision">ビジョン</h4>
+        <p data-ja="検証可能な目標を2つ掲げています。ラオス人選手がJリーグでプロ契約を結ぶこと、そしてサバナケット・スタジアムを満員にすること。どちらも公表済みで、達成までに複数年を要します。" data-en="Two goals that can be checked: a Lao player signing a professional contract in the J-League, and a full house at Savannakhet Stadium. Both are stated publicly, and both will take several years.">検証可能な目標を2つ掲げています。ラオス人選手がJリーグでプロ契約を結ぶこと、そしてサバナケット・スタジアムを満員にすること。どちらも公表済みで、達成までに複数年を要します。</p>
+      </div>
+      <div class="cl-pledge">
+        <h4 data-ja="ミッション" data-en="Mission">ミッション</h4>
+        <p data-ja="ラオスのサッカーを世界水準へ。日本人選手とラオス人選手が同じロッカールームで日々切磋琢磨する環境をつくり、次世代のアジアサッカーを育てていきます。" data-en="To bring Lao football up to world standard — Japanese and Lao players in the same dressing room, pushing each other every day, building the next generation of Asian football.">ラオスのサッカーを世界水準へ。日本人選手とラオス人選手が同じロッカールームで日々切磋琢磨する環境をつくり、次世代のアジアサッカーを育てていきます。</p>
+      </div>
+      <div class="cl-pledge">
+        <h4 data-ja="約束" data-en="Promise">約束</h4>
+        <p data-ja="選手に正当な対価を支払うこと。そして、ラオスの子どもたちが「サッカーで生きていける」と本気で信じられるクラブであり続けること。" data-en="To pay our players what they are worth — and to remain a club that lets the children of Laos genuinely believe they can make a living from football.">選手に正当な対価を支払うこと。そして、ラオスの子どもたちが「サッカーで生きていける」と本気で信じられるクラブであり続けること。</p>
+      </div>
+    </div>
+    <p style="margin-top:20px" data-ja="ZELOSはギリシャ神話の「熱意」を司る神の名です。生まれた国や国籍に関係なく、誰もがスポーツを通じて挑戦できる社会を——その一点の信念からクラブは始まりました。" data-en="ZELOS is the Greek god of zeal. The club began from a single conviction: that anyone, wherever they were born and whatever passport they hold, should be able to take their shot through sport.">ZELOSはギリシャ神話の「熱意」を司る神の名です。生まれた国や国籍に関係なく、誰もがスポーツを通じて挑戦できる社会を——その一点の信念からクラブは始まりました。</p>
+  </div>
+
+  <div class="about-section">
+    <h3>HOW IT STARTED</h3>
+    <p data-ja="サバナケット・ゼロスFCは、投資案件として始まったクラブではありません。始まりは、一人の日本人プロサッカー選手でした。東南アジアで才能ある選手に出会っても、彼らにはプロへの道筋がない。一方で、日本には行き場を失った選手がいる——渡邉卓矢が繰り返し目にしてきた現実です。" data-en="Savannakhet Zelos FC did not begin as an investment. It began with one Japanese professional footballer. He kept meeting gifted players in Southeast Asia who had no route into the professional game — while in Japan, players were losing their place. Takuya Watanabe saw it again and again.">サバナケット・ゼロスFCは、投資案件として始まったクラブではありません。始まりは、一人の日本人プロサッカー選手でした。東南アジアで才能ある選手に出会っても、彼らにはプロへの道筋がない。一方で、日本には行き場を失った選手がいる——渡邉卓矢が繰り返し目にしてきた現実です。</p>
+    <p data-ja="その断絶を埋めるべく、渡邉卓矢はクラブ運営・選手マネジメント・海外挑戦サポート・スポンサーマッチングを自ら手がけるようになりました。2026年、サバナケットのクラブの運営権の70%を法的に取得し、サバナケット・ゼロスFCとして再出発させました。" data-en="To close that gap he took on club management, player management, overseas placement and sponsor matching himself. In 2026 he legally acquired 70% of the operating rights to a club in Savannakhet, and relaunched it as Savannakhet Zelos FC.">その断絶を埋めるべく、渡邉卓矢はクラブ運営・選手マネジメント・海外挑戦サポート・スポンサーマッチングを自ら手がけるようになりました。2026年、サバナケットのクラブの運営権の70%を法的に取得し、サバナケット・ゼロスFCとして再出発させました。</p>
+    <p data-ja="拠点の選定にも理由があります。サバナケットはラオス第2の都市であり、メコン川に架かる第2友好橋でタイと直結する、国のゲートウェイです。毎日国境が越えられていく街。「繋ぐ」ことを存在理由とするクラブに、これ以上ふさわしい場所はありませんでした。" data-en="The location was chosen for a reason. Savannakhet is the second city of Laos and the country's gateway — linked straight to Thailand by the Second Friendship Bridge over the Mekong. A town where the border is crossed every day. For a club whose whole purpose is connecting things, nowhere fitted better.">拠点の選定にも理由があります。サバナケットはラオス第2の都市であり、メコン川に架かる第2友好橋でタイと直結する、国のゲートウェイです。毎日国境が越えられていく街。「繋ぐ」ことを存在理由とするクラブに、これ以上ふさわしい場所はありませんでした。</p>
+  </div>
+
+  <div class="about-section">
+    <h3>WHAT MAKES US DIFFERENT</h3>
+    <div class="cl-diff-grid">
+      <div class="cl-diff">
+        <h4 data-ja="日本の運営基準" data-en="Japanese operating standards">日本の運営基準</h4>
+        <p data-ja="契約、メディカル、スケジュール管理、選手の待遇まで、アマチュアではなく日本のプロクラブの水準で運営しています。" data-en="Contracts, medical, scheduling, player welfare — run to the standard of a Japanese professional club, not an amateur one.">契約、メディカル、スケジュール管理、選手の待遇まで、アマチュアではなく日本のプロクラブの水準で運営しています。</p>
+      </div>
+      <div class="cl-diff">
+        <h4 data-ja="本当の意味での二カ国チーム" data-en="A genuinely two-country team">本当の意味での二カ国チーム</h4>
+        <p data-ja="日本人選手とラオス人選手が同じユニフォームを争い、共に指導を受け、共に成長します。" data-en="Japanese and Lao players compete for the same shirt, are coached together, and grow together.">日本人選手とラオス人選手が同じユニフォームを争い、共に指導を受け、共に成長します。</p>
+      </div>
+      <div class="cl-diff">
+        <h4 data-ja="到達点が明確" data-en="A clear destination">到達点が明確</h4>
+        <p data-ja="Jリーグへの導線があることで、順位表とは別の、測定可能な目標が毎シーズン存在します。" data-en="Because there is a route to the J-League, every season carries a measurable goal beyond the league table.">Jリーグへの導線があることで、順位表とは別の、測定可能な目標が毎シーズン存在します。</p>
+      </div>
+      <div class="cl-diff">
+        <h4 data-ja="日・英・ラオの3言語運用" data-en="Run in three languages">日・英・ラオの3言語運用</h4>
+        <p data-ja="クラブは3言語で運営され、3つの言語圏に向けて発信しています。" data-en="The club is run in Japanese, English and Lao, and speaks to all three audiences.">クラブは3言語で運営され、3つの言語圏に向けて発信しています。</p>
+      </div>
+    </div>
+    <p data-ja="運営体制：現役プロサッカー選手でもある渡邉卓矢（運営権の70%を保有）と、ラオスサッカー界で長年活動してきたブントンの共同オーナー体制です。営業・マーケティング・広報は日本とラオスにまたがるバイリンガルチームが担当しています。" data-en="Ownership: Takuya Watanabe, still a playing professional, holds 70% of the operating rights, alongside co-owner Bounthong, long established in Lao football. Sales, marketing and communications are handled by a bilingual team working across Japan and Laos.">運営体制：現役プロサッカー選手でもある渡邉卓矢（運営権の70%を保有）と、ラオスサッカー界で長年活動してきたブントンの共同オーナー体制です。営業・マーケティング・広報は日本とラオスにまたがるバイリンガルチームが担当しています。</p>
+  </div>
+
+  <div class="about-section">
+    <h3>ZELOS CAFE</h3>
+    <p data-ja="首都ビエンチャンでは、クラブが直接運営する実店舗「ZELOS CAFE」を展開しています。試合会場の外でクラブと街の人々が出会う、日常のタッチポイントです。" data-en="In the capital, Vientiane, the club runs its own café — ZELOS CAFE. It is where the club and the city meet on an ordinary day, away from the stadium.">首都ビエンチャンでは、クラブが直接運営する実店舗「ZELOS CAFE」を展開しています。試合会場の外でクラブと街の人々が出会う、日常のタッチポイントです。</p>
+    <div class="cl-diff-grid">
+      <div class="cl-diff">
+        <h4 data-ja="メニュー" data-en="Menu">メニュー</h4>
+        <p data-ja="抹茶ラテ、おにぎり、豚汁、だし巻き卵、オムライスなど、日本らしい軽食を提供しています。" data-en="Matcha lattes, onigiri, tonjiru, dashimaki tamago, omurice — Japanese light meals.">抹茶ラテ、おにぎり、豚汁、だし巻き卵、オムライスなど、日本らしい軽食を提供しています。</p>
+      </div>
+      <div class="cl-diff">
+        <h4 data-ja="スタッフ" data-en="Staff">スタッフ</h4>
+        <p data-ja="スタッフには女子チームの選手を雇用しており、選手のセカンドキャリア・収入面のサポートにもつながっています。" data-en="We employ players from the women's team, which supports both their income and their life after football.">スタッフには女子チームの選手を雇用しており、選手のセカンドキャリア・収入面のサポートにもつながっています。</p>
+      </div>
+      <div class="cl-diff">
+        <h4 data-ja="オフィシャルショップ" data-en="Official shop">オフィシャルショップ</h4>
+        <p data-ja="ユニフォーム等のクラブグッズの購入・受け取りが可能です。スポンサー企業の商品露出やイベント開催の場にもなっています。" data-en="Club merchandise, including kit, can be bought and collected here. It also hosts sponsor product placement and events.">ユニフォーム等のクラブグッズの購入・受け取りが可能です。スポンサー企業の商品露出やイベント開催の場にもなっています。</p>
+      </div>
+    </div>
   </div>
 
   <div class="about-section">
@@ -4472,11 +4848,11 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
       </tr>
       <tr>
         <th data-ja="チームカラー" data-en="Team Colors">チームカラー</th>
-        <td data-ja="ネイビー × ゴールド" data-en="Navy × Gold">ネイビー × ゴールド</td>
+        <td data-ja="イエロー" data-en="Yellow">イエロー</td>
       </tr>
       <tr>
         <th data-ja="運営会社" data-en="Operating Company">運営会社</th>
-        <td data-ja="株式会社ZELOS（東京都千代田区）" data-en="ZELOS Inc. (Chiyoda-ku, Tokyo)">株式会社ZELOS（東京都千代田区）</td>
+        <td data-ja="Savannakhet Zelos FC（ラオス法人）" data-en="Savannakhet Zelos FC (a Lao company)">Savannakhet Zelos FC（ラオス法人）</td>
       </tr>
       <tr>
         <th data-ja="代表" data-en="Representative">代表</th>
@@ -4740,6 +5116,94 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
   <div class="sp-terms">
     <p data-ja="※ 費用はシーズンあたりの金額で、消費税は別途申し受けます。ご契約はSavannakhet Zelos FC（ラオス法人）とのラオスキープまたはUSD建てとなり、分割でのお支払いもご相談いただけます。複数シーズンでのご契約には優遇条件をご用意しています。" data-en="* Fees are per season and exclude consumption tax. Agreements are made with Savannakhet Zelos FC (a Lao company) in Lao kip or USD, and instalment payments can be arranged. Preferential terms are available for multi-season agreements.">※ 費用はシーズンあたりの金額で、消費税は別途申し受けます。ご契約はSavannakhet Zelos FC（ラオス法人）とのラオスキープまたはUSD建てとなり、分割でのお支払いもご相談いただけます。複数シーズンでのご契約には優遇条件をご用意しています。</p>
     <p data-ja="※ 上記の権利内容は各プランの標準的な構成であり、最終的な内容はご契約書にて確定いたします。ホスピタリティをコンテンツやデジタル施策に振り替えるなど、御社の目的に合わせた組み替えも可能です。" data-en="* The rights listed are the standard configuration for each plan; final terms are confirmed in the agreement. Elements can be re-balanced to suit your objectives — for example, converting hospitality into content or digital activity.">※ 上記の権利内容は各プランの標準的な構成であり、最終的な内容はご契約書にて確定いたします。ホスピタリティをコンテンツやデジタル施策に振り替えるなど、御社の目的に合わせた組み替えも可能です。</p>
+  </div>
+
+  <h3 class="sp-h3">WHERE YOU'LL BE SEEN</h3>
+  <p class="sp-lead" data-ja="クラブは試合日だけの存在ではありません。ライブ配信、日本国内の有料ファンコミュニティ、物販、ツアー、育成事業——そのすべてがパートナー企業の露出面になります。" data-en="A club is not only there on matchdays. Live broadcasts, a paid fan community in Japan, merchandise, tours and the academy — every one of them carries our partners.">クラブは試合日だけの存在ではありません。ライブ配信、日本国内の有料ファンコミュニティ、物販、ツアー、育成事業——そのすべてがパートナー企業の露出面になります。</p>
+  <div class="sp-reach-grid">
+    <div class="sp-reach">
+      <h4 data-ja="全試合ライブ配信" data-en="Every match streamed live">全試合ライブ配信</h4>
+      <p data-ja="ラオス・プレミアリーグの全試合をクラブ公式YouTubeで配信しています。日本とラオスから同時に視聴される、放映権者を介さないクラブ自身の放送枠です。" data-en="We stream every Lao Premier League match on the club's own YouTube channel — watched in Japan and Laos at the same time, with no broadcaster in between.">ラオス・プレミアリーグの全試合をクラブ公式YouTubeで配信しています。日本とラオスから同時に視聴される、放映権者を介さないクラブ自身の放送枠です。</p>
+    </div>
+    <div class="sp-reach">
+      <h4 data-ja="公式ファンクラブ" data-en="Official fan club">公式ファンクラブ</h4>
+      <p data-ja="2026年夏開始。無料／月額1,000円／月額3,000円の3プラン構成。日本国内に集中する、識別可能な会員コミュニティに、メールマガジン・限定動画・オンライン選手交流会を通じて直接リーチできます。" data-en="Launched in summer 2026, on free, ¥1,000 and ¥3,000 monthly tiers. A named, mostly Japan-based membership you can reach directly through newsletters, members-only video and online player meet-ups.">2026年夏開始。無料／月額1,000円／月額3,000円の3プラン構成。日本国内に集中する、識別可能な会員コミュニティに、メールマガジン・限定動画・オンライン選手交流会を通じて直接リーチできます。</p>
+    </div>
+    <div class="sp-reach">
+      <h4 data-ja="3言語のチャンネル" data-en="Channels in three languages">3言語のチャンネル</h4>
+      <p data-ja="Instagram、X、Facebook、YouTube、そして日英2言語のウェブサイトとラオ語での現地発信。ひとつのスポンサーシップが、3つの言語圏に届きます。" data-en="Instagram, X, Facebook and YouTube, plus a bilingual Japanese/English website and Lao-language posts on the ground. One sponsorship reaches three language markets.">Instagram、X、Facebook、YouTube、そして日英2言語のウェブサイトとラオ語での現地発信。ひとつのスポンサーシップが、3つの言語圏に届きます。</p>
+    </div>
+    <div class="sp-reach">
+      <h4 data-ja="オフィシャルショップ／ZELOS CAFE" data-en="Official shop / ZELOS CAFE">オフィシャルショップ／ZELOS CAFE</h4>
+      <p data-ja="2026/27シーズンのホームユニフォームを9,500円で販売中（名前・番号入りは＋1,500円）。日本国内・ラオス国内・海外へ発送しており、その一枚一枚に御社のロゴが乗ります。首都ビエンチャンの実店舗「ZELOS CAFE」でも購入・受け取りが可能です。" data-en="The 2026/27 home shirt sells at ¥9,500 (¥1,500 more with name and number), shipping within Japan, within Laos and overseas — and every one of them carries your logo. It can also be bought and collected at ZELOS CAFE in Vientiane.">2026/27シーズンのホームユニフォームを9,500円で販売中（名前・番号入りは＋1,500円）。日本国内・ラオス国内・海外へ発送しており、その一枚一枚に御社のロゴが乗ります。首都ビエンチャンの実店舗「ZELOS CAFE」でも購入・受け取りが可能です。</p>
+    </div>
+    <div class="sp-reach">
+      <h4 data-ja="観戦ツアー" data-en="Supporter tours">観戦ツアー</h4>
+      <p data-ja="日本からサバナケットへのサポーターツアーを実施。スタジアム観戦とクラブスタッフの現地アテンドが付く、接待・サンプリングに適した場です。" data-en="Supporter tours run from Japan to Savannakhet, with stadium seats and club staff on the ground — a natural setting for hosting guests or sampling products.">日本からサバナケットへのサポーターツアーを実施。スタジアム観戦とクラブスタッフの現地アテンドが付く、接待・サンプリングに適した場です。</p>
+    </div>
+    <div class="sp-reach">
+      <h4 data-ja="アカデミー・トライアウト" data-en="Academy &amp; tryouts">アカデミー・トライアウト</h4>
+      <p data-ja="サバナケットでの育成事業に加え、東京でのオープントライアウトを既に2回開催（VOL.1・VOL.2／2026年春）。参加者・ご家族・メディアが集まるリアルイベントです。" data-en="Alongside the academy in Savannakhet, we have held two open tryouts in Tokyo (Vol. 1 and Vol. 2, spring 2026) — live events that bring together entrants, their families and the media.">サバナケットでの育成事業に加え、東京でのオープントライアウトを既に2回開催（VOL.1・VOL.2／2026年春）。参加者・ご家族・メディアが集まるリアルイベントです。</p>
+    </div>
+  </div>
+  <p class="sp-note" data-ja="クラブは1年目のため、観客動員数やチャンネルのリーチは実績値の蓄積段階にあります。予測値をお示しするのではなく、シーズン中およびシーズン終了時のご報告で実測値をお伝えする方針です。" data-en="This is the club's first season, so attendance and channel reach are still being accumulated as real figures. Rather than offer projections, we report measured results during and at the end of the season.">クラブは1年目のため、観客動員数やチャンネルのリーチは実績値の蓄積段階にあります。予測値をお示しするのではなく、シーズン中およびシーズン終了時のご報告で実測値をお伝えする方針です。</p>
+
+  <h3 class="sp-h3">HOW IT WORKS</h3>
+  <p class="sp-lead" data-ja="ご相談からシーズン終了のご報告まで、5つのステップで進めます。" data-en="From first conversation to the end-of-season report, in five steps.">ご相談からシーズン終了のご報告まで、5つのステップで進めます。</p>
+  <div class="sp-flow">
+    <div>
+      <div class="sp-step">
+        <div class="sp-step-no">1</div>
+        <div class="sp-step-body">
+          <h4 data-ja="ご相談" data-en="Talk to us">ご相談</h4>
+          <p data-ja="まずは短いお打ち合わせを。御社が何を実現したいのか、どの市場で、どのくらいの期間で——そこからお伺いします。" data-en="A short call first. What you want to achieve, in which market, over what period — we start there.">まずは短いお打ち合わせを。御社が何を実現したいのか、どの市場で、どのくらいの期間で——そこからお伺いします。</p>
+        </div>
+      </div>
+      <div class="sp-step">
+        <div class="sp-step-no">2</div>
+        <div class="sp-step-body">
+          <h4 data-ja="ご提案" data-en="Proposal">ご提案</h4>
+          <p data-ja="おおよそ2週間以内に、推奨プラン・権利内容・活用施策・費用をまとめた提案書をご提出します。" data-en="Within roughly two weeks we send a written proposal: recommended plan, rights, activation ideas and cost.">おおよそ2週間以内に、推奨プラン・権利内容・活用施策・費用をまとめた提案書をご提出します。</p>
+        </div>
+      </div>
+      <div class="sp-step">
+        <div class="sp-step-no">3</div>
+        <div class="sp-step-body">
+          <h4 data-ja="ご契約" data-en="Agreement">ご契約</h4>
+          <p data-ja="Savannakhet Zelos FC（ラオス法人）との契約書を締結。ラオスキープまたはUSDでのお支払いとなり、分割スケジュールもご相談いただけます。" data-en="The agreement is signed with Savannakhet Zelos FC, a Lao company. Payment is in Lao kip or USD, and instalments can be arranged.">Savannakhet Zelos FC（ラオス法人）との契約書を締結。ラオスキープまたはUSDでのお支払いとなり、分割スケジュールもご相談いただけます。</p>
+        </div>
+      </div>
+      <div class="sp-step">
+        <div class="sp-step-no">4</div>
+        <div class="sp-step-body">
+          <h4 data-ja="実施開始" data-en="Go live">実施開始</h4>
+          <p data-ja="ユニフォーム・看板の製作、クラブと御社の双方チャネルでの発表、シーズン開幕戦からコンテンツ施策を開始します。" data-en="Kit and signage are produced, the partnership is announced on both your channels and ours, and content activity begins with the season opener.">ユニフォーム・看板の製作、クラブと御社の双方チャネルでの発表、シーズン開幕戦からコンテンツ施策を開始します。</p>
+        </div>
+      </div>
+      <div class="sp-step">
+        <div class="sp-step-no">5</div>
+        <div class="sp-step-body">
+          <h4 data-ja="ご報告" data-en="Report back">ご報告</h4>
+          <p data-ja="シーズン終了時に、実施した権利内容、チャネル実績、活動報告をまとめてご提出。次シーズンの条件もあわせてご提示します。" data-en="At the end of the season we deliver a written report on rights delivered, channel performance and activity — together with terms for the following season.">シーズン終了時に、実施した権利内容、チャネル実績、活動報告をまとめてご提出。次シーズンの条件もあわせてご提示します。</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="sp-facts">
+        <h4 data-ja="実務面のご確認事項" data-en="Practical points">実務面のご確認事項</h4>
+        <ul>
+          <li data-ja="<strong>契約主体</strong>：Savannakhet Zelos FC（ラオス法人）。ラオスの商慣行に沿ったご契約です。" data-en="<strong>Contracting party</strong>: Savannakhet Zelos FC, a Lao company. Agreements follow Lao commercial practice."><strong>契約主体</strong>：Savannakhet Zelos FC（ラオス法人）。ラオスの商慣行に沿ったご契約です。</li>
+          <li data-ja="<strong>通貨</strong>：ラオスキープまたはUSD。請求書・領収書は英語対応可能です。" data-en="<strong>Currency</strong>: Lao kip or USD. Invoices and receipts can be issued in English."><strong>通貨</strong>：ラオスキープまたはUSD。請求書・領収書は英語対応可能です。</li>
+          <li data-ja="<strong>言語</strong>：交渉・契約・報告のすべてを日本語で対応。クラブの対外発信は英語・ラオ語でも行います。" data-en="<strong>Language</strong>: negotiation, contracting and reporting all in Japanese. The club also communicates publicly in English and Lao."><strong>言語</strong>：交渉・契約・報告のすべてを日本語で対応。クラブの対外発信は英語・ラオ語でも行います。</li>
+          <li data-ja="<strong>契約期間</strong>：1シーズン単位。複数シーズンのご契約には優遇条件がございます。" data-en="<strong>Term</strong>: one season at a time. Preferential terms apply to multi-season agreements."><strong>契約期間</strong>：1シーズン単位。複数シーズンのご契約には優遇条件がございます。</li>
+          <li data-ja="<strong>独占性</strong>：ユニフォーム各位置は1社様の独占です。業種独占も個別にご相談いただけます。" data-en="<strong>Exclusivity</strong>: each kit position belongs to a single company. Category exclusivity can be discussed."><strong>独占性</strong>：ユニフォーム各位置は1社様の独占です。業種独占も個別にご相談いただけます。</li>
+        </ul>
+      </div>
+      <div class="sp-urgent">
+        <h4 data-ja="お早めのご検討を" data-en="Why timing matters">お早めのご検討を</h4>
+        <p data-ja="ユニフォームはシーズン開幕前に製作するため、掲出枠はお申し込み順の確定となります。2026/27シーズンの背中スポンサーは2026年4月に決定済みで、胸スポンサーは現在募集中です。" data-en="Kit is manufactured before the season starts, so placements are confirmed in the order they are booked. The back-of-shirt position for 2026/27 was filled in April 2026; the chest position is open now.">ユニフォームはシーズン開幕前に製作するため、掲出枠はお申し込み順の確定となります。2026/27シーズンの背中スポンサーは2026年4月に決定済みで、胸スポンサーは現在募集中です。</p>
+      </div>
+    </div>
   </div>
 
   <h3 class="sp-h3">SPONSORSHIP INQUIRY</h3>
