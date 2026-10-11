@@ -3028,6 +3028,17 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
 .game-card.has-result .game-time { display: none; }
 .game-card.has-result { opacity: 0.92; }
 
+.cd-next {
+  margin-top: 18px; padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  font-family: "Oswald", "Noto Sans JP", sans-serif;
+  font-size: 13px; font-weight: 500; letter-spacing: 0.04em;
+  opacity: 0.9;
+}
+.cd-next[hidden] { display: none !important; }
+.cd.is-final .cd-next { border-top-color: rgba(0, 0, 0, 0.22); }
+@media (max-width: 760px) { .cd-next { font-size: 12px; line-height: 1.7; } }
+
 /* ========================= SEASON RECORD ========================= */
 .season-record[hidden] { display: none !important; }
 .season-record {
@@ -3611,6 +3622,8 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
       </div>
     </div>
 
+    <div class="cd-next" id="cdNext" hidden></div>
+
     <div class="cd-actions">
       <a class="cd-btn" onclick="showPage('contact')" data-ja="チケットを申し込む" data-en="GET TICKETS">チケットを申し込む</a>
       <a class="cd-btn ghost" onclick="showPage('schedule')" data-ja="全日程を見る" data-en="FULL SCHEDULE">全日程を見る</a>
@@ -3674,7 +3687,7 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
   <a class="more" onclick="showPage('schedule')" data-ja="ALL SCHEDULE →" data-en="ALL SCHEDULE →">ALL SCHEDULE →</a>
 </div>
 <div class="game-schedule">
-  <div class="game-card fade-in" data-date="2026-10-10">
+  <div class="game-card fade-in" data-date="2026-10-10" data-score="0-0">
     <span class="game-badge home">HOME</span>
     <div class="game-venue" data-ja="サバナケット・スタジアム" data-en="Savannakhet Stadium">サバナケット・スタジアム</div>
     <div class="game-date">10.10</div>
@@ -3759,7 +3772,7 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
     <div class="game-venue" data-ja="ルアンパバーン・スタジアム" data-en="Luang Prabang Stadium">ルアンパバーン・スタジアム</div>
     <div class="game-date">12.17</div>
     <div class="game-time" data-ja="15:30 キックオフ（日本時間 17:30）" data-en="Kick-off 15:30 (17:30 JST)">15:30 キックオフ（日本時間 17:30）</div>
-    <div class="game-league" data-ja="LAO LEAGUE 1 第11節" data-en="LAO LEAGUE 1 MATCHDAY 11">LAO LEAGUE 1 第11節</div>
+    <div class="game-league" data-ja="LAO LEAGUE 1 第10節" data-en="LAO LEAGUE 1 MATCHDAY 10">LAO LEAGUE 1 第10節</div>
     <div class="game-opponent"><img class="game-logo" src="data:image/webp;base64,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" alt="Luang Prabang EDL FC" loading="lazy"><span data-ja="vs. ルアンパバーン EDL FC" data-en="vs. Luang Prabang EDL FC">vs. ルアンパバーン EDL FC</span></div>
   </div>
 </div>
@@ -3783,6 +3796,11 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
       <button class="news-tab" data-cat="sponsor" data-ja="スポンサー" data-en="SPONSOR">スポンサー</button>
     </div>
     <div class="news-list">
+      <a class="news-item fade-in">
+        <div class="news-date">2026.10.10</div>
+        <div class="news-category event" data-ja="試合・イベント" data-en="MATCH & EVENT">EVENT</div>
+        <div class="news-title" data-body-ja="2026年10月10日、サバナケット・スタジアムでラオス・プレミアリーグ2026/27シーズンの開幕戦が行われ、サバナケット・ゼロスFCはマツダGB FCと0-0で引き分けました。クラブにとって、リーグ戦における最初の公式戦です。||オーナー・渡邉卓矢のコメント||「いよいよ新たなサバナケット県のチームのリーグ戦が開幕しました。まずはこのリーグに参加することを認めてくださって、登録手続きや開催までの準備を指南してくださったサッカー協会に感謝いたします。||また、多くのサポーターさんが足を運んでくれました。昨シーズンは数十人しか来場していなかったと聞いています。このスタジアムが街の中心、人々の集まるタッチポイントとなり、多くの感動や笑顔の生まれる場所に成長することを目指しています。||そのためには多くのサポートが必要ですし、クラブとして価値を提供することが必要です。ではどんな価値を提供できるのか。そう考えると、この街の人々の週末の楽しみになりたい。そして子どもたちの夢の対象であり、目標を持ち、今を大切に生きるための第3の居場所となりたい。||そのためにはピッチ内だけではなく、地域の皆さんにとって重要な存在となることが必要です。それは選手のみならず、スタッフや関連企業、パートナーさんたちとの連携が必要です。||まだまだ未熟なチームですが、ここからラオスのサッカーにとって、サバナケットの人々にとってなくてはならない存在へと成長していきたいと考えています。引き続き応援をよろしくお願いします。」||次節は10月17日（土）、アウェイでナムター・ユナイテッドと対戦します。キックオフは15:30（日本時間17:30）、ルアンナムター・スタジアム。全試合をクラブ公式YouTubeチャンネルでライブ配信しています。" data-body-en="Savannakhet Zelos FC opened their 2026/27 Lao Premier League campaign with a 0-0 draw against Mazda GB FC at Savannakhet Stadium on 10 October 2026 &mdash; the club&apos;s first competitive league fixture.||Takuya Watanabe, Owner||&ldquo;The league season has begun for a new club in Savannakhet province. First of all, I want to thank the football federation for admitting us to this league, and for guiding us through registration and everything else that had to be ready before kick-off.||A lot of supporters came to the ground. I am told that last season only a few dozen people attended. We want this stadium to become the centre of the town &mdash; a place where people gather, and where a great deal of emotion and a great many smiles are made.||That will take a lot of support, and it means the club has to offer something of value in return. So what value can we offer? When I think about it: we want to be what the people of this town look forward to at the weekend. We want to be what children dream of, and a third place where they can hold on to a goal and live today fully.||To do that we have to matter to the people here, not only on the pitch. That takes more than the players &mdash; it takes our staff, the companies we work with, and our partners, all pulling together.||We are still a young, inexperienced team. But from here we want to grow into something Lao football, and the people of Savannakhet, cannot do without. We would be glad to have your support along the way.&rdquo;||Next up is Namtha United away on Saturday 17 October, kicking off at 15:30 local time (17:30 JST) at Luang Namtha Stadium. Every match is streamed live on the club&apos;s official YouTube channel." data-ja="【リーグ開幕戦】△ 0-0 vs マツダGB FC｜ホームで勝ち点1、リーグ戦が始まりました" data-en="[Season Opener] D 0-0 vs Mazda GB FC &mdash; a point at home as the league campaign begins">【リーグ開幕戦】△ 0-0 vs マツダGB FC｜ホームで勝ち点1、リーグ戦が始まりました</div>
+      </a>
       <a class="news-item fade-in">
         <div class="news-date" data-ja="プレシーズン" data-en="Preseason">プレシーズン</div>
         <div class="news-category event" data-ja="試合・イベント" data-en="MATCH & EVENT">EVENT</div>
@@ -4406,7 +4424,7 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
   </div>
 
   <div class="game-schedule" style="padding:0">
-  <div class="game-card" data-date="2026-10-10">
+  <div class="game-card" data-date="2026-10-10" data-score="0-0">
     <span class="game-badge home">HOME</span>
     <div class="game-venue" data-ja="サバナケット・スタジアム" data-en="Savannakhet Stadium">サバナケット・スタジアム</div>
     <div class="game-date">10.10</div>
@@ -4491,7 +4509,7 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
     <div class="game-venue" data-ja="ルアンパバーン・スタジアム" data-en="Luang Prabang Stadium">ルアンパバーン・スタジアム</div>
     <div class="game-date">12.17</div>
     <div class="game-time" data-ja="15:30 キックオフ（日本時間 17:30）" data-en="Kick-off 15:30 (17:30 JST)">15:30 キックオフ（日本時間 17:30）</div>
-    <div class="game-league" data-ja="LAO LEAGUE 1 第11節" data-en="LAO LEAGUE 1 MATCHDAY 11">LAO LEAGUE 1 第11節</div>
+    <div class="game-league" data-ja="LAO LEAGUE 1 第10節" data-en="LAO LEAGUE 1 MATCHDAY 10">LAO LEAGUE 1 第10節</div>
     <div class="game-opponent"><img class="game-logo" src="data:image/webp;base64,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" alt="Luang Prabang EDL FC" loading="lazy"><span data-ja="vs. ルアンパバーン EDL FC" data-en="vs. Luang Prabang EDL FC">vs. ルアンパバーン EDL FC</span></div>
   </div>
   </div>
@@ -6614,6 +6632,24 @@ document.addEventListener('keydown', (e) => {
   }
   var MARK = { win: '〇', draw: '△', loss: '×' };
 
+  /* --- 0. a score entered on one card is copied to every card for that date,
+             so you only ever have to write data-score in one place --- */
+  (function () {
+    var byDate = {};
+    Array.prototype.forEach.call(document.querySelectorAll('.game-card[data-date]'), function (c) {
+      var d = c.getAttribute('data-date');
+      (byDate[d] = byDate[d] || []).push(c);
+    });
+    Object.keys(byDate).forEach(function (d) {
+      var src = null;
+      byDate[d].forEach(function (c) { if (!src && c.getAttribute('data-score')) src = c; });
+      if (!src) return;
+      byDate[d].forEach(function (c) {
+        if (!c.getAttribute('data-score')) c.setAttribute('data-score', src.getAttribute('data-score'));
+      });
+    });
+  })();
+
   /* --- 1. paint any entered score onto every fixture card, both pages --- */
   Array.prototype.forEach.call(document.querySelectorAll('.game-card[data-score]'), function (c) {
     var sc = parseScore(c.getAttribute('data-score'));
@@ -6715,6 +6751,27 @@ document.addEventListener('keydown', (e) => {
     slot.innerHTML = '';
     if (f.crest) { var c = f.crest.cloneNode(true); c.removeAttribute('class'); slot.appendChild(c); }
 
+    /* while a result is on show, still point at the next fixture */
+    var nextLine = document.getElementById('cdNext');
+    if (nextLine) {
+      var nx = null;
+      for (var k = fixtures.indexOf(f) + 1; k < fixtures.length; k++) {
+        if (!fixtures[k].score) { nx = fixtures[k]; break; }
+      }
+      if (isResult && nx) {
+        var nd = nx.date.split('-');
+        var nw = new Date(+nd[0], nd[1] - 1, +nd[2]).getDay();
+        setText(nextLine,
+          '次節 ' + nd[1] + '/' + nd[2] + '（' + ['日','月','火','水','木','金','土'][nw] + '）vs '
+            + stripVs(nx.oppJa) + '（' + (nx.home ? 'ホーム' : 'アウェイ') + '）15:30 キックオフ ／ 日本時間 17:30',
+          'NEXT: ' + nd[1] + '/' + nd[2] + ' (' + ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][nw] + ') vs '
+            + stripVs(nx.oppEn) + ' (' + (nx.home ? 'HOME' : 'AWAY') + ') · Kick-off 15:30 / 17:30 JST');
+        nextLine.hidden = false;
+      } else {
+        nextLine.hidden = true;
+      }
+    }
+
     var mark = document.getElementById('cdRMark');
     var score = document.getElementById('cdRScore');
     if (isResult && f.score) {
@@ -6769,6 +6826,7 @@ document.addEventListener('keydown', (e) => {
     if (diff <= 0) {
       clock.hidden = true; live.hidden = false;
       band.classList.add('is-final');
+      setText(document.getElementById('cdKicker'), '試合中', 'LIVE NOW');
       return;
     }
 
@@ -6798,7 +6856,11 @@ document.addEventListener('keydown', (e) => {
       else if (f.score.outcome === 'draw') d++;
       else l++;
     });
-    document.getElementById('srWDL').textContent = w + '勝 ' + d + '分 ' + l + '敗';
+    var wdl = document.getElementById('srWDL');
+    wdl.setAttribute('data-ja', w + '勝 ' + d + '分 ' + l + '敗');
+    wdl.setAttribute('data-en', w + 'W ' + d + 'D ' + l + 'L');
+    wdl.textContent = (typeof currentLang !== 'undefined' && currentLang === 'en')
+      ? (w + 'W ' + d + 'D ' + l + 'L') : (w + '勝 ' + d + '分 ' + l + '敗');
     document.getElementById('srPlayed').textContent = played.length;
     document.getElementById('srPts').textContent = w * 3 + d;
     document.getElementById('srGF').textContent = gf;
@@ -6882,6 +6944,12 @@ function closeNewsModal(event) {
   document.getElementById('newsModal').classList.remove('active');
   document.body.style.overflow = '';
 }
+/* Esc closes the article */
+document.addEventListener('keydown', function (e) {
+  if (e.key !== 'Escape') return;
+  var m = document.getElementById('newsModal');
+  if (m && m.classList.contains('active')) closeNewsModal();
+});
 </script>
 
 <script>
