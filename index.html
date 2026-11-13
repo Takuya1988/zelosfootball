@@ -3513,6 +3513,72 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
 }
 @media (max-width: 860px) { .cl-pledges { grid-template-columns: 1fr; } }
 
+
+/* ========================= LEAGUE TABLE ========================= */
+.lt-wrap { margin: 0 0 34px; }
+.lt-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  flex-wrap: wrap; gap: 8px; margin-bottom: 12px;
+}
+.lt-title {
+  font-family: "Oswald", sans-serif; font-size: 18px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink);
+  padding-left: 12px; border-left: 5px solid var(--gold);
+}
+.lt-asof { font-size: 11.5px; color: var(--sub); }
+.lt-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+table.lt {
+  width: 100%; border-collapse: collapse; min-width: 560px;
+  font-variant-numeric: tabular-nums;
+}
+table.lt th, table.lt td {
+  padding: 10px 8px; text-align: center; font-size: 13px;
+  border-bottom: 1px solid var(--line); white-space: nowrap;
+}
+table.lt thead th {
+  background: var(--navy); color: #fff;
+  font-family: "Oswald", sans-serif; font-size: 11px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  border-bottom: none; padding: 11px 8px;
+}
+table.lt th.lt-team, table.lt td.lt-team {
+  text-align: left; white-space: normal; min-width: 170px;
+  font-weight: 600; color: var(--ink);
+}
+table.lt td.lt-pos {
+  font-family: "Oswald", sans-serif; font-size: 15px; font-weight: 700;
+  width: 38px; color: var(--ink);
+}
+table.lt td.lt-pts {
+  font-family: "Oswald", sans-serif; font-size: 16px; font-weight: 700;
+  color: var(--ink);
+}
+table.lt tbody tr:nth-child(even) { background: rgba(0, 0, 0, 0.022); }
+table.lt tbody tr.lt-us { background: var(--gold); }
+table.lt tbody tr.lt-us td { font-weight: 700; color: var(--navy); border-bottom-color: rgba(0,0,0,0.18); }
+table.lt tbody tr.lt-us td.lt-pos::after {
+  content: ""; display: block;
+}
+table.lt tbody tr.lt-acl td.lt-pos {
+  box-shadow: inset 4px 0 0 var(--gold-deep);
+}
+.lt-note { font-size: 11.5px; color: var(--sub); line-height: 1.8; margin-top: 12px; }
+.lt-note b { color: var(--ink); }
+.lt-swipe { display: none; font-size: 11px; color: var(--sub); margin-top: 6px; }
+
+@media (max-width: 680px) {
+  table.lt { min-width: 0; }
+  table.lt th.lt-opt, table.lt td.lt-opt { display: none; }   /* hide GF / GA on phones */
+  table.lt th, table.lt td { padding: 9px 3px; font-size: 12px; }
+  table.lt thead th { font-size: 10px; letter-spacing: 0.02em; }
+  table.lt th.lt-team, table.lt td.lt-team {
+    min-width: 0; width: 46%; font-size: 11.5px; padding-left: 4px; line-height: 1.45;
+  }
+  table.lt td.lt-pos { width: 24px; font-size: 14px; }
+  table.lt td.lt-pts { font-size: 15px; }
+  .lt-swipe { display: none; }
+}
+
 </style>
 </head>
 <body>
@@ -4428,6 +4494,16 @@ nav.main-nav li.lang a:hover { color: #fff; background: transparent; }
 <div class="generic-inner">
   <h2>GAME &amp; RESULT</h2>
   <p style="color:var(--sub);margin-bottom:24px" data-ja="2026-27シーズン 日程・結果" data-en="2026-27 Season Fixtures &amp; Results">2026-27シーズン 日程・結果</p>
+
+  <div class="lt-wrap">
+    <div class="lt-head">
+      <div class="lt-title" data-ja="リーグ順位表" data-en="LEAGUE TABLE">リーグ順位表</div>
+      <div class="lt-asof" id="ltAsof"></div>
+    </div>
+    <div class="lt-scroll"><table class="lt" id="leagueTable"></table></div>
+    <div class="lt-swipe" data-ja="← 横にスクロールできます" data-en="← scroll sideways for more">← 横にスクロールできます</div>
+    <p class="lt-note" data-ja="順位は <b>勝点 → 得失点差 → 得点</b> の順で決定します。1位のクラブにAFCチャレンジリーグ予備ラウンドおよびASEANクラブ選手権予選プレーオフの出場権が与えられます。各クラブの消化試合数は異なります。下の「リーグ戦 通算」はクラブ自身の最新成績のため、この表の時点と数字が異なる場合があります。" data-en="Ranked by <b>points, then goal difference, then goals scored</b>. The club finishing first qualifies for the AFC Challenge League preliminary round and the ASEAN Club Championship qualifying play-offs. Clubs have played a different number of matches. The club&#39;s own record below is kept fully up to date, so it may be ahead of the date shown here.">順位は <b>勝点 → 得失点差 → 得点</b> の順で決定します。1位のクラブにAFCチャレンジリーグ予備ラウンドおよびASEANクラブ選手権予選プレーオフの出場権が与えられます。各クラブの消化試合数は異なります。下の「リーグ戦 通算」はクラブ自身の最新成績のため、この表の時点と数字が異なる場合があります。</p>
+  </div>
 
   <div class="season-record" id="seasonRecord" hidden>
     <div class="sr-line">
@@ -7110,6 +7186,113 @@ document.addEventListener('keydown', function (e) {
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else { init(); }
+})();
+</script>
+
+
+<script>
+/* ===== LEAGUE TABLE ==========================================================
+   順位表の更新は、下の STANDINGS の数字を書き換えるだけです。
+   勝点・得失点差・試合数・順位はページ側で自動計算し、自動で並べ替えます。
+
+     w  = 勝   d = 分   l = 敗   gf = 得点   ga = 失点
+
+   ASOF には「何月何日時点の表か」を入れてください（例 '2026-11-01'）。
+   サバナケット・ゼロスFCの行は自動で黄色くなります（us: true の行）。
+   ========================================================================== */
+(function () {
+  var ASOF = '2026-11-01';   /* ← 更新したらここも直す */
+
+  var STANDINGS = [
+    { ja: 'エズラFC',                        en: 'Ezra FC',                       w: 3, d: 1, l: 0, gf: 14, ga: 2  },
+    { ja: 'サラワンユナイテッド',              en: 'Salavan United',                w: 3, d: 1, l: 0, gf: 10, ga: 3  },
+    { ja: 'マツダGB FC',                     en: 'Mazda GB FC',                   w: 3, d: 1, l: 0, gf: 8,  ga: 1  },
+    { ja: 'ルアンパバーン EDL FC',            en: 'Luang Prabang EDL FC',          w: 3, d: 0, l: 1, gf: 13, ga: 4  },
+    { ja: 'サバナケット・ゼロスFC',            en: 'Savannakhet Zelos FC',          w: 2, d: 2, l: 0, gf: 8,  ga: 5, us: true },
+    { ja: 'ナムター・ユナイテッド',            en: 'Namtha United',                 w: 2, d: 0, l: 2, gf: 7,  ga: 8  },
+    { ja: 'チャンパサック HAGL アヴェニール FC', en: 'Champasak HAGL Avenir FC',    w: 1, d: 0, l: 2, gf: 4,  ga: 4  },
+    { ja: 'BIS FC',                          en: 'BIS FC',                        w: 0, d: 1, l: 2, gf: 2,  ga: 12 },
+    { ja: 'アーミーFC',                       en: 'Army FC',                       w: 0, d: 0, l: 4, gf: 0,  ga: 7  },
+    { ja: 'ピンケオ2010 チャンタブリー・パクセー FC', en: 'Pinkeo 2010 Chanthabouly Pakse FC', w: 0, d: 0, l: 3, gf: 2, ga: 10 },
+    { ja: 'ウドムサイ・アントルメ FC',         en: 'Oudomxay Entremets FC',         w: 0, d: 0, l: 3, gf: 0,  ga: 12 }
+  ];
+
+  var box = document.getElementById('leagueTable');
+  if (!box) return;
+
+  var rows = STANDINGS.map(function (t) {
+    return {
+      ja: t.ja, en: t.en, us: !!t.us,
+      pld: t.w + t.d + t.l,
+      w: t.w, d: t.d, l: t.l, gf: t.gf, ga: t.ga,
+      gd: t.gf - t.ga,
+      pts: t.w * 3 + t.d
+    };
+  });
+
+  /* 1) 勝点  2) 得失点差  3) 得点 */
+  rows.sort(function (a, b) {
+    return (b.pts - a.pts) || (b.gd - a.gd) || (b.gf - a.gf);
+  });
+
+  function lang() {
+    return (typeof currentLang !== 'undefined' && currentLang === 'en') ? 'en' : 'ja';
+  }
+  function td(cls, val) { return '<td class="' + cls + '">' + val + '</td>'; }
+
+  var HEAD = [
+    ['lt-pos',  '#',      '#'],
+    ['lt-team', 'クラブ',  'CLUB'],
+    ['',        '試合',    'PLD'],
+    ['',        '勝',      'W'],
+    ['',        '分',      'D'],
+    ['',        '敗',      'L'],
+    ['lt-opt',  '得点',    'GF'],
+    ['lt-opt',  '失点',    'GA'],
+    ['',        '得失',    'GD'],
+    ['lt-pts',  '勝点',    'PTS']
+  ];
+
+  function render() {
+    var L = lang();
+    var h = '<thead><tr>';
+    HEAD.forEach(function (c) {
+      h += '<th class="' + c[0] + '">' + (L === 'en' ? c[2] : c[1]) + '</th>';
+    });
+    h += '</tr></thead><tbody>';
+
+    rows.forEach(function (r, i) {
+      var cls = [];
+      if (r.us) cls.push('lt-us');
+      if (i === 0) cls.push('lt-acl');
+      h += '<tr' + (cls.length ? ' class="' + cls.join(' ') + '"' : '') + '>';
+      h += td('lt-pos', i + 1);
+      h += td('lt-team', L === 'en' ? r.en : r.ja);
+      h += td('', r.pld) + td('', r.w) + td('', r.d) + td('', r.l);
+      h += td('lt-opt', r.gf) + td('lt-opt', r.ga);
+      h += td('', (r.gd > 0 ? '+' : '') + r.gd);
+      h += td('lt-pts', r.pts);
+      h += '</tr>';
+    });
+    h += '</tbody>';
+    box.innerHTML = h;
+
+    var d = ASOF.split('-');
+    var asof = document.getElementById('ltAsof');
+    if (asof) {
+      asof.textContent = (L === 'en')
+        ? 'As of ' + d[2] + '/' + d[1] + '/' + d[0]
+        : d[0] + '年' + (+d[1]) + '月' + (+d[2]) + '日時点';
+    }
+  }
+
+  render();
+
+  /* 言語を切り替えたら組み直す */
+  if (typeof window.toggleLang === 'function') {
+    var orig = window.toggleLang;
+    window.toggleLang = function () { orig.apply(this, arguments); render(); };
+  }
 })();
 </script>
 
