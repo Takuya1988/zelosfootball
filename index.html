@@ -3556,9 +3556,6 @@ table.lt td.lt-pts {
 table.lt tbody tr:nth-child(even) { background: rgba(0, 0, 0, 0.022); }
 table.lt tbody tr.lt-us { background: var(--gold); }
 table.lt tbody tr.lt-us td { font-weight: 700; color: var(--navy); border-bottom-color: rgba(0,0,0,0.18); }
-table.lt tbody tr.lt-us td.lt-pos::after {
-  content: ""; display: block;
-}
 table.lt tbody tr.lt-acl td.lt-pos {
   box-shadow: inset 4px 0 0 var(--gold-deep);
 }
@@ -4502,7 +4499,7 @@ table.lt tbody tr.lt-acl td.lt-pos {
     </div>
     <div class="lt-scroll"><table class="lt" id="leagueTable"></table></div>
     <div class="lt-swipe" data-ja="← 横にスクロールできます" data-en="← scroll sideways for more">← 横にスクロールできます</div>
-    <p class="lt-note" data-ja="順位は <b>勝点 → 得失点差 → 得点</b> の順で決定します。1位のクラブにAFCチャレンジリーグ予備ラウンドおよびASEANクラブ選手権予選プレーオフの出場権が与えられます。各クラブの消化試合数は異なります。下の「リーグ戦 通算」はクラブ自身の最新成績のため、この表の時点と数字が異なる場合があります。" data-en="Ranked by <b>points, then goal difference, then goals scored</b>. The club finishing first qualifies for the AFC Challenge League preliminary round and the ASEAN Club Championship qualifying play-offs. Clubs have played a different number of matches. The club&#39;s own record below is kept fully up to date, so it may be ahead of the date shown here.">順位は <b>勝点 → 得失点差 → 得点</b> の順で決定します。1位のクラブにAFCチャレンジリーグ予備ラウンドおよびASEANクラブ選手権予選プレーオフの出場権が与えられます。各クラブの消化試合数は異なります。下の「リーグ戦 通算」はクラブ自身の最新成績のため、この表の時点と数字が異なる場合があります。</p>
+    <p class="lt-note" data-ja="順位は <b>勝点 → 得失点差 → 得点</b> の順で決定します。1位のクラブにAFCチャレンジリーグ予備ラウンドおよびASEANクラブ選手権予選プレーオフの出場権が与えられます。サバナケット・ゼロスFCの行は日程・結果から自動で更新されるため常に最新です。他クラブの数字は上記の時点のもので、消化試合数はクラブごとに異なります。" data-en="Ranked by <b>points, then goal difference, then goals scored</b>. The club finishing first qualifies for the AFC Challenge League preliminary round and the ASEAN Club Championship qualifying play-offs. Savannakhet Zelos&#39; own row updates automatically from the results on this site, so it is always current. The other clubs&#39; figures are as of the date above, and clubs have played a different number of matches.">順位は <b>勝点 → 得失点差 → 得点</b> の順で決定します。1位のクラブにAFCチャレンジリーグ予備ラウンドおよびASEANクラブ選手権予選プレーオフの出場権が与えられます。サバナケット・ゼロスFCの行は日程・結果から自動で更新されるため常に最新です。他クラブの数字は上記の時点のもので、消化試合数はクラブごとに異なります。</p>
   </div>
 
   <div class="season-record" id="seasonRecord" hidden>
@@ -7212,7 +7209,7 @@ document.addEventListener('keydown', function (e) {
     { ja: 'ナムター・ユナイテッド',            en: 'Namtha United',                 w: 2, d: 0, l: 2, gf: 7,  ga: 8  },
     { ja: 'チャンパサック HAGL アヴェニール FC', en: 'Champasak HAGL Avenir FC',    w: 1, d: 0, l: 2, gf: 4,  ga: 4  },
     { ja: 'BIS FC',                          en: 'BIS FC',                        w: 0, d: 1, l: 2, gf: 2,  ga: 12 },
-    { ja: 'アーミーFC',                       en: 'Army FC',                       w: 0, d: 0, l: 4, gf: 0,  ga: 7  },
+    { ja: 'アーミーFC',                       en: 'Army FC',                       w: 0, d: 1, l: 4, gf: 0,  ga: 7  },
     { ja: 'ピンケオ2010 チャンタブリー・パクセー FC', en: 'Pinkeo 2010 Chanthabouly Pakse FC', w: 0, d: 0, l: 3, gf: 2, ga: 10 },
     { ja: 'ウドムサイ・アントルメ FC',         en: 'Oudomxay Entremets FC',         w: 0, d: 0, l: 3, gf: 0,  ga: 12 }
   ];
@@ -7220,9 +7217,30 @@ document.addEventListener('keydown', function (e) {
   var box = document.getElementById('leagueTable');
   if (!box) return;
 
+  /* --- 自クラブの行は、このサイトに入力済みのスコアから自動計算する ---
+     日程表に data-score を入れれば順位表にも即反映されます。手で直す必要はありません。 */
+  (function () {
+    var me = null;
+    for (var i = 0; i < STANDINGS.length; i++) { if (STANDINGS[i].us) { me = STANDINGS[i]; break; } }
+    if (!me) return;
+    var seen = {}, w = 0, d = 0, l = 0, gf = 0, ga = 0, n = 0;
+    Array.prototype.forEach.call(
+      document.querySelectorAll('.game-card[data-score][data-date]'), function (c) {
+        var key = c.getAttribute('data-date');
+        if (seen[key]) return;                       /* 同じ試合のカードが2枚あるため */
+        var m = String(c.getAttribute('data-score')).match(/^\s*(\d+)\s*[-–:]\s*(\d+)\s*$/);
+        if (!m) return;
+        seen[key] = 1; n++;
+        var us = +m[1], them = +m[2];
+        gf += us; ga += them;
+        if (us > them) w++; else if (us === them) d++; else l++;
+      });
+    if (n) { me.w = w; me.d = d; me.l = l; me.gf = gf; me.ga = ga; me.live = true; }
+  })();
+
   var rows = STANDINGS.map(function (t) {
     return {
-      ja: t.ja, en: t.en, us: !!t.us,
+      ja: t.ja, en: t.en, us: !!t.us, live: !!t.live,
       pld: t.w + t.d + t.l,
       w: t.w, d: t.d, l: t.l, gf: t.gf, ga: t.ga,
       gd: t.gf - t.ga,
@@ -7280,9 +7298,12 @@ document.addEventListener('keydown', function (e) {
     var d = ASOF.split('-');
     var asof = document.getElementById('ltAsof');
     if (asof) {
+      var liveRow = rows.some(function (r) { return r.live; });
       asof.textContent = (L === 'en')
-        ? 'As of ' + d[2] + '/' + d[1] + '/' + d[0]
-        : d[0] + '年' + (+d[1]) + '月' + (+d[2]) + '日時点';
+        ? (liveRow ? 'Savannakhet Zelos up to date · other clubs as of ' : 'As of ')
+            + d[2] + '/' + d[1] + '/' + d[0]
+        : (liveRow ? 'サバナケット・ゼロスFCは最新 ／ 他クラブは ' : '')
+            + d[0] + '年' + (+d[1]) + '月' + (+d[2]) + '日時点';
     }
   }
 
