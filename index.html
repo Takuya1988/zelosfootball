@@ -3576,6 +3576,186 @@ table.lt tbody tr.lt-acl td.lt-pos {
   .lt-swipe { display: none; }
 }
 
+
+/* ========================= SHOP / ORDER WINDOW ========================= */
+.ow { margin: 0 0 30px; border-radius: 4px; overflow: hidden; }
+.ow[hidden] { display: none !important; }
+.ow-inner {
+  background: var(--navy); color: #fff;
+  padding: 20px 24px; display: flex; align-items: center;
+  flex-wrap: wrap; gap: 8px 26px;
+  border-left: 6px solid var(--gold);
+}
+.ow.is-open .ow-inner { background: var(--gold); color: var(--navy); border-left-color: var(--navy); }
+.ow.is-last .ow-inner { background: #8a1f1f; color: #fff; border-left-color: var(--gold); }
+.ow-state {
+  font-family: "Oswald", sans-serif; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+}
+.ow-dates { font-size: 14px; font-weight: 700; }
+.ow-left {
+  margin-left: auto; font-family: "Oswald", sans-serif;
+  font-size: 15px; font-weight: 600; letter-spacing: 0.04em;
+}
+@media (max-width: 640px) {
+  .ow-inner { padding: 16px 18px; gap: 6px 16px; }
+  .ow-left { margin-left: 0; width: 100%; }
+}
+
+.buy-wrap { margin-top: 26px; }
+.buy-btn {
+  display: block; width: 100%; box-sizing: border-box; text-align: center;
+  background: var(--gold); color: var(--navy);
+  font-family: "Oswald", sans-serif; font-size: 17px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 18px 20px; border: 2px solid var(--gold); border-radius: 3px;
+  cursor: pointer; text-decoration: none; transition: all 0.2s;
+}
+.buy-btn:hover { background: var(--navy); color: var(--gold); border-color: var(--navy); }
+.buy-btn.is-closed {
+  background: transparent; color: var(--sub); border-color: var(--line);
+  cursor: not-allowed; pointer-events: none;
+}
+.buy-pay { margin-top: 10px; font-size: 11.5px; color: var(--sub); text-align: center; line-height: 1.7; }
+
+.shirt-impact {
+  display: flex; gap: 24px; align-items: flex-start;
+  background: #fff; border: 1px solid var(--line); border-left: 6px solid var(--gold);
+  border-radius: 4px; padding: 26px 26px 24px; margin: 44px 0 10px;
+}
+.si-fig {
+  flex: 0 0 auto; font-family: "Oswald", sans-serif;
+  font-size: 54px; font-weight: 700; line-height: 1; color: var(--gold-deep);
+}
+.si-fig small { font-size: 16px; font-weight: 500; margin-left: 4px; color: var(--sub); }
+.si-body h4 { font-size: 18px; font-weight: 700; margin: 0 0 10px; color: var(--ink); line-height: 1.5; }
+.si-body p { font-size: 13.5px; line-height: 1.9; color: var(--sub); margin: 0 0 12px; }
+.si-link {
+  font-family: "Oswald", sans-serif; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.1em; color: var(--ink); cursor: pointer; border-bottom: 2px solid var(--gold);
+}
+.si-link:hover { color: var(--gold-deep); }
+@media (max-width: 640px) {
+  .shirt-impact { flex-direction: column; gap: 10px; padding: 22px 20px; }
+  .si-fig { font-size: 44px; }
+}
+
+.shop-note { margin-top: 24px; font-size: 12px; color: var(--sub); line-height: 1.9; }
+.shop-alt {
+  margin-top: 34px; background: var(--bg);
+  border: 1px solid var(--line); border-radius: 4px; padding: 24px 24px 22px;
+}
+.shop-alt h4 { font-size: 15px; font-weight: 700; margin: 0 0 10px; color: var(--ink); }
+.shop-alt p { font-size: 13px; line-height: 1.85; color: var(--sub); margin: 0 0 16px; }
+.cd-btn.shop-alt-btn, .cd-btn.ghost.shop-alt-btn {
+  display: inline-block; background: transparent; color: var(--ink);
+  border: 1px solid var(--navy);
+}
+.cd-btn.shop-alt-btn:hover, .cd-btn.ghost.shop-alt-btn:hover {
+  background: var(--navy); color: var(--gold); border-color: var(--navy);
+}
+
+
+/* ================= WHITE-BASED THEME (override) ================= */
+/* 黄色一色だったブランド面を白ベースに戻す */
+.topbar, .story, .ac-route, footer {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+}
+.topbar *, .story *, .ac-route *, footer * {
+  color: #1a1a1a !important;
+  border-color: #e2e2e2 !important;
+}
+.hero-slider,
+#page-players .tm-hero, .fc-hero, .ac-hero, .yt-hero {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+  border-bottom: 4px solid var(--gold);
+}
+.hero-slider *, #page-players .tm-hero *, .fc-hero *, .ac-hero *, .yt-hero * {
+  color: #1a1a1a !important;
+  border-color: #e2e2e2 !important;
+}
+.hero-slider .hero-tagline { border-top-color: var(--gold) !important; }
+
+footer { border-top: 4px solid var(--gold) !important; }
+.topbar { border-bottom: 1px solid #e2e2e2 !important; }
+
+/* ヘッダーとナビ */
+header.main { background: #ffffff !important; border-bottom: 1px solid #e2e2e2 !important; }
+header.main .logo, header.main .logo * { color: #1a1a1a !important; }
+header.main .cta-btn {
+  background: transparent !important; color: #1a1a1a !important;
+  border: 1px solid #e2e2e2 !important;
+}
+header.main .cta-btn.gold {
+  background: var(--gold) !important; color: #1a1a1a !important; border-color: var(--gold) !important;
+}
+nav.main-nav { background: #ffffff !important; border-bottom: 1px solid #e2e2e2 !important; }
+nav.main-nav li a { color: #555555 !important; }
+nav.main-nav li a:hover, nav.main-nav li a.active {
+  color: #1a1a1a !important;
+  box-shadow: inset 0 -3px 0 var(--gold);
+}
+
+/* 数字の帯：黒面をやめてグレー面＋黄色の数字に */
+.stats-bar { background: #f5f5f5 !important; border-top: 3px solid var(--gold); border-bottom: 1px solid #e2e2e2; }
+.stats-bar, .stats-bar * { color: #1a1a1a !important; }
+.stats-bar .stat-num { color: #1a1a1a !important; }
+.stats-bar .stat-item { border-right-color: #e2e2e2 !important; }
+
+/* 黒ベタだったブロックをグレー面＋黄色ラインに */
+.cl-pledge, .ac2-cta, .ac2-proof-main, .sp-urgent, .season-record, .ac2-tier.mid {
+  background: #f5f5f5 !important;
+  border-top: 4px solid var(--gold);
+  border-left: none;
+}
+.cl-pledge *, .ac2-cta *, .ac2-proof-main *, .sp-urgent *, .season-record *, .ac2-tier.mid * {
+  color: #1a1a1a !important;
+}
+.cl-pledge h4, .ac2-cta h4, .ac2-proof-main h4, .sp-urgent h4,
+.season-record .sr-label, .season-record .sr-stats em,
+.ac2-tier.mid .ac2-tier-amt, .ac2-tier.mid .ac2-tier-ppl { color: #1a1a1a !important; }
+.ac2-proof-tag { background: var(--gold) !important; color: #1a1a1a !important; }
+
+/* 順位表のヘッダー行 */
+table.lt thead th { background: #f5f5f5 !important; color: #1a1a1a !important; border-bottom: 3px solid var(--gold) !important; }
+table.lt tbody tr.lt-us { background: #fdf4d0 !important; box-shadow: inset 4px 0 0 var(--gold); }
+table.lt tbody tr.lt-us td { color: #1a1a1a !important; }
+
+/* カウントダウン帯：面は .cd 側に塗る（.cd-inner に塗ると額縁になる） */
+.cd {
+  background: #f5f5f5 !important;
+  border-top: 1px solid #e2e2e2 !important;
+  border-bottom: 3px solid var(--gold) !important;
+}
+.cd-inner { background: transparent !important; border: none !important; }
+.cd, .cd * { color: #1a1a1a !important; }
+.cd-unit b, .cd-rscore, .cd-kicker { color: #1a1a1a !important; }
+.cd-league, .cd-meta, .cd-unit span, .cd-share-label, .cd-next { opacity: 0.72; }
+.cd-btn { background: var(--gold) !important; color: #1a1a1a !important; border-color: var(--gold) !important; }
+.cd-btn.ghost { background: transparent !important; color: #1a1a1a !important; border: 1px solid #e2e2e2 !important; }
+.cd-share a { border-color: #e2e2e2 !important; }
+/* 24時間を切ったとき：面は塗らず、上辺を太くして数字を強調するだけ */
+.cd.is-final {
+  background: #f5f5f5 !important;
+  border-top: 6px solid var(--gold) !important;
+  border-bottom: 3px solid var(--gold) !important;
+}
+.cd.is-final .cd-kicker { color: #a8201a !important; font-weight: 700; }
+.cd.is-final .cd-unit b { color: #a8201a !important; }
+.cd.is-final .cd-btn { background: var(--gold) !important; color: #1a1a1a !important; }
+.cd.is-final .cd-btn.ghost { background: transparent !important; color: #1a1a1a !important; border-color: #e2e2e2 !important; }
+.cd.is-final .cd-share a { color: #1a1a1a !important; border-color: #e2e2e2 !important; }
+
+/* ショップの受注帯 */
+.ow-inner { background: #f5f5f5 !important; color: #1a1a1a !important; border-left: 6px solid var(--gold) !important; }
+.ow.is-open .ow-inner { background: #fdf4d0 !important; color: #1a1a1a !important; }
+.ow.is-last .ow-inner { background: #fdf4d0 !important; color: #1a1a1a !important; }
+
+/* 本文の背景 */
+body, .page { background: #ffffff !important; }
+
 </style>
 </head>
 <body>
@@ -4982,7 +5162,16 @@ table.lt tbody tr.lt-acl td.lt-pos {
 <div class="page" id="page-goods">
 <div class="generic-inner">
   <h2>OFFICIAL SHOP</h2>
-  <p data-ja="2026-27シーズン公式ユニフォームの販売は７月末を予定しています。" data-en="Our 2026-27 official uniforms are now on sale.">2026-27シーズン公式ユニフォームの販売を開始しました。</p>
+  <p data-ja="2026-27シーズン公式ユニフォームは、受注生産の期間限定販売です。" data-en="The 2026-27 official shirt is made to order and sold in limited windows.">2026-27シーズン公式ユニフォームは、受注生産の期間限定販売です。</p>
+
+  <!-- ORDER WINDOW BAND -->
+  <div class="ow" id="orderWindow" hidden>
+    <div class="ow-inner">
+      <div class="ow-state" id="owState"></div>
+      <div class="ow-dates" id="owDates"></div>
+      <div class="ow-left" id="owLeft"></div>
+    </div>
+  </div>
 
   <!-- Product Card -->
   <div class="product-card">
@@ -4993,7 +5182,6 @@ table.lt tbody tr.lt-acl td.lt-pos {
       <div class="product-kicker" data-ja="2026-27 OFFICIAL" data-en="2026-27 OFFICIAL">2026-27 OFFICIAL</div>
       <h3 class="product-title" data-ja="HOME ユニフォーム（シャツ）" data-en="HOME Uniform (Shirt)">HOME ユニフォーム（シャツ）</h3>
       <div class="product-price">¥9,500 <span data-ja="(税込)" data-en="(tax incl.)">(税込)</span></div>
-
       <table class="product-spec">
         <tr>
           <th data-ja="サイズ" data-en="Size">サイズ</th>
@@ -5004,93 +5192,67 @@ table.lt tbody tr.lt-acl td.lt-pos {
           <td data-ja="ポリエステル、ドライメッシュ" data-en="Polyester, Dry Mesh">ポリエステル、ドライメッシュ</td>
         </tr>
         <tr>
-          <th data-ja="名入れ" data-en="Name & Number">名入れ</th>
-          <td data-ja="お好きな名前・背番号を指定可能（+¥1,500）/ 名入れなしも選択可" data-en="Custom name & number available (+¥1,500) / or no customization">お好きな名前・背番号を指定可能（+¥1,500）/ 名入れなしも選択可</td>
+          <th data-ja="名入れ" data-en="Name &amp; Number">名入れ</th>
+          <td data-ja="お好きな名前・背番号を指定可能（+¥1,500）/ 名入れなしも選択可" data-en="Custom name &amp; number available (+¥1,500) / or no customization">お好きな名前・背番号を指定可能（+¥1,500）/ 名入れなしも選択可</td>
         </tr>
         <tr>
-          <th data-ja="発送時期" data-en="Shipping">発送時期</th>
-          <td data-ja="2026年7月25日以降、ご注文から約4週間" data-en="From July 25, 2026, approx. 4 weeks after order">2026年7月25日以降、ご注文から約4週間</td>
+          <th data-ja="生産" data-en="Production">生産</th>
+          <td data-ja="受注生産（受注締切後にまとめて製作します）" data-en="Made to order, produced together after the window closes">受注生産（受注締切後にまとめて製作します）</td>
         </tr>
         <tr>
-          <th data-ja="送料" data-en="Shipping Fee">送料</th>
-          <td data-ja="日本国内 ¥800 / ラオス国内 無料 / 海外 応相談" data-en="Japan ¥800 / Laos Free / International: Contact us">日本国内 ¥800 / ラオス国内 無料 / 海外 応相談</td>
+          <th data-ja="お届け" data-en="Delivery">お届け</th>
+          <td id="owDeliveryCell">—</td>
         </tr>
         <tr>
-          <th data-ja="販売開始" data-en="On Sale">販売開始</th>
-          <td data-ja="2026年7月25日〜" data-en="From July 25, 2026">2026年7月25日〜</td>
+          <th data-ja="送料" data-en="Shipping">送料</th>
+          <td data-ja="日本国内 ¥800 ／ ラオス国内 無料 ／ 海外 応相談" data-en="Japan ¥800 / Laos free / International: please contact us">日本国内 ¥800 ／ ラオス国内 無料 ／ 海外 応相談</td>
         </tr>
       </table>
+
+      <div class="buy-wrap">
+        <a class="buy-btn" id="buyBtn" href="#" target="_blank" rel="noopener"
+           data-ja="ショップで購入する" data-en="BUY IN THE SHOP">ショップで購入する</a>
+        <div class="buy-pay" data-ja="クレジットカード・PayPay残高・コンビニ払い・キャリア決済に対応しています" data-en="Card, PayPay balance, convenience-store payment and carrier billing accepted">クレジットカード・PayPay残高・コンビニ払い・キャリア決済に対応しています</div>
+      </div>
     </div>
   </div>
 
-  <!-- Order Form Header -->
-  <h3 style="font-family:'Oswald',sans-serif;font-size:22px;color:var(--navy);margin-top:56px;margin-bottom:16px;padding-left:14px;border-left:4px solid var(--gold)">ORDER FORM</h3>
-  <p style="margin-bottom:16px" data-ja="ご注文は以下のフォームからお願いいたします。お申し込み後、担当者より振込先・PayPay情報などを記載したメールをお送りいたします。" data-en="Please place your order using the form below. After submission, we will email you payment details (bank transfer or PayPay).">ご注文は以下のフォームからお願いいたします。お申し込み後、担当者より振込先・PayPay情報などを記載したメールをお送りいたします。</p>
+  <!-- WHAT YOUR SHIRT DOES -->
+  <div class="shirt-impact">
+    <div class="si-fig">5<small data-ja="人" data-en="children">人</small></div>
+    <div class="si-body">
+      <h4 data-ja="この1枚で、子ども5人をスタジアムに招待できます" data-en="One shirt brings five children into the stadium">この1枚で、子ども5人をスタジアムに招待できます</h4>
+      <p data-ja="クラブは1枚200円の観戦チケットで、サバナケットの子どもたちを試合に招待する取り組みを行っています。ユニフォーム1枚の売上は、子ども5人分の招待にあたります。スタジアムで、ラオス人選手と日本人選手がプロとして戦う姿を直接見てもらうための取り組みです。" data-en="The club invites local children to matches on ¥200 tickets. The revenue from one shirt covers five of those seats &mdash; five more children who get to watch Lao and Japanese players compete as professionals, in person.">クラブは1枚200円の観戦チケットで、サバナケットの子どもたちを試合に招待する取り組みを行っています。ユニフォーム1枚の売上は、子ども5人分の招待にあたります。スタジアムで、ラオス人選手と日本人選手がプロとして戦う姿を直接見てもらうための取り組みです。</p>
+      <a class="si-link" onclick="showPage('academy')" data-ja="アカデミー・地域活動を見る →" data-en="SEE OUR ACADEMY &amp; COMMUNITY WORK →">アカデミー・地域活動を見る →</a>
+    </div>
+  </div>
 
   <!-- Order Flow -->
+  <h3 class="sp-h3" data-ja="ご注文の流れ" data-en="HOW IT WORKS">ご注文の流れ</h3>
   <div class="order-flow">
     <div class="flow-step">
       <div class="flow-num">1</div>
-      <div class="flow-text" data-ja="フォームから注文" data-en="Submit Order Form">フォームから注文</div>
+      <div class="flow-text" data-ja="ショップでサイズ・名入れを選ぶ" data-en="Pick size and name option">ショップでサイズ・名入れを選ぶ</div>
     </div>
     <div class="flow-arrow">→</div>
     <div class="flow-step">
       <div class="flow-num">2</div>
-      <div class="flow-text" data-ja="振込・PayPay情報が届く" data-en="Receive Payment Info">振込・PayPay情報が届く</div>
+      <div class="flow-text" data-ja="その場で決済（カード・PayPay等）" data-en="Pay on the spot">その場で決済（カード・PayPay等）</div>
     </div>
     <div class="flow-arrow">→</div>
     <div class="flow-step">
       <div class="flow-num">3</div>
-      <div class="flow-text" data-ja="入金確認後、発送" data-en="Shipping After Payment">入金確認後、発送</div>
+      <div class="flow-text" data-ja="締切後にまとめて製作・発送" data-en="Produced and shipped after the window">締切後にまとめて製作・発送</div>
     </div>
   </div>
 
-  <!-- Order Form -->
-  <form class="contact-form" action="https://formspree.io/f/xkokrplj" method="POST">
-    <input type="hidden" name="_subject" value="【svzfc.com】ユニフォーム注文">
-    <input type="hidden" name="_language" value="ja">
-    <input type="hidden" name="注文商品" value="2026-27 HOME ユニフォーム (シャツ) ¥9,500">
+  <p class="shop-note" data-ja="※ 受注生産のため、締切後のサイズ・名入れ内容の変更、およびお客様都合による返品・交換はお受けできません。ご注文前にサイズをよくご確認ください。<br>※ 製品に不良があった場合は交換いたします。お問い合わせフォームよりご連絡ください。<br>※ ラオス国内でのご購入、および日本以外への発送をご希望の場合は、ショップではなくお問い合わせフォームよりご連絡ください。" data-en="* As each shirt is made to order, size and name details cannot be changed after the window closes, and we cannot accept returns or exchanges for change of mind. Please check your size carefully before ordering.<br>* Faulty items will be replaced. Please get in touch through the contact form.<br>* For purchases within Laos, or shipping outside Japan, please contact us through the form rather than the shop.">※ 受注生産のため、締切後のサイズ・名入れ内容の変更、およびお客様都合による返品・交換はお受けできません。ご注文前にサイズをよくご確認ください。<br>※ 製品に不良があった場合は交換いたします。お問い合わせフォームよりご連絡ください。<br>※ ラオス国内でのご購入、および日本以外への発送をご希望の場合は、ショップではなくお問い合わせフォームよりご連絡ください。</p>
 
-    <label class="form-label" data-ja="【お客様情報】" data-en="【Customer Information】">【お客様情報】</label>
-    <input type="text" name="お名前" data-ja-placeholder="お名前 *" data-en-placeholder="Your Name *" placeholder="お名前 *" required>
-    <input type="email" name="メールアドレス" data-ja-placeholder="メールアドレス *" data-en-placeholder="Email Address *" placeholder="メールアドレス *" required>
-    <input type="tel" name="電話番号" data-ja-placeholder="電話番号 *" data-en-placeholder="Phone Number *" placeholder="電話番号 *" required>
-
-    <label class="form-label" data-ja="【配送先住所】" data-en="【Shipping Address】">【配送先住所】</label>
-    <input type="text" name="郵便番号" data-ja-placeholder="郵便番号 *" data-en-placeholder="Postal Code *" placeholder="郵便番号 *" required>
-    <input type="text" name="住所" data-ja-placeholder="住所 *(番地、建物名まで)" data-en-placeholder="Full Address *" placeholder="住所 *(番地、建物名まで)" required>
-
-    <label class="form-label" data-ja="【注文内容】" data-en="【Order Details】">【注文内容】</label>
-    <select name="サイズ" required>
-      <option value="" data-ja="サイズを選択 *" data-en="Select Size *">サイズを選択 *</option>
-      <option value="S">S</option>
-      <option value="M">M</option>
-      <option value="L">L</option>
-      <option value="XL">XL</option>
-      <option value="2XL">2XL</option>
-    </select>
-    <input type="number" name="数量" data-ja-placeholder="数量 *" data-en-placeholder="Quantity *" placeholder="数量 *" min="1" value="1" required>
-
-    <select name="名入れ" required>
-      <option value="" data-ja="名入れオプション *" data-en="Name & Number Option *">名入れオプション *</option>
-      <option value="名入れなし" data-ja="名入れなし" data-en="No Customization">名入れなし</option>
-      <option value="名入れあり（+¥1,500）" data-ja="名入れあり（+¥1,500）" data-en="With Custom Name & Number (+¥1,500)">名入れあり（+¥1,500）</option>
-    </select>
-    <input type="text" name="名前_背番号指定" data-ja-placeholder="名入れ希望の場合のみ記入（例：WATANABE 93）" data-en-placeholder="Only if customized (e.g. WATANABE 93)" placeholder="名入れ希望の場合のみ記入（例：WATANABE 93）">
-
-    <label class="form-label" data-ja="【お支払い方法】" data-en="【Payment Method】">【お支払い方法】</label>
-    <select name="支払い方法" required>
-      <option value="" data-ja="お支払い方法を選択 *" data-en="Select Payment Method *">お支払い方法を選択 *</option>
-      <option value="銀行振込" data-ja="銀行振込" data-en="Bank Transfer">銀行振込</option>
-      <option value="PayPay" data-ja="PayPay" data-en="PayPay">PayPay</option>
-    </select>
-
-    <textarea name="備考" data-ja-placeholder="備考（ご質問やご要望があればこちらに）" data-en-placeholder="Notes (any questions or requests)" placeholder="備考（ご質問やご要望があればこちらに）"></textarea>
-
-    <button type="submit" data-ja="注文を送信する" data-en="SUBMIT ORDER">注文を送信する</button>
-  </form>
-
-  <p style="margin-top:24px;font-size:12px;color:var(--sub);line-height:1.8" data-ja="※ ご注文確定後のサイズ・名入れ内容の変更はできません。よくご確認の上、ご注文ください。<br>※ ご入金確認後、発送の準備に入ります。入金期限は注文から7日以内とさせていただきます。<br>※ 海外からのご注文の場合、送料は別途ご相談となります。" data-en="* Size and customization cannot be changed after order confirmation. Please review carefully before ordering.<br>* Shipping preparation begins after payment confirmation. Payment must be completed within 7 days of order.<br>* For international orders, shipping fees will be discussed separately.">※ ご注文確定後のサイズ・名入れ内容の変更はできません。よくご確認の上、ご注文ください。<br>※ ご入金確認後、発送の準備に入ります。入金期限は注文から7日以内とさせていただきます。<br>※ 海外からのご注文の場合、送料は別途ご相談となります。</p>
+  <div class="shop-alt">
+    <h4 data-ja="ラオス国内・海外からのご注文" data-en="Ordering from Laos or outside Japan">ラオス国内・海外からのご注文</h4>
+    <p data-ja="ショップは日本国内向けです。ラオス国内でのご購入（現地価格 300,000キープ）、および日本以外への発送は、お問い合わせフォームより承ります。" data-en="The online shop serves Japan. For purchases inside Laos (local price 300,000 kip) or shipping to other countries, please use the contact form.">ショップは日本国内向けです。ラオス国内でのご購入（現地価格 300,000キープ）、および日本以外への発送は、お問い合わせフォームより承ります。</p>
+    <a class="cd-btn ghost shop-alt-btn" onclick="showPage('contact')" data-ja="お問い合わせフォームへ" data-en="GO TO CONTACT FORM">お問い合わせフォームへ</a>
+  </div>
 </div>
 </div><!-- end page-goods -->
 
@@ -7310,6 +7472,106 @@ document.addEventListener('keydown', function (e) {
   render();
 
   /* 言語を切り替えたら組み直す */
+  if (typeof window.toggleLang === 'function') {
+    var orig = window.toggleLang;
+    window.toggleLang = function () { orig.apply(this, arguments); render(); };
+  }
+})();
+</script>
+
+
+<script>
+/* ===== OFFICIAL SHOP / 受注会 ================================================
+   受注会をやるたびに、下の3つを書き換えるだけです。
+
+     SHOP_URL  … STORESのショップ（または商品ページ）のURL
+     OPEN      … 受注開始日   'YYYY-MM-DD'
+     CLOSE     … 受注締切日   'YYYY-MM-DD'（この日の23:59まで受付）
+     DELIVERY  … お届け時期の表示（日本語・英語）
+
+   締切を過ぎると購入ボタンは自動で止まり、「次回の受注会をお待ちください」に
+   切り替わります。締切3日前からは帯が赤くなります。
+   SHOP_URL が空のままだとボタンは押せない状態で表示されます。
+   ========================================================================== */
+(function () {
+  var SHOP_URL = '';                 /* ← STORESのURLをここに貼る 例 'https://svzfc.stores.jp/' */
+  var OPEN     = '2026-11-14';
+  var CLOSE    = '2026-11-30';
+  var DELIVERY = { ja: '2026年12月下旬（締切後に製作）', en: 'Late December 2026, produced after the window closes' };
+
+  var band = document.getElementById('orderWindow');
+  var btn  = document.getElementById('buyBtn');
+  if (!band || !btn) return;
+
+  var TZ = '+07:00';                                   /* ラオス時間 */
+  var openAt  = new Date(OPEN  + 'T00:00:00' + TZ).getTime();
+  var closeAt = new Date(CLOSE + 'T23:59:59' + TZ).getTime();
+
+  function L() { return (typeof currentLang !== 'undefined' && currentLang === 'en') ? 'en' : 'ja'; }
+  function md(s) { var p = s.split('-'); return (+p[1]) + '/' + (+p[2]); }
+
+  function set(el, ja, en) {
+    if (!el) return;
+    el.setAttribute('data-ja', ja);
+    el.setAttribute('data-en', en);
+    el.textContent = L() === 'en' ? en : ja;
+  }
+
+  function render() {
+    var now = Date.now();
+    var state = now < openAt ? 'soon' : (now > closeAt ? 'closed' : 'open');
+    var daysLeft = Math.ceil((closeAt - now) / 86400000);
+
+    band.hidden = false;
+    band.className = 'ow' + (state === 'open' ? ' is-open' : '')
+                   + (state === 'open' && daysLeft <= 3 ? ' is-last' : '');
+
+    var cell = document.getElementById('owDeliveryCell');
+    set(cell, DELIVERY.ja, DELIVERY.en);
+
+    if (state === 'soon') {
+      set(document.getElementById('owState'), '受注会 まもなく開始', 'ORDER WINDOW OPENS SOON');
+      set(document.getElementById('owDates'), md(OPEN) + ' 受付開始', 'Opens ' + md(OPEN));
+      set(document.getElementById('owLeft'), '', '');
+      btn.className = 'buy-btn is-closed';
+      set(btn, '受付開始までお待ちください', 'OPENS SOON');
+      btn.removeAttribute('href');
+      return;
+    }
+
+    if (state === 'closed') {
+      set(document.getElementById('owState'), '今回の受注会は終了しました', 'THIS ORDER WINDOW HAS CLOSED');
+      set(document.getElementById('owDates'), md(OPEN) + '〜' + md(CLOSE) + ' 受付分は製作中です',
+          'Orders from ' + md(OPEN) + '–' + md(CLOSE) + ' are in production');
+      set(document.getElementById('owLeft'), '次回の受注会をお待ちください', 'The next window will be announced');
+      btn.className = 'buy-btn is-closed';
+      set(btn, '受注受付は終了しました', 'ORDERING CLOSED');
+      btn.removeAttribute('href');
+      return;
+    }
+
+    /* open */
+    set(document.getElementById('owState'), '受注受付中', 'ORDER WINDOW OPEN');
+    set(document.getElementById('owDates'), md(OPEN) + '〜' + md(CLOSE) + ' 23:59 まで',
+        md(OPEN) + ' – ' + md(CLOSE) + ', closes 23:59');
+    set(document.getElementById('owLeft'),
+        daysLeft <= 1 ? '本日締切' : ('締切まで あと' + daysLeft + '日'),
+        daysLeft <= 1 ? 'CLOSES TODAY' : (daysLeft + ' DAYS LEFT'));
+
+    if (SHOP_URL) {
+      btn.className = 'buy-btn';
+      btn.setAttribute('href', SHOP_URL);
+      set(btn, 'ショップで購入する', 'BUY IN THE SHOP');
+    } else {
+      btn.className = 'buy-btn is-closed';
+      set(btn, '準備中', 'COMING SOON');
+      btn.removeAttribute('href');
+    }
+  }
+
+  render();
+  setInterval(render, 60000);
+
   if (typeof window.toggleLang === 'function') {
     var orig = window.toggleLang;
     window.toggleLang = function () { orig.apply(this, arguments); render(); };
